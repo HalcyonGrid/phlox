@@ -1,0 +1,18 @@
+Shim generation
+-------------------
+
+input
+-----------
+key llRequestDisplayName(key id)
+
+becomes:
+-----------
+calls[id] = Shim_llRequestDisplayName
+
+private void Shim_llRequestDisplayName()
+{
+	UUID p1 = ConvToUUID(_interpreter.ScriptState.Operands.Pop());
+	
+	UUID ret = _systemAPI.llRequestDisplayName(p1);
+	_interpreter.ScriptState.Operands.Push(ConvToLSLType(ret));
+}
