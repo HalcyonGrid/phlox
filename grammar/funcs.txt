@@ -492,3 +492,4 @@ iwGroupEject(key user, key group);
 string iwGetAgentData(key id, integer data);
 integer iwIsPlusUser(key id);
 llAttachToAvatarTemp(integer attachPoint);
+integer iwListIncludesElements(list src, list elements, integer any);

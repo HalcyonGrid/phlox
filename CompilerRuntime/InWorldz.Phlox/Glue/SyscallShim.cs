@@ -560,6 +560,7 @@ namespace InWorldz.Phlox.Glue
 				Shim_iwGetAgentData,        //495
                 Shim_iwIsPlusUser,          //496
                 Shim_llAttachToAvatarTemp,  //497
+                Shim_iwListIncludesElements,//498
         };
 
         public void SetScriptEventFlags()
@@ -5296,5 +5297,16 @@ namespace InWorldz.Phlox.Glue
             self._systemAPI.llAttachToAvatarTemp(p0);
         }
 
+        // integer iwListIncludesElements
+        static private void Shim_iwListIncludesElements(SyscallShim self)
+        {
+            int p2 = ConvToInt(self._interpreter.ScriptState.Operands.Pop());
+            LSLList p1 = ConvToLSLList(self._interpreter.ScriptState.Operands.Pop());
+            LSLList p0 = ConvToLSLList(self._interpreter.ScriptState.Operands.Pop());
+
+            int ret = self._systemAPI.iwListIncludesElements(p0, p1, p2);
+
+            self._interpreter.SafeOperandsPush(ConvToLSLType(ret));
+        }
     }
 }

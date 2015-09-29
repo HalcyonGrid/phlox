@@ -3494,6 +3494,13 @@ namespace InWorldz.Phlox.Types
 				ParamNames = new string[] {"attachPoint"},
 				TableIndex = 497
 			}},
+            {"iwListIncludesElements", new FunctionSig {
+                FunctionName = "iwListIncludesElements",
+                ReturnType = VarType.Integer,
+                ParamTypes = new VarType[] {VarType.List, VarType.List, VarType.Integer},
+                ParamNames = new string[] {"src", "elements", "any"},
+                TableIndex = 498
+            }},
 		};
 	}
 }
