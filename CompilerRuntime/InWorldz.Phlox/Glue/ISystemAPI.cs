@@ -522,5 +522,6 @@ namespace InWorldz.Phlox.Glue
         string iwGetAgentData(string id, int data);
         int iwIsPlusUser(string id);
         void llAttachToAvatarTemp(int attachPoint);
+        int iwListIncludesElements(LSLList src, LSLList elements, int any);
     }
 }

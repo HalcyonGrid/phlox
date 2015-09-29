@@ -1800,4 +1800,8 @@
     llAttachToAvatarTemp(integer id)
     Attaches an object to the avatar but does not add it to the avatar's inventory
   </string>
+  <string name="iwListIncludesElements" translate="false">
+    integer iwListIncludesElements(list src, list elements, integer any)
+    Returns true if the src list contains at least one instance of every element in the list of elements.  If the integer any is true, then it will instead check if it has at least one instance of any element.
+  </string>
 </root>
