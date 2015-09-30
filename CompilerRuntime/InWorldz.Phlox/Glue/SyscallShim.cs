@@ -561,6 +561,8 @@ namespace InWorldz.Phlox.Glue
                 Shim_iwIsPlusUser,          //496
                 Shim_llAttachToAvatarTemp,  //497
                 Shim_iwListIncludesElements,//498
+                Shim_iwReverseString,       //499
+                Shim_iwReverseList,         //500
         };
 
         public void SetScriptEventFlags()
@@ -5297,7 +5299,7 @@ namespace InWorldz.Phlox.Glue
             self._systemAPI.llAttachToAvatarTemp(p0);
         }
 
-        // integer iwListIncludesElements
+        // integer iwListIncludesElements(list src, list elements, integer any)
         static private void Shim_iwListIncludesElements(SyscallShim self)
         {
             int p2 = ConvToInt(self._interpreter.ScriptState.Operands.Pop());
@@ -5305,6 +5307,27 @@ namespace InWorldz.Phlox.Glue
             LSLList p0 = ConvToLSLList(self._interpreter.ScriptState.Operands.Pop());
 
             int ret = self._systemAPI.iwListIncludesElements(p0, p1, p2);
+
+            self._interpreter.SafeOperandsPush(ConvToLSLType(ret));
+        }
+
+        // string iwReverseString(string src);
+        static private void Shim_iwReverseString(SyscallShim self)
+        {
+            string p0 = ConvToString(self._interpreter.ScriptState.Operands.Pop());
+
+            string ret = self._systemAPI.iwReverseString(p0);
+
+            self._interpreter.SafeOperandsPush(ConvToLSLType(ret));
+        }
+
+        // list iwReverseList(list src, integer stride)
+        static private void Shim_iwReverseList(SyscallShim self)
+        {
+            int p1 = ConvToInt(self._interpreter.ScriptState.Operands.Pop());
+            LSLList p0 = ConvToLSLList(self._interpreter.ScriptState.Operands.Pop());
+
+            LSLList ret = self._systemAPI.iwReverseList(p0, p1);
 
             self._interpreter.SafeOperandsPush(ConvToLSLType(ret));
         }

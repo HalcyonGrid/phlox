@@ -3501,6 +3501,20 @@ namespace InWorldz.Phlox.Types
                 ParamNames = new string[] {"src", "elements", "any"},
                 TableIndex = 498
             }},
+            {"iwReverseString", new FunctionSig {
+                FunctionName = "iwReverseString",
+                ReturnType = VarType.String,
+                ParamTypes = new VarType[] {VarType.String},
+                ParamNames = new string[] {"src"},
+                TableIndex = 499
+            }},
+            {"iwReverseList", new FunctionSig {
+                FunctionName = "iwReverseList",
+                ReturnType = VarType.List,
+                ParamTypes = new VarType[] {VarType.List, VarType.Integer},
+                ParamNames = new string[] {"src", "stride"},
+                TableIndex = 500
+            }},
 		};
 	}
 }

@@ -523,5 +523,7 @@ namespace InWorldz.Phlox.Glue
         int iwIsPlusUser(string id);
         void llAttachToAvatarTemp(int attachPoint);
         int iwListIncludesElements(LSLList src, LSLList elements, int any);
+        string iwReverseString(string src);
+        LSLList iwReverseList(LSLList src, int stride);
     }
 }

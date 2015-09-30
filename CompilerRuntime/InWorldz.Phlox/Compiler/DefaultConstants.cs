@@ -756,6 +756,7 @@ namespace InWorldz.Phlox.Compiler
 
             {"IW_APPEARANCE_GENDER", new ConstantSymbol("IW_APPEARANCE_GENDER", SymbolTable.INT, "31")},
 
+            {"IW_MATCH_INCLUDE", new ConstantSymbol("IW_MATCH_INCLUDE", SymbolTable.INT, "-2")},
             {"IW_MATCH_EQUAL", new ConstantSymbol("IW_MATCH_EQUAL", SymbolTable.INT, "-1")},
             {"IW_MATCH_HEAD", new ConstantSymbol("IW_MATCH_HEAD", SymbolTable.INT, "0")},
             {"IW_MATCH_TAIL", new ConstantSymbol("IW_MATCH_TAIL", SymbolTable.INT, "1")},

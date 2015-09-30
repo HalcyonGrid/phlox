@@ -1804,4 +1804,12 @@
     integer iwListIncludesElements(list src, list elements, integer any)
     Returns true if the src list contains at least one instance of every element in the list of elements.  If the integer any is true, then it will instead check if it has at least one instance of any element.
   </string>
+  <string name="iwReverseString" translate="false">
+    string iwReverseString(string src);
+    This will return a reversed version of the input string.
+  </string>
+  <string name="iwReverseList" translate="false">
+    list iwReverseList(list src, integer stride);
+    This will return a reversed version of the input list.  If stride is more than one, then it will preserve the order of elements within a stride.
+  </string>
 </root>
