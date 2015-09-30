@@ -3515,6 +3515,20 @@ namespace InWorldz.Phlox.Types
                 ParamNames = new string[] {"src", "stride"},
                 TableIndex = 500
             }},
-		};
+            {"iwGetInventoryIndex", new FunctionSig {
+                FunctionName = "iwGetInventoryIndex",
+                ReturnType = VarType.Integer,
+                ParamTypes = new VarType[] {VarType.Integer, VarType.String},
+                ParamNames = new string[] {"type", "name"},
+                TableIndex = 501
+            }},
+            {"iwGetLinkInventoryIndex", new FunctionSig {
+                FunctionName = "iwGetLinkInventoryIndex",
+                ReturnType = VarType.Integer,
+                ParamTypes = new VarType[] {VarType.Integer, VarType.Integer, VarType.String},
+                ParamNames = new string[] {"link", "type", "name"},
+                TableIndex = 502
+            }},
+        };
 	}
 }
