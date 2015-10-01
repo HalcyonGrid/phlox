@@ -1812,4 +1812,11 @@
     list iwReverseList(list src, integer stride);
     This will return a reversed version of the input list.  If stride is more than one, then it will preserve the order of elements within a stride.
   </string>
+  <string name="iwSearchInventory" translate="false">
+    list iwSearchInventory(integer type, string pattern, integer matchtype);
+    This will return a list of all items of the specified type in the task inventory which match the specified pattern.  Pattern-matching is performed the same way as iwMatchString.
+  </string>
+  <string name="iwSearchLinkInventory" translate="false">
+    list iwSearchInventory(integer link, integer type, string pattern, integer matchtype);
+  </string>
 </root>

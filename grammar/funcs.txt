@@ -495,3 +495,5 @@ llAttachToAvatarTemp(integer attachPoint);
 integer iwListIncludesElements(list src, list elements, integer any);
 string iwReverseString(string src);
 list iwReverseList(list src, integer stride);
+list iwSearchInventory(integer type, string pattern, integer matchType);
+list iwSearchLinkInventory(integer link, integer type, string pattern, integer matchType);

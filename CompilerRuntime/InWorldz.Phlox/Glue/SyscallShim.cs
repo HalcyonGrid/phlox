@@ -563,6 +563,8 @@ namespace InWorldz.Phlox.Glue
                 Shim_iwListIncludesElements,//498
                 Shim_iwReverseString,       //499
                 Shim_iwReverseList,         //500
+                Shim_iwSearchInventory,     //501
+                Shim_iwSearchLinkInventory, //502
         };
 
         public void SetScriptEventFlags()
@@ -5328,6 +5330,31 @@ namespace InWorldz.Phlox.Glue
             LSLList p0 = ConvToLSLList(self._interpreter.ScriptState.Operands.Pop());
 
             LSLList ret = self._systemAPI.iwReverseList(p0, p1);
+
+            self._interpreter.SafeOperandsPush(ConvToLSLType(ret));
+        }
+
+        // list iwSearchInventory(integer type, string pattern, integer matchtype)
+        static private void Shim_iwSearchInventory(SyscallShim self)
+        {
+            int p2 = ConvToInt(self._interpreter.ScriptState.Operands.Pop());
+            string p1 = ConvToString(self._interpreter.ScriptState.Operands.Pop());
+            int p0 = ConvToInt(self._interpreter.ScriptState.Operands.Pop());
+
+            LSLList ret = self._systemAPI.iwSearchInventory(p0, p1, p2);
+
+            self._interpreter.SafeOperandsPush(ConvToLSLType(ret));
+        }
+
+        // list iwSearchLinkInventory(integer link, integer type, string pattern, integer matchtype)
+        static private void Shim_iwSearchLinkInventory(SyscallShim self)
+        {
+            int p3 = ConvToInt(self._interpreter.ScriptState.Operands.Pop());
+            string p2 = ConvToString(self._interpreter.ScriptState.Operands.Pop());
+            int p1 = ConvToInt(self._interpreter.ScriptState.Operands.Pop());
+            int p0 = ConvToInt(self._interpreter.ScriptState.Operands.Pop());
+
+            LSLList ret = self._systemAPI.iwSearchLinkInventory(p0, p1, p2, p3);
 
             self._interpreter.SafeOperandsPush(ConvToLSLType(ret));
         }

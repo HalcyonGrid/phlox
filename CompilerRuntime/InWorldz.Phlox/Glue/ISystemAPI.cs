@@ -525,5 +525,7 @@ namespace InWorldz.Phlox.Glue
         int iwListIncludesElements(LSLList src, LSLList elements, int any);
         string iwReverseString(string src);
         LSLList iwReverseList(LSLList src, int stride);
+        LSLList iwSearchInventory(int type, string pattern, int matchtype);
+        LSLList iwSearchLinkInventory(int link, int type, string pattern, int matchtype);
     }
 }
