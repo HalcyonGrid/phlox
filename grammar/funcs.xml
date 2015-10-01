@@ -1812,12 +1812,4 @@
     list iwReverseList(list src, integer stride);
     This will return a reversed version of the input list.  If stride is more than one, then it will preserve the order of elements within a stride.
   </string>
-  <string name="iwGetInventoryIndex" translate="false">
-    integer iwGetInventoryIndex(integer type, string name);
-    This will search through the task prim's inventory and attempt to find the index number for the specified item name.  If none is found, a result of -1 is returned.
-  </string>
-  <string name="iwGetLinkInventoryIndex" translate="false">
-    integer iwGetLinkInventoryIndex(integer link, integer type, string name);
-    This will search through the specified link's inventory and attempt to find the index number for the specified item name.  If none is found, a result of -1 is returned.
-  </string>
 </root>
