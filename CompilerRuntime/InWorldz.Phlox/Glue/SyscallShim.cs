@@ -565,6 +565,9 @@ namespace InWorldz.Phlox.Glue
                 Shim_iwReverseList,         //500
                 Shim_iwSearchInventory,     //501
                 Shim_iwSearchLinkInventory, //502
+                Shim_iwIntRand,             //503
+                Shim_iwIntRandRange,        //504
+                Shim_iwFrandRange,          //505
         };
 
         public void SetScriptEventFlags()
@@ -5355,6 +5358,38 @@ namespace InWorldz.Phlox.Glue
             int p0 = ConvToInt(self._interpreter.ScriptState.Operands.Pop());
 
             LSLList ret = self._systemAPI.iwSearchLinkInventory(p0, p1, p2, p3);
+
+            self._interpreter.SafeOperandsPush(ConvToLSLType(ret));
+        }
+
+        // integer iwIntRand(integer max);
+        static private void Shim_iwIntRand(SyscallShim self)
+        {
+            int p0 = ConvToInt(self._interpreter.ScriptState.Operands.Pop());
+
+            int ret = self._systemAPI.iwIntRand(p0);
+
+            self._interpreter.SafeOperandsPush(ConvToLSLType(ret));
+        }
+
+        // integer iwIntRandRange(integer min, integer max);
+        static private void Shim_iwIntRandRange(SyscallShim self)
+        {
+            int p1 = ConvToInt(self._interpreter.ScriptState.Operands.Pop());
+            int p0 = ConvToInt(self._interpreter.ScriptState.Operands.Pop());
+
+            int ret = self._systemAPI.iwIntRandRange(p0, p1);
+
+            self._interpreter.SafeOperandsPush(ConvToLSLType(ret));
+        }
+
+        // float iwFloatRandRange(float min, float max);
+        static private void Shim_iwFrandRange(SyscallShim self)
+        {
+            float p1 = ConvToFloat(self._interpreter.ScriptState.Operands.Pop());
+            float p0 = ConvToFloat(self._interpreter.ScriptState.Operands.Pop());
+
+            float ret = self._systemAPI.iwFrandRange(p0, p1);
 
             self._interpreter.SafeOperandsPush(ConvToLSLType(ret));
         }

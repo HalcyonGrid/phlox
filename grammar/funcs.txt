@@ -497,3 +497,7 @@ string iwReverseString(string src);
 list iwReverseList(list src, integer stride);
 list iwSearchInventory(integer type, string pattern, integer matchType);
 list iwSearchLinkInventory(integer link, integer type, string pattern, integer matchType);
+integer iwIntRand(integer max);
+integer iwIntRange(integer min, integer max);
+float iwFrandRange(float min, float max);
+#key iwGetRezzerKey(key id);

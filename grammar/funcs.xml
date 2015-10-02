@@ -1818,5 +1818,24 @@
   </string>
   <string name="iwSearchLinkInventory" translate="false">
     list iwSearchInventory(integer link, integer type, string pattern, integer matchtype);
+    This will return a list of all items of the specified type in the specified link, which match the specified pattern.  Pattern-matching is performed the same way as iwMatchString.
   </string>
+  <string name="iwIntRand" translate="false">
+    integer iwIntRand(integer max);
+    Returns a random integer, ranging from zero up to (and including) the maximum value specified.
+  </string>
+  <string name="iwIntRandRange" translate="false">
+    integer iwIntRandRange(integer min, integer max);
+    Returns a random integer ranging from min to max.
+  </string>
+  <string name="iwFrandRange" translate="false">
+    float iwFrandRange(float min, float max);
+    Returns a random float ranging from min to max.
+  </string>
+  <!--
+  <string name="iwGetRezzerKey" translate="false">
+    key iwGetRezzerKey(key id);
+    Returns the key of the object which rezzed the specified object.  If the input key is NULL_KEY, then it will get the rezzer key of the object the prim is contained in.
+  </string>
+  -->
 </root>

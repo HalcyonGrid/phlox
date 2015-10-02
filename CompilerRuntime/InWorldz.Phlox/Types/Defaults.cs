@@ -3529,6 +3529,27 @@ namespace InWorldz.Phlox.Types
                 ParamNames = new string[] {"link", "type", "pattern", "matchtype"},
                 TableIndex = 502
             }},
+            {"iwIntRand", new FunctionSig {
+                FunctionName = "iwIntRand",
+                ReturnType = VarType.Integer,
+                ParamTypes = new VarType[] {VarType.Integer},
+                ParamNames = new string[] {"max"},
+                TableIndex = 503
+            }},
+            {"iwIntRandRange", new FunctionSig {
+                FunctionName = "iwIntRandRange",
+                ReturnType = VarType.Integer,
+                ParamTypes = new VarType[] {VarType.Integer, VarType.Integer},
+                ParamNames = new string[] {"min", "max"},
+                TableIndex = 504
+            }},
+            {"iwFrandRange", new FunctionSig {
+                FunctionName = "iwFrandRange",
+                ReturnType = VarType.Float,
+                ParamTypes = new VarType[] {VarType.Float, VarType.Float},
+                ParamNames = new string[] {"min", "max"},
+                TableIndex = 505
+            }},
         };
 	}
 }

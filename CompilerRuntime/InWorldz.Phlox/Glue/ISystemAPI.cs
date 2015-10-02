@@ -527,5 +527,8 @@ namespace InWorldz.Phlox.Glue
         LSLList iwReverseList(LSLList src, int stride);
         LSLList iwSearchInventory(int type, string pattern, int matchtype);
         LSLList iwSearchLinkInventory(int link, int type, string pattern, int matchtype);
+        int iwIntRand(int max);
+        int iwIntRandRange(int min, int max);
+        float iwFrandRange(float min, float max);
     }
 }
