@@ -505,6 +505,12 @@ namespace InWorldz.Phlox.Compiler
             {"OBJECT_PHYSICS", new ConstantSymbol("OBJECT_PHYSICS", SymbolTable.INT, "21")},
             {"OBJECT_PHANTOM", new ConstantSymbol("OBJECT_PHANTOM", SymbolTable.INT, "22")},
             {"OBJECT_TEMP_ON_REZ", new ConstantSymbol("OBJECT_TEMP_ON_REZ", SymbolTable.INT, "23")},
+            {"OBJECT_RENDER_WEIGHT", new ConstantSymbol("OBJECT_RENDER_WEIGHT", SymbolTable.INT, "24")},
+            {"OBJECT_HOVER_HEIGHT", new ConstantSymbol("OBJECT_HOVER_HEIGHT", SymbolTable.INT, "25")},
+            {"OBJECT_BODY_SHAPE_TYPE", new ConstantSymbol("OBJECT_BODY_SHAPE_TYPE", SymbolTable.INT, "26")},
+            {"OBJECT_LAST_OWNER_ID", new ConstantSymbol("OBJECT_LAST_OWNER_ID", SymbolTable.INT, "27")},
+            {"OBJECT_CLICK_ACTION", new ConstantSymbol("OBJECT_CLICK_ACTION", SymbolTable.INT, "28")},
+
             // IW extensions to the OBJECT_CONSTANTS at out-of-range unexpected values
             {"OBJECT_TOTAL_UPDATES", new ConstantSymbol("OBJECT_TOTAL_UPDATES", SymbolTable.INT, "11001")},
 
