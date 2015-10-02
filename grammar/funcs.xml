@@ -1832,6 +1832,11 @@
     float iwFrandRange(float min, float max);
     Returns a random float ranging from min to max.
   </string>
+  <string name="botSearchBotOutfits" translate="false">
+    list botSearchBotOutfits(string pattern, integer matchType, integer start, integer end);
+    As botGetBotOutfits, except it only returns a list of bot outfits with names that match a specified pattern.  Pattern-matching is performed the same way as iwMatchString.
+    Passing an empty string as a pattern will act as a wildcard.  Also, using the start and end parameters, it will return a subset of the return results.
+  </string>
   <!--
   <string name="iwGetRezzerKey" translate="false">
     key iwGetRezzerKey(key id);

@@ -500,4 +500,5 @@ list iwSearchLinkInventory(integer link, integer type, string pattern, integer m
 integer iwIntRand(integer max);
 integer iwIntRange(integer min, integer max);
 float iwFrandRange(float min, float max);
+list botSearchBotOutfits(string pattern, integer matchType, integer start, integer end);
 #key iwGetRezzerKey(key id);

@@ -3550,6 +3550,13 @@ namespace InWorldz.Phlox.Types
                 ParamNames = new string[] {"min", "max"},
                 TableIndex = 505
             }},
+            {"botSearchBotOutfits", new FunctionSig {
+                FunctionName = "botSearchBotOutfits",
+                ReturnType = VarType.List,
+                ParamTypes = new VarType[] {VarType.String, VarType.Integer, VarType.Integer, VarType.Integer},
+                ParamNames = new string[] {"pattern", "matchType", "start", "end"},
+                TableIndex = 506
+            }},
         };
 	}
 }

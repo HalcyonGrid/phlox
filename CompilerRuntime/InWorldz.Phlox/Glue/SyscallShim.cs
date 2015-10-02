@@ -568,6 +568,7 @@ namespace InWorldz.Phlox.Glue
                 Shim_iwIntRand,             //503
                 Shim_iwIntRandRange,        //504
                 Shim_iwFrandRange,          //505
+                Shim_botSearchBotOutfits,   //506
         };
 
         public void SetScriptEventFlags()
@@ -5392,6 +5393,24 @@ namespace InWorldz.Phlox.Glue
             float ret = self._systemAPI.iwFrandRange(p0, p1);
 
             self._interpreter.SafeOperandsPush(ConvToLSLType(ret));
+        }
+
+
+        // list botSearchBotOutfits(string pattern, integer matchType, integer start, integer end);
+        static private void Shim_botSearchBotOutfits(SyscallShim self)
+        {
+            //set the script to long running syscall and call the function async
+            self._interpreter.ScriptState.RunState = VM.RuntimeState.Status.Syscall;
+
+            int p3 = ConvToInt(self._interpreter.ScriptState.Operands.Pop());
+            int p2 = ConvToInt(self._interpreter.ScriptState.Operands.Pop());
+            int p1 = ConvToInt(self._interpreter.ScriptState.Operands.Pop());
+            string p0 = ConvToString(self._interpreter.ScriptState.Operands.Pop());
+
+            self._asyncCallDelegate(delegate ()
+            {
+                self._systemAPI.botSearchBotOutfits(p0, p1, p2, p3);
+            });
         }
     }
 }
