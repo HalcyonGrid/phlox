@@ -561,6 +561,14 @@ namespace InWorldz.Phlox.Glue
                 Shim_iwIsPlusUser,          //496
                 Shim_llAttachToAvatarTemp,  //497
                 Shim_iwListIncludesElements,//498
+                Shim_iwReverseString,       //499
+                Shim_iwReverseList,         //500
+                Shim_iwSearchInventory,     //501
+                Shim_iwSearchLinkInventory, //502
+                Shim_iwIntRand,             //503
+                Shim_iwIntRandRange,        //504
+                Shim_iwFrandRange,          //505
+                Shim_botSearchBotOutfits,   //506
         };
 
         public void SetScriptEventFlags()
@@ -5297,7 +5305,7 @@ namespace InWorldz.Phlox.Glue
             self._systemAPI.llAttachToAvatarTemp(p0);
         }
 
-        // integer iwListIncludesElements
+        // integer iwListIncludesElements(list src, list elements, integer any)
         static private void Shim_iwListIncludesElements(SyscallShim self)
         {
             int p2 = ConvToInt(self._interpreter.ScriptState.Operands.Pop());
@@ -5307,6 +5315,102 @@ namespace InWorldz.Phlox.Glue
             int ret = self._systemAPI.iwListIncludesElements(p0, p1, p2);
 
             self._interpreter.SafeOperandsPush(ConvToLSLType(ret));
+        }
+
+        // string iwReverseString(string src);
+        static private void Shim_iwReverseString(SyscallShim self)
+        {
+            string p0 = ConvToString(self._interpreter.ScriptState.Operands.Pop());
+
+            string ret = self._systemAPI.iwReverseString(p0);
+
+            self._interpreter.SafeOperandsPush(ConvToLSLType(ret));
+        }
+
+        // list iwReverseList(list src, integer stride)
+        static private void Shim_iwReverseList(SyscallShim self)
+        {
+            int p1 = ConvToInt(self._interpreter.ScriptState.Operands.Pop());
+            LSLList p0 = ConvToLSLList(self._interpreter.ScriptState.Operands.Pop());
+
+            LSLList ret = self._systemAPI.iwReverseList(p0, p1);
+
+            self._interpreter.SafeOperandsPush(ConvToLSLType(ret));
+        }
+
+        // list iwSearchInventory(integer type, string pattern, integer matchtype)
+        static private void Shim_iwSearchInventory(SyscallShim self)
+        {
+            int p2 = ConvToInt(self._interpreter.ScriptState.Operands.Pop());
+            string p1 = ConvToString(self._interpreter.ScriptState.Operands.Pop());
+            int p0 = ConvToInt(self._interpreter.ScriptState.Operands.Pop());
+
+            LSLList ret = self._systemAPI.iwSearchInventory(p0, p1, p2);
+
+            self._interpreter.SafeOperandsPush(ConvToLSLType(ret));
+        }
+
+        // list iwSearchLinkInventory(integer link, integer type, string pattern, integer matchtype)
+        static private void Shim_iwSearchLinkInventory(SyscallShim self)
+        {
+            int p3 = ConvToInt(self._interpreter.ScriptState.Operands.Pop());
+            string p2 = ConvToString(self._interpreter.ScriptState.Operands.Pop());
+            int p1 = ConvToInt(self._interpreter.ScriptState.Operands.Pop());
+            int p0 = ConvToInt(self._interpreter.ScriptState.Operands.Pop());
+
+            LSLList ret = self._systemAPI.iwSearchLinkInventory(p0, p1, p2, p3);
+
+            self._interpreter.SafeOperandsPush(ConvToLSLType(ret));
+        }
+
+        // integer iwIntRand(integer max);
+        static private void Shim_iwIntRand(SyscallShim self)
+        {
+            int p0 = ConvToInt(self._interpreter.ScriptState.Operands.Pop());
+
+            int ret = self._systemAPI.iwIntRand(p0);
+
+            self._interpreter.SafeOperandsPush(ConvToLSLType(ret));
+        }
+
+        // integer iwIntRandRange(integer min, integer max);
+        static private void Shim_iwIntRandRange(SyscallShim self)
+        {
+            int p1 = ConvToInt(self._interpreter.ScriptState.Operands.Pop());
+            int p0 = ConvToInt(self._interpreter.ScriptState.Operands.Pop());
+
+            int ret = self._systemAPI.iwIntRandRange(p0, p1);
+
+            self._interpreter.SafeOperandsPush(ConvToLSLType(ret));
+        }
+
+        // float iwFloatRandRange(float min, float max);
+        static private void Shim_iwFrandRange(SyscallShim self)
+        {
+            float p1 = ConvToFloat(self._interpreter.ScriptState.Operands.Pop());
+            float p0 = ConvToFloat(self._interpreter.ScriptState.Operands.Pop());
+
+            float ret = self._systemAPI.iwFrandRange(p0, p1);
+
+            self._interpreter.SafeOperandsPush(ConvToLSLType(ret));
+        }
+
+
+        // list botSearchBotOutfits(string pattern, integer matchType, integer start, integer end);
+        static private void Shim_botSearchBotOutfits(SyscallShim self)
+        {
+            //set the script to long running syscall and call the function async
+            self._interpreter.ScriptState.RunState = VM.RuntimeState.Status.Syscall;
+
+            int p3 = ConvToInt(self._interpreter.ScriptState.Operands.Pop());
+            int p2 = ConvToInt(self._interpreter.ScriptState.Operands.Pop());
+            int p1 = ConvToInt(self._interpreter.ScriptState.Operands.Pop());
+            string p0 = ConvToString(self._interpreter.ScriptState.Operands.Pop());
+
+            self._asyncCallDelegate(delegate ()
+            {
+                self._systemAPI.botSearchBotOutfits(p0, p1, p2, p3);
+            });
         }
     }
 }

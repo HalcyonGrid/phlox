@@ -3501,6 +3501,62 @@ namespace InWorldz.Phlox.Types
                 ParamNames = new string[] {"src", "elements", "any"},
                 TableIndex = 498
             }},
-		};
+            {"iwReverseString", new FunctionSig {
+                FunctionName = "iwReverseString",
+                ReturnType = VarType.String,
+                ParamTypes = new VarType[] {VarType.String},
+                ParamNames = new string[] {"src"},
+                TableIndex = 499
+            }},
+            {"iwReverseList", new FunctionSig {
+                FunctionName = "iwReverseList",
+                ReturnType = VarType.List,
+                ParamTypes = new VarType[] {VarType.List, VarType.Integer},
+                ParamNames = new string[] {"src", "stride"},
+                TableIndex = 500
+            }},
+            {"iwSearchInventory", new FunctionSig {
+                FunctionName = "iwSearchInventory",
+                ReturnType = VarType.List,
+                ParamTypes = new VarType[] {VarType.Integer, VarType.String, VarType.Integer},
+                ParamNames = new string[] {"type", "pattern", "matchtype"},
+                TableIndex = 501
+            }},
+            {"iwSearchLinkInventory", new FunctionSig {
+                FunctionName = "iwSearchLinkInventory",
+                ReturnType = VarType.List,
+                ParamTypes = new VarType[] {VarType.Integer, VarType.Integer, VarType.String, VarType.Integer},
+                ParamNames = new string[] {"link", "type", "pattern", "matchtype"},
+                TableIndex = 502
+            }},
+            {"iwIntRand", new FunctionSig {
+                FunctionName = "iwIntRand",
+                ReturnType = VarType.Integer,
+                ParamTypes = new VarType[] {VarType.Integer},
+                ParamNames = new string[] {"max"},
+                TableIndex = 503
+            }},
+            {"iwIntRandRange", new FunctionSig {
+                FunctionName = "iwIntRandRange",
+                ReturnType = VarType.Integer,
+                ParamTypes = new VarType[] {VarType.Integer, VarType.Integer},
+                ParamNames = new string[] {"min", "max"},
+                TableIndex = 504
+            }},
+            {"iwFrandRange", new FunctionSig {
+                FunctionName = "iwFrandRange",
+                ReturnType = VarType.Float,
+                ParamTypes = new VarType[] {VarType.Float, VarType.Float},
+                ParamNames = new string[] {"min", "max"},
+                TableIndex = 505
+            }},
+            {"botSearchBotOutfits", new FunctionSig {
+                FunctionName = "botSearchBotOutfits",
+                ReturnType = VarType.List,
+                ParamTypes = new VarType[] {VarType.String, VarType.Integer, VarType.Integer, VarType.Integer},
+                ParamNames = new string[] {"pattern", "matchType", "start", "end"},
+                TableIndex = 506
+            }},
+        };
 	}
 }
