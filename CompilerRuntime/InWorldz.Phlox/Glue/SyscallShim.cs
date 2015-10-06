@@ -569,6 +569,8 @@ namespace InWorldz.Phlox.Glue
                 Shim_iwIntRandRange,        //504
                 Shim_iwFrandRange,          //505
                 Shim_botSearchBotOutfits,   //506
+                Shim_iwListRemoveElements,  //507
+                Shim_iwListRemoveDuplicates,//508
         };
 
         public void SetScriptEventFlags()
@@ -5411,6 +5413,28 @@ namespace InWorldz.Phlox.Glue
             {
                 self._systemAPI.botSearchBotOutfits(p0, p1, p2, p3);
             });
+        }
+
+        // list iwListRemoveElements(list src, list elements, integer count);
+        static private void Shim_iwListRemoveElements(SyscallShim self)
+        {
+            int p2 = ConvToInt(self._interpreter.ScriptState.Operands.Pop());
+            LSLList p1 = ConvToLSLList(self._interpreter.ScriptState.Operands.Pop());
+            LSLList p0 = ConvToLSLList(self._interpreter.ScriptState.Operands.Pop());
+
+            LSLList ret = self._systemAPI.iwListRemoveElements(p0, p1, p2);
+
+            self._interpreter.SafeOperandsPush(ConvToLSLType(ret));
+        }
+
+        // list iwListRemoveDuplicates(list src, list elements, integer count);
+        static private void Shim_iwListRemoveDuplicates(SyscallShim self)
+        {
+            LSLList p0 = ConvToLSLList(self._interpreter.ScriptState.Operands.Pop());
+
+            LSLList ret = self._systemAPI.iwListRemoveDuplicates(p0);
+
+            self._interpreter.SafeOperandsPush(ConvToLSLType(ret));
         }
     }
 }
