@@ -571,6 +571,8 @@ namespace InWorldz.Phlox.Glue
                 Shim_botSearchBotOutfits,   //506
                 Shim_iwListRemoveElements,  //507
                 Shim_iwListRemoveDuplicates,//508
+                Shim_iwStartLinkAnimation,  //509
+                Shim_iwStopLinkAnimation,   //510
         };
 
         public void SetScriptEventFlags()
@@ -5435,6 +5437,24 @@ namespace InWorldz.Phlox.Glue
             LSLList ret = self._systemAPI.iwListRemoveDuplicates(p0);
 
             self._interpreter.SafeOperandsPush(ConvToLSLType(ret));
+        }
+
+        // iwStartLinkAnimation(integer link, string anim);
+        static private void Shim_iwStartLinkAnimation(SyscallShim self)
+        {
+            string p1 = ConvToString(self._interpreter.ScriptState.Operands.Pop());
+            int p0 = ConvToInt(self._interpreter.ScriptState.Operands.Pop());
+
+            self._systemAPI.iwStartLinkAnimation(p0, p1);
+        }
+
+        // iwStopLinkAnimation(integer link, string anim);
+        static private void Shim_iwStopLinkAnimation(SyscallShim self)
+        {
+            string p1 = ConvToString(self._interpreter.ScriptState.Operands.Pop());
+            int p0 = ConvToInt(self._interpreter.ScriptState.Operands.Pop());
+
+            self._systemAPI.iwStopLinkAnimation(p0, p1);
         }
     }
 }

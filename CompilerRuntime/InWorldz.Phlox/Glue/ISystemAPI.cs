@@ -533,5 +533,7 @@ namespace InWorldz.Phlox.Glue
         void botSearchBotOutfits(string pattern, int matchType, int start, int end);//Returns LSLList via async return
         LSLList iwListRemoveElements(LSLList src, LSLList elements, int count);
         LSLList iwListRemoveDuplicates(LSLList src);
+        void iwStartLinkAnimation(int link, string anim);
+        void iwStopLinkAnimation(int link, string anim);
     }
 }

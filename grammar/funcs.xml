@@ -1847,6 +1847,14 @@
     list iwListRemoveDuplicates(list src);
     This will return a copy of the src list with all duplicated elements removed.  So if src was [1, 2, 1, 4, 2, 3, 4, -7], then it would return [1, 2, 3, 4, -7].
   </string>
+  <string name="iwStartLinkAnimation">
+    iwStartLinkAnimation(integer link, string anim);
+    This function works as llStartAnimation, but instead of trying to start an animation in the current prim, it will instead start an animation from the specified link number.
+  </string>
+  <string name="iwStopLinkAnimation">
+    iwStopLinkAnimation(integer link, string anim);
+    This function works as llStopAnimation, but instead of trying to stop an animation in the current prim, it will instead stop an animation from the specified link number.
+  </string>
   <!--
   <string name="iwGetRezzerKey" translate="false">
     key iwGetRezzerKey(key id);

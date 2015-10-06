@@ -3571,6 +3571,20 @@ namespace InWorldz.Phlox.Types
                 ParamNames = new string[] {"src"},
                 TableIndex = 508
             }},
+            {"iwStartLinkAnimation", new FunctionSig {
+                FunctionName = "iwStartLinkAnimation",
+                ReturnType = VarType.Void,
+                ParamTypes = new VarType[] {VarType.Integer, VarType.String},
+                ParamNames = new string[] {"link", "anim"},
+                TableIndex = 509
+            }},
+            {"iwStopLinkAnimation", new FunctionSig {
+                FunctionName = "iwStopLinkAnimation",
+                ReturnType = VarType.Void,
+                ParamTypes = new VarType[] {VarType.Integer, VarType.String},
+                ParamNames = new string[] {"link", "anim"},
+                TableIndex = 510
+            }},
         };
 	}
 }

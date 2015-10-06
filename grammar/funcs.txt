@@ -503,4 +503,6 @@ float iwFrandRange(float min, float max);
 list botSearchBotOutfits(string pattern, integer matchType, integer start, integer end);
 list iwListRemoveElements(list src, list elements, integer count);
 list iwListRemoveDuplicates(list src);
+iwStartLinkAnimation(integer link, string anim);
+iwStopLinkAnimation(integer link, string anim);
 #key iwGetRezzerKey(key id);
