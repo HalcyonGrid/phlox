@@ -1873,6 +1873,10 @@
     This function searches the linkset and returns a strided list of link number and link description pairs for any links with descriptions matching the pattern, following the semantics of iwMatchString.
     If the integer linksOnly is TRUE, then the function will omit the link descriptions and only return a list of link numbers.
   </string>
+  <string name="botHasTag">
+    integer botHasTag(key botID, string tag);
+    Returns TRUE if a bot has the specified tag, or FALSE if not.
+  </string>
   <!--
   <string name="iwGetRezzerKey" translate="false">
     key iwGetRezzerKey(key id);

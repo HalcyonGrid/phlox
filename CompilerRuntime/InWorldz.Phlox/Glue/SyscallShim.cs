@@ -577,6 +577,7 @@ namespace InWorldz.Phlox.Glue
                 Shim_iwClampFloat,          //512
                 Shim_iwSearchLinksByName,   //513
                 Shim_iwSearchLinksByDesc,   //514
+                Shim_botHasTag,             //515
         };
 
         public void SetScriptEventFlags()
@@ -5473,6 +5474,7 @@ namespace InWorldz.Phlox.Glue
             self._interpreter.SafeOperandsPush(ConvToLSLType(ret));
         }
 
+        // float iwClampFloat(float value, float min, float max);
         static private void Shim_iwClampFloat(SyscallShim self)
         {
             float p2 = ConvToFloat(self._interpreter.ScriptState.Operands.Pop());
@@ -5484,6 +5486,7 @@ namespace InWorldz.Phlox.Glue
             self._interpreter.SafeOperandsPush(ConvToLSLType(ret));
         }
 
+        // list iwSearchLinksByName(string pattern, integer matchType, integer linksOnly);
         static private void Shim_iwSearchLinksByName(SyscallShim self)
         {
             int p2 = ConvToInt(self._interpreter.ScriptState.Operands.Pop());
@@ -5495,6 +5498,7 @@ namespace InWorldz.Phlox.Glue
             self._interpreter.SafeOperandsPush(ConvToLSLType(ret));
         }
 
+        // list iwSearchLinksByDesc(string pattern, integer matchType, integer linksOnly);
         static private void Shim_iwSearchLinksByDesc(SyscallShim self)
         {
             int p2 = ConvToInt(self._interpreter.ScriptState.Operands.Pop());
@@ -5502,6 +5506,17 @@ namespace InWorldz.Phlox.Glue
             string p0 = ConvToString(self._interpreter.ScriptState.Operands.Pop());
 
             LSLList ret = self._systemAPI.iwSearchLinksByDesc(p0, p1, p2);
+
+            self._interpreter.SafeOperandsPush(ConvToLSLType(ret));
+        }
+
+        // integer botHasTag(key botID, string tag);
+        static private void Shim_botHasTag(SyscallShim self)
+        {
+            string p1 = ConvToString(self.Interpreter.ScriptState.Operands.Pop());
+            string p0 = ConvToString(self.Interpreter.ScriptState.Operands.Pop());
+
+            int ret = self._systemAPI.botHasTag(p0, p1);
 
             self._interpreter.SafeOperandsPush(ConvToLSLType(ret));
         }

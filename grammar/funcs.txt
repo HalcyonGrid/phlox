@@ -509,4 +509,5 @@ integer iwClampInt(integer value, integer min, integer max);
 float iwClampFloat(float value, float min, float max);
 list iwSearchLinksByName(string pattern, integer matchType, integer linksOnly);
 list iwSearchLinksByDesc(string pattern, integer matchType, integer linksOnly);
+integer botHasTag(key botID, string tag);
 #key iwGetRezzerKey(key id);
