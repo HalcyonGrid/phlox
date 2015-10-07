@@ -1877,6 +1877,10 @@
     integer botHasTag(key botID, string tag);
     Returns TRUE if a bot has the specified tag, or FALSE if not.
   </string>
+  <string name="botGetBotTags">
+    list botGetBotTags(key botID);
+    Returns a list of all tags associated with the specified bot, if any.
+  </string>
   <!--
   <string name="iwGetRezzerKey" translate="false">
     key iwGetRezzerKey(key id);

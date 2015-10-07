@@ -540,5 +540,6 @@ namespace InWorldz.Phlox.Glue
         LSLList iwSearchLinksByName(string pattern, int matchType, int linksOnly);
         LSLList iwSearchLinksByDesc(string pattern, int matchType, int linksOnly);
         int botHasTag(string botID, string tag);
+        LSLList botGetBotTags(string botID);
     }
 }

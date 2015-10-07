@@ -3620,6 +3620,13 @@ namespace InWorldz.Phlox.Types
                 ParamNames = new string[] {"botID", "tag"},
                 TableIndex = 515
             }},
+            {"botGetBotTags", new FunctionSig {
+                FunctionName = "botGetBotTags",
+                ReturnType = VarType.List,
+                ParamTypes = new VarType[] {VarType.Key},
+                ParamNames = new string[] {"botID"},
+                TableIndex = 516
+            }},
         };
 	}
 }
