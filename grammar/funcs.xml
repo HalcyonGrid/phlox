@@ -1838,7 +1838,7 @@
     Passing an empty string as a pattern will act as a wildcard.  Also, using the start and end parameters, it will return a subset of the return results.
   </string>
   <string name="iwListRemoveElements" translate="false">
-    list iwListRemoveElements(list src, list elements, integer count);
+    list iwListRemoveElements(list src, list elements, integer count, integer mode);
     This will scan through the src list and find all occurences of the list elements, and then removes them.  If the count integer is more than 0, it will only remove an instance
     of the specified element list that many times.  So, if you set it to one, it will only remove the first instance it finds, and if two it will only remove the first two instances
     that it finds, and so on.

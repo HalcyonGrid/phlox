@@ -5426,11 +5426,12 @@ namespace InWorldz.Phlox.Glue
         // list iwListRemoveElements(list src, list elements, integer count);
         static private void Shim_iwListRemoveElements(SyscallShim self)
         {
+            int p3 = ConvToInt(self._interpreter.ScriptState.Operands.Pop());
             int p2 = ConvToInt(self._interpreter.ScriptState.Operands.Pop());
             LSLList p1 = ConvToLSLList(self._interpreter.ScriptState.Operands.Pop());
             LSLList p0 = ConvToLSLList(self._interpreter.ScriptState.Operands.Pop());
 
-            LSLList ret = self._systemAPI.iwListRemoveElements(p0, p1, p2);
+            LSLList ret = self._systemAPI.iwListRemoveElements(p0, p1, p2, p3);
 
             self._interpreter.SafeOperandsPush(ConvToLSLType(ret));
         }

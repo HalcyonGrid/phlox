@@ -3560,8 +3560,8 @@ namespace InWorldz.Phlox.Types
             {"iwListRemoveElements", new FunctionSig {
                 FunctionName = "iwListRemoveElements",
                 ReturnType = VarType.List,
-                ParamTypes = new VarType[] {VarType.List, VarType.List, VarType.Integer},
-                ParamNames = new string[] {"src", "elements", "count"},
+                ParamTypes = new VarType[] {VarType.List, VarType.List, VarType.Integer, VarType.Integer},
+                ParamNames = new string[] {"src", "elements", "count", "mode"},
                 TableIndex = 507
             }},
             {"iwListRemoveDuplicates", new FunctionSig {

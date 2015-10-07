@@ -501,7 +501,7 @@ integer iwIntRand(integer max);
 integer iwIntRange(integer min, integer max);
 float iwFrandRange(float min, float max);
 list botSearchBotOutfits(string pattern, integer matchType, integer start, integer end);
-list iwListRemoveElements(list src, list elements, integer count);
+list iwListRemoveElements(list src, list elements, integer count, integer mode);
 list iwListRemoveDuplicates(list src);
 iwStartLinkAnimation(integer link, string anim);
 iwStopLinkAnimation(integer link, string anim);
