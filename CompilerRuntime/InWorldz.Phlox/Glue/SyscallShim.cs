@@ -575,6 +575,8 @@ namespace InWorldz.Phlox.Glue
                 Shim_iwStopLinkAnimation,   //510
                 Shim_iwClampInt,            //511
                 Shim_iwClampFloat,          //512
+                Shim_iwSearchLinksByName,   //513
+                Shim_iwSearchLinksByDesc,   //514
         };
 
         public void SetScriptEventFlags()
@@ -5478,6 +5480,28 @@ namespace InWorldz.Phlox.Glue
             float p0 = ConvToFloat(self._interpreter.ScriptState.Operands.Pop());
 
             float ret = self._systemAPI.iwClampFloat(p0, p1, p2);
+
+            self._interpreter.SafeOperandsPush(ConvToLSLType(ret));
+        }
+
+        static private void Shim_iwSearchLinksByName(SyscallShim self)
+        {
+            int p2 = ConvToInt(self._interpreter.ScriptState.Operands.Pop());
+            int p1 = ConvToInt(self._interpreter.ScriptState.Operands.Pop());
+            string p0 = ConvToString(self._interpreter.ScriptState.Operands.Pop());
+
+            LSLList ret = self._systemAPI.iwSearchLinksByName(p0, p1, p2);
+
+            self._interpreter.SafeOperandsPush(ConvToLSLType(ret));
+        }
+
+        static private void Shim_iwSearchLinksByDesc(SyscallShim self)
+        {
+            int p2 = ConvToInt(self._interpreter.ScriptState.Operands.Pop());
+            int p1 = ConvToInt(self._interpreter.ScriptState.Operands.Pop());
+            string p0 = ConvToString(self._interpreter.ScriptState.Operands.Pop());
+
+            LSLList ret = self._systemAPI.iwSearchLinksByDesc(p0, p1, p2);
 
             self._interpreter.SafeOperandsPush(ConvToLSLType(ret));
         }

@@ -1863,6 +1863,16 @@
     float iwClampFloat(float value, float min, float max);
     This function clamps the input value, forcing it to fall within the range of min and max if it is outside of that range.
   </string>
+  <string name="iwSearchLinksByName">
+    list iwSearchLinksByName(string pattern, integer matchType, integer linksOnly);
+    This function searches the linkset and returns a strided list of link number and link name pairs for any links with names matching the pattern, following the semantics of iwMatchString.
+    If the integer linksOnly is TRUE, then the function will omit the link names and only return a list of link numbers.
+  </string>
+  <string name="iwSearchLinksByDesc">
+    list iwSearchLinksByDesc(string pattern, integer matchType, integer linksOnly);
+    This function searches the linkset and returns a strided list of link number and link description pairs for any links with descriptions matching the pattern, following the semantics of iwMatchString.
+    If the integer linksOnly is TRUE, then the function will omit the link descriptions and only return a list of link numbers.
+  </string>
   <!--
   <string name="iwGetRezzerKey" translate="false">
     key iwGetRezzerKey(key id);

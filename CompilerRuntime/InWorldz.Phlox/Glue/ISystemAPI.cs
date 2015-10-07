@@ -537,5 +537,7 @@ namespace InWorldz.Phlox.Glue
         void iwStopLinkAnimation(int link, string anim);
         int iwClampInt(int value, int min, int max);
         float iwClampFloat(float value, float min, float max);
+        LSLList iwSearchLinksByName(string pattern, int matchType, int linksOnly);
+        LSLList iwSearchLinksByDesc(string pattern, int matchType, int linksOnly);
     }
 }

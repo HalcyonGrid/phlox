@@ -3599,6 +3599,20 @@ namespace InWorldz.Phlox.Types
                 ParamNames = new string[] {"value", "min", "max"},
                 TableIndex = 512
             }},
+            {"iwSearchLinksByName", new FunctionSig {
+                FunctionName = "iwSearchLinksByName",
+                ReturnType = VarType.List,
+                ParamTypes = new VarType[] {VarType.String, VarType.Integer, VarType.Integer},
+                ParamNames = new string[] {"pattern", "matchType", "linksOnly"},
+                TableIndex = 513
+            }},
+            {"iwSearchLinksByDesc", new FunctionSig {
+                FunctionName = "iwSearchLinksByDesc",
+                ReturnType = VarType.List,
+                ParamTypes = new VarType[] {VarType.String, VarType.Integer, VarType.Integer},
+                ParamNames = new string[] {"pattern", "matchType", "linksOnly"},
+                TableIndex = 514
+            }},
         };
 	}
 }
