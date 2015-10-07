@@ -535,5 +535,7 @@ namespace InWorldz.Phlox.Glue
         LSLList iwListRemoveDuplicates(LSLList src);
         void iwStartLinkAnimation(int link, string anim);
         void iwStopLinkAnimation(int link, string anim);
+        int iwClampInt(int value, int min, int max);
+        float iwClampFloat(float value, float min, float max);
     }
 }

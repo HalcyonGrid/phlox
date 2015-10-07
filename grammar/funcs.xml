@@ -1855,6 +1855,14 @@
     iwStopLinkAnimation(integer link, string anim);
     This function works as llStopAnimation, but instead of trying to stop an animation in the current prim, it will instead stop an animation from the specified link number.
   </string>
+  <string name="iwClampInt">
+    integer iwClampInt(integer value, integer min, integer max);
+    This function clamps the input value, forcing it to fall within the range of min and max if it is outside that range.
+  </string>
+  <string name="iwClampFloat">
+    float iwClampFloat(float value, float min, float max);
+    This function clamps the input value, forcing it to fall within the range of min and max if it is outside of that range.
+  </string>
   <!--
   <string name="iwGetRezzerKey" translate="false">
     key iwGetRezzerKey(key id);

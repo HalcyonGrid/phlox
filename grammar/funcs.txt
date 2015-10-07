@@ -505,4 +505,6 @@ list iwListRemoveElements(list src, list elements, integer count);
 list iwListRemoveDuplicates(list src);
 iwStartLinkAnimation(integer link, string anim);
 iwStopLinkAnimation(integer link, string anim);
+integer iwClampInt(integer value, integer min, integer max);
+float iwClampFloat(float value, float min, float max);
 #key iwGetRezzerKey(key id);

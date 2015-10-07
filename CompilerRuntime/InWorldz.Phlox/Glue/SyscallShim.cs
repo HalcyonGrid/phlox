@@ -573,6 +573,8 @@ namespace InWorldz.Phlox.Glue
                 Shim_iwListRemoveDuplicates,//508
                 Shim_iwStartLinkAnimation,  //509
                 Shim_iwStopLinkAnimation,   //510
+                Shim_iwClampInt,            //511
+                Shim_iwClampFloat,          //512
         };
 
         public void SetScriptEventFlags()
@@ -5455,6 +5457,29 @@ namespace InWorldz.Phlox.Glue
             int p0 = ConvToInt(self._interpreter.ScriptState.Operands.Pop());
 
             self._systemAPI.iwStopLinkAnimation(p0, p1);
+        }
+
+        // integer iwClampInt(integer value, integer min, integer max);
+        static private void Shim_iwClampInt(SyscallShim self)
+        {
+            int p2 = ConvToInt(self._interpreter.ScriptState.Operands.Pop());
+            int p1 = ConvToInt(self._interpreter.ScriptState.Operands.Pop());
+            int p0 = ConvToInt(self._interpreter.ScriptState.Operands.Pop());
+
+            int ret = self._systemAPI.iwClampInt(p0, p1, p2);
+
+            self._interpreter.SafeOperandsPush(ConvToLSLType(ret));
+        }
+
+        static private void Shim_iwClampFloat(SyscallShim self)
+        {
+            float p2 = ConvToFloat(self._interpreter.ScriptState.Operands.Pop());
+            float p1 = ConvToFloat(self._interpreter.ScriptState.Operands.Pop());
+            float p0 = ConvToFloat(self._interpreter.ScriptState.Operands.Pop());
+
+            float ret = self._systemAPI.iwClampFloat(p0, p1, p2);
+
+            self._interpreter.SafeOperandsPush(ConvToLSLType(ret));
         }
     }
 }

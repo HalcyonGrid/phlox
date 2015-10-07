@@ -3585,6 +3585,20 @@ namespace InWorldz.Phlox.Types
                 ParamNames = new string[] {"link", "anim"},
                 TableIndex = 510
             }},
+            {"iwClampInt", new FunctionSig {
+                FunctionName = "iwClampInt",
+                ReturnType = VarType.Integer,
+                ParamTypes = new VarType[] {VarType.Integer, VarType.Integer, VarType.Integer},
+                ParamNames = new string[] {"value", "min", "max"},
+                TableIndex = 511
+            }},
+            {"iwClampFloat", new FunctionSig {
+                FunctionName = "iwClampFloat",
+                ReturnType = VarType.Float,
+                ParamTypes = new VarType[] {VarType.Float, VarType.Float, VarType.Float},
+                ParamNames = new string[] {"value", "min", "max"},
+                TableIndex = 512
+            }},
         };
 	}
 }
