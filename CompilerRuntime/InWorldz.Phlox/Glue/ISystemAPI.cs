@@ -531,9 +531,15 @@ namespace InWorldz.Phlox.Glue
         int iwIntRandRange(int min, int max);
         float iwFrandRange(float min, float max);
         void botSearchBotOutfits(string pattern, int matchType, int start, int end);//Returns LSLList via async return
-        LSLList iwListRemoveElements(LSLList src, LSLList elements, int count);
+        LSLList iwListRemoveElements(LSLList src, LSLList elements, int count, int mode);
         LSLList iwListRemoveDuplicates(LSLList src);
         void iwStartLinkAnimation(int link, string anim);
         void iwStopLinkAnimation(int link, string anim);
+        int iwClampInt(int value, int min, int max);
+        float iwClampFloat(float value, float min, float max);
+        LSLList iwSearchLinksByName(string pattern, int matchType, int linksOnly);
+        LSLList iwSearchLinksByDesc(string pattern, int matchType, int linksOnly);
+        int botHasTag(string botID, string tag);
+        LSLList botGetBotTags(string botID);
     }
 }

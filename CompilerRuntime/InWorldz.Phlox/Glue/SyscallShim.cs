@@ -573,6 +573,12 @@ namespace InWorldz.Phlox.Glue
                 Shim_iwListRemoveDuplicates,//508
                 Shim_iwStartLinkAnimation,  //509
                 Shim_iwStopLinkAnimation,   //510
+                Shim_iwClampInt,            //511
+                Shim_iwClampFloat,          //512
+                Shim_iwSearchLinksByName,   //513
+                Shim_iwSearchLinksByDesc,   //514
+                Shim_botHasTag,             //515
+                Shim_botGetBotTags,         //516
         };
 
         public void SetScriptEventFlags()
@@ -5420,11 +5426,12 @@ namespace InWorldz.Phlox.Glue
         // list iwListRemoveElements(list src, list elements, integer count);
         static private void Shim_iwListRemoveElements(SyscallShim self)
         {
+            int p3 = ConvToInt(self._interpreter.ScriptState.Operands.Pop());
             int p2 = ConvToInt(self._interpreter.ScriptState.Operands.Pop());
             LSLList p1 = ConvToLSLList(self._interpreter.ScriptState.Operands.Pop());
             LSLList p0 = ConvToLSLList(self._interpreter.ScriptState.Operands.Pop());
 
-            LSLList ret = self._systemAPI.iwListRemoveElements(p0, p1, p2);
+            LSLList ret = self._systemAPI.iwListRemoveElements(p0, p1, p2, p3);
 
             self._interpreter.SafeOperandsPush(ConvToLSLType(ret));
         }
@@ -5455,6 +5462,74 @@ namespace InWorldz.Phlox.Glue
             int p0 = ConvToInt(self._interpreter.ScriptState.Operands.Pop());
 
             self._systemAPI.iwStopLinkAnimation(p0, p1);
+        }
+
+        // integer iwClampInt(integer value, integer min, integer max);
+        static private void Shim_iwClampInt(SyscallShim self)
+        {
+            int p2 = ConvToInt(self._interpreter.ScriptState.Operands.Pop());
+            int p1 = ConvToInt(self._interpreter.ScriptState.Operands.Pop());
+            int p0 = ConvToInt(self._interpreter.ScriptState.Operands.Pop());
+
+            int ret = self._systemAPI.iwClampInt(p0, p1, p2);
+
+            self._interpreter.SafeOperandsPush(ConvToLSLType(ret));
+        }
+
+        // float iwClampFloat(float value, float min, float max);
+        static private void Shim_iwClampFloat(SyscallShim self)
+        {
+            float p2 = ConvToFloat(self._interpreter.ScriptState.Operands.Pop());
+            float p1 = ConvToFloat(self._interpreter.ScriptState.Operands.Pop());
+            float p0 = ConvToFloat(self._interpreter.ScriptState.Operands.Pop());
+
+            float ret = self._systemAPI.iwClampFloat(p0, p1, p2);
+
+            self._interpreter.SafeOperandsPush(ConvToLSLType(ret));
+        }
+
+        // list iwSearchLinksByName(string pattern, integer matchType, integer linksOnly);
+        static private void Shim_iwSearchLinksByName(SyscallShim self)
+        {
+            int p2 = ConvToInt(self._interpreter.ScriptState.Operands.Pop());
+            int p1 = ConvToInt(self._interpreter.ScriptState.Operands.Pop());
+            string p0 = ConvToString(self._interpreter.ScriptState.Operands.Pop());
+
+            LSLList ret = self._systemAPI.iwSearchLinksByName(p0, p1, p2);
+
+            self._interpreter.SafeOperandsPush(ConvToLSLType(ret));
+        }
+
+        // list iwSearchLinksByDesc(string pattern, integer matchType, integer linksOnly);
+        static private void Shim_iwSearchLinksByDesc(SyscallShim self)
+        {
+            int p2 = ConvToInt(self._interpreter.ScriptState.Operands.Pop());
+            int p1 = ConvToInt(self._interpreter.ScriptState.Operands.Pop());
+            string p0 = ConvToString(self._interpreter.ScriptState.Operands.Pop());
+
+            LSLList ret = self._systemAPI.iwSearchLinksByDesc(p0, p1, p2);
+
+            self._interpreter.SafeOperandsPush(ConvToLSLType(ret));
+        }
+
+        // integer botHasTag(key botID, string tag);
+        static private void Shim_botHasTag(SyscallShim self)
+        {
+            string p1 = ConvToString(self.Interpreter.ScriptState.Operands.Pop());
+            string p0 = ConvToString(self.Interpreter.ScriptState.Operands.Pop());
+
+            int ret = self._systemAPI.botHasTag(p0, p1);
+
+            self._interpreter.SafeOperandsPush(ConvToLSLType(ret));
+        }
+
+        static private void Shim_botGetBotTags(SyscallShim self)
+        {
+            string p0 = ConvToString(self.Interpreter.ScriptState.Operands.Pop());
+
+            LSLList ret = self._systemAPI.botGetBotTags(p0);
+
+            self._interpreter.SafeOperandsPush(ConvToLSLType(ret));
         }
     }
 }

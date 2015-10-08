@@ -1838,7 +1838,7 @@
     Passing an empty string as a pattern will act as a wildcard.  Also, using the start and end parameters, it will return a subset of the return results.
   </string>
   <string name="iwListRemoveElements" translate="false">
-    list iwListRemoveElements(list src, list elements, integer count);
+    list iwListRemoveElements(list src, list elements, integer count, integer mode);
     This will scan through the src list and find all occurences of the list elements, and then removes them.  If the count integer is more than 0, it will only remove an instance
     of the specified element list that many times.  So, if you set it to one, it will only remove the first instance it finds, and if two it will only remove the first two instances
     that it finds, and so on.
@@ -1854,6 +1854,32 @@
   <string name="iwStopLinkAnimation">
     iwStopLinkAnimation(integer link, string anim);
     This function works as llStopAnimation, but instead of trying to stop an animation in the current prim, it will instead stop an animation from the specified link number.
+  </string>
+  <string name="iwClampInt">
+    integer iwClampInt(integer value, integer min, integer max);
+    This function clamps the input value, forcing it to fall within the range of min and max if it is outside that range.
+  </string>
+  <string name="iwClampFloat">
+    float iwClampFloat(float value, float min, float max);
+    This function clamps the input value, forcing it to fall within the range of min and max if it is outside of that range.
+  </string>
+  <string name="iwSearchLinksByName">
+    list iwSearchLinksByName(string pattern, integer matchType, integer linksOnly);
+    This function searches the linkset and returns a strided list of link number and link name pairs for any links with names matching the pattern, following the semantics of iwMatchString.
+    If the integer linksOnly is TRUE, then the function will omit the link names and only return a list of link numbers.
+  </string>
+  <string name="iwSearchLinksByDesc">
+    list iwSearchLinksByDesc(string pattern, integer matchType, integer linksOnly);
+    This function searches the linkset and returns a strided list of link number and link description pairs for any links with descriptions matching the pattern, following the semantics of iwMatchString.
+    If the integer linksOnly is TRUE, then the function will omit the link descriptions and only return a list of link numbers.
+  </string>
+  <string name="botHasTag">
+    integer botHasTag(key botID, string tag);
+    Returns TRUE if a bot has the specified tag, or FALSE if not.
+  </string>
+  <string name="botGetBotTags">
+    list botGetBotTags(key botID);
+    Returns a list of all tags associated with the specified bot, if any.
   </string>
   <!--
   <string name="iwGetRezzerKey" translate="false">

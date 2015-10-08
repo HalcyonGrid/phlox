@@ -3560,8 +3560,8 @@ namespace InWorldz.Phlox.Types
             {"iwListRemoveElements", new FunctionSig {
                 FunctionName = "iwListRemoveElements",
                 ReturnType = VarType.List,
-                ParamTypes = new VarType[] {VarType.List, VarType.List, VarType.Integer},
-                ParamNames = new string[] {"src", "elements", "count"},
+                ParamTypes = new VarType[] {VarType.List, VarType.List, VarType.Integer, VarType.Integer},
+                ParamNames = new string[] {"src", "elements", "count", "mode"},
                 TableIndex = 507
             }},
             {"iwListRemoveDuplicates", new FunctionSig {
@@ -3584,6 +3584,48 @@ namespace InWorldz.Phlox.Types
                 ParamTypes = new VarType[] {VarType.Integer, VarType.String},
                 ParamNames = new string[] {"link", "anim"},
                 TableIndex = 510
+            }},
+            {"iwClampInt", new FunctionSig {
+                FunctionName = "iwClampInt",
+                ReturnType = VarType.Integer,
+                ParamTypes = new VarType[] {VarType.Integer, VarType.Integer, VarType.Integer},
+                ParamNames = new string[] {"value", "min", "max"},
+                TableIndex = 511
+            }},
+            {"iwClampFloat", new FunctionSig {
+                FunctionName = "iwClampFloat",
+                ReturnType = VarType.Float,
+                ParamTypes = new VarType[] {VarType.Float, VarType.Float, VarType.Float},
+                ParamNames = new string[] {"value", "min", "max"},
+                TableIndex = 512
+            }},
+            {"iwSearchLinksByName", new FunctionSig {
+                FunctionName = "iwSearchLinksByName",
+                ReturnType = VarType.List,
+                ParamTypes = new VarType[] {VarType.String, VarType.Integer, VarType.Integer},
+                ParamNames = new string[] {"pattern", "matchType", "linksOnly"},
+                TableIndex = 513
+            }},
+            {"iwSearchLinksByDesc", new FunctionSig {
+                FunctionName = "iwSearchLinksByDesc",
+                ReturnType = VarType.List,
+                ParamTypes = new VarType[] {VarType.String, VarType.Integer, VarType.Integer},
+                ParamNames = new string[] {"pattern", "matchType", "linksOnly"},
+                TableIndex = 514
+            }},
+            {"botHasTag", new FunctionSig {
+                FunctionName = "botHasTag",
+                ReturnType = VarType.Integer,
+                ParamTypes = new VarType[] {VarType.Key, VarType.String},
+                ParamNames = new string[] {"botID", "tag"},
+                TableIndex = 515
+            }},
+            {"botGetBotTags", new FunctionSig {
+                FunctionName = "botGetBotTags",
+                ReturnType = VarType.List,
+                ParamTypes = new VarType[] {VarType.Key},
+                ParamNames = new string[] {"botID"},
+                TableIndex = 516
             }},
         };
 	}
