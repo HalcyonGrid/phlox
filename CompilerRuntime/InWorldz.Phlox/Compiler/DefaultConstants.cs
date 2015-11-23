@@ -352,6 +352,10 @@ namespace InWorldz.Phlox.Compiler
             {"PRIM_LINK_TARGET", new ConstantSymbol("PRIM_LINK_TARGET", SymbolTable.INT, "34")},
             {"PRIM_SLICE", new ConstantSymbol("PRIM_SLICE", SymbolTable.INT, "35")},
 
+            {"PRIM_SPECULAR", new ConstantSymbol("PRIM_SPECULAR", SymbolTable.INT, "36")},
+            {"PRIM_NORMAL", new ConstantSymbol("PRIM_NORMAL", SymbolTable.INT, "37")},
+            {"PRIM_ALPHA_MODE", new ConstantSymbol("PRIM_ALPHA_MODE", SymbolTable.INT, "38")},
+
             {"IW_PRIM_ALPHA", new ConstantSymbol("IW_PRIM_ALPHA", SymbolTable.INT, "11001")},   // IW extensions to PRIM_* constants
 
             {"PRIM_TEXGEN_DEFAULT", new ConstantSymbol("PRIM_TEXGEN_DEFAULT", SymbolTable.INT, "0")},
@@ -404,6 +408,12 @@ namespace InWorldz.Phlox.Compiler
             {"PRIM_SCULPT_TYPE_CYLINDER", new ConstantSymbol("PRIM_SCULPT_TYPE_CYLINDER", SymbolTable.INT, "4")},
             {"PRIM_SCULPT_FLAG_INVERT", new ConstantSymbol("PRIM_SCULPT_FLAG_INVERT", SymbolTable.INT, "64")},
             {"PRIM_SCULPT_FLAG_MIRROR", new ConstantSymbol("PRIM_SCULPT_FLAG_MIRROR", SymbolTable.INT, "128")},
+
+            {"PRIM_ALPHA_MODE_NONE", new ConstantSymbol("PRIM_ALPHA_MODE_NONE", SymbolTable.INT, "0")},
+            {"PRIM_ALPHA_MODE_BLEND", new ConstantSymbol("PRIM_ALPHA_MODE_BLEND", SymbolTable.INT, "1")},
+            {"PRIM_ALPHA_MODE_MASK", new ConstantSymbol("PRIM_ALPHA_MODE_MASK", SymbolTable.INT, "2")},
+            {"PRIM_ALPHA_MODE_EMISSIVE", new ConstantSymbol("PRIM_ALPHA_MODE_EMISSIVE", SymbolTable.INT, "3")},
+
             {"MASK_BASE", new ConstantSymbol("MASK_BASE", SymbolTable.INT, "0")},
             {"MASK_OWNER", new ConstantSymbol("MASK_OWNER", SymbolTable.INT, "1")},
             {"MASK_GROUP", new ConstantSymbol("MASK_GROUP", SymbolTable.INT, "2")},
