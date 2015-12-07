@@ -357,11 +357,12 @@ namespace InWorldz.Phlox.Compiler
             {"PRIM_ALPHA_MODE", new ConstantSymbol("PRIM_ALPHA_MODE", SymbolTable.INT, "38")},
 
             {"IW_PRIM_ALPHA", new ConstantSymbol("IW_PRIM_ALPHA", SymbolTable.INT, "11001")},   // IW extensions to PRIM_* constants
-            {"IW_PRIM_PROJECTOR_ENABLED",  new ConstantSymbol("IW_PRIM_PROJECTOR_ENABLED",  SymbolTable.INT, "11100")},
-            {"IW_PRIM_PROJECTOR_TEXTURE",  new ConstantSymbol("IW_PRIM_PROJECTOR_TEXTURE",  SymbolTable.INT, "11101")},
-            {"IW_PRIM_PROJECTOR_FOV",      new ConstantSymbol("IW_PRIM_PROJECTOR_FOV",      SymbolTable.INT, "11102")},
-            {"IW_PRIM_PROJECTOR_FOCUS",    new ConstantSymbol("IW_PRIM_PROJECTOR_FOCUS",    SymbolTable.INT, "11103")},
-            {"IW_PRIM_PROJECTOR_AMBIENCE", new ConstantSymbol("IW_PRIM_PROJECTOR_AMBIENCE", SymbolTable.INT, "11104")},
+            {"IW_PRIM_PROJECTOR",          new ConstantSymbol("IW_PRIM_PROJECTOR",          SymbolTable.INT, "11100")},
+            {"IW_PRIM_PROJECTOR_ENABLED",  new ConstantSymbol("IW_PRIM_PROJECTOR_ENABLED",  SymbolTable.INT, "11101")},
+            {"IW_PRIM_PROJECTOR_TEXTURE",  new ConstantSymbol("IW_PRIM_PROJECTOR_TEXTURE",  SymbolTable.INT, "11102")},
+            {"IW_PRIM_PROJECTOR_FOV",      new ConstantSymbol("IW_PRIM_PROJECTOR_FOV",      SymbolTable.INT, "11103")},
+            {"IW_PRIM_PROJECTOR_FOCUS",    new ConstantSymbol("IW_PRIM_PROJECTOR_FOCUS",    SymbolTable.INT, "11104")},
+            {"IW_PRIM_PROJECTOR_AMBIENCE", new ConstantSymbol("IW_PRIM_PROJECTOR_AMBIENCE", SymbolTable.INT, "11105")},
 
             {"PRIM_TEXGEN_DEFAULT", new ConstantSymbol("PRIM_TEXGEN_DEFAULT", SymbolTable.INT, "0")},
             {"PRIM_TEXGEN_PLANAR", new ConstantSymbol("PRIM_TEXGEN_PLANAR", SymbolTable.INT, "1")},
