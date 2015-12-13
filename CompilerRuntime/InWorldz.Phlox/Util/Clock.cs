@@ -9,21 +9,22 @@ namespace InWorldz.Phlox.Util
     public class Clock
     {
 
-#if __MonoCS__ 
-        //Todo: Fill in implementation for linux/cross platform GetTickCount64 implementation
-#else
+        public static bool IsWindows = System.Environment.OSVersion.Platform == System.PlatformID.Win32NT;
+
         [DllImport("kernel32.dll")]
         static extern UInt64 GetTickCount64();
-#endif
 
         public static UInt64 GetLongTickCount()
         {
-#if __MonoCS__ 
-                //Todo: Fill in implementation for linux/cross platform GetTickCount64 implementation
+            if (IsWindows)
+            {
+                return GetTickCount64();
+            }
+            else
+            {
+                // TODO: Fill in implementation for linux/cross platform GetTickCount64 implementation
                 return (UInt64)Environment.TickCount;
-#else
-            return GetTickCount64();
-#endif
+            }
         }
 
         public static DateTime TickCountToDateTime(UInt64 tickCount, UInt64 currentTickCount)
