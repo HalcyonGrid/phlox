@@ -112,18 +112,29 @@ namespace InWorldz.Phlox.Util
             return value;
         }
 
-        public static string Vector3ToString(Vector3 vPrimitive)
+        public static string Vector3ToStringWith5FractionalDigits(Vector3 vPrimitive)
         {
             return String.Format("<{0:0.00000}, {1:0.00000}, {2:0.00000}>", vPrimitive.X, vPrimitive.Y, vPrimitive.Z);
         }
 
-        public static string QuaternionToString(Quaternion rPrimitive)
+        public static string QuaternionToStringWith5FractionalDigits(Quaternion rPrimitive)
         {
             return String.Format("<{0:0.00000}, {1:0.00000}, {2:0.00000}, {3:0.00000}>",
-                    rPrimitive.X, rPrimitive.Y, rPrimitive.Z, rPrimitive.W);
+                rPrimitive.X, rPrimitive.Y, rPrimitive.Z, rPrimitive.W);
         }
 
-        public static string FloatToString(float f)
+        public static string Vector3ToStringWith6FractionalDigits(Vector3 vPrimitive)
+        {
+            return String.Format("<{0:0.000000}, {1:0.000000}, {2:0.000000}>", vPrimitive.X, vPrimitive.Y, vPrimitive.Z);
+        }
+
+        public static string QuaternionToStringWith6FractionalDigits(Quaternion rPrimitive)
+        {
+            return String.Format("<{0:0.000000}, {1:0.000000}, {2:0.000000}, {3:0.000000}>",
+                rPrimitive.X, rPrimitive.Y, rPrimitive.Z, rPrimitive.W);
+        }
+
+        public static string FloatToStringWith6FractionalDigits(float f)
         {
             return f.ToString("0.000000");
         }
