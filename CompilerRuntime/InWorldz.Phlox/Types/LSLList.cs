@@ -82,7 +82,7 @@ namespace InWorldz.Phlox.Types
         private void CheckMemorySize()
         {
             //TODO: this sucks, refactor it should reference max memory from somewhere else
-            const int MAX_MEMORY = 65536;
+            const int MAX_MEMORY = 0x20000;
             if (_memorySize > MAX_MEMORY)
             {
                 throw new CheckException("Out of memory");

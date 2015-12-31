@@ -17,7 +17,7 @@ namespace InWorldz.Phlox.VM
         /// <summary>
         /// Maximum memory in bytes allowed for all allocations
         /// </summary>
-        public const int MAX_MEMORY = 65536;
+        public const int MAX_MEMORY = 0x20000;
 
         [ProtoMember(1)]
         public int MemoryUsed;
