@@ -526,6 +526,7 @@ namespace InWorldz.Phlox.Compiler
             {"OBJECT_BODY_SHAPE_TYPE", new ConstantSymbol("OBJECT_BODY_SHAPE_TYPE", SymbolTable.INT, "26")},
             {"OBJECT_LAST_OWNER_ID", new ConstantSymbol("OBJECT_LAST_OWNER_ID", SymbolTable.INT, "27")},
             {"OBJECT_CLICK_ACTION", new ConstantSymbol("OBJECT_CLICK_ACTION", SymbolTable.INT, "28")},
+            {"IW_OBJECT_SCRIPT_MEMORY_USED", new ConstantSymbol("IW_OBJECT_SCRIPT_MEMORY_USED", SymbolTable.INT, "10001") },
 
             // IW extensions to the OBJECT_CONSTANTS at out-of-range unexpected values
             {"OBJECT_TOTAL_UPDATES", new ConstantSymbol("OBJECT_TOTAL_UPDATES", SymbolTable.INT, "11001")},
