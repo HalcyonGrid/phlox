@@ -511,4 +511,5 @@ list iwSearchLinksByName(string pattern, integer matchType, integer linksOnly);
 list iwSearchLinksByDesc(string pattern, integer matchType, integer linksOnly);
 integer botHasTag(key botID, string tag);
 list botGetBotTags(key botID);
+integer iwValidateURL(string url);
 #key iwGetRezzerKey(key id);
