@@ -1883,7 +1883,7 @@
   </string>
   <string name="iwValidateURL">
     integer iwValidateURL(string url);
-    Returns TRUE if the input url's formatting is valid
+    Returns TRUE if the input url's formatting is valid according to the HTTP, HTTPS, or WWW schemes.
   </string>
   <!--
   <string name="iwGetRezzerKey" translate="false">
