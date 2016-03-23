@@ -1887,4 +1887,8 @@
     Returns the key of the object which rezzed the specified object.  If the input key is NULL_KEY, then it will get the rezzer key of the object the prim is contained in.
   </string>
   -->
+  <string name = "iwRemoteLoadScriptPin">
+  	integer iwRemoteLoadScriptPin(key target, string name, integer pin, integer running, integer start_param);
+  	Functions same as llRemoteLoadScriptPin, but if the PIN doesn't match, then it returns an integer status code instead of shouting a debug message
+  </string>
 </root>
