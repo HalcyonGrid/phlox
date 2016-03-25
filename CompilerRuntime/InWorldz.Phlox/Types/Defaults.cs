@@ -3627,6 +3627,13 @@ namespace InWorldz.Phlox.Types
                 ParamNames = new string[] {"botID"},
                 TableIndex = 516
             }},
+            {"iwValidateURL", new FunctionSig {
+                FunctionName = "iwValidateURL",
+                ReturnType = VarType.Integer,
+                ParamTypes = new VarType[] {VarType.String},
+                ParamNames = new string[] {"url"},
+                TableIndex = 517
+            }},
         };
 	}
 }
