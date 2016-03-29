@@ -579,6 +579,7 @@ namespace InWorldz.Phlox.Glue
                 Shim_iwSearchLinksByDesc,   //514
                 Shim_botHasTag,             //515
 				Shim_botGetBotTags,         //516
+                Shim_iwValidateURL,         //517
 				Shim_iwRemoteLoadScriptPin, //518
         };
 
@@ -5531,9 +5532,18 @@ namespace InWorldz.Phlox.Glue
             LSLList ret = self._systemAPI.botGetBotTags(p0);
 
             self._interpreter.SafeOperandsPush(ConvToLSLType(ret));
-		}
+        }
 
-		static private void Shim_iwRemoteLoadScriptPin(SyscallShim self)
+        static private void Shim_iwValidateURL(SyscallShim self)
+        {
+            string p0 = ConvToString(self.Interpreter.ScriptState.Operands.Pop());
+
+            int ret = self._systemAPI.iwValidateURL(p0);
+
+            self._interpreter.SafeOperandsPush(ConvToLSLType(ret));
+        }
+
+        static private void Shim_iwRemoteLoadScriptPin(SyscallShim self)
 		{
 			int p4 = ConvToInt(self._interpreter.ScriptState.Operands.Pop());
 			int p3 = ConvToInt(self._interpreter.ScriptState.Operands.Pop());

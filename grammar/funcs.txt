@@ -511,5 +511,5 @@ list iwSearchLinksByName(string pattern, integer matchType, integer linksOnly);
 list iwSearchLinksByDesc(string pattern, integer matchType, integer linksOnly);
 integer botHasTag(key botID, string tag);
 list botGetBotTags(key botID);
-#key iwGetRezzerKey(key id);
-integer iwRemoteLoadScriptPin(key target, string name, integer pin, integer running, integer start_param)
+integer iwRemoteLoadScriptPin(key target, string name, integer pin, integer running, integer start_param);
+integer iwValidateURL(string url);

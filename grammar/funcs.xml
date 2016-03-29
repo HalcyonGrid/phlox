@@ -1891,4 +1891,8 @@
   	integer iwRemoteLoadScriptPin(key target, string name, integer pin, integer running, integer start_param);
   	Functions same as llRemoteLoadScriptPin, but if the PIN doesn't match, then it returns an integer status code instead of shouting a debug message
   </string>
+  <string name="iwValidateURL">
+    integer iwValidateURL(string url);
+    Returns TRUE if the input url's formatting is valid according to the HTTP, HTTPS, or WWW schemes.
+  </string>
 </root>

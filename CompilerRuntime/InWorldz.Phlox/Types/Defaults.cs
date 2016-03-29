@@ -3627,7 +3627,14 @@ namespace InWorldz.Phlox.Types
                 ParamNames = new string[] {"botID"},
                 TableIndex = 516
 			}},
-			{"iwRemoteLoadScriptPin", new FunctionSig {
+            {"iwValidateURL", new FunctionSig {
+                FunctionName = "iwValidateURL",
+                ReturnType = VarType.Integer,
+                ParamTypes = new VarType[] {VarType.String},
+                ParamNames = new string[] {"url"},
+                TableIndex = 517
+            }},
+            {"iwRemoteLoadScriptPin", new FunctionSig {
 				FunctionName = "iwRemoteLoadScriptPin",
 				ReturnType = VarType.Integer,
 				ParamTypes = new VarType[] {VarType.Key, VarType.String, VarType.Integer, VarType.Integer, VarType.Integer},
