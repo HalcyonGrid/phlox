@@ -542,5 +542,6 @@ namespace InWorldz.Phlox.Glue
         int botHasTag(string botID, string tag);
         LSLList botGetBotTags(string botID);
         int iwValidateURL(string url);
+        int iwRemoteLoadScriptPin(string target,string name,int pin,int running,int start_param);
     }
 }

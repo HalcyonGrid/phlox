@@ -808,6 +808,12 @@ namespace InWorldz.Phlox.Compiler
             { "IWERR_MUTED", new ConstantSymbol("IWERR_MUTED", SymbolTable.INT, "6") },
                 // 7: the ID/target/object does not exist
             { "IWERR_NOTFOUND", new ConstantSymbol("IWERR_NOTFOUND", SymbolTable.INT, "7") },
+
+			// Return codes for iwRemoteLoadScriptPin
+			{ "IW_REMOTELOAD_SUCCESS", new ConstantSymbol("IW_REMOTELOAD_SUCCESS", SymbolTable.INT,  "1") },
+			{ "IW_REMOTELOAD_FAILURE", new ConstantSymbol("IW_REMOTELOAD_FAILURE", SymbolTable.INT,  "0") },
+			{ "IW_REMOTELOAD_BAD_PIN", new ConstantSymbol("IW_REMOTELOAD_BAD_PIN", SymbolTable.INT, "-1") },
+			{ "IW_REMOTELOAD_NO_PIN",  new ConstantSymbol("IW_REMOTELOAD_NO_PIN",  SymbolTable.INT, "-2") },
         };
     }
 }
