@@ -817,6 +817,13 @@ namespace InWorldz.Phlox.Compiler
 
 			// Return codes for iwDeliverInventory and iwDeliverInventoryList
 			{ "IW_DELIVER_OK",      new ConstantSymbol("IW_DELIVER_OK",     SymbolTable.INT, "0") },
+			{ "IW_DELIVER_BADKEY",  new ConstantSymbol("IW_DELIVER_BADKEY", SymbolTable.INT, "1") },
+			{ "IW_DELIVER_MUTED",   new ConstantSymbol("IW_DELIVER_MUTED",  SymbolTable.INT, "2") },
+			{ "IW_DELIVER_ITEM",    new ConstantSymbol("IW_DELIVER_ITEM",   SymbolTable.INT, "3") },
+			{ "IW_DELIVER_PRIM",    new ConstantSymbol("IW_DELIVER_PRIM",   SymbolTable.INT, "4") },
+			{ "IW_DELIVER_USER",    new ConstantSymbol("IW_DELIVER_USER",   SymbolTable.INT, "5") },
+			{ "IW_DELIVER_PERM",    new ConstantSymbol("IW_DELIVER_PERM",   SymbolTable.INT, "6") },
+			{ "IW_DELIVER_NONE",    new ConstantSymbol("IW_DELIVER_NONE",   SymbolTable.INT, "7") },
         };
     }
 }
