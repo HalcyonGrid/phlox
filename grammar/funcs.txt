@@ -513,3 +513,5 @@ integer botHasTag(key botID, string tag);
 list botGetBotTags(key botID);
 integer iwRemoteLoadScriptPin(key target, string name, integer pin, integer running, integer start_param);
 integer iwValidateURL(string url);
+integer iwDeliverInventory(integer linknumber, key destination, string inventory)
+integer iwDeliverInventoryList(integer linknumber, key target, string folder, list inventory)

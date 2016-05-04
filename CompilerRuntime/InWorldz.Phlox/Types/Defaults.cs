@@ -3641,6 +3641,20 @@ namespace InWorldz.Phlox.Types
 				ParamNames = new string[] {"target", "name", "pin", "running", "start_param"},
 				TableIndex = 518
 			}},
+            {"iwDeliverInventory", new FunctionSig {
+                FunctionName =  "iwDeliverInventory",
+                ReturnType = VarType.Integer,
+                ParamTypes = new VarType[] {VarType.Integer, VarType.Key, VarType.String},
+                ParamNames = new string[] {"linknumber", "target", "name"},
+                TableIndex = 519
+            }},
+            {"iwDeliverInventoryList", new FunctionSig {
+                FunctionName =  "iwDeliverInventoryList",
+                ReturnType = VarType.Integer,
+                ParamTypes = new VarType[] {VarType.Integer, VarType.Key, VarType.String, VarType.List},
+                ParamNames = new string[] {"linknumber", "target", "folder", "inventory"},
+                TableIndex = 520
+            }},
         };
 	}
 }

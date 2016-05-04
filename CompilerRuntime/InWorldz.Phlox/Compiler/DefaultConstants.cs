@@ -814,6 +814,9 @@ namespace InWorldz.Phlox.Compiler
 			{ "IW_REMOTELOAD_FAILURE", new ConstantSymbol("IW_REMOTELOAD_FAILURE", SymbolTable.INT,  "0") },
 			{ "IW_REMOTELOAD_BAD_PIN", new ConstantSymbol("IW_REMOTELOAD_BAD_PIN", SymbolTable.INT, "-1") },
 			{ "IW_REMOTELOAD_NO_PIN",  new ConstantSymbol("IW_REMOTELOAD_NO_PIN",  SymbolTable.INT, "-2") },
+
+			// Return codes for iwDeliverInventory and iwDeliverInventoryList
+			{ "IW_DELIVER_OK",      new ConstantSymbol("IW_DELIVER_OK",     SymbolTable.INT, "0") },
         };
     }
 }

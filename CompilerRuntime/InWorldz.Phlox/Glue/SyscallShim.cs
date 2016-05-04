@@ -581,6 +581,8 @@ namespace InWorldz.Phlox.Glue
 				Shim_botGetBotTags,         //516
                 Shim_iwValidateURL,         //517
 				Shim_iwRemoteLoadScriptPin, //518
+				Shim_iwDeliverInventory,    //519
+				Shim_iwDeliverInventoryList,//520
         };
 
         public void SetScriptEventFlags()
@@ -5555,5 +5557,36 @@ namespace InWorldz.Phlox.Glue
 
 			self._interpreter.SafeOperandsPush (ConvToLSLType (ret));
 		}
+
+        static private void Shim_iwDeliverInventory(SyscallShim self)
+        {
+            string p2 = ConvToString(self._interpreter.ScriptState.Operands.Pop());
+            string p1 = ConvToString(self._interpreter.ScriptState.Operands.Pop());
+            int p0 = ConvToInt(self._interpreter.ScriptState.Operands.Pop());
+
+            //set the script to long running syscall and call the function async
+            self._interpreter.ScriptState.RunState = VM.RuntimeState.Status.Syscall;
+
+            self._asyncCallDelegate(delegate ()
+            {
+                self._systemAPI.iwDeliverInventory(p0, p1, p2);
+            });
+        }
+
+        static private void Shim_iwDeliverInventoryList(SyscallShim self)
+        {
+            LSLList p3 = ConvToLSLList(self._interpreter.ScriptState.Operands.Pop());
+            string p2 = ConvToString(self._interpreter.ScriptState.Operands.Pop());
+            string p1 = ConvToString(self._interpreter.ScriptState.Operands.Pop());
+            int p0 = ConvToInt(self._interpreter.ScriptState.Operands.Pop());
+
+            self._interpreter.ScriptState.RunState = VM.RuntimeState.Status.Syscall;
+
+            self._asyncCallDelegate(delegate ()
+            {
+                self._systemAPI.iwDeliverInventoryList(p0, p1, p2, p3);
+            });
+        }
+
     }
 }

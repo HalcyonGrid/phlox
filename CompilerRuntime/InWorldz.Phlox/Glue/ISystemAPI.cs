@@ -543,5 +543,7 @@ namespace InWorldz.Phlox.Glue
         LSLList botGetBotTags(string botID);
         int iwValidateURL(string url);
         int iwRemoteLoadScriptPin(string target,string name,int pin,int running,int start_param);
+        void iwDeliverInventory(int linknumber, string destination, string inventory);
+        void iwDeliverInventoryList(int linknumber, string target, string folder, LSLList inventory);
     }
 }
