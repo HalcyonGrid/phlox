@@ -545,5 +545,10 @@ namespace InWorldz.Phlox.Glue
         int iwRemoteLoadScriptPin(string target,string name,int pin,int running,int start_param);
         void iwDeliverInventory(int linknumber, string destination, string inventory);
         void iwDeliverInventoryList(int linknumber, string target, string folder, LSLList inventory);
+		Vector3 iwGetEulerRot();
+		Vector3 iwGetEulerRootRot();
+		Vector3 iwGetEulerLocalRot();
+		void iwSetEulerRot(Vector3 rot);
+		void iwSetEulerLocalRot(Vector3 rot);
     }
 }

@@ -3655,6 +3655,41 @@ namespace InWorldz.Phlox.Types
                 ParamNames = new string[] {"linknumber", "target", "folder", "inventory"},
                 TableIndex = 520
             }},
+			{"iwGetEulerRot()", new FunctionSig {
+				FunctionName = "iwGetEulerRot",
+				ReturnType = VarType.Vector,
+				ParamTypes = new VarType[] {},
+				ParamNames = new string[] {},
+				TableIndex = 521
+				}},
+			{"iwGetEulerRot()", new FunctionSig {
+				FunctionName = "iwGetEulerRootRot",
+				ReturnType = VarType.Vector,
+				ParamTypes = new VarType[] {},
+				ParamNames = new string[] {},
+				TableIndex = 522
+			}},
+			{"iwGetEulerRot()", new FunctionSig {
+				FunctionName = "iwGetEulerLocalRot",
+				ReturnType = VarType.Vector,
+				ParamTypes = new VarType[] {},
+				ParamNames = new string[] {},
+				TableIndex = 523
+				}},
+			{"iwGetEulerRot()", new FunctionSig {
+				FunctionName = "iwSetEulerRot",
+				ReturnType = VarType.Void,
+				ParamTypes = new VarType[] {VarType.Vector},
+				ParamNames = new string[] {"rot"},
+				TableIndex = 524
+				}},
+			{"iwGetEulerRot()", new FunctionSig {
+				FunctionName = "iwSetEulerLocalRot",
+				ReturnType = VarType.Void,
+				ParamTypes = new VarType[] {VarType.Vector},
+				ParamNames = new string[] {"rot"},
+				TableIndex = 525
+			}},
         };
 	}
 }

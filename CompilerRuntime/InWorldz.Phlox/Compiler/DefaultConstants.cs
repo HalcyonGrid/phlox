@@ -363,6 +363,8 @@ namespace InWorldz.Phlox.Compiler
             {"IW_PRIM_PROJECTOR_FOV",      new ConstantSymbol("IW_PRIM_PROJECTOR_FOV",      SymbolTable.INT, "11103")},
             {"IW_PRIM_PROJECTOR_FOCUS",    new ConstantSymbol("IW_PRIM_PROJECTOR_FOCUS",    SymbolTable.INT, "11104")},
             {"IW_PRIM_PROJECTOR_AMBIENCE", new ConstantSymbol("IW_PRIM_PROJECTOR_AMBIENCE", SymbolTable.INT, "11105")},
+			{"IW_PRIM_EULER_ROTATION",     new ConstantSymbol("IW_PRIM_EULER_ROTATION",     SymbolTable.INT, "11106")},
+			{"IW_PRIM_EULER_ROT_LOCAL",    new ConstantSymbol("IW_PRIM_EULER_ROTATION",     SymbolTable.INT, "11107")},
 
             {"PRIM_TEXGEN_DEFAULT", new ConstantSymbol("PRIM_TEXGEN_DEFAULT", SymbolTable.INT, "0")},
             {"PRIM_TEXGEN_PLANAR", new ConstantSymbol("PRIM_TEXGEN_PLANAR", SymbolTable.INT, "1")},

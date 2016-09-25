@@ -1903,4 +1903,19 @@
     integer iwDeliverInventoryList(integer linknumber, key target, string folder, list inventory)
     Gives inventory items from the speified prim to target, creating a new folder to put them in, and returning an completion code.
   </string>
+  <string name="iwGetEulerRot()" translate="false">
+  	Returns the rotation of the current prim, as a euler vector.
+  </string>
+  <string name="iwGetEulerRootRot()" translate="false">
+  	Returns the rotation of the root prim, as a euler vector.
+  </string>
+  <string name="iwGetEulerLocalRot()" translate="false">
+  	Returns the local rotation of the current prim, as a euler vector.
+  </string>
+  <string name="iwSetEulerRot()" translate="false">
+  	Sets the rotation of the current prim, using a euler vector.
+  </string>
+  <string name="iwSetEulerLocalRot()" translate="false">
+  	Sets the local rotation of the current prim, using a euler vector.
+  </string>
 </root>

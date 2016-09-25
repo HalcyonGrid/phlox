@@ -515,3 +515,8 @@ integer iwRemoteLoadScriptPin(key target, string name, integer pin, integer runn
 integer iwValidateURL(string url);
 integer iwDeliverInventory(integer linknumber, key destination, string inventory)
 integer iwDeliverInventoryList(integer linknumber, key target, string folder, list inventory)
+vector iwGetEulerRot()
+vector iwGetEulerRootRot()
+vector iwGetEulerLocalRot()
+iwSetEulerRot(vector rot)
+iwSetEulerLocalRot(vector rot)

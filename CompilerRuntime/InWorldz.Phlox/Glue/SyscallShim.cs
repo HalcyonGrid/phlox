@@ -583,6 +583,11 @@ namespace InWorldz.Phlox.Glue
 				Shim_iwRemoteLoadScriptPin, //518
 				Shim_iwDeliverInventory,    //519
 				Shim_iwDeliverInventoryList,//520
+				Shim_iwGetEulerRot,			//521
+				Shim_iwGetEulerRootRot,		//522
+				Shim_iwGetEulerLocalRot,	//523
+				Shim_iwSetEulerRot,			//524
+				Shim_iwSetEulerLocalRot,	//525
         };
 
         public void SetScriptEventFlags()
@@ -5587,6 +5592,39 @@ namespace InWorldz.Phlox.Glue
                 self._systemAPI.iwDeliverInventoryList(p0, p1, p2, p3);
             });
         }
+
+		static private void Shim_iwGetEulerRot(SyscallShim self)
+		{
+			Vector3 ret = self._systemAPI.iwGetEulerRot();
+
+			self._interpreter.SafeOperandsPush (ConvToLSLType (ret));
+		}
+
+		static private void Shim_iwGetEulerRootRot(SyscallShim self)
+		{
+			Vector3 ret = self._systemAPI.iwGetEulerRootRot();
+
+			self._interpreter.SafeOperandsPush (ConvToLSLType (ret));
+		}
+
+		static private void Shim_iwGetEulerLocalRot(SyscallShim self)
+		{
+			Vector3 ret = self._systemAPI.iwGetEulerLocalRot();
+
+			self._interpreter.SafeOperandsPush (ConvToLSLType (ret));
+		}
+
+		static private void Shim_iwSetEulerRot(SyscallShim self)
+		{
+			Vector3 p0 = ConvToVector(self._interpreter.ScriptState.Operands.Pop ());
+			self._systemAPI.iwSetEulerRot(p0);
+		}
+
+		static private void Shim_iwSetEulerLocalRot(SyscallShim self)
+		{
+			Vector3 p0 = ConvToVector(self._interpreter.ScriptState.Operands.Pop ());
+			self._systemAPI.iwSetEulerLocalRot(p0);
+		}
 
     }
 }
