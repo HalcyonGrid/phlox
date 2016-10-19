@@ -545,5 +545,12 @@ namespace InWorldz.Phlox.Glue
         int iwRemoteLoadScriptPin(string target,string name,int pin,int running,int start_param);
         void iwDeliverInventory(int linknumber, string destination, string inventory);
         void iwDeliverInventoryList(int linknumber, string target, string folder, LSLList inventory);
+        LSLList llGetAttachedList(string avatar);
+        int llReturnObjectsByOwner(string owner, int scope);
+        int llReturnObjectsByID(LSLList objects);
+        string llTransferLindenDollars(string destination, int amount );
+        string iwGiveMoney(string destination, int amount);
+        void iwStandTarget(Vector3 offset, Quaternion rot);
+        void iwLinkStandTarget(int link, Vector3 offset, Quaternion rot);
     }
 }

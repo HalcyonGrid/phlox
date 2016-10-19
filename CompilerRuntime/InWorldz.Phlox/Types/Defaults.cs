@@ -3655,6 +3655,55 @@ namespace InWorldz.Phlox.Types
                 ParamNames = new string[] {"linknumber", "target", "folder", "inventory"},
                 TableIndex = 520
             }},
-        };
+            {"llGetAttachedList", new FunctionSig {
+                FunctionName =  "llGetAttachedList",
+                ReturnType = VarType.List,
+                ParamTypes = new VarType[] {VarType.Key},
+                ParamNames = new string[] {"avatar"},
+                TableIndex = 521
+            }},
+            {"llReturnObjectsByOwner", new FunctionSig {
+                FunctionName =  "llReturnObjectsByOwner",
+                ReturnType = VarType.Integer,
+                ParamTypes = new VarType[] {VarType.Key, VarType.Integer},
+                ParamNames = new string[] {"owner", "scope"},
+                TableIndex = 522
+            }},
+            {"llReturnObjectsByID", new FunctionSig {
+                FunctionName =  "llReturnObjectsByID",
+                ReturnType = VarType.Integer,
+                ParamTypes = new VarType[] {VarType.List},
+                ParamNames = new string[] {"objects"},
+                TableIndex = 523
+            }},
+            {"llTransferLindenDollars", new FunctionSig {
+                FunctionName =  "llTransferLindenDollars",
+                ReturnType = VarType.Key,
+                ParamTypes = new VarType[] {VarType.Key, VarType.Integer},
+                ParamNames = new string[] {"destination", "amount"},
+                TableIndex = 524
+            }},
+            {"iwGiveMoney", new FunctionSig {
+                FunctionName =  "iwGiveMoney",
+                ReturnType = VarType.Key,
+                ParamTypes = new VarType[] {VarType.Key, VarType.Integer},
+                ParamNames = new string[] {"destination", "amount"},
+                TableIndex = 525
+            }},
+            {"iwStandTarget", new FunctionSig {
+                FunctionName =  "iwStandTarget",
+                ReturnType = VarType.Void,
+                ParamTypes = new VarType[] {VarType.Vector, VarType.Rotation},
+                ParamNames = new string[] {"offset", "rot"},
+                TableIndex = 526
+            }},
+            {"iwLinkStandTarget", new FunctionSig {
+                FunctionName =  "iwLinkStandTarget",
+                ReturnType = VarType.Void,
+                ParamTypes = new VarType[] {VarType.Integer, VarType.Vector, VarType.Rotation},
+                ParamNames = new string[] {"linknum", "offset", "rot"},
+                TableIndex = 527
+            }},
+       };
 	}
 }
