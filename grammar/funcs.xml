@@ -1901,6 +1901,41 @@
   </string>
   <string name="LSLTipText_iwDeliverInventoryList" translate="false">
     integer iwDeliverInventoryList(integer linknumber, key target, string folder, list inventory)
-    Gives inventory items from the speified prim to target, creating a new folder to put them in, and returning an completion code.
+    Gives inventory items from the specified prim to target, creating a new folder to put them in, and returning an completion code.
+  </string>
+  <string name="LSLTipText_llGetAttachedList" translate="false">
+    list llGetAttachedList(key avatar)
+    Returns a list of the keys of the public attachments worn by an avatar.
+  </string>
+  <string name="LSLTipText_llReturnObjectsByOwner" translate="false">
+    integer llReturnObjectsByOwner(key owner, integer scope)
+    If the script is owned by an agent, PERMISSION_RETURN_OBJECTS may be granted by the owner. 
+    If the script is owned by a group, this permission may be granted by an agent belonging to the group's "Owners" role.
+    Returns an integer that is the number of objects successfully returned to their owners or an ERR_* flag.
+  </string>
+  <string name="LSLTipText_llReturnObjectsByID" translate="false">
+    integer llReturnObjectsByID(integer linknumber, key target, string folder, list inventory)
+    If the script is owned by an agent, PERMISSION_RETURN_OBJECTS may be granted by the owner.
+    If the script is owned by a group, this permission may be granted by an agent belonging to the group's "Owners" role.
+    Returns an integer that is the number of objects successfully returned to their owners or an ERR_* flag.
+  </string>
+  <string name="LSLTipText_llTransferLindenDollars" translate="false">
+    key llTransferLindenDollars(key destination, integer amount)
+    Returns a key used in a matching transaction_result event for the success or failure of the transfer.
+    If the transaction is successful, this key will show in the transaction history.
+  </string>
+  <string name="LSLTipText_iwGiveMoney" translate="false">
+    string iwGiveMoney(key destination, integer amount)
+    Directly returns the transaction ID for the success or failure of a money transfer.
+    If the transaction is successful, it returns a the transaction ID that will show in the transaction history.
+    If the transaction fails, it returns an empty string ("").
+  </string>
+  <string name="LSLTipText_iwStandTarget" translate="false">
+    iwStandTarget(vector offset, rotation rot)
+    Specifies the location, relative to the current prim, for a seated avatar to be placed when they stand up.
+  </string>
+  <string name="LSLTipText_iwLinkStandTarget" translate="false">
+    iwLinkStandTarget(integer link, vector offset, rotation rot)
+    Specifies the location, relative to the specified prim, for a seated avatar to be placed when they stand up.
   </string>
 </root>

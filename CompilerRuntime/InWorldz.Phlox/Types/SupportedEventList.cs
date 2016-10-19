@@ -49,7 +49,8 @@ namespace InWorldz.Phlox.Types
             TOUCH,
             TOUCH_START,
             TOUCH_END,
-            BOT_UPDATE
+            BOT_UPDATE,
+            TRANSACTION_RESULT
         }
 
         private Dictionary<string, FunctionSig> _supportedEvents = new Dictionary<string, FunctionSig>()
@@ -299,6 +300,13 @@ namespace InWorldz.Phlox.Types
                 ReturnType = VarType.Void,
                 ParamTypes = new VarType[] {VarType.String,VarType.Integer,VarType.List},
                 TableIndex = (int) Events.BOT_UPDATE
+            }},
+
+            {"transaction_result", new FunctionSig { 
+                FunctionName = "transaction_result",
+                ReturnType = VarType.Void,
+                ParamTypes = new VarType[] {VarType.Key, VarType.Integer, VarType.String},
+                TableIndex = (int) Events.TRANSACTION_RESULT
             }},
         };
 

@@ -515,3 +515,10 @@ integer iwRemoteLoadScriptPin(key target, string name, integer pin, integer runn
 integer iwValidateURL(string url);
 integer iwDeliverInventory(integer linknumber, key destination, string inventory)
 integer iwDeliverInventoryList(integer linknumber, key target, string folder, list inventory)
+list llGetAttachedList(key avatar)
+integer llReturnObjectsByOwner(key owner, integer scope)
+integer llReturnObjectsByID(list objects)
+key llTransferLindenDollars(key destination, integer amount)
+string iwGiveMoney(key destination, integer amount)
+iwStandTarget(vector offset, rotation rot)
+iwLinkStandTarget(integer link, vector offset, rotation rot)

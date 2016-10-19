@@ -583,6 +583,13 @@ namespace InWorldz.Phlox.Glue
 				Shim_iwRemoteLoadScriptPin, //518
 				Shim_iwDeliverInventory,    //519
 				Shim_iwDeliverInventoryList,//520
+				Shim_llGetAttachedList,     //521
+				Shim_llReturnObjectsByOwner,//522
+				Shim_llReturnObjectsByID,   //523
+				Shim_llTransferLindenDollars,//524
+				Shim_iwGiveMoney,           //525
+				Shim_iwStandTarget,         //526
+				Shim_iwLinkStandTarget,     //527
         };
 
         public void SetScriptEventFlags()
@@ -5588,5 +5595,69 @@ namespace InWorldz.Phlox.Glue
             });
         }
 
+        static private void Shim_llGetAttachedList(SyscallShim self)
+        {
+            string p0 = ConvToString(self._interpreter.ScriptState.Operands.Pop());
+
+            LSLList ret = self._systemAPI.llGetAttachedList(p0);
+
+            self._interpreter.SafeOperandsPush(ConvToLSLType(ret));
+        }
+
+        static private void Shim_llReturnObjectsByOwner(SyscallShim self)
+        {
+            int p1 = ConvToInt(self._interpreter.ScriptState.Operands.Pop());
+            string p0 = ConvToString(self._interpreter.ScriptState.Operands.Pop());
+
+            int ret = self._systemAPI.llReturnObjectsByOwner(p0, p1);
+
+            self._interpreter.SafeOperandsPush(ConvToLSLType(ret));
+        }
+
+        static private void Shim_llReturnObjectsByID(SyscallShim self)
+        {
+            LSLList p0 = ConvToLSLList(self._interpreter.ScriptState.Operands.Pop());
+
+            int ret = self._systemAPI.llReturnObjectsByID(p0);
+
+            self._interpreter.SafeOperandsPush(ConvToLSLType(ret));
+        }
+
+        static private void Shim_llTransferLindenDollars(SyscallShim self)
+        {
+            int p1 = ConvToInt(self._interpreter.ScriptState.Operands.Pop());
+            string p0 = ConvToString(self._interpreter.ScriptState.Operands.Pop());
+
+            string ret = self._systemAPI.llTransferLindenDollars(p0, p1);
+
+            self._interpreter.SafeOperandsPush(ConvToLSLType(ret));
+        }
+
+        static private void Shim_iwGiveMoney(SyscallShim self)
+        {
+            int p1 = ConvToInt(self._interpreter.ScriptState.Operands.Pop());
+            string p0 = ConvToString(self._interpreter.ScriptState.Operands.Pop());
+
+            string ret = self._systemAPI.iwGiveMoney(p0, p1);
+
+            self._interpreter.SafeOperandsPush(ConvToLSLType(ret));
+        }
+
+        static private void Shim_iwStandTarget(SyscallShim self)
+        {
+            Quaternion p1 = ConvToQuat(self._interpreter.ScriptState.Operands.Pop());
+            Vector3 p0 = ConvToVector(self._interpreter.ScriptState.Operands.Pop());
+
+            self._systemAPI.iwStandTarget(p0, p1);
+        }
+
+        static private void Shim_iwLinkStandTarget(SyscallShim self)
+        {
+            Quaternion p2 = ConvToQuat(self._interpreter.ScriptState.Operands.Pop());
+            Vector3 p1 = ConvToVector(self._interpreter.ScriptState.Operands.Pop());
+            int p0 = ConvToInt(self._interpreter.ScriptState.Operands.Pop());
+
+            self._systemAPI.iwLinkStandTarget(p0, p1, p2);
+        }
     }
 }
