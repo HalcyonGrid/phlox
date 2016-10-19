@@ -63,6 +63,7 @@ namespace InWorldz.Phlox.Compiler
             {"PERMISSION_TELEPORT", new ConstantSymbol("PERMISSION_TELEPORT", SymbolTable.INT, "4096")},
             {"PERMISSION_SILENT_ESTATE_MANAGEMENT", new ConstantSymbol("PERMISSION_SILENT_ESTATE_MANAGEMENT", SymbolTable.INT, "16384")},
             {"PERMISSION_OVERRIDE_ANIMATIONS", new ConstantSymbol("PERMISSION_OVERRIDE_ANIMATIONS", SymbolTable.INT, "32768")},
+            {"PERMISSION_RETURN_OBJECTS", new ConstantSymbol("PERMISSION_RETURN_OBJECTS", SymbolTable.INT, "65536")},
             {"AGENT_FLYING", new ConstantSymbol("AGENT_FLYING", SymbolTable.INT, "1")},
             {"AGENT_ATTACHMENTS", new ConstantSymbol("AGENT_ATTACHMENTS", SymbolTable.INT, "2")},
             {"AGENT_SCRIPTED", new ConstantSymbol("AGENT_SCRIPTED", SymbolTable.INT, "4")},
