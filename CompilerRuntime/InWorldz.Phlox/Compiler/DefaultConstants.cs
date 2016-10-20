@@ -826,6 +826,11 @@ namespace InWorldz.Phlox.Compiler
 			{ "IW_DELIVER_USER",    new ConstantSymbol("IW_DELIVER_USER",   SymbolTable.INT, "5") },
 			{ "IW_DELIVER_PERM",    new ConstantSymbol("IW_DELIVER_PERM",   SymbolTable.INT, "6") },
 			{ "IW_DELIVER_NONE",    new ConstantSymbol("IW_DELIVER_NONE",   SymbolTable.INT, "7") },
+
+            // Used by llReturnObjectsByOwner
+            
+            // Returned by llReturnObjectsByOwner and llReturnObjectsByID
+
         };
     }
 }
