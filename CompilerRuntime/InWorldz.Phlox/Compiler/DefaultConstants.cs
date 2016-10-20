@@ -828,8 +828,16 @@ namespace InWorldz.Phlox.Compiler
 			{ "IW_DELIVER_NONE",    new ConstantSymbol("IW_DELIVER_NONE",   SymbolTable.INT, "7") },
 
             // Used by llReturnObjectsByOwner
+			{ "OBJECT_RETURN_PARCEL",       new ConstantSymbol("OBJECT_RETURN_PARCEL",          SymbolTable.INT, "1") },
+			{ "OBJECT_RETURN_PARCEL_OWNER", new ConstantSymbol("OBJECT_RETURN_PARCEL_OWNER",    SymbolTable.INT, "2") },
+			{ "OBJECT_RETURN_REGION",       new ConstantSymbol("OBJECT_RETURN_REGION",          SymbolTable.INT, "4") },
             
             // Returned by llReturnObjectsByOwner and llReturnObjectsByID
+			{ "ERR_GENERIC",                new ConstantSymbol("ERR_GENERIC",                   SymbolTable.INT, "-1") },
+			{ "ERR_PARCEL_PERMISSIONS",     new ConstantSymbol("ERR_PARCEL_PERMISSIONS",        SymbolTable.INT, "-2") },
+			{ "ERR_MALFORMED_PARAMS",       new ConstantSymbol("ERR_MALFORMED_PARAMS",          SymbolTable.INT, "-3") },
+			{ "ERR_RUNTIME_PERMISSIONS",    new ConstantSymbol("ERR_RUNTIME_PERMISSIONS",       SymbolTable.INT, "-4") },
+			{ "ERR_THROTTLED",              new ConstantSymbol("ERR_THROTTLED",                 SymbolTable.INT, "-5") },
 
         };
     }
