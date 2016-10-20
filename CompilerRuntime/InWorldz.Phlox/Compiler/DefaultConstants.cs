@@ -63,6 +63,7 @@ namespace InWorldz.Phlox.Compiler
             {"PERMISSION_TELEPORT", new ConstantSymbol("PERMISSION_TELEPORT", SymbolTable.INT, "4096")},
             {"PERMISSION_SILENT_ESTATE_MANAGEMENT", new ConstantSymbol("PERMISSION_SILENT_ESTATE_MANAGEMENT", SymbolTable.INT, "16384")},
             {"PERMISSION_OVERRIDE_ANIMATIONS", new ConstantSymbol("PERMISSION_OVERRIDE_ANIMATIONS", SymbolTable.INT, "32768")},
+            {"PERMISSION_RETURN_OBJECTS", new ConstantSymbol("PERMISSION_RETURN_OBJECTS", SymbolTable.INT, "65536")},
             {"AGENT_FLYING", new ConstantSymbol("AGENT_FLYING", SymbolTable.INT, "1")},
             {"AGENT_ATTACHMENTS", new ConstantSymbol("AGENT_ATTACHMENTS", SymbolTable.INT, "2")},
             {"AGENT_SCRIPTED", new ConstantSymbol("AGENT_SCRIPTED", SymbolTable.INT, "4")},
@@ -825,6 +826,19 @@ namespace InWorldz.Phlox.Compiler
 			{ "IW_DELIVER_USER",    new ConstantSymbol("IW_DELIVER_USER",   SymbolTable.INT, "5") },
 			{ "IW_DELIVER_PERM",    new ConstantSymbol("IW_DELIVER_PERM",   SymbolTable.INT, "6") },
 			{ "IW_DELIVER_NONE",    new ConstantSymbol("IW_DELIVER_NONE",   SymbolTable.INT, "7") },
+
+            // Used by llReturnObjectsByOwner
+			{ "OBJECT_RETURN_PARCEL",       new ConstantSymbol("OBJECT_RETURN_PARCEL",          SymbolTable.INT, "1") },
+			{ "OBJECT_RETURN_PARCEL_OWNER", new ConstantSymbol("OBJECT_RETURN_PARCEL_OWNER",    SymbolTable.INT, "2") },
+			{ "OBJECT_RETURN_REGION",       new ConstantSymbol("OBJECT_RETURN_REGION",          SymbolTable.INT, "4") },
+            
+            // Returned by llReturnObjectsByOwner and llReturnObjectsByID
+			{ "ERR_GENERIC",                new ConstantSymbol("ERR_GENERIC",                   SymbolTable.INT, "-1") },
+			{ "ERR_PARCEL_PERMISSIONS",     new ConstantSymbol("ERR_PARCEL_PERMISSIONS",        SymbolTable.INT, "-2") },
+			{ "ERR_MALFORMED_PARAMS",       new ConstantSymbol("ERR_MALFORMED_PARAMS",          SymbolTable.INT, "-3") },
+			{ "ERR_RUNTIME_PERMISSIONS",    new ConstantSymbol("ERR_RUNTIME_PERMISSIONS",       SymbolTable.INT, "-4") },
+			{ "ERR_THROTTLED",              new ConstantSymbol("ERR_THROTTLED",                 SymbolTable.INT, "-5") },
+
         };
     }
 }

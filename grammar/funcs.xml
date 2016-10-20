@@ -1927,8 +1927,8 @@
   <string name="LSLTipText_iwGiveMoney" translate="false">
     string iwGiveMoney(key destination, integer amount)
     Directly returns the transaction ID for the success or failure of a money transfer.
-    If the transaction is successful, it returns a the transaction ID that will show in the transaction history.
-    If the transaction fails, it returns an empty string ("").
+    If the transaction is successful, it returns the actual transaction ID that will show in the transaction history.
+    If the transaction fails, or an error tag on error, e.g. "MISSING_PERMISSION_DEBIT".
   </string>
   <string name="LSLTipText_iwStandTarget" translate="false">
     iwStandTarget(vector offset, rotation rot)
