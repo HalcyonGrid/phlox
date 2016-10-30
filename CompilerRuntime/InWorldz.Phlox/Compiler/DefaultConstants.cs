@@ -357,6 +357,10 @@ namespace InWorldz.Phlox.Compiler
             {"PRIM_NORMAL", new ConstantSymbol("PRIM_NORMAL", SymbolTable.INT, "37")},
             {"PRIM_ALPHA_MODE", new ConstantSymbol("PRIM_ALPHA_MODE", SymbolTable.INT, "38")},
 
+            { "PRIM_ALLOW_UNSIT", new ConstantSymbol("PRIM_ALLOW_UNSIT", SymbolTable.INT, "39")},
+            { "PRIM_SCRIPTED_SIT_ONLY", new ConstantSymbol("PRIM_SCRIPTED_SIT_ONLY", SymbolTable.INT, "40")},
+            { "PRIM_SIT_TARGET", new ConstantSymbol("PRIM_SIT_TARGET", SymbolTable.INT, "41")},
+
             {"IW_PRIM_ALPHA", new ConstantSymbol("IW_PRIM_ALPHA", SymbolTable.INT, "11001")},   // IW extensions to PRIM_* constants
             {"IW_PRIM_PROJECTOR",          new ConstantSymbol("IW_PRIM_PROJECTOR",          SymbolTable.INT, "11100")},
             {"IW_PRIM_PROJECTOR_ENABLED",  new ConstantSymbol("IW_PRIM_PROJECTOR_ENABLED",  SymbolTable.INT, "11101")},
