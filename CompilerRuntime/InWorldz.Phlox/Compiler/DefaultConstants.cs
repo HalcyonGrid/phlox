@@ -239,6 +239,22 @@ namespace InWorldz.Phlox.Compiler
             {"ATTACH_HUD_BOTTOM_RIGHT", new ConstantSymbol("ATTACH_HUD_BOTTOM_RIGHT", SymbolTable.INT, "38")},
             {"ATTACH_NECK", new ConstantSymbol("ATTACH_NECK", SymbolTable.INT, "39")},                      // identifier name not yet final https://jira.secondlife.com/browse/SCR-217
             {"ATTACH_AVATAR_CENTER", new ConstantSymbol("ATTACH_AVATAR_CENTER", SymbolTable.INT, "40")},    // identifier name not yet final https://jira.secondlife.com/browse/SCR-217
+            // Bento Additions
+            {"ATTACH_LHAND_RING1", new ConstantSymbol("ATTACH_LHAND_RING1", SymbolTable.INT, "41")},
+            {"ATTACH_RHAND_RING1", new ConstantSymbol("ATTACH_RHAND_RING1", SymbolTable.INT, "42")},
+            {"ATTACH_TAIL_BASE", new ConstantSymbol("ATTACH_TAIL_BASE", SymbolTable.INT, "43")},
+            {"ATTACH_TAIL_TIP", new ConstantSymbol("ATTACH_TAIL_TIP", SymbolTable.INT, "44")},
+            {"ATTACH_LWING", new ConstantSymbol("ATTACH_LWING", SymbolTable.INT, "45")},
+            {"ATTACH_RWING", new ConstantSymbol("ATTACH_RWING", SymbolTable.INT, "46")},
+            {"ATTACH_FACE_JAW", new ConstantSymbol("ATTACH_FACE_JAW", SymbolTable.INT, "47")},
+            {"ATTACH_FACE_LEAR", new ConstantSymbol("ATTACH_FACE_LEAR", SymbolTable.INT, "48")},
+            {"ATTACH_FACE_REAR", new ConstantSymbol("ATTACH_FACE_REAR", SymbolTable.INT, "49")},
+            {"ATTACH_FACE_LEYE", new ConstantSymbol("ATTACH_FACE_LEYE", SymbolTable.INT, "50")},
+            {"ATTACH_FACE_REYE", new ConstantSymbol("ATTACH_FACE_REYE", SymbolTable.INT, "51")},
+            {"ATTACH_FACE_TONGUE", new ConstantSymbol("ATTACH_FACE_TONGUE", SymbolTable.INT, "52")},
+            {"ATTACH_GROIN", new ConstantSymbol("ATTACH_GROIN", SymbolTable.INT, "53")},
+            {"ATTACH_HIND_LFOOT", new ConstantSymbol("ATTACH_HIND_LFOOT", SymbolTable.INT, "54")},
+            {"ATTACH_HIND_RFOOT", new ConstantSymbol("ATTACH_HIND_RFOOT", SymbolTable.INT, "55")},
             {"LAND_LEVEL", new ConstantSymbol("LAND_LEVEL", SymbolTable.INT, "0")},
             {"LAND_RAISE", new ConstantSymbol("LAND_RAISE", SymbolTable.INT, "1")},
             {"LAND_LOWER", new ConstantSymbol("LAND_LOWER", SymbolTable.INT, "2")},
