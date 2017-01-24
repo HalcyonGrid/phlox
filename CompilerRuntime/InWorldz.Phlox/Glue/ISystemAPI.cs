@@ -552,5 +552,8 @@ namespace InWorldz.Phlox.Glue
         string iwGiveMoney(string destination, int amount);
         void iwStandTarget(Vector3 offset, Quaternion rot);
         void iwLinkStandTarget(int link, Vector3 offset, Quaternion rot);
+        string llGetAnimationOverride(string anim_state);
+        void llSetAnimationOverride(string anim_state, string anim);
+        void llResetAnimationOverride(string anim_state);
     }
 }
