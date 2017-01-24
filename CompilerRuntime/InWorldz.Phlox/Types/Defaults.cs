@@ -3704,6 +3704,27 @@ namespace InWorldz.Phlox.Types
                 ParamNames = new string[] {"linknum", "offset", "rot"},
                 TableIndex = 527
             }},
-       };
+            {"llGetAnimationOverride", new FunctionSig {
+                FunctionName =  "llGetAnimationOverride",
+                ReturnType = VarType.String,
+                ParamTypes = new VarType[] {VarType.String},
+                ParamNames = new string[] {"anim_state"},
+                TableIndex = 528
+            }},
+            {"llSetAnimationOverride", new FunctionSig {
+                FunctionName =  "llSetAnimationOverride",
+                ReturnType = VarType.Void,
+                ParamTypes = new VarType[] {VarType.String, VarType.String},
+                ParamNames = new string[] {"anim_state", "anim"},
+                TableIndex = 529
+            }},
+            {"llResetAnimationOverride", new FunctionSig {
+                FunctionName =  "llResetAnimationOverride",
+                ReturnType = VarType.Void,
+                ParamTypes = new VarType[] {VarType.String},
+                ParamNames = new string[] {"anim_state"},
+                TableIndex = 530
+            }},
+     };
 	}
 }

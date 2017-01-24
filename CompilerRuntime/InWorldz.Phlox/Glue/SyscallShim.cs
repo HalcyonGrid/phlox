@@ -5659,5 +5659,29 @@ namespace InWorldz.Phlox.Glue
 
             self._systemAPI.iwLinkStandTarget(p0, p1, p2);
         }
+
+	    static private void Shim_llGetAnimationOverride(SyscallShim self)
+	    {
+            string p0 = ConvToString(self._interpreter.ScriptState.Operands.Pop());
+    
+            string ret = self._systemAPI.llGetAnimationOverride(p0);
+
+            self._interpreter.SafeOperandsPush(ConvToLSLType(ret));
+        }
+
+	    static private void Shim_llSetAnimationOverride(SyscallShim self)
+	    {
+            string p1 = ConvToString(self._interpreter.ScriptState.Operands.Pop());
+            string p0 = ConvToString(self._interpreter.ScriptState.Operands.Pop());
+
+            self._systemAPI.llSetAnimationOverride(p0, p1);
+        }
+
+        static private void Shim_llResetAnimationOverride(SyscallShim self)
+	    {
+            string p0 = ConvToString(self._interpreter.ScriptState.Operands.Pop());
+
+            self._systemAPI.llResetAnimationOverride(p0);
+	    }
     }
 }
