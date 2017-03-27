@@ -59,6 +59,13 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Antlr3.Runtime">
+      <HintPath>..\..\antlr-dotnet-tool-3.3.1.7705\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.StringTemplate, Version=3.4.1.9004, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\antlr-dotnet-tool-3.3.1.7705\Antlr3.StringTemplate.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -70,9 +77,6 @@
     </Reference>
     <Reference Include="LibreMetaverse.Types">
       <HintPath>..\packages\LibreMetaverse.Types.1.0.2.26\lib\net40\LibreMetaverse.Types.dll</HintPath>
-    </Reference>
-    <Reference Include="Antlr3.StringTemplate">
-      <HintPath>..\packages\Antlr3.StringTemplate.3.4.1.9005\lib\net35\Antlr3.StringTemplate.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
