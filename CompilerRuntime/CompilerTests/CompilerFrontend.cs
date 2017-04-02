@@ -43,7 +43,7 @@ namespace CompilerTests
 
         public InWorldz.Phlox.Glue.CompilerFrontend Compile(ICharStream input)
         {
-            InWorldz.Phlox.Glue.CompilerFrontend frontEnd = new InWorldz.Phlox.Glue.CompilerFrontend(_listener, "..\\..\\..\\..\\grammar", true);
+            InWorldz.Phlox.Glue.CompilerFrontend frontEnd = new InWorldz.Phlox.Glue.CompilerFrontend(_listener, "../../../../grammar", true);
             frontEnd.OutputASTGraph = true;
 
             frontEnd.Compile(input);
