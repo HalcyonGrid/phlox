@@ -55,7 +55,7 @@ namespace CompilerTests.ByteCompilerTests
 
             Assert.IsTrue(i.ScriptState.Operands.Count == 0); //stack should be empty
             Console.WriteLine(Listener.TraceDestination.ToString());
-            Assert.IsTrue(Listener.MessagesContain("1.1\r\n1.2\r\n1.3\r\n1.1\r\n1.2\r\n1.3\r\n1.4"));
+            Assert.IsTrue(Listener.MessagesContain($"1.1{Environment.NewLine}1.2{Environment.NewLine}1.3{Environment.NewLine}1.1{Environment.NewLine}1.2{Environment.NewLine}1.3{Environment.NewLine}1.4"));
         }
 
         [Test]
@@ -89,7 +89,7 @@ namespace CompilerTests.ByteCompilerTests
 
             Assert.IsTrue(i.ScriptState.Operands.Count == 0); //stack should be empty
             Console.WriteLine(Listener.TraceDestination.ToString());
-            Assert.IsTrue(Listener.MessagesContain("2.2\r\n<1.1, 2.2, 1.3>"));
+            Assert.IsTrue(Listener.MessagesContain($"2.2{Environment.NewLine}<1.1, 2.2, 1.3>"));
         }
     }
 }
