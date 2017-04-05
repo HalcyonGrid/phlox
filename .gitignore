@@ -162,6 +162,7 @@ ClientBin/
 *.publishsettings
 node_modules/
 bower_components/
+.AppleDouble
 
 # RIA/Silverlight projects
 Generated_Code/

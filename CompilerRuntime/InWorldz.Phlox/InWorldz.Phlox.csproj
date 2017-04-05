@@ -3,8 +3,6 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>8.0.30703</ProductVersion>
-    <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{56C3EF44-AB6C-4719-B160-2FFC163E4439}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
@@ -35,22 +33,11 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Antlr3.Runtime, Version=3.3.1.7705, Culture=neutral, PublicKeyToken=eb42632606e9261f, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
+    <Reference Include="Antlr3.Runtime">
       <HintPath>..\..\antlr-dotnet-tool-3.3.1.7705\Antlr3.Runtime.dll</HintPath>
     </Reference>
-    <Reference Include="Antlr3.StringTemplate, Version=3.3.1.7705, Culture=neutral, PublicKeyToken=eb42632606e9261f, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
+    <Reference Include="Antlr3.StringTemplate">
       <HintPath>..\..\antlr-dotnet-tool-3.3.1.7705\Antlr3.StringTemplate.dll</HintPath>
-    </Reference>
-    <Reference Include="C5">
-      <HintPath>..\C5.dll</HintPath>
-    </Reference>
-    <Reference Include="OpenMetaverseTypes">
-      <HintPath>..\OpenMetaverseTypes.dll</HintPath>
-    </Reference>
-    <Reference Include="protobuf-net">
-      <HintPath>..\protobuf-net.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -58,6 +45,15 @@
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
+    <Reference Include="protobuf-net">
+      <HintPath>..\packages\protobuf-net.2.1.0\lib\net45\protobuf-net.dll</HintPath>
+    </Reference>
+    <Reference Include="LibreMetaverse.Types">
+      <HintPath>..\packages\LibreMetaverse.Types.1.0.2.26\lib\net40\LibreMetaverse.Types.dll</HintPath>
+    </Reference>
+    <Reference Include="C5">
+      <HintPath>..\packages\C5.2.4.5947.17249\lib\net45\C5.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ByteCompiler\AssemblerLexer.cs" />
@@ -144,10 +140,11 @@
     <Compile Include="VM\VMException.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="..\..\Grammar\funcs.txt" />
-    <None Include="..\..\Grammar\funcs.xml">
+    <None Include="..\..\grammar\funcs.txt" />
+    <None Include="..\..\grammar\funcs.xml">
       <SubType>Designer</SubType>
     </None>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
