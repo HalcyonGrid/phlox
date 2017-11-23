@@ -441,15 +441,15 @@ namespace InWorldz.Phlox.Types
             }
             else if (_members[index] is float)
             {
-                return Util.Encoding.FloatToString((float)_members[index]);
+                return Util.Encoding.FloatToStringWith6FractionalDigits((float)_members[index]);
             }
             else if (_members[index] is Vector3)
             {
-                return Util.Encoding.Vector3ToString((Vector3)_members[index]);
+                return Util.Encoding.Vector3ToStringWith6FractionalDigits((Vector3)_members[index]);
             }
             else if (_members[index] is Quaternion)
             {
-                return Util.Encoding.QuaternionToString((Quaternion)_members[index]);
+                return Util.Encoding.QuaternionToStringWith6FractionalDigits((Quaternion)_members[index]);
             }
             else
             {

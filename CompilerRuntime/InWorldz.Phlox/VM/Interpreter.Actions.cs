@@ -1318,17 +1318,17 @@ namespace InWorldz.Phlox.VM
             }
             else if (primitive is float)
             {
-                return Util.Encoding.FloatToString((float)primitive);
+                return Util.Encoding.FloatToStringWith6FractionalDigits((float)primitive);
             }
             else if (primitive is Vector3)
             {
                 Vector3 vPrimitive = (Vector3)primitive;
-                return Util.Encoding.Vector3ToString(vPrimitive);
+                return Util.Encoding.Vector3ToStringWith5FractionalDigits(vPrimitive);
             }
             else if (primitive is Quaternion)
             {
                 Quaternion rPrimitive = (Quaternion)primitive;
-                return Util.Encoding.QuaternionToString(rPrimitive);
+                return Util.Encoding.QuaternionToStringWith5FractionalDigits(rPrimitive);
             }
             else if (primitive is string)
             {
@@ -1343,9 +1343,9 @@ namespace InWorldz.Phlox.VM
         private string _LSLListToString(LSLList list)
         {
             StringBuilder contents = new StringBuilder();
-            foreach (object obj in list.Members)
+            for (int index = 0; index < list.Data.Length; ++index)
             {
-                contents.Append(_PrimitiveToString(obj));
+                contents.Append(list.GetLSLStringItem(index));
             }
 
             return contents.ToString();
