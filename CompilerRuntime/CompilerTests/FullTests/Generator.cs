@@ -32,7 +32,7 @@ namespace CompilerTests.FullTests
                     }";
 
             TestListener listener = new TestListener();
-            MCompilerFrontend testFrontend = new MCompilerFrontend(listener, "..\\..\\..\\..\\grammar");
+            MCompilerFrontend testFrontend = new MCompilerFrontend(listener, "../../../../grammar");
             CompiledScript script = testFrontend.Compile(test);
 
             Assert.AreEqual(0, listener.ErrorCount);
@@ -62,7 +62,7 @@ namespace CompilerTests.FullTests
                     ";
 
             TestListener listener = new TestListener();
-            MCompilerFrontend testFrontend = new MCompilerFrontend(listener, "..\\..\\..\\..\\grammar", true);
+            MCompilerFrontend testFrontend = new MCompilerFrontend(listener, "../../../../grammar", true);
             CompiledScript script = testFrontend.Compile(test);
 
             string byteCode = testFrontend.GeneratedByteCode;
@@ -94,7 +94,7 @@ namespace CompilerTests.FullTests
                     ";
 
             TestListener listener = new TestListener();
-            MCompilerFrontend testFrontend = new MCompilerFrontend(listener, "..\\..\\..\\..\\grammar", true);
+            MCompilerFrontend testFrontend = new MCompilerFrontend(listener, "../../../../grammar", true);
             CompiledScript script = testFrontend.Compile(test);
 
             string byteCode = testFrontend.GeneratedByteCode;
@@ -126,7 +126,7 @@ namespace CompilerTests.FullTests
                     ";
 
             TestListener listener = new TestListener();
-            MCompilerFrontend testFrontend = new MCompilerFrontend(listener, "..\\..\\..\\..\\grammar", true);
+            MCompilerFrontend testFrontend = new MCompilerFrontend(listener, "../../../../grammar", true);
             CompiledScript script = testFrontend.Compile(test);
 
             string byteCode = testFrontend.GeneratedByteCode;
@@ -155,7 +155,7 @@ namespace CompilerTests.FullTests
                     ";
 
             TestListener listener = new TestListener();
-            MCompilerFrontend testFrontend = new MCompilerFrontend(listener, "..\\..\\..\\..\\grammar", true);
+            MCompilerFrontend testFrontend = new MCompilerFrontend(listener, "../../../../grammar", true);
             CompiledScript script = testFrontend.Compile(test);
 
             string byteCode = testFrontend.GeneratedByteCode;
@@ -188,7 +188,7 @@ namespace CompilerTests.FullTests
                     ";
 
             TestListener listener = new TestListener();
-            MCompilerFrontend testFrontend = new MCompilerFrontend(listener, "..\\..\\..\\..\\grammar", true);
+            MCompilerFrontend testFrontend = new MCompilerFrontend(listener, "../../../../grammar", true);
             CompiledScript script = testFrontend.Compile(test);
 
             string byteCode = testFrontend.GeneratedByteCode;
@@ -224,7 +224,7 @@ namespace CompilerTests.FullTests
                     ";
 
             TestListener listener = new TestListener();
-            MCompilerFrontend testFrontend = new MCompilerFrontend(listener, "..\\..\\..\\..\\grammar", true);
+            MCompilerFrontend testFrontend = new MCompilerFrontend(listener, "../../../../grammar", true);
             CompiledScript script = testFrontend.Compile(test);
 
             string byteCode = testFrontend.GeneratedByteCode;
@@ -258,7 +258,7 @@ namespace CompilerTests.FullTests
                     ";
 
             TestListener listener = new TestListener();
-            MCompilerFrontend testFrontend = new MCompilerFrontend(listener, "..\\..\\..\\..\\grammar", true);
+            MCompilerFrontend testFrontend = new MCompilerFrontend(listener, "../../../../grammar", true);
             CompiledScript script = testFrontend.Compile(test);
 
             string byteCode = testFrontend.GeneratedByteCode;
@@ -293,7 +293,7 @@ namespace CompilerTests.FullTests
                         }";
 
             TestListener listener = new TestListener();
-            MCompilerFrontend testFrontend = new MCompilerFrontend(listener, "..\\..\\..\\..\\grammar", true);
+            MCompilerFrontend testFrontend = new MCompilerFrontend(listener, "../../../../grammar", true);
             CompiledScript script = testFrontend.Compile(test);
 
             string byteCode = testFrontend.GeneratedByteCode;

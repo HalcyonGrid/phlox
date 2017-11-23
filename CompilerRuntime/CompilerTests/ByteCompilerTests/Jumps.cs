@@ -50,7 +50,7 @@ namespace CompilerTests.ByteCompilerTests
 
             Assert.IsTrue(i.ScriptState.Operands.Count == 0); //stack should be empty
             Console.WriteLine(Listener.TraceDestination.ToString());
-            Assert.IsTrue(Listener.MessagesContain("1\r\n2\r\n3\r\n4\r\n5\r\n6\r\n7\r\n8\r\n9\r\n10\r\n"));
+            Assert.IsTrue(Listener.MessagesContain($"1{Environment.NewLine}2{Environment.NewLine}3{Environment.NewLine}4{Environment.NewLine}5{Environment.NewLine}6{Environment.NewLine}7{Environment.NewLine}8{Environment.NewLine}9{Environment.NewLine}10{Environment.NewLine}"));
         }
 
         [Test]
@@ -92,7 +92,7 @@ namespace CompilerTests.ByteCompilerTests
 
             Assert.IsTrue(i.ScriptState.Operands.Count == 0); //stack should be empty
             Console.WriteLine(Listener.TraceDestination.ToString());
-            Assert.IsTrue(Listener.MessagesContain("test\r\n2\r\n1\r\n0"));
+            Assert.IsTrue(Listener.MessagesContain($"test{Environment.NewLine}2{Environment.NewLine}1{Environment.NewLine}0"));
         }
     }
 }

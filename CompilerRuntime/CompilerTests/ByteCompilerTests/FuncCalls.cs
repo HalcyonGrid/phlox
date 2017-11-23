@@ -89,7 +89,7 @@ namespace CompilerTests.ByteCompilerTests
 
             Assert.IsTrue(i.ScriptState.Operands.Count == 0); //stack should be empty
             Console.WriteLine(Listener.TraceDestination.ToString());
-            Assert.IsTrue(Listener.MessagesContain("20\r\n2\r\ngnarly\r\n"));
+            Assert.IsTrue(Listener.MessagesContain($"20{Environment.NewLine}2{Environment.NewLine}gnarly{Environment.NewLine}"));
         }
     }
 }
