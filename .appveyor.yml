@@ -1,0 +1,82 @@
+init:
+- ps: if ($env:APPVEYOR_REPO_TAG -eq "true") { $env:TAG_VERSION = "$env:APPVEYOR_REPO_TAG_NAME.$env:APPVEYOR_BUILD_NUMBER" } else { $env:TAG_VERSION = "v1.0.0.$env:APPVEYOR_BUILD_NUMBER-alpha" }
+- ps: $env:TAG_VERSION = $env:TAG_VERSION -replace 'v',''
+- ps: Write-Host "Setting version to '$env:TAG_VERSION'"
+- ps: Update-AppveyorBuild -Version "$env:TAG_VERSION"
+
+image:
+- Visual Studio 2017
+- Ubuntu
+
+configuration: Release
+
+platform:
+- x64
+
+pull_requests:
+  do_not_increment_build_number: true
+
+nuget:
+  disable_publish_on_pr: true
+
+skip_commits:
+  files:
+  - doc/*
+  - README.md
+  - .gitignore
+  - LICENSE
+
+cache:
+- CompilerRuntime\packages -> **\packages.config
+- '%LocalAppData%\NuGet\Cache'
+
+assembly_info:
+  patch: true
+  assembly_version: '{version}'
+  assembly_file_version: '{version}'
+  assembly_informational_version: '{version}'
+
+before_build:
+- ps: |
+    if ($isLinux) {
+      $env:EDITION = "mono"
+    } else {
+      $env:EDITION = "dotnet"
+    }
+- cd CompilerRuntime
+- nuget restore CompilerRuntime.sln
+
+build:
+  project: CompilerRuntime\CompilerRuntime.sln
+  parallel: true
+  verbosity: minimal
+  publish_nuget: false
+  publish_nuget_symbols: false
+for:
+-
+  matrix:
+    only:
+    - image: Ubuntu
+  build_script:
+  - msbuild CompilerRuntime/CompilerRuntime.sln
+
+after_build:
+- ps: Rename-Item -Path bin -NewName phlox
+
+# No tests for now.
+test: off
+
+artifacts:
+- path: phlox
+  name: Phlox-$(APPVEYOR_BUILD_VERSION)-$(APPVEYOR_REPO_BRANCH)-$(EDITION)
+  type: zip
+
+deploy:
+  provider: GitHub
+  auth_token:
+    secure: "CfI4VUu86RwI9MC8YoMfj9PJRiyoVkwD8AAyiUgKXpPU32Zw"
+  artifact: Phlox-$(APPVEYOR_BUILD_VERSION)-$(APPVEYOR_REPO_BRANCH)-$(EDITION)
+  draft: true
+  prerelease: false
+  on:
+    APPVEYOR_REPO_TAG: true
