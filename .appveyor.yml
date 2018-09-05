@@ -58,9 +58,10 @@ for:
     only:
     - image: Ubuntu
   build_script:
-  - msbuild CompilerRuntime/CompilerRuntime.sln
+  - msbuild CompilerRuntime.sln
 
 after_build:
+- ps: Set-Location "$env:APPVEYOR_BUILD_FOLDER"
 - ps: Rename-Item -Path bin -NewName phlox
 
 # No tests for now.
