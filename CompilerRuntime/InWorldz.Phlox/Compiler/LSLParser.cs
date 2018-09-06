@@ -23,7 +23,7 @@ using Antlr.Runtime;
 using Antlr.Runtime.Tree;
 using RewriteRuleITokenStream = Antlr.Runtime.Tree.RewriteRuleTokenStream;
 
-namespace  InWorldz.Phlox.Compiler 
+namespace  Halcyon.Phlox.Compiler 
 {
 [System.CodeDom.Compiler.GeneratedCode("ANTLR", "3.3.1.7705")]
 [System.CLSCompliant(false)]
@@ -174,7 +174,7 @@ public partial class LSLParser : Antlr.Runtime.Parser
 
 		public override void Recover(IIntStream input, RecognitionException re)
 	    {
-			if (++ErrorCount == 10) throw new InWorldz.Phlox.Types.TooManyErrorsException("Too many errors", re);
+			if (++ErrorCount == 10) throw new Halcyon.Phlox.Types.TooManyErrorsException("Too many errors", re);
 	        base.Recover(input, re);
 	    }
 
@@ -9776,4 +9776,4 @@ public partial class LSLParser : Antlr.Runtime.Parser
 	#endregion Follow sets
 }
 
-} // namespace  InWorldz.Phlox.Compiler 
+} // namespace  Halcyon.Phlox.Compiler 

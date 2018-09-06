@@ -7,7 +7,7 @@ using Antlr.Runtime;
 using Antlr.Runtime.Tree;
 
 
-namespace InWorldz.Phlox.Compiler
+namespace Halcyon.Phlox.Compiler
 {
     public class LSLErrorNode : LSLAst
     {

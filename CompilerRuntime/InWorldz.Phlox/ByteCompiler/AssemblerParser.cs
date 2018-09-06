@@ -19,7 +19,7 @@
 using System.Collections.Generic;
 using Antlr.Runtime;
 
-namespace  InWorldz.Phlox.ByteCompiler 
+namespace  Halcyon.Phlox.ByteCompiler 
 {
 /** 
  *  A generic bytecode assembler whose instructions take 0..3 operands.
@@ -1070,4 +1070,4 @@ public partial class AssemblerParser : Antlr.Runtime.Parser
 	#endregion Follow sets
 }
 
-} // namespace  InWorldz.Phlox.ByteCompiler 
+} // namespace  Halcyon.Phlox.ByteCompiler 

@@ -5,7 +5,7 @@ using System.Text;
 using Antlr.Runtime.Tree;
 using Antlr.Runtime;
 
-namespace InWorldz.Phlox.Compiler
+namespace Halcyon.Phlox.Compiler
 {
     public class LSLAst : CommonTree
     {

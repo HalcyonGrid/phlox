@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using OpenMetaverse;
 
-namespace InWorldz.Phlox.Types
+namespace Halcyon.Phlox.Types
 {
     /// <summary>
     /// All the variable types supported by the LSL language implementation

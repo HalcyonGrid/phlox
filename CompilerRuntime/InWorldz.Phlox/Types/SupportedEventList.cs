@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-using InWorldz.Phlox.Util;
-using InWorldz.Phlox.Types;
+using Halcyon.Phlox.Util;
+using Halcyon.Phlox.Types;
 
-namespace InWorldz.Phlox.Types
+namespace Halcyon.Phlox.Types
 {
     /// <summary>
     /// Defines a list of supported events with their signatures

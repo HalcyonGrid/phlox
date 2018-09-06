@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-using InWorldz.Phlox.Util;
+using Halcyon.Phlox.Util;
 using ProtoBuf;
 
-namespace InWorldz.Phlox.VM
+namespace Halcyon.Phlox.VM
 {
     /// <summary>
     /// Tracks per script memory usage

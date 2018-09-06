@@ -5,7 +5,7 @@ using System.Text;
 using OpenMetaverse;
 using System.Collections;
 
-namespace InWorldz.Phlox.Types
+namespace Halcyon.Phlox.Types
 {
     /// <summary>
     /// An LSL script list object. An immutable list.

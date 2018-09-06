@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-using InWorldz.Phlox.Types;
+using Halcyon.Phlox.Types;
 
-namespace InWorldz.Phlox.Compiler
+namespace Halcyon.Phlox.Compiler
 {
     public class EventSymbol : ScopedSymbol
     {

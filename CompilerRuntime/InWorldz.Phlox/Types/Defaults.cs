@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace InWorldz.Phlox.Types
+namespace Halcyon.Phlox.Types
 {
 	public class Defaults
 	{

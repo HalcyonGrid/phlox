@@ -19,7 +19,7 @@
 using System.Collections.Generic;
 using Antlr.Runtime;
 
-namespace  InWorldz.Phlox.Compiler 
+namespace  Halcyon.Phlox.Compiler 
 {
 [System.CodeDom.Compiler.GeneratedCode("ANTLR", "3.3.1.7705")]
 [System.CLSCompliant(false)]
@@ -4165,4 +4165,4 @@ public partial class LSLLexer : Antlr.Runtime.Lexer
 
 }
 
-} // namespace  InWorldz.Phlox.Compiler 
+} // namespace  Halcyon.Phlox.Compiler 

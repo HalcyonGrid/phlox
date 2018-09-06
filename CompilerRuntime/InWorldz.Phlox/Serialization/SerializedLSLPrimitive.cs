@@ -6,7 +6,7 @@ using System.Text;
 using ProtoBuf;
 using OpenMetaverse;
 
-namespace InWorldz.Phlox.Serialization
+namespace Halcyon.Phlox.Serialization
 {
     [ProtoContract]
     public class SerializedLSLPrimitive

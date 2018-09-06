@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace InWorldz.Phlox.Compiler.BranchAnalyze
+namespace Halcyon.Phlox.Compiler.BranchAnalyze
 {
     public abstract class Statement
     {

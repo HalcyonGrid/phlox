@@ -5,7 +5,7 @@ using System.Text;
 
 using ProtoBuf;
 
-namespace InWorldz.Phlox.Serialization
+namespace Halcyon.Phlox.Serialization
 {
     /// <summary>
     /// The state of a script as held on disk or on the wire

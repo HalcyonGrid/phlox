@@ -6,7 +6,7 @@ using System.Text.RegularExpressions;
 using System.Globalization;
 using OpenMetaverse;
 
-namespace InWorldz.Phlox.Util
+namespace Halcyon.Phlox.Util
 {
     internal class Encoding
     {

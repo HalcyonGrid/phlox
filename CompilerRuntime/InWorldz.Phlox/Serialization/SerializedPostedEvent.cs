@@ -5,7 +5,7 @@ using System.Text;
 
 using ProtoBuf;
 
-namespace InWorldz.Phlox.Serialization
+namespace Halcyon.Phlox.Serialization
 {
     [ProtoContract]
     public class SerializedPostedEvent

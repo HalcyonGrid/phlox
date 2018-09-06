@@ -5,7 +5,7 @@ using System.Text;
 
 using NUnit.Framework;
 using Antlr.Runtime;
-using InWorldz.Phlox.VM;
+using Halcyon.Phlox.VM;
 
 namespace CompilerTests.ByteCompilerTests
 {

@@ -20,7 +20,7 @@ using System.Collections.Generic;
 using Antlr.Runtime;
 using Antlr.Runtime.Tree;
 using RewriteRuleITokenStream = Antlr.Runtime.Tree.RewriteRuleTokenStream;
-namespace  InWorldz.Phlox.Compiler 
+namespace  Halcyon.Phlox.Compiler 
 {
 [System.CodeDom.Compiler.GeneratedCode("ANTLR", "3.3.1.7705")]
 [System.CLSCompliant(false)]
@@ -3310,4 +3310,4 @@ public partial class Types : Antlr.Runtime.Tree.TreeFilter
 	#endregion Follow sets
 }
 
-} // namespace  InWorldz.Phlox.Compiler 
+} // namespace  Halcyon.Phlox.Compiler 

@@ -5,9 +5,9 @@ using System.Text;
 using System.Diagnostics;
 using Antlr.Runtime;
 
-using InWorldz.Phlox.Types;
+using Halcyon.Phlox.Types;
 
-namespace InWorldz.Phlox.Compiler
+namespace Halcyon.Phlox.Compiler
 {
     public class SymbolTable
     {

@@ -5,9 +5,9 @@ using System.Linq;
 using System.Text;
 using OpenMetaverse;
 
-using InWorldz.Phlox.Types;
+using Halcyon.Phlox.Types;
 
-namespace InWorldz.Phlox.Glue
+namespace Halcyon.Phlox.Glue
 {
 	public interface ISystemAPI
 	{

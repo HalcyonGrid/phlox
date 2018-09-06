@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-using InWorldz.Phlox.Compiler;
-using InWorldz.Phlox.Types;
+using Halcyon.Phlox.Compiler;
+using Halcyon.Phlox.Types;
 using Antlr.Runtime;
 using Antlr.Runtime.Tree;
 using Antlr3.ST;
 using System.IO;
-using InWorldz.Phlox.Compiler.BranchAnalyze;
+using Halcyon.Phlox.Compiler.BranchAnalyze;
 
 namespace CompilerRunner
 {

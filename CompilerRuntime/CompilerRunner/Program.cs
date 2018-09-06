@@ -6,10 +6,10 @@ using System.Text;
 using Antlr.Runtime;
 using Antlr.Runtime.Tree;
 
-using InWorldz.Phlox.Compiler;
-using InWorldz.Phlox.VM;
-using InWorldz.Phlox.Types;
-using InWorldz.Phlox.Serialization;
+using Halcyon.Phlox.Compiler;
+using Halcyon.Phlox.VM;
+using Halcyon.Phlox.Types;
+using Halcyon.Phlox.Serialization;
 using System.IO;
 
 namespace CompilerRunner

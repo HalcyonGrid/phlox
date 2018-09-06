@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace InWorldz.Phlox.ByteCompiler
+namespace Halcyon.Phlox.ByteCompiler
 {
     public class GenerationException : Exception
     {

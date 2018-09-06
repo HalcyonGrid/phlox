@@ -5,7 +5,7 @@ using System.Text;
 
 using ProtoBuf;
 
-namespace InWorldz.Phlox.Serialization
+namespace Halcyon.Phlox.Serialization
 {
     /// <summary>
     /// This class is a representation of the LSLList primitive type but can be serialized

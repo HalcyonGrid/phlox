@@ -6,7 +6,7 @@ using System.Text;
 using ProtoBuf;
 using OpenMetaverse;
 
-namespace InWorldz.Phlox.VM
+namespace Halcyon.Phlox.VM
 {
     /// <summary>
     /// Stores information about an event that is contained in a script.

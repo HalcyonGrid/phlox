@@ -6,7 +6,7 @@ using System.Text;
 using ProtoBuf;
 using OpenMetaverse;
 
-namespace InWorldz.Phlox.Serialization
+namespace Halcyon.Phlox.Serialization
 {
     /// <summary>
     /// A script in a format that can be saved to disk and sent 

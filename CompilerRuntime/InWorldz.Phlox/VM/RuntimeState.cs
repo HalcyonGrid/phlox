@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Diagnostics;
 
-namespace InWorldz.Phlox.VM
+namespace Halcyon.Phlox.VM
 {
     /// <summary>
     /// This reprensents the runtime state of a script. From the current IP to the callstack    
@@ -358,7 +358,7 @@ namespace InWorldz.Phlox.VM
             return false;
         }
 
-        public bool IsEventQueued(InWorldz.Phlox.Types.SupportedEventList.Events evtType)
+        public bool IsEventQueued(Halcyon.Phlox.Types.SupportedEventList.Events evtType)
         {
             foreach (PostedEvent evt in EventQueue)
             {

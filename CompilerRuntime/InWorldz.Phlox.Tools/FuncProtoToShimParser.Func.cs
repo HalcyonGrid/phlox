@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-using InWorldz.Phlox.Types;
+using Halcyon.Phlox.Types;
 using Antlr3.ST;
 using Antlr.Runtime;
 using System.IO;
 
-namespace InWorldz.Phlox.Tools
+namespace Halcyon.Phlox.Tools
 {
     public partial class FuncProtoToShimParser
     {

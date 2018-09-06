@@ -19,7 +19,7 @@
 using System.Collections.Generic;
 using Antlr.Runtime;
 
-namespace  InWorldz.Phlox.Tools 
+namespace  Halcyon.Phlox.Tools 
 {
 [System.CodeDom.Compiler.GeneratedCode("ANTLR", "3.3.1.7705")]
 [System.CLSCompliant(false)]
@@ -443,4 +443,4 @@ public partial class FuncProtoToShimParser : Antlr.Runtime.Parser
 	#endregion Follow sets
 }
 
-} // namespace  InWorldz.Phlox.Tools 
+} // namespace  Halcyon.Phlox.Tools 

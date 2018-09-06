@@ -7,11 +7,11 @@ using System.IO;
 using NUnit.Framework;
 using Antlr.Runtime;
 
-using MCompilerFrontend = InWorldz.Phlox.Glue.CompilerFrontend;
-using InWorldz.Phlox.VM;
-using InWorldz.Phlox.Types;
-using InWorldz.Phlox.Serialization;
-using InWorldz.Phlox.Util;
+using MCompilerFrontend = Halcyon.Phlox.Glue.CompilerFrontend;
+using Halcyon.Phlox.VM;
+using Halcyon.Phlox.Types;
+using Halcyon.Phlox.Serialization;
+using Halcyon.Phlox.Util;
 
 using OpenMetaverse;
 

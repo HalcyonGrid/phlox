@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using ProtoBuf;
 
-namespace InWorldz.Phlox.Types
+namespace Halcyon.Phlox.Types
 {
     /// <summary>
     /// Represents a sentinal value that can be used for testing

@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using OpenMetaverse;
 
-using InWorldz.Phlox.Types;
+using Halcyon.Phlox.Types;
 
-namespace InWorldz.Phlox.Glue
+namespace Halcyon.Phlox.Glue
 {
 	public class SyscallShim : ISyscallShim
 	{
@@ -14,11 +14,11 @@ namespace InWorldz.Phlox.Glue
         public delegate void LongRunSyscallDelegate();
         public delegate void PerformAsyncCallDelegate(LongRunSyscallDelegate longCall);
 
-		private InWorldz.Phlox.VM.Interpreter _interpreter;
+		private Halcyon.Phlox.VM.Interpreter _interpreter;
 		private ISystemAPI _systemAPI;
         private PerformAsyncCallDelegate _asyncCallDelegate;
 
-		public InWorldz.Phlox.VM.Interpreter Interpreter
+		public Halcyon.Phlox.VM.Interpreter Interpreter
 		{
 			get
 			{

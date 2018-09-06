@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-using InWorldz.Phlox.VM;
+using Halcyon.Phlox.VM;
 
-namespace InWorldz.Phlox.ByteCompiler
+namespace Halcyon.Phlox.ByteCompiler
 {
     public class FunctionSymbol
     {

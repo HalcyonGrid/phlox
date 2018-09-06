@@ -5,7 +5,7 @@ using System.Text;
 
 using ProtoBuf;
 
-namespace InWorldz.Phlox.VM
+namespace Halcyon.Phlox.VM
 {
     /// <summary>
     /// A listener that this script has opened

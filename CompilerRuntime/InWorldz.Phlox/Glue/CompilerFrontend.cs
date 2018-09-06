@@ -3,15 +3,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-using InWorldz.Phlox.Types;
+using Halcyon.Phlox.Types;
 using Antlr.Runtime;
 using Antlr.Runtime.Tree;
-using InWorldz.Phlox.Compiler;
-using InWorldz.Phlox.ByteCompiler;
+using Halcyon.Phlox.Compiler;
+using Halcyon.Phlox.ByteCompiler;
 using Antlr3.ST;
 using System.IO;
 
-namespace InWorldz.Phlox.Glue
+namespace Halcyon.Phlox.Glue
 {
     /// <summary>
     /// Provides a frontend to compile input

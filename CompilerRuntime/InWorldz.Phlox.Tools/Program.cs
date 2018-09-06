@@ -5,7 +5,7 @@ using System.Text;
 
 using Antlr.Runtime;
 
-namespace InWorldz.Phlox.Tools
+namespace Halcyon.Phlox.Tools
 {
     class Program
     {

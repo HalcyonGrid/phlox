@@ -3,14 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-using InWorldz.Phlox.Types;
-using InWorldz.Phlox.VM;
-using InWorldz.Phlox.Util;
+using Halcyon.Phlox.Types;
+using Halcyon.Phlox.VM;
+using Halcyon.Phlox.Util;
 
 using Antlr.Runtime;
 using OpenMetaverse;
 
-namespace InWorldz.Phlox.ByteCompiler
+namespace Halcyon.Phlox.ByteCompiler
 {
     public class BytecodeGenerator
     {

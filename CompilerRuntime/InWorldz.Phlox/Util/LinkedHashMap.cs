@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Collections;
 
-namespace InWorldz.Phlox.Util
+namespace Halcyon.Phlox.Util
 {
     /// <summary>
     /// Stores a collection of objects that can be looked up by a key in O(1) and 

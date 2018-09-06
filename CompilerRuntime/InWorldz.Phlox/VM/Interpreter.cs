@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-using InWorldz.Phlox.Types;
+using Halcyon.Phlox.Types;
 using OpenMetaverse;
 
-namespace InWorldz.Phlox.VM
+namespace Halcyon.Phlox.VM
 {
     /// <summary>
     /// An interpreter that can be loaded with a script and current execution state

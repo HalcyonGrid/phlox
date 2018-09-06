@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace InWorldz.Phlox.Types
+namespace Halcyon.Phlox.Types
 {
     /// <summary>
     /// Handles the translation of a system call (syscall instruction) to an API call to

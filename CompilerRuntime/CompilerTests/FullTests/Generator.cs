@@ -6,8 +6,8 @@ using System.Text;
 using NUnit.Framework;
 using Antlr.Runtime;
 
-using MCompilerFrontend = InWorldz.Phlox.Glue.CompilerFrontend;
-using InWorldz.Phlox.VM;
+using MCompilerFrontend = Halcyon.Phlox.Glue.CompilerFrontend;
+using Halcyon.Phlox.VM;
 using System.Text.RegularExpressions;
 
 namespace CompilerTests.FullTests

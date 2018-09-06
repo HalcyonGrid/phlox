@@ -6,7 +6,7 @@ using OpenMetaverse;
 
 using ProtoBuf;
 
-namespace InWorldz.Phlox.VM
+namespace Halcyon.Phlox.VM
 {
     /// <summary>
     /// Variables that are set during some events to provide the script

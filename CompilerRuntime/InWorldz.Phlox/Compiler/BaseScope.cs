@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using Antlr.Runtime;
 
-namespace InWorldz.Phlox.Compiler
+namespace Halcyon.Phlox.Compiler
 {
     public abstract class BaseScope : IScope
     {

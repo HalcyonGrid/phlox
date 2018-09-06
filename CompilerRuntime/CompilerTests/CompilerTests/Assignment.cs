@@ -130,7 +130,7 @@ namespace CompilerTests.CompilerUnitTests
                     default { state_entry() {} }
                     ";
 
-            InWorldz.Phlox.Glue.CompilerFrontend fe = Compiler.Compile(new ANTLRStringStream(test));
+            Halcyon.Phlox.Glue.CompilerFrontend fe = Compiler.Compile(new ANTLRStringStream(test));
             Assert.IsTrue(Listener.ErrorCount == 0);
             Assert.IsTrue(fe.GeneratedByteCode.Contains("store 0"));
             Assert.IsTrue(fe.GeneratedByteCode.Contains("store 1"));
@@ -149,7 +149,7 @@ namespace CompilerTests.CompilerUnitTests
                     default { state_entry() {} }
                     ";
 
-            InWorldz.Phlox.Glue.CompilerFrontend fe = Compiler.Compile(new ANTLRStringStream(test));
+            Halcyon.Phlox.Glue.CompilerFrontend fe = Compiler.Compile(new ANTLRStringStream(test));
             Assert.IsTrue(Listener.ErrorCount == 0);
             Console.WriteLine(fe.GeneratedByteCode);
             Assert.IsTrue(fe.GeneratedByteCode.Contains("load 0"));

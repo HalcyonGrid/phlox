@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 
 using OpenMetaverse;
-using InWorldz.Phlox.Types;
+using Halcyon.Phlox.Types;
 
-namespace InWorldz.Phlox.Util
+namespace Halcyon.Phlox.Util
 {
     internal class MemoryCalc
     {

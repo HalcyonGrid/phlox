@@ -4,11 +4,11 @@ using System.Linq;
 using System.Text;
 
 using OpenMetaverse;
-using InWorldz.Phlox.Types;
+using Halcyon.Phlox.Types;
 using System.Text.RegularExpressions;
 using System.Globalization;
 
-namespace InWorldz.Phlox.VM
+namespace Halcyon.Phlox.VM
 {
     public partial class Interpreter
     {

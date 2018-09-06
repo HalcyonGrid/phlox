@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
-using InWorldz.Phlox.Types;
+using Halcyon.Phlox.Types;
 
 /// <summary>
 /// Redirects all trace text from the parsers to an LSLListener

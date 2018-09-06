@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 
 using OpenMetaverse;
-using InWorldz.Phlox.Util;
+using Halcyon.Phlox.Util;
 
-namespace InWorldz.Phlox.VM
+namespace Halcyon.Phlox.VM
 {
     /// <summary>
     /// Represents a script after it has been compiled by the byte compiler
