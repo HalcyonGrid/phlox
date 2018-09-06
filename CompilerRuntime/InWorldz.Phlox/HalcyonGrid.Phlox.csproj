@@ -6,8 +6,8 @@
     <ProjectGuid>{56C3EF44-AB6C-4719-B160-2FFC163E4439}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>InWorldz.Phlox</RootNamespace>
-    <AssemblyName>InWorldz.Phlox</AssemblyName>
+    <RootNamespace>Halcyon.Phlox</RootNamespace>
+    <AssemblyName>Halcyon.Phlox</AssemblyName>
     <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />

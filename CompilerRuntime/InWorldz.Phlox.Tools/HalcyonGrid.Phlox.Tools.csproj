@@ -6,8 +6,8 @@
     <ProjectGuid>{90ECCEA5-238D-4241-8622-479FA10CC6AA}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>InWorldz.Phlox.Tools</RootNamespace>
-    <AssemblyName>InWorldz.Phlox.Tools</AssemblyName>
+    <RootNamespace>Halcyon.Phlox.Tools</RootNamespace>
+    <AssemblyName>Halcyon.Phlox.Tools</AssemblyName>
     <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
@@ -103,9 +103,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\InWorldz.Phlox\InWorldz.Phlox.csproj">
+    <ProjectReference Include="..\InWorldz.Phlox\Halcyon.Phlox.csproj">
       <Project>{56C3EF44-AB6C-4719-B160-2FFC163E4439}</Project>
-      <Name>InWorldz.Phlox</Name>
+      <Name>Halcyon.Phlox</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
