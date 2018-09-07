@@ -8,7 +8,7 @@ options {
 }
 
 @header {
-	using InWorldz.Phlox.Compiler.BranchAnalyze;
+	using Halcyon.Phlox.Compiler.BranchAnalyze;
 }
 
 @members {
@@ -25,7 +25,7 @@ options {
 }
 
 
-@namespace { InWorldz.Phlox.Compiler } 
+@namespace { Halcyon.Phlox.Compiler } 
 
 topdown
 	:	methodDef

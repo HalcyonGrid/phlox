@@ -17,7 +17,7 @@ options {
 
 	public override void Recover(IIntStream input, RecognitionException re)
     {
-		if (++ErrorCount == 10) throw new InWorldz.Phlox.Types.TooManyErrorsException("Too many errors", re);
+		if (++ErrorCount == 10) throw new Halcyon.Phlox.Types.TooManyErrorsException("Too many errors", re);
         base.Recover(input, re);
     }
 	
@@ -76,7 +76,7 @@ options {
 }
 
 
-@namespace { InWorldz.Phlox.Compiler } 
+@namespace { Halcyon.Phlox.Compiler } 
 
 public script	:	(g+=globalInits | f+=functions | s+=states)+
 			-> file(

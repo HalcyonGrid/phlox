@@ -17,7 +17,7 @@ options {
 	protected override void Bottomup() { bottomup(); }
 }
 
-@namespace { InWorldz.Phlox.Compiler } 
+@namespace { Halcyon.Phlox.Compiler } 
 
 bottomup
 	:	exprRoot

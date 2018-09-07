@@ -59,7 +59,7 @@ tokens {
 
 	public override void Recover(IIntStream input, RecognitionException re)
     {
-		if (++ErrorCount == 10) throw new InWorldz.Phlox.Types.TooManyErrorsException("Too many errors", re);
+		if (++ErrorCount == 10) throw new Halcyon.Phlox.Types.TooManyErrorsException("Too many errors", re);
         base.Recover(input, re);
     }
 
@@ -89,8 +89,8 @@ tokens {
 	}
 }
 
-@parser::namespace { InWorldz.Phlox.Compiler } // Or just @namespace { ... }
-@lexer::namespace { InWorldz.Phlox.Compiler }
+@parser::namespace { Halcyon.Phlox.Compiler } // Or just @namespace { ... }
+@lexer::namespace { Halcyon.Phlox.Compiler }
 
 public prog	
 :	globalStmt+ EOF

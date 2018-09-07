@@ -103,7 +103,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\InWorldz.Phlox\Halcyon.Phlox.csproj">
+    <ProjectReference Include="..\Halcyon.Phlox\Halcyon.Phlox.csproj">
       <Project>{56C3EF44-AB6C-4719-B160-2FFC163E4439}</Project>
       <Name>Halcyon.Phlox</Name>
     </ProjectReference>

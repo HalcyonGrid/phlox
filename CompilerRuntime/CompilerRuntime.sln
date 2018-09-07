@@ -5,11 +5,11 @@ VisualStudioVersion = 15.0.27428.2027
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CompilerTests", "CompilerTests\CompilerTests.csproj", "{93F3C614-8395-4590-AB3C-1DB14CFB3C3F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Halcyon.Phlox", "InWorldz.Phlox\Halcyon.Phlox.csproj", "{56C3EF44-AB6C-4719-B160-2FFC163E4439}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Halcyon.Phlox", "Halcyon.Phlox\Halcyon.Phlox.csproj", "{56C3EF44-AB6C-4719-B160-2FFC163E4439}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CompilerRunner", "CompilerRunner\CompilerRunner.csproj", "{2108CC4A-1365-40C8-8468-57E07EAF94F0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Halcyon.Phlox.Tools", "InWorldz.Phlox.Tools\Halcyon.Phlox.Tools.csproj", "{90ECCEA5-238D-4241-8622-479FA10CC6AA}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Halcyon.Phlox.Tools", "Halcyon.Phlox.Tools\Halcyon.Phlox.Tools.csproj", "{90ECCEA5-238D-4241-8622-479FA10CC6AA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

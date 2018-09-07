@@ -7,9 +7,9 @@ using System.Linq;
 using System.Text;
 using OpenMetaverse;
 
-using InWorldz.Phlox.Types;
+using Halcyon.Phlox.Types;
 
-namespace InWorldz.Phlox.Glue
+namespace Halcyon.Phlox.Glue
 {
 	public interface ISystemAPI
 	{
@@ -30,7 +30,7 @@ defaultmethods(functionlist) ::= <<
 using System;
 using System.Collections.Generic;
 
-namespace InWorldz.Phlox.Types
+namespace Halcyon.Phlox.Types
 {
 	public class Defaults
 	{
@@ -46,18 +46,18 @@ using System.Linq;
 using System.Text;
 using OpenMetaverse;
 
-using InWorldz.Phlox.Types;
+using Halcyon.Phlox.Types;
 
-namespace InWorldz.Phlox.Glue
+namespace Halcyon.Phlox.Glue
 {
 	public class SyscallShim : ISyscallShim
 	{
 		public delegate void ShimCall();
 
-		private InWorldz.Phlox.VM.Interpreter _interpreter;
+		private Halcyon.Phlox.VM.Interpreter _interpreter;
 		private ISystemAPI _systemAPI;
 
-		public InWorldz.Phlox.VM.Interpreter Interpreter
+		public Halcyon.Phlox.VM.Interpreter Interpreter
 		{
 			get
 			{
