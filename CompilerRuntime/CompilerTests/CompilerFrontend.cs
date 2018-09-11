@@ -13,6 +13,12 @@ namespace CompilerTests
 {
     class CompilerFrontend
     {
+        private string _grammarFolder;
+        public CompilerFrontend(string grammarFolder)
+        {
+            _grammarFolder = grammarFolder;
+        }
+
         private System.IO.TextWriter _traceDestination;
         public System.IO.TextWriter TraceDestination
         {
@@ -43,7 +49,7 @@ namespace CompilerTests
 
         public Halcyon.Phlox.Glue.CompilerFrontend Compile(ICharStream input)
         {
-            Halcyon.Phlox.Glue.CompilerFrontend frontEnd = new Halcyon.Phlox.Glue.CompilerFrontend(_listener, "../../../../grammar", true);
+            Halcyon.Phlox.Glue.CompilerFrontend frontEnd = new Halcyon.Phlox.Glue.CompilerFrontend(_listener, _grammarFolder, true);
             frontEnd.OutputASTGraph = true;
 
             frontEnd.Compile(input);

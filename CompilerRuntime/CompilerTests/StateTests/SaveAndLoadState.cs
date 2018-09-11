@@ -24,7 +24,7 @@ namespace CompilerTests.SateTests
         public void TestLoadOldProtobuf1CompiledScript()
         {
             CompiledScript cs;
-            using (var file = System.IO.File.OpenRead("StateTests/v1script.plx"))
+            using (var file = System.IO.File.OpenRead(TestContext.CurrentContext.TestDirectory + "/StateTests/v1script.plx"))
             {
                 SerializedScript deser = ProtoBuf.Serializer.Deserialize<SerializedScript>(file);
                 cs = deser.ToCompiledScript();
@@ -38,7 +38,7 @@ namespace CompilerTests.SateTests
         {
             RuntimeState deserRunState;
 
-            using (var file = System.IO.File.OpenRead("StateTests/phloxstate.plxs"))
+            using (var file = System.IO.File.OpenRead(TestContext.CurrentContext.TestDirectory + "/StateTests/phloxstate.plxs"))
             {
                 SerializedRuntimeState deser = ProtoBuf.Serializer.Deserialize<SerializedRuntimeState>(file);
                 deserRunState = deser.ToRuntimeState();

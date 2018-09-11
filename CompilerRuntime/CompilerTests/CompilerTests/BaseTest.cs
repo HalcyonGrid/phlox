@@ -31,7 +31,7 @@ namespace CompilerTests.CompilerUnitTests
         [SetUp]
         public void Setup()
         {
-            _compiler = new CompilerFrontend();
+            _compiler = new CompilerFrontend(TestContext.CurrentContext.TestDirectory + "/../grammar");
             _listener = new TestListener();
             _compiler.Listener = _listener;
             _compiler.TraceDestination = Console.Error;
