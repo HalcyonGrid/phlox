@@ -25,7 +25,7 @@ options {
 }
 
 
-@namespace { InWorldz.Phlox.Compiler } 
+@namespace { Halcyon.Phlox.Compiler } 
 
 topdown:
 		enterFuncBlock	

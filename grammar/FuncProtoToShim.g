@@ -5,7 +5,7 @@ options {
 }
 
 
-@namespace { InWorldz.Phlox.Tools } 
+@namespace { Halcyon.Phlox.Tools } 
 
 public list	:	funcDef+
 	;

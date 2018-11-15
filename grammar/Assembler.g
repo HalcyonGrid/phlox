@@ -32,7 +32,7 @@ options {
 }
 // END: members
 
-@namespace { InWorldz.Phlox.ByteCompiler }
+@namespace { Halcyon.Phlox.ByteCompiler }
 
 public program
     :   globals?

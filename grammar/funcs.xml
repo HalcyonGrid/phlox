@@ -1621,11 +1621,11 @@
   </string>
   <string name="LSLTipText_llSetMemoryLimit" translate="false">
     integer llSetMemoryLimit(integer limit)
-    Sets the number of free bytes of memory the script can use. No effect under Phlox in InWorldz.
+    Sets the number of free bytes of memory the script can use. No effect under Phlox in Halcyon.
   </string>
   <string name="LSLTipText_llGetMemoryLimit" translate="false">
     integer llGetMemoryLimit()
-    Returns the number of free bytes of memory the script can use. Always 64K under Phlox in InWorldz.
+    Returns the number of free bytes of memory the script can use. Always 64K under Phlox in Halcyon.
   </string>
   <string name="LSLTipText_llManageEstateAccess" translate="false">
     integer llManageEstateAccess(integer action, key avatar)

@@ -48,8 +48,8 @@ tokens {
   ASSIGN_EQ='=';
 }
 
-@parser::namespace { InWorldz.Phlox.Compiler } // Or just @namespace { ... }
-@lexer::namespace { InWorldz.Phlox.Compiler }
+@parser::namespace { Halcyon.Phlox.Compiler } // Or just @namespace { ... }
+@lexer::namespace { Halcyon.Phlox.Compiler }
 
 public prog	
 :	globalStmt+ EOF

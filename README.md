@@ -4,7 +4,7 @@ Build Status
 * Master branch: [![Build status](https://ci.appveyor.com/api/projects/status/3lktfajt8jwkjdfi/branch/master?svg=true)](https://ci.appveyor.com/project/HalcyonGrid/phlox/branch/master)
 * Latest release: [https://github.com/HalcyonGrid/phlox/releases](https://github.com/HalcyonGrid/phlox/releases)
 
-The InWorldz Phlox VM and LSL compiler
+The Halcyon Phlox VM and LSL compiler
 
 Contained within is a compiler for the Linden Scripting Language and a corresponding virtual machine that can run the compiled code.
 
