@@ -256,7 +256,7 @@ namespace Halcyon.Phlox.VM
         /// <summary>
         /// This is the UUID of a bot that is having sensor/listen events
         /// called on it
-        /// See botSensor/botSensorRepeat/iwDetectedBot functions
+        /// See botSensor/botSensorRepeat/halDetectedBot functions
         /// </summary>
         [ProtoMember(26)]
         public string BotID;

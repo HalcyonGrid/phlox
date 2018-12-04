@@ -2519,6 +2519,13 @@ namespace Halcyon.Phlox.Types
                 ParamNames = new string[] {"id"},
                 TableIndex = 358
             }},
+            {"halMakeNotecard", new FunctionSig {
+                FunctionName =  "halMakeNotecard",
+                ReturnType = VarType.Void,
+                ParamTypes = new VarType[] {VarType.String, VarType.List},
+                ParamNames = new string[] {"name", "data"},
+                TableIndex = 359
+            }},
             {"iwMakeNotecard", new FunctionSig {
                 FunctionName =  "iwMakeNotecard",
                 ReturnType = VarType.Void,
@@ -2526,12 +2533,26 @@ namespace Halcyon.Phlox.Types
                 ParamNames = new string[] {"name", "data"},
                 TableIndex = 359
             }},
+            {"halAvatarName2Key", new FunctionSig {
+                FunctionName =  "halAvatarName2Key",
+                ReturnType = VarType.Key,
+                ParamTypes = new VarType[] {VarType.String, VarType.String},
+                ParamNames = new string[] {"firstName", "lastName"},
+                TableIndex = 360
+            }},
             {"iwAvatarName2Key", new FunctionSig {
                 FunctionName =  "iwAvatarName2Key",
                 ReturnType = VarType.Key,
                 ParamTypes = new VarType[] {VarType.String, VarType.String},
                 ParamNames = new string[] {"firstName", "lastName"},
                 TableIndex = 360
+            }},
+            {"halLinkTargetOmega", new FunctionSig {
+                FunctionName =  "halLinkTargetOmega",
+                ReturnType = VarType.Void,
+                ParamTypes = new VarType[] {VarType.Integer, VarType.Vector, VarType.Float, VarType.Float},
+                ParamNames = new string[] {"linkeNumber", "axis", "spinRate", "gain"},
+                TableIndex = 361
             }},
             {"iwLinkTargetOmega", new FunctionSig {
                 FunctionName =  "iwLinkTargetOmega",
@@ -2562,12 +2583,26 @@ namespace Halcyon.Phlox.Types
                 TableIndex = 364
             }},
 
+            {"halGetLinkInventoryNumber", new FunctionSig {
+                FunctionName =  "halGetLinkInventoryNumber",
+                ReturnType = VarType.Integer,
+                ParamTypes = new VarType[] {VarType.Integer, VarType.Integer},
+                ParamNames = new string[] {"linknumber", "type"},
+                TableIndex = 365
+            }},
             {"iwGetLinkInventoryNumber", new FunctionSig {
                 FunctionName =  "iwGetLinkInventoryNumber",
                 ReturnType = VarType.Integer,
                 ParamTypes = new VarType[] {VarType.Integer, VarType.Integer},
                 ParamNames = new string[] {"linknumber", "type"},
                 TableIndex = 365
+            }},
+            {"halGetLinkInventoryType", new FunctionSig {
+                FunctionName =  "halGetLinkInventoryType",
+                ReturnType = VarType.Integer,
+                ParamTypes = new VarType[] {VarType.Integer, VarType.String},
+                ParamNames = new string[] {"linknumber", "name"},
+                TableIndex = 366
             }},
             {"iwGetLinkInventoryType", new FunctionSig {
                 FunctionName =  "iwGetLinkInventoryType",
@@ -2576,12 +2611,26 @@ namespace Halcyon.Phlox.Types
                 ParamNames = new string[] {"linknumber", "name"},
                 TableIndex = 366
             }},
+            {"halGetLinkInventoryPermMask", new FunctionSig {
+                FunctionName =  "halGetLinkInventoryPermMask",
+                ReturnType = VarType.Integer,
+                ParamTypes = new VarType[] {VarType.Integer, VarType.String, VarType.Integer},
+                ParamNames = new string[] {"linknumber", "name", "mask"},
+                TableIndex = 367
+            }},
             {"iwGetLinkInventoryPermMask", new FunctionSig {
                 FunctionName =  "iwGetLinkInventoryPermMask",
                 ReturnType = VarType.Integer,
                 ParamTypes = new VarType[] {VarType.Integer, VarType.String, VarType.Integer},
                 ParamNames = new string[] {"linknumber", "name", "mask"},
                 TableIndex = 367
+            }},
+            {"halGetLinkInventoryName", new FunctionSig {
+                FunctionName =  "halGetLinkInventoryName",
+                ReturnType = VarType.String,
+                ParamTypes = new VarType[] {VarType.Integer, VarType.Integer, VarType.Integer},
+                ParamNames = new string[] {"linknumber", "type", "number"},
+                TableIndex = 368
             }},
             {"iwGetLinkInventoryName", new FunctionSig {
                 FunctionName =  "iwGetLinkInventoryName",
@@ -2590,12 +2639,26 @@ namespace Halcyon.Phlox.Types
                 ParamNames = new string[] {"linknumber", "type", "number"},
                 TableIndex = 368
             }},
+            {"halGetLinkInventoryKey", new FunctionSig {
+                FunctionName =  "halGetLinkInventoryKey",
+                ReturnType = VarType.String,
+                ParamTypes = new VarType[] {VarType.Integer, VarType.String},
+                ParamNames = new string[] {"linknumber", "name"},
+                TableIndex = 369
+            }},
             {"iwGetLinkInventoryKey", new FunctionSig {
                 FunctionName =  "iwGetLinkInventoryKey",
                 ReturnType = VarType.String,
                 ParamTypes = new VarType[] {VarType.Integer, VarType.String},
                 ParamNames = new string[] {"linknumber", "name"},
                 TableIndex = 369
+            }},
+            {"halGetLinkInventoryCreator", new FunctionSig {
+                FunctionName =  "halGetLinkInventoryCreator",
+                ReturnType = VarType.String,
+                ParamTypes = new VarType[] {VarType.Integer, VarType.String},
+                ParamNames = new string[] {"linknumber", "name"},
+                TableIndex = 370
             }},
             {"iwGetLinkInventoryCreator", new FunctionSig {
                 FunctionName =  "iwGetLinkInventoryCreator",
@@ -2604,12 +2667,26 @@ namespace Halcyon.Phlox.Types
                 ParamNames = new string[] {"linknumber", "name"},
                 TableIndex = 370
             }},
+            {"halSHA256String", new FunctionSig {
+                FunctionName =  "halSHA256String",
+                ReturnType = VarType.String,
+                ParamTypes = new VarType[] {VarType.String},
+                ParamNames = new string[] {"src"},
+                TableIndex = 371
+            }},
             {"iwSHA256String", new FunctionSig {
                 FunctionName =  "iwSHA256String",
                 ReturnType = VarType.String,
                 ParamTypes = new VarType[] {VarType.String},
                 ParamNames = new string[] {"src"},
                 TableIndex = 371
+            }},
+            {"halTeleportAgent", new FunctionSig {
+                FunctionName =  "halTeleportAgent",
+                ReturnType = VarType.Void,
+                ParamTypes = new VarType[] {VarType.String, VarType.String, VarType.Vector, VarType.Vector},
+                ParamNames = new string[] {"agent", "region", "pos", "lookat"},
+                TableIndex = 372
             }},
             {"iwTeleportAgent", new FunctionSig {
                 FunctionName =  "iwTeleportAgent",
@@ -2625,12 +2702,26 @@ namespace Halcyon.Phlox.Types
                 ParamNames = new string[] {"linknumber"},
                 TableIndex = 373
             }},
+            {"halGetLastOwner", new FunctionSig {
+                FunctionName =  "halGetLastOwner",
+                ReturnType = VarType.Key,
+                ParamTypes = new VarType[] {},
+                ParamNames = new string[] {},
+                TableIndex = 374
+            }},
             {"iwGetLastOwner", new FunctionSig {
                 FunctionName =  "iwGetLastOwner",
                 ReturnType = VarType.Key,
                 ParamTypes = new VarType[] {},
                 ParamNames = new string[] {},
                 TableIndex = 374
+            }},
+            {"halRemoveLinkInventory", new FunctionSig {
+                FunctionName =  "halRemoveLinkInventory",
+                ReturnType = VarType.Void,
+                ParamTypes = new VarType[] {VarType.Integer, VarType.String},
+                ParamNames = new string[] {"linknumber", "name"},
+                TableIndex = 375
             }},
             {"iwRemoveLinkInventory", new FunctionSig {
                 FunctionName =  "iwRemoveLinkInventory",
@@ -2639,12 +2730,26 @@ namespace Halcyon.Phlox.Types
                 ParamNames = new string[] {"linknumber", "name"},
                 TableIndex = 375
             }},
+            {"halGiveLinkInventory", new FunctionSig {
+                FunctionName =  "halGiveLinkInventory",
+                ReturnType = VarType.Void,
+                ParamTypes = new VarType[] {VarType.Integer, VarType.Key, VarType.String},
+                ParamNames = new string[] {"linknumber", "target", "name"},
+                TableIndex = 376
+            }},
             {"iwGiveLinkInventory", new FunctionSig {
                 FunctionName =  "iwGiveLinkInventory",
                 ReturnType = VarType.Void,
                 ParamTypes = new VarType[] {VarType.Integer, VarType.Key, VarType.String},
                 ParamNames = new string[] {"linknumber", "target", "name"},
                 TableIndex = 376
+            }},
+            {"halGiveLinkInventoryList", new FunctionSig {
+                FunctionName =  "halGiveLinkInventoryList",
+                ReturnType = VarType.Void,
+                ParamTypes = new VarType[] {VarType.Integer, VarType.Key, VarType.String, VarType.List},
+                ParamNames = new string[] {"linknumber", "target", "folder", "inventory"},
+                TableIndex = 377
             }},
             {"iwGiveLinkInventoryList", new FunctionSig {
                 FunctionName =  "iwGiveLinkInventoryList",
@@ -2653,12 +2758,26 @@ namespace Halcyon.Phlox.Types
                 ParamNames = new string[] {"linknumber", "target", "folder", "inventory"},
                 TableIndex = 377
             }},
+            {"halGetNotecardSegment", new FunctionSig {
+                FunctionName =  "halGetNotecardSegment",
+                ReturnType = VarType.Key,
+                ParamTypes = new VarType[] {VarType.String, VarType.Integer, VarType.Integer, VarType.Integer},
+                ParamNames = new string[] {"name", "line", "startOffset", "maxLength"},
+                TableIndex = 378
+            }},
             {"iwGetNotecardSegment", new FunctionSig {
                 FunctionName =  "iwGetNotecardSegment",
                 ReturnType = VarType.Key,
                 ParamTypes = new VarType[] {VarType.String, VarType.Integer, VarType.Integer, VarType.Integer},
                 ParamNames = new string[] {"name", "line", "startOffset", "maxLength"},
                 TableIndex = 378
+            }},
+            {"halGetLinkNumberOfNotecardLines", new FunctionSig {
+                FunctionName =  "halGetLinkNumberOfNotecardLines",
+                ReturnType = VarType.Key,
+                ParamTypes = new VarType[] {VarType.Integer, VarType.String},
+                ParamNames = new string[] {"linknumber", "name"},
+                TableIndex = 379
             }},
             {"iwGetLinkNumberOfNotecardLines", new FunctionSig {
                 FunctionName =  "iwGetLinkNumberOfNotecardLines",
@@ -2667,12 +2786,26 @@ namespace Halcyon.Phlox.Types
                 ParamNames = new string[] {"linknumber", "name"},
                 TableIndex = 379
             }},
+            {"halGetLinkNotecardLine", new FunctionSig {
+                FunctionName =  "halGetLinkNotecardLine",
+                ReturnType = VarType.Key,
+                ParamTypes = new VarType[] {VarType.Integer, VarType.String, VarType.Integer},
+                ParamNames = new string[] {"linknumber", "name", "line"},
+                TableIndex = 380
+            }},
             {"iwGetLinkNotecardLine", new FunctionSig {
                 FunctionName =  "iwGetLinkNotecardLine",
                 ReturnType = VarType.Key,
                 ParamTypes = new VarType[] {VarType.Integer, VarType.String, VarType.Integer},
                 ParamNames = new string[] {"linknumber", "name", "line"},
                 TableIndex = 380
+            }},
+            {"halGetLinkNotecardSegment", new FunctionSig {
+                FunctionName =  "halGetLinkNotecardSegment",
+                ReturnType = VarType.Key,
+                ParamTypes = new VarType[] {VarType.Integer, VarType.String, VarType.Integer, VarType.Integer, VarType.Integer},
+                ParamNames = new string[] {"linknumber", "name", "line", "startOffset", "maxLength"},
+                TableIndex = 381
             }},
             {"iwGetLinkNotecardSegment", new FunctionSig {
                 FunctionName =  "iwGetLinkNotecardSegment",
@@ -2681,12 +2814,26 @@ namespace Halcyon.Phlox.Types
                 ParamNames = new string[] {"linknumber", "name", "line", "startOffset", "maxLength"},
                 TableIndex = 381
             }},
+            {"halActiveGroup", new FunctionSig {
+                FunctionName =  "halActiveGroup",
+                ReturnType = VarType.Integer,
+                ParamTypes = new VarType[] {VarType.Key, VarType.Key},
+                ParamNames = new string[] {"agentId", "groupId"},
+                TableIndex = 382
+            }},
             {"iwActiveGroup", new FunctionSig {
                 FunctionName =  "iwActiveGroup",
                 ReturnType = VarType.Integer,
                 ParamTypes = new VarType[] {VarType.Key, VarType.Key},
                 ParamNames = new string[] {"agentId", "groupId"},
                 TableIndex = 382
+            }},
+            {"halAvatarOnLink", new FunctionSig {
+                FunctionName =  "halAvatarOnLink",
+                ReturnType = VarType.Key,
+                ParamTypes = new VarType[] {VarType.Integer},
+                ParamNames = new string[] {"linknumber"},
+                TableIndex = 383
             }},
             {"iwAvatarOnLink", new FunctionSig {
                 FunctionName =  "iwAvatarOnLink",
@@ -2709,6 +2856,13 @@ namespace Halcyon.Phlox.Types
                 ParamNames = new string[] {},
                 TableIndex = 385
             }},
+            {"halGetLinkInventoryDesc", new FunctionSig {
+                FunctionName =  "halGetLinkInventoryDesc",
+                ReturnType = VarType.String,
+                ParamTypes = new VarType[] {VarType.Integer, VarType.String},
+                ParamNames = new string[] {"linknumber", "name"},
+                TableIndex = 386
+            }},
             {"iwGetLinkInventoryDesc", new FunctionSig {
                 FunctionName =  "iwGetLinkInventoryDesc",
                 ReturnType = VarType.String,
@@ -2722,6 +2876,13 @@ namespace Halcyon.Phlox.Types
                 ParamTypes = new VarType[] {},
                 ParamNames = new string[] {},
                 TableIndex = 387
+            }},
+            {"halGetLinkInventoryLastOwner", new FunctionSig {
+                FunctionName =  "halGetLinkInventoryLastOwner",
+                ReturnType = VarType.Key,
+                ParamTypes = new VarType[] {VarType.Integer, VarType.String},
+                ParamNames = new string[] {"linknumber", "name"},
+                TableIndex = 388
             }},
             {"iwGetLinkInventoryLastOwner", new FunctionSig {
                 FunctionName =  "iwGetLinkInventoryLastOwner",
@@ -2779,6 +2940,13 @@ namespace Halcyon.Phlox.Types
                 ParamNames = new string[] {"force", "local"},
                 TableIndex = 395
             }},
+            {"halRezObject", new FunctionSig {
+                FunctionName =  "halRezObject",
+                ReturnType = VarType.Key,
+                ParamTypes = new VarType[] {VarType.String, VarType.Vector, VarType.Vector, VarType.Rotation, VarType.Integer},
+                ParamNames = new string[] {"name", "pos", "vel", "rot", "param"},
+                TableIndex = 396
+            }},
             {"iwRezObject", new FunctionSig {
                 FunctionName =  "iwRezObject",
                 ReturnType = VarType.Key,
@@ -2786,12 +2954,26 @@ namespace Halcyon.Phlox.Types
                 ParamNames = new string[] {"name", "pos", "vel", "rot", "param"},
                 TableIndex = 396
             }},
+            {"halRezAtRoot", new FunctionSig {
+                FunctionName =  "halRezAtRoot",
+                ReturnType = VarType.Key,
+                ParamTypes = new VarType[] {VarType.String, VarType.Vector, VarType.Vector, VarType.Rotation, VarType.Integer},
+                ParamNames = new string[] {"name", "pos", "vel", "rot", "param"},
+                TableIndex = 397
+            }},
             {"iwRezAtRoot", new FunctionSig {
                 FunctionName =  "iwRezAtRoot",
                 ReturnType = VarType.Key,
                 ParamTypes = new VarType[] {VarType.String, VarType.Vector, VarType.Vector, VarType.Rotation, VarType.Integer},
                 ParamNames = new string[] {"name", "pos", "vel", "rot", "param"},
                 TableIndex = 397
+            }},
+            {"halRezPrim", new FunctionSig {
+                FunctionName =  "halRezPrim",
+                ReturnType = VarType.Key,
+                ParamTypes = new VarType[] {VarType.List, VarType.List, VarType.List, VarType.Vector, VarType.Vector, VarType.Rotation, VarType.Integer},
+                ParamNames = new string[] {"primParams", "particleSystem", "inventoryList", "pos", "vel", "rot", "param"},
+                TableIndex = 398
             }},
             {"iwRezPrim", new FunctionSig {
                 FunctionName =  "iwRezPrim",
@@ -2807,12 +2989,26 @@ namespace Halcyon.Phlox.Types
                 ParamNames = new string[] {"id", "options"},
                 TableIndex = 399
             }},
+            {"halGetAgentList", new FunctionSig {
+                FunctionName =  "halGetAgentList",
+                ReturnType = VarType.List,
+                ParamTypes = new VarType[] {VarType.Integer, VarType.Vector, VarType.Vector, VarType.List},
+                ParamNames = new string[] {"id", "minPos", "maxPos", "params"},
+                TableIndex = 400
+            }},
             {"iwGetAgentList", new FunctionSig {
                 FunctionName =  "iwGetAgentList",
                 ReturnType = VarType.List,
                 ParamTypes = new VarType[] {VarType.Integer, VarType.Vector, VarType.Vector, VarType.List},
                 ParamNames = new string[] {"id", "minPos", "maxPos", "params"},
                 TableIndex = 400
+            }},
+            {"halGetWorldBoundingBox", new FunctionSig {
+                FunctionName =  "halGetWorldBoundingBox",
+                ReturnType = VarType.List,
+                ParamTypes = new VarType[] {VarType.Key},
+                ParamNames = new string[] {"object"},
+                TableIndex = 401
             }},
             {"iwGetWorldBoundingBox", new FunctionSig {
                 FunctionName =  "iwGetWorldBoundingBox",
@@ -2842,6 +3038,13 @@ namespace Halcyon.Phlox.Types
                 ParamNames = new string[] {"action", "avatar"},
                 TableIndex = 404
             }},
+            {"halSubStringIndex", new FunctionSig {
+                FunctionName =  "halSubStringIndex",
+                ReturnType = VarType.Integer,
+                ParamTypes = new VarType[] {VarType.String, VarType.String, VarType.Integer, VarType.Integer},
+                ParamNames = new string[] {"source", "pattern", "offset", "isCaseSensitive"},
+                TableIndex = 405
+            }},
             {"iwSubStringIndex", new FunctionSig {
                 FunctionName =  "iwSubStringIndex",
                 ReturnType = VarType.Integer,
@@ -2863,6 +3066,13 @@ namespace Halcyon.Phlox.Types
                 ParamNames = new string[] {},
                 TableIndex = 407
             }},
+            {"halGetObjectMassMKS", new FunctionSig {
+                FunctionName =  "halGetObjectMassMKS",
+                ReturnType = VarType.Float,
+                ParamTypes = new VarType[] {VarType.Key},
+                ParamNames = new string[] {"id"},
+                TableIndex = 408
+            }},
             {"iwGetObjectMassMKS", new FunctionSig {
                 FunctionName =  "iwGetObjectMassMKS",
                 ReturnType = VarType.Float,
@@ -2876,6 +3086,13 @@ namespace Halcyon.Phlox.Types
                 ParamTypes = new VarType[] {VarType.Integer, VarType.Vector, VarType.Vector},
                 ParamNames = new string[] {"linknum", "eyeOffset", "cameraAt"},
                 TableIndex = 409
+            }},
+            {"halSetGround", new FunctionSig {
+                FunctionName =  "halSetGround",
+                ReturnType = VarType.Void,
+                ParamTypes = new VarType[] {VarType.Integer, VarType.Integer, VarType.Integer, VarType.Integer, VarType.Float},
+                ParamNames = new string[] {"x1", "y1", "x2", "y2", "height"},
+                TableIndex = 410
             }},
             {"iwSetGround", new FunctionSig {
                 FunctionName =  "iwSetGround",
@@ -2926,12 +3143,26 @@ namespace Halcyon.Phlox.Types
                 ParamNames = new string[] {"src"},
                 TableIndex = 416
             }},
+            {"halSetWind", new FunctionSig {
+                FunctionName =  "halSetWind",
+                ReturnType = VarType.Void,
+                ParamTypes = new VarType[] {VarType.Integer, VarType.Vector, VarType.Vector},
+                ParamNames = new string[] {"type", "offset", "speed"},
+                TableIndex = 417
+            }},
             {"iwSetWind", new FunctionSig {
                 FunctionName =  "iwSetWind",
                 ReturnType = VarType.Void,
                 ParamTypes = new VarType[] {VarType.Integer, VarType.Vector, VarType.Vector},
                 ParamNames = new string[] {"type", "offset", "speed"},
                 TableIndex = 417
+            }},
+            {"halHasParcelPowers", new FunctionSig {
+                FunctionName =  "halHasParcelPowers",
+                ReturnType = VarType.Integer,
+                ParamTypes = new VarType[] {VarType.Integer},
+                ParamNames = new string[] {"groupPower"},
+                TableIndex = 418
             }},
             {"iwHasParcelPowers", new FunctionSig {
                 FunctionName =  "iwHasParcelPowers",
@@ -2940,12 +3171,26 @@ namespace Halcyon.Phlox.Types
                 ParamNames = new string[] {"groupPower"},
                 TableIndex = 418
             }},
+            {"halGroundSurfaceNormal", new FunctionSig {
+                FunctionName =  "halGroundSurfaceNormal",
+                ReturnType = VarType.Vector,
+                ParamTypes = new VarType[] {VarType.Vector},
+                ParamNames = new string[] {"offset"},
+                TableIndex = 419
+            }},
             {"iwGroundSurfaceNormal", new FunctionSig {
                 FunctionName =  "iwGroundSurfaceNormal",
                 ReturnType = VarType.Vector,
                 ParamTypes = new VarType[] {VarType.Vector},
                 ParamNames = new string[] {"offset"},
                 TableIndex = 419
+            }},
+            {"halRequestAnimationData", new FunctionSig {
+                FunctionName =  "halRequestAnimationData",
+                ReturnType = VarType.Key,
+                ParamTypes = new VarType[] {VarType.String},
+                ParamNames = new string[] {"name"},
+                TableIndex = 420
             }},
             {"iwRequestAnimationData", new FunctionSig {
                 FunctionName =  "iwRequestAnimationData",
@@ -2968,6 +3213,13 @@ namespace Halcyon.Phlox.Types
                 ParamNames = new string[] {"keyframes", "options"},
                 TableIndex = 422
             }},
+            {"halWind", new FunctionSig {
+                FunctionName =  "halWind",
+                ReturnType = VarType.Vector,
+                ParamTypes = new VarType[] {VarType.Vector},
+                ParamNames = new string[] {"offset"},
+                TableIndex = 423
+            }},
             {"iwWind", new FunctionSig {
                 FunctionName =  "iwWind",
                 ReturnType = VarType.Vector,
@@ -2982,6 +3234,13 @@ namespace Halcyon.Phlox.Types
                 ParamNames = new string[] {},
                 TableIndex = 424
             }},
+            {"halGetLocalTime", new FunctionSig {
+                FunctionName =  "halGetLocalTime",
+                ReturnType = VarType.Integer,
+                ParamTypes = new VarType[] {},
+                ParamNames = new string[] {},
+                TableIndex = 425
+            }},
             {"iwGetLocalTime", new FunctionSig {
                 FunctionName =  "iwGetLocalTime",
                 ReturnType = VarType.Integer,
@@ -2989,12 +3248,26 @@ namespace Halcyon.Phlox.Types
                 ParamNames = new string[] {},
                 TableIndex = 425
             }},
+            {"halGetLocalTimeOffset", new FunctionSig {
+                FunctionName =  "halGetLocalTimeOffset",
+                ReturnType = VarType.Integer,
+                ParamTypes = new VarType[] {},
+                ParamNames = new string[] {},
+                TableIndex = 426
+            }},
             {"iwGetLocalTimeOffset", new FunctionSig {
                 FunctionName =  "iwGetLocalTimeOffset",
                 ReturnType = VarType.Integer,
                 ParamTypes = new VarType[] {},
                 ParamNames = new string[] {},
                 TableIndex = 426
+            }},
+            {"halFormatTime", new FunctionSig {
+                FunctionName =  "halFormatTime",
+                ReturnType = VarType.String,
+                ParamTypes = new VarType[] {VarType.Integer, VarType.Integer, VarType.String},
+                ParamNames = new string[] {"unixtime", "isUTC", "format"},
+                TableIndex = 427
             }},
             {"iwFormatTime", new FunctionSig {
                 FunctionName =  "iwFormatTime",
@@ -3269,6 +3542,13 @@ namespace Halcyon.Phlox.Types
                 ParamNames = new string[] {},
                 TableIndex = 465
             }},
+            {"halDetectedBot", new FunctionSig {
+                FunctionName =  "halDetectedBot",
+                ReturnType = VarType.Key,
+                ParamTypes = new VarType[] {},
+                ParamNames = new string[] {},
+                TableIndex = 466
+            }},
             {"iwDetectedBot", new FunctionSig {
                 FunctionName =  "iwDetectedBot",
                 ReturnType = VarType.Key,
@@ -3360,12 +3640,26 @@ namespace Halcyon.Phlox.Types
                 ParamNames = new string[] {"botID", "profileParams"},
                 TableIndex = 478
             }},
+            {"halCheckRezError", new FunctionSig {
+                FunctionName =  "halCheckRezError",
+                ReturnType = VarType.Integer,
+                ParamTypes = new VarType[] {VarType.Vector, VarType.Integer, VarType.Integer},
+                ParamNames = new string[] {"offset", "isTemp", "landImpact"},
+                TableIndex = 479
+            }},
             {"iwCheckRezError", new FunctionSig {
                 FunctionName =  "iwCheckRezError",
                 ReturnType = VarType.Integer,
                 ParamTypes = new VarType[] {VarType.Vector, VarType.Integer, VarType.Integer},
                 ParamNames = new string[] {"offset", "isTemp", "landImpact"},
                 TableIndex = 479
+            }},
+            {"halGetAngularVelocity", new FunctionSig {
+                FunctionName =  "halGetAngularVelocity",
+                ReturnType = VarType.Vector,
+                ParamTypes = new VarType[] {},
+                ParamNames = new string[] {},
+                TableIndex = 480
             }},
             {"iwGetAngularVelocity", new FunctionSig {
                 FunctionName =  "iwGetAngularVelocity",
@@ -3374,12 +3668,26 @@ namespace Halcyon.Phlox.Types
                 ParamNames = new string[] {},
                 TableIndex = 480
             }},
+            {"halGetAppearanceParam", new FunctionSig {
+                FunctionName =  "halGetAppearanceParam",
+                ReturnType = VarType.Integer,
+                ParamTypes = new VarType[] {VarType.Key, VarType.Integer},
+                ParamNames = new string[] {"avatarKey","whichParam"},
+                TableIndex = 481
+            }},
             {"iwGetAppearanceParam", new FunctionSig {
                 FunctionName =  "iwGetAppearanceParam",
                 ReturnType = VarType.Integer,
                 ParamTypes = new VarType[] {VarType.Key, VarType.Integer},
                 ParamNames = new string[] {"avatarKey","whichParam"},
                 TableIndex = 481
+            }},
+            {"halParseString2List", new FunctionSig {
+                FunctionName =  "halParseString2List",
+                ReturnType = VarType.List,
+                ParamTypes = new VarType[] {VarType.String, VarType.List, VarType.List, VarType.List},
+                ParamNames = new string[] {"src", "separators", "spacers", "args"},
+                TableIndex = 482
             }},
             {"iwParseString2List", new FunctionSig {
                 FunctionName =  "iwParseString2List",
@@ -3388,12 +3696,26 @@ namespace Halcyon.Phlox.Types
                 ParamNames = new string[] {"src", "separators", "spacers", "args"},
                 TableIndex = 482
             }},
+            {"halChar2Int", new FunctionSig {
+                FunctionName = "halChar2Int",
+                ReturnType = VarType.Integer,
+                ParamTypes = new VarType[] {VarType.String, VarType.Integer},
+                ParamNames = new string[] {"src", "index"},
+                TableIndex = 483
+            }},
             {"iwChar2Int", new FunctionSig {
                 FunctionName = "iwChar2Int",
                 ReturnType = VarType.Integer,
                 ParamTypes = new VarType[] {VarType.String, VarType.Integer},
                 ParamNames = new string[] {"src", "index"},
                 TableIndex = 483
+            }},
+            {"halInt2Char", new FunctionSig {
+                FunctionName = "halInt2Char",
+                ReturnType = VarType.String,
+                ParamTypes = new VarType[] {VarType.Integer},
+                ParamNames = new string[] {"num"},
+                TableIndex = 484
             }},
             {"iwInt2Char", new FunctionSig {
                 FunctionName = "iwInt2Char",
@@ -3402,12 +3724,26 @@ namespace Halcyon.Phlox.Types
                 ParamNames = new string[] {"num"},
                 TableIndex = 484
             }},
+            {"halReplaceString", new FunctionSig {
+                FunctionName = "halReplaceString",
+                ReturnType = VarType.String,
+                ParamTypes = new VarType[] {VarType.String, VarType.String, VarType.String},
+                ParamNames = new string[] {"str", "pattern", "replacement"},
+                TableIndex = 485
+            }},
             {"iwReplaceString", new FunctionSig {
                 FunctionName = "iwReplaceString",
                 ReturnType = VarType.String,
                 ParamTypes = new VarType[] {VarType.String, VarType.String, VarType.String},
                 ParamNames = new string[] {"str", "pattern", "replacement"},
                 TableIndex = 485
+            }},
+            {"halFormatString", new FunctionSig {
+                FunctionName = "halFormatString",
+                ReturnType = VarType.String,
+                ParamTypes = new VarType[] {VarType.String, VarType.List},
+                ParamNames = new string[] {"str", "values"},
+                TableIndex = 486
             }},
             {"iwFormatString", new FunctionSig {
                 FunctionName = "iwFormatString",
@@ -3416,12 +3752,26 @@ namespace Halcyon.Phlox.Types
                 ParamNames = new string[] {"str", "values"},
                 TableIndex = 486
             }},
+            {"halMatchString", new FunctionSig {
+                FunctionName = "halMatchString",
+                ReturnType = VarType.Integer,
+                ParamTypes = new VarType[] {VarType.String, VarType.String, VarType.Integer},
+                ParamNames = new string[] {"str", "pattern", "matchType"},
+                TableIndex = 487
+            }},
             {"iwMatchString", new FunctionSig {
                 FunctionName = "iwMatchString",
                 ReturnType = VarType.Integer,
                 ParamTypes = new VarType[] {VarType.String, VarType.String, VarType.Integer},
                 ParamNames = new string[] {"str", "pattern", "matchType"},
                 TableIndex = 487
+            }},
+            {"halStringCodec", new FunctionSig {
+                FunctionName = "halStringCodec",
+                ReturnType = VarType.String,
+                ParamTypes = new VarType[] {VarType.String, VarType.String, VarType.Integer, VarType.List},
+                ParamNames = new string[] {"str", "codec", "operation", "extraParams"},
+                TableIndex = 488
             }},
             {"iwStringCodec", new FunctionSig {
                 FunctionName = "iwStringCodec",
@@ -3430,12 +3780,26 @@ namespace Halcyon.Phlox.Types
                 ParamNames = new string[] {"str", "codec", "operation", "extraParams"},
                 TableIndex = 488
             }},
+            {"halMatchList", new FunctionSig {
+                FunctionName = "halMatchList",
+                ReturnType = VarType.Integer,
+                ParamTypes = new VarType[] {VarType.List, VarType.List, VarType.Integer},
+                ParamNames = new string[] {"list1", "list2", "matchType"},
+                TableIndex = 489
+            }},
             {"iwMatchList", new FunctionSig {
                 FunctionName = "iwMatchList",
                 ReturnType = VarType.Integer,
                 ParamTypes = new VarType[] {VarType.List, VarType.List, VarType.Integer},
                 ParamNames = new string[] {"list1", "list2", "matchType"},
                 TableIndex = 489
+            }},
+            {"halColorConvert", new FunctionSig {
+                FunctionName = "halColorConvert",
+                ReturnType = VarType.Vector,
+                ParamTypes = new VarType[] {VarType.Vector, VarType.Integer, VarType.Integer},
+                ParamNames = new string[] {"input", "color1", "color2"},
+                TableIndex = 490
             }},
             {"iwColorConvert", new FunctionSig {
                 FunctionName = "iwColorConvert",
@@ -3444,12 +3808,26 @@ namespace Halcyon.Phlox.Types
                 ParamNames = new string[] {"input", "color1", "color2"},
                 TableIndex = 490
             }},
+            {"halNameToColor", new FunctionSig {
+                FunctionName = "halNameToColor",
+                ReturnType = VarType.Vector,
+                ParamTypes = new VarType[] {VarType.String},
+                ParamNames = new string[] {"name"},
+                TableIndex = 491
+            }},
             {"iwNameToColor", new FunctionSig {
                 FunctionName = "iwNameToColor",
                 ReturnType = VarType.Vector,
                 ParamTypes = new VarType[] {VarType.String},
                 ParamNames = new string[] {"name"},
                 TableIndex = 491
+            }},
+            {"halVerifyType", new FunctionSig {
+                FunctionName = "halVerifyType",
+                ReturnType = VarType.Integer,
+                ParamTypes = new VarType[] {VarType.String, VarType.Integer},
+                ParamNames = new string[] {"str", "type"},
+                TableIndex = 492
             }},
             {"iwVerifyType", new FunctionSig {
                 FunctionName = "iwVerifyType",
@@ -3458,12 +3836,26 @@ namespace Halcyon.Phlox.Types
                 ParamNames = new string[] {"str", "type"},
                 TableIndex = 492
             }},
+            {"halGroupInvite", new FunctionSig {
+                FunctionName =  "halGroupInvite",
+                ReturnType = VarType.Integer,
+                ParamTypes = new VarType[] {VarType.Key, VarType.Key, VarType.String},
+                ParamNames = new string[] {"group", "user", "rolename"},
+                TableIndex = 493
+            }},
             {"iwGroupInvite", new FunctionSig {
                 FunctionName =  "iwGroupInvite",
                 ReturnType = VarType.Integer,
                 ParamTypes = new VarType[] {VarType.Key, VarType.Key, VarType.String},
                 ParamNames = new string[] {"group", "user", "rolename"},
                 TableIndex = 493
+            }},
+            {"halGroupEject", new FunctionSig {
+                FunctionName =  "halGroupEject",
+                ReturnType = VarType.Integer,
+                ParamTypes = new VarType[] {VarType.Key, VarType.Key},
+                ParamNames = new string[] {"group", "user"},
+                TableIndex = 494
             }},
             {"iwGroupEject", new FunctionSig {
                 FunctionName =  "iwGroupEject",
@@ -3472,14 +3864,28 @@ namespace Halcyon.Phlox.Types
                 ParamNames = new string[] {"group", "user"},
                 TableIndex = 494
             }},
-             {"iwGetAgentData", new FunctionSig {
+            {"halGetAgentData", new FunctionSig {
+                FunctionName =  "halGetAgentData",
+                ReturnType = VarType.String,
+                ParamTypes = new VarType[] {VarType.Key, VarType.Integer},
+                ParamNames = new string[] {"id", "data"},
+                TableIndex = 495
+            }},
+            {"iwGetAgentData", new FunctionSig {
                 FunctionName =  "iwGetAgentData",
                 ReturnType = VarType.String,
                 ParamTypes = new VarType[] {VarType.Key, VarType.Integer},
                 ParamNames = new string[] {"id", "data"},
                 TableIndex = 495
             }},
-             {"iwIsPlusUser", new FunctionSig {
+            {"halIsPlusUser", new FunctionSig {
+                FunctionName =  "halIsPlusUser",
+                ReturnType = VarType.Integer,
+                ParamTypes = new VarType[] {VarType.Key},
+                ParamNames = new string[] {"id"},
+                TableIndex = 496
+            }},
+            {"iwIsPlusUser", new FunctionSig {
                 FunctionName =  "iwIsPlusUser",
                 ReturnType = VarType.Integer,
                 ParamTypes = new VarType[] {VarType.Key},
@@ -3493,12 +3899,26 @@ namespace Halcyon.Phlox.Types
                 ParamNames = new string[] {"attachPoint"},
                 TableIndex = 497
             }},
+            {"halListIncludesElements", new FunctionSig {
+                FunctionName = "halListIncludesElements",
+                ReturnType = VarType.Integer,
+                ParamTypes = new VarType[] {VarType.List, VarType.List, VarType.Integer},
+                ParamNames = new string[] {"src", "elements", "any"},
+                TableIndex = 498
+            }},
             {"iwListIncludesElements", new FunctionSig {
                 FunctionName = "iwListIncludesElements",
                 ReturnType = VarType.Integer,
                 ParamTypes = new VarType[] {VarType.List, VarType.List, VarType.Integer},
                 ParamNames = new string[] {"src", "elements", "any"},
                 TableIndex = 498
+            }},
+            {"halReverseString", new FunctionSig {
+                FunctionName = "halReverseString",
+                ReturnType = VarType.String,
+                ParamTypes = new VarType[] {VarType.String},
+                ParamNames = new string[] {"src"},
+                TableIndex = 499
             }},
             {"iwReverseString", new FunctionSig {
                 FunctionName = "iwReverseString",
@@ -3507,12 +3927,26 @@ namespace Halcyon.Phlox.Types
                 ParamNames = new string[] {"src"},
                 TableIndex = 499
             }},
+            {"halReverseList", new FunctionSig {
+                FunctionName = "halReverseList",
+                ReturnType = VarType.List,
+                ParamTypes = new VarType[] {VarType.List, VarType.Integer},
+                ParamNames = new string[] {"src", "stride"},
+                TableIndex = 500
+            }},
             {"iwReverseList", new FunctionSig {
                 FunctionName = "iwReverseList",
                 ReturnType = VarType.List,
                 ParamTypes = new VarType[] {VarType.List, VarType.Integer},
                 ParamNames = new string[] {"src", "stride"},
                 TableIndex = 500
+            }},
+            {"halSearchInventory", new FunctionSig {
+                FunctionName = "halSearchInventory",
+                ReturnType = VarType.List,
+                ParamTypes = new VarType[] {VarType.Integer, VarType.String, VarType.Integer},
+                ParamNames = new string[] {"type", "pattern", "matchtype"},
+                TableIndex = 501
             }},
             {"iwSearchInventory", new FunctionSig {
                 FunctionName = "iwSearchInventory",
@@ -3521,12 +3955,26 @@ namespace Halcyon.Phlox.Types
                 ParamNames = new string[] {"type", "pattern", "matchtype"},
                 TableIndex = 501
             }},
+            {"halSearchLinkInventory", new FunctionSig {
+                FunctionName = "halSearchLinkInventory",
+                ReturnType = VarType.List,
+                ParamTypes = new VarType[] {VarType.Integer, VarType.Integer, VarType.String, VarType.Integer},
+                ParamNames = new string[] {"link", "type", "pattern", "matchtype"},
+                TableIndex = 502
+            }},
             {"iwSearchLinkInventory", new FunctionSig {
                 FunctionName = "iwSearchLinkInventory",
                 ReturnType = VarType.List,
                 ParamTypes = new VarType[] {VarType.Integer, VarType.Integer, VarType.String, VarType.Integer},
                 ParamNames = new string[] {"link", "type", "pattern", "matchtype"},
                 TableIndex = 502
+            }},
+            {"halIntRand", new FunctionSig {
+                FunctionName = "halIntRand",
+                ReturnType = VarType.Integer,
+                ParamTypes = new VarType[] {VarType.Integer},
+                ParamNames = new string[] {"max"},
+                TableIndex = 503
             }},
             {"iwIntRand", new FunctionSig {
                 FunctionName = "iwIntRand",
@@ -3535,12 +3983,26 @@ namespace Halcyon.Phlox.Types
                 ParamNames = new string[] {"max"},
                 TableIndex = 503
             }},
+            {"halIntRandRange", new FunctionSig {
+                FunctionName = "halIntRandRange",
+                ReturnType = VarType.Integer,
+                ParamTypes = new VarType[] {VarType.Integer, VarType.Integer},
+                ParamNames = new string[] {"min", "max"},
+                TableIndex = 504
+            }},
             {"iwIntRandRange", new FunctionSig {
                 FunctionName = "iwIntRandRange",
                 ReturnType = VarType.Integer,
                 ParamTypes = new VarType[] {VarType.Integer, VarType.Integer},
                 ParamNames = new string[] {"min", "max"},
                 TableIndex = 504
+            }},
+            {"halFrandRange", new FunctionSig {
+                FunctionName = "halFrandRange",
+                ReturnType = VarType.Float,
+                ParamTypes = new VarType[] {VarType.Float, VarType.Float},
+                ParamNames = new string[] {"min", "max"},
+                TableIndex = 505
             }},
             {"iwFrandRange", new FunctionSig {
                 FunctionName = "iwFrandRange",
@@ -3556,12 +4018,26 @@ namespace Halcyon.Phlox.Types
                 ParamNames = new string[] {"pattern", "matchType", "start", "end"},
                 TableIndex = 506
             }},
+            {"halListRemoveElements", new FunctionSig {
+                FunctionName = "halListRemoveElements",
+                ReturnType = VarType.List,
+                ParamTypes = new VarType[] {VarType.List, VarType.List, VarType.Integer, VarType.Integer},
+                ParamNames = new string[] {"src", "elements", "count", "mode"},
+                TableIndex = 507
+            }},
             {"iwListRemoveElements", new FunctionSig {
                 FunctionName = "iwListRemoveElements",
                 ReturnType = VarType.List,
                 ParamTypes = new VarType[] {VarType.List, VarType.List, VarType.Integer, VarType.Integer},
                 ParamNames = new string[] {"src", "elements", "count", "mode"},
                 TableIndex = 507
+            }},
+            {"halListRemoveDuplicates", new FunctionSig {
+                FunctionName = "halListRemoveDuplicates",
+                ReturnType = VarType.List,
+                ParamTypes = new VarType[] {VarType.List},
+                ParamNames = new string[] {"src"},
+                TableIndex = 508
             }},
             {"iwListRemoveDuplicates", new FunctionSig {
                 FunctionName = "iwListRemoveDuplicates",
@@ -3570,12 +4046,26 @@ namespace Halcyon.Phlox.Types
                 ParamNames = new string[] {"src"},
                 TableIndex = 508
             }},
+            {"halStartLinkAnimation", new FunctionSig {
+                FunctionName = "halStartLinkAnimation",
+                ReturnType = VarType.Void,
+                ParamTypes = new VarType[] {VarType.Integer, VarType.String},
+                ParamNames = new string[] {"link", "anim"},
+                TableIndex = 509
+            }},
             {"iwStartLinkAnimation", new FunctionSig {
                 FunctionName = "iwStartLinkAnimation",
                 ReturnType = VarType.Void,
                 ParamTypes = new VarType[] {VarType.Integer, VarType.String},
                 ParamNames = new string[] {"link", "anim"},
                 TableIndex = 509
+            }},
+            {"halStopLinkAnimation", new FunctionSig {
+                FunctionName = "halStopLinkAnimation",
+                ReturnType = VarType.Void,
+                ParamTypes = new VarType[] {VarType.Integer, VarType.String},
+                ParamNames = new string[] {"link", "anim"},
+                TableIndex = 510
             }},
             {"iwStopLinkAnimation", new FunctionSig {
                 FunctionName = "iwStopLinkAnimation",
@@ -3584,12 +4074,26 @@ namespace Halcyon.Phlox.Types
                 ParamNames = new string[] {"link", "anim"},
                 TableIndex = 510
             }},
+            {"halClampInt", new FunctionSig {
+                FunctionName = "halClampInt",
+                ReturnType = VarType.Integer,
+                ParamTypes = new VarType[] {VarType.Integer, VarType.Integer, VarType.Integer},
+                ParamNames = new string[] {"value", "min", "max"},
+                TableIndex = 511
+            }},
             {"iwClampInt", new FunctionSig {
                 FunctionName = "iwClampInt",
                 ReturnType = VarType.Integer,
                 ParamTypes = new VarType[] {VarType.Integer, VarType.Integer, VarType.Integer},
                 ParamNames = new string[] {"value", "min", "max"},
                 TableIndex = 511
+            }},
+            {"halClampFloat", new FunctionSig {
+                FunctionName = "halClampFloat",
+                ReturnType = VarType.Float,
+                ParamTypes = new VarType[] {VarType.Float, VarType.Float, VarType.Float},
+                ParamNames = new string[] {"value", "min", "max"},
+                TableIndex = 512
             }},
             {"iwClampFloat", new FunctionSig {
                 FunctionName = "iwClampFloat",
@@ -3598,12 +4102,26 @@ namespace Halcyon.Phlox.Types
                 ParamNames = new string[] {"value", "min", "max"},
                 TableIndex = 512
             }},
+            {"halSearchLinksByName", new FunctionSig {
+                FunctionName = "halSearchLinksByName",
+                ReturnType = VarType.List,
+                ParamTypes = new VarType[] {VarType.String, VarType.Integer, VarType.Integer},
+                ParamNames = new string[] {"pattern", "matchType", "linksOnly"},
+                TableIndex = 513
+            }},
             {"iwSearchLinksByName", new FunctionSig {
                 FunctionName = "iwSearchLinksByName",
                 ReturnType = VarType.List,
                 ParamTypes = new VarType[] {VarType.String, VarType.Integer, VarType.Integer},
                 ParamNames = new string[] {"pattern", "matchType", "linksOnly"},
                 TableIndex = 513
+            }},
+            {"halSearchLinksByDesc", new FunctionSig {
+                FunctionName = "halSearchLinksByDesc",
+                ReturnType = VarType.List,
+                ParamTypes = new VarType[] {VarType.String, VarType.Integer, VarType.Integer},
+                ParamNames = new string[] {"pattern", "matchType", "linksOnly"},
+                TableIndex = 514
             }},
             {"iwSearchLinksByDesc", new FunctionSig {
                 FunctionName = "iwSearchLinksByDesc",
@@ -3626,12 +4144,26 @@ namespace Halcyon.Phlox.Types
                 ParamNames = new string[] {"botID"},
                 TableIndex = 516
             }},
+            {"halValidateURL", new FunctionSig {
+                FunctionName = "halValidateURL",
+                ReturnType = VarType.Integer,
+                ParamTypes = new VarType[] {VarType.String},
+                ParamNames = new string[] {"url"},
+                TableIndex = 517
+            }},
             {"iwValidateURL", new FunctionSig {
                 FunctionName = "iwValidateURL",
                 ReturnType = VarType.Integer,
                 ParamTypes = new VarType[] {VarType.String},
                 ParamNames = new string[] {"url"},
                 TableIndex = 517
+            }},
+            {"halRemoteLoadScriptPin", new FunctionSig {
+                FunctionName = "halRemoteLoadScriptPin",
+                ReturnType = VarType.Integer,
+                ParamTypes = new VarType[] {VarType.Key, VarType.String, VarType.Integer, VarType.Integer, VarType.Integer},
+                ParamNames = new string[] {"target", "name", "pin", "running", "start_param"},
+                TableIndex = 518
             }},
             {"iwRemoteLoadScriptPin", new FunctionSig {
                 FunctionName = "iwRemoteLoadScriptPin",
@@ -3640,12 +4172,26 @@ namespace Halcyon.Phlox.Types
                 ParamNames = new string[] {"target", "name", "pin", "running", "start_param"},
                 TableIndex = 518
             }},
+            {"halDeliverInventory", new FunctionSig {
+                FunctionName =  "halDeliverInventory",
+                ReturnType = VarType.Integer,
+                ParamTypes = new VarType[] {VarType.Integer, VarType.Key, VarType.String},
+                ParamNames = new string[] {"linknumber", "target", "name"},
+                TableIndex = 519
+            }},
             {"iwDeliverInventory", new FunctionSig {
                 FunctionName =  "iwDeliverInventory",
                 ReturnType = VarType.Integer,
                 ParamTypes = new VarType[] {VarType.Integer, VarType.Key, VarType.String},
                 ParamNames = new string[] {"linknumber", "target", "name"},
                 TableIndex = 519
+            }},
+            {"halDeliverInventoryList", new FunctionSig {
+                FunctionName =  "halDeliverInventoryList",
+                ReturnType = VarType.Integer,
+                ParamTypes = new VarType[] {VarType.Integer, VarType.Key, VarType.String, VarType.List},
+                ParamNames = new string[] {"linknumber", "target", "folder", "inventory"},
+                TableIndex = 520
             }},
             {"iwDeliverInventoryList", new FunctionSig {
                 FunctionName =  "iwDeliverInventoryList",
@@ -3682,6 +4228,13 @@ namespace Halcyon.Phlox.Types
                 ParamNames = new string[] {"destination", "amount"},
                 TableIndex = 524
             }},
+            {"halGiveMoney", new FunctionSig {
+                FunctionName =  "halGiveMoney",
+                ReturnType = VarType.Key,
+                ParamTypes = new VarType[] {VarType.Key, VarType.Integer},
+                ParamNames = new string[] {"destination", "amount"},
+                TableIndex = 525
+            }},
             {"iwGiveMoney", new FunctionSig {
                 FunctionName =  "iwGiveMoney",
                 ReturnType = VarType.Key,
@@ -3689,12 +4242,26 @@ namespace Halcyon.Phlox.Types
                 ParamNames = new string[] {"destination", "amount"},
                 TableIndex = 525
             }},
+            {"halStandTarget", new FunctionSig {
+                FunctionName =  "halStandTarget",
+                ReturnType = VarType.Void,
+                ParamTypes = new VarType[] {VarType.Vector, VarType.Rotation},
+                ParamNames = new string[] {"offset", "rot"},
+                TableIndex = 526
+            }},
             {"iwStandTarget", new FunctionSig {
                 FunctionName =  "iwStandTarget",
                 ReturnType = VarType.Void,
                 ParamTypes = new VarType[] {VarType.Vector, VarType.Rotation},
                 ParamNames = new string[] {"offset", "rot"},
                 TableIndex = 526
+            }},
+            {"halLinkStandTarget", new FunctionSig {
+                FunctionName =  "halLinkStandTarget",
+                ReturnType = VarType.Void,
+                ParamTypes = new VarType[] {VarType.Integer, VarType.Vector, VarType.Rotation},
+                ParamNames = new string[] {"linknum", "offset", "rot"},
+                TableIndex = 527
             }},
             {"iwLinkStandTarget", new FunctionSig {
                 FunctionName =  "iwLinkStandTarget",

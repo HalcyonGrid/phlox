@@ -1496,33 +1496,65 @@
     integer llSetRegionPos(vector v)
     Moves the position of the script host to the specified region location.
   </string>
+  <string name="LSLTipText_halGetLinkInventoryNumber" translate="false">
+    integer halGetLinkInventoryNumber(integer linknumber, integer type)
+    Returns an integer that is the number of items of a given type in the prims inventory.
+  </string>
   <string name="LSLTipText_iwGetLinkInventoryNumber" translate="false">
     integer iwGetLinkInventoryNumber(integer linknumber, integer type)
     Returns an integer that is the number of items of a given type in the prims inventory.
+  </string>
+  <string name="LSLTipText_halGetLinkInventoryType" translate="false">
+    integer halGetLinkInventoryType(integer linknumber, string name)
+    Returns an integer that is the type of the inventory item name.
   </string>
   <string name="LSLTipText_iwGetLinkInventoryType" translate="false">
     integer iwGetLinkInventoryType(integer linknumber, string name)
     Returns an integer that is the type of the inventory item name.
   </string>
+  <string name="LSLTipText_halGetLinkInventoryPermMask" translate="false">
+    integer halGetLinkInventoryPermMask(integer linknumber, string item, integer mask)
+    Returns an integer bitfield that is the requested permission mask for the inventory item.
+  </string>
   <string name="LSLTipText_iwGetLinkInventoryPermMask" translate="false">
     integer iwGetLinkInventoryPermMask(integer linknumber, string item, integer mask)
     Returns an integer bitfield that is the requested permission mask for the inventory item.
+  </string>
+  <string name="LSLTipText_halGetLinkInventoryName" translate="false">
+    string halGetLinkInventoryName(integer linknumber, integer type, integer number)
+    Returns a string that is the name of the inventory item number of type, or an empty string if no item of the specified type is found in the prim's inventory (or there are less than or equal to number items of the type).
   </string>
   <string name="LSLTipText_iwGetLinkInventoryName" translate="false">
     string iwGetLinkInventoryName(integer linknumber, integer type, integer number)
     Returns a string that is the name of the inventory item number of type, or an empty string if no item of the specified type is found in the prim's inventory (or there are less than or equal to number items of the type).
   </string>
+  <string name="LSLTipText_halGetLinkInventoryKey" translate="false">
+    key halGetLinkInventoryKey(integer linknumber, string name)
+    Returns a key that is the UUID of the inventory name.
+  </string>
   <string name="LSLTipText_iwGetLinkInventoryKey" translate="false">
     key iwGetLinkInventoryKey(integer linknumber, string name)
     Returns a key that is the UUID of the inventory name.
+  </string>
+  <string name="LSLTipText_halGetLinkInventoryCreator" translate="false">
+    key halGetLinkInventoryCreator(integer linknumber, string item)
+    Returns a key of the creator of the inventory item.
   </string>
   <string name="LSLTipText_iwGetLinkInventoryCreator" translate="false">
     key iwGetLinkInventoryCreator(integer linknumber, string item)
     Returns a key of the creator of the inventory item.
   </string>
+  <string name="LSLTipText_halSHA256String" translate="false">
+    string halSHA256String(string src)
+    Returns the SHA256 hash for the specified source text string.
+  </string>
   <string name="LSLTipText_iwSHA256String" translate="false">
     string iwSHA256String(string src)
     Returns the SHA256 hash for the specified source text string.
+  </string>
+  <string name="LSLTipText_halTeleportAgent" translate="false">
+    void halTeleportAgent(key agent, string region, vector pos, vector lookat)
+    Teleports the specified user to the location indicated, with no prompting or other dialogs.
   </string>
   <string name="LSLTipText_iwTeleportAgent" translate="false">
     void iwTeleportAgent(key agent, string region, vector pos, vector lookat)
@@ -1532,41 +1564,81 @@
     key llAvatarOnLinkSitTarget()
     If an avatar is seated on a sit target on the specified prim, returns the avatar&apos;s key, otherwise NULL_KEY
   </string>
+  <string name="LSLTipText_halGetLastOwner" translate="false">
+    key halGetLastOwner()
+    Returns the UUID of the previous owner&apos;s to rez this object.
+  </string>
   <string name="LSLTipText_iwGetLastOwner" translate="false">
     key iwGetLastOwner()
     Returns the UUID of the previous owner&apos;s to rez this object.
+  </string>
+  <string name="LSLTipText_halRemoveLinkInventory" translate="false">
+    halRemoveLinkInventory(integer linknum, string item)
+    Removes the named inventory item from the specified prim.
   </string>
   <string name="LSLTipText_iwRemoveLinkInventory" translate="false">
     iwRemoveLinkInventory(integer linknum, string item)
     Removes the named inventory item from the specified prim.
   </string>
+  <string name="LSLTipText_halGiveLinkInventory" translate="false">
+    halGiveLinkInventory(integer linknum, key target, string inventory)
+    Gives inventory from the specified prim to the specified target.
+  </string>
   <string name="LSLTipText_iwGiveLinkInventory" translate="false">
     iwGiveLinkInventory(integer linknum, key target, string inventory)
     Gives inventory from the specified prim to the specified target.
+  </string>
+  <string name="LSLTipText_halGiveLinkInventoryList" translate="false">
+    halGiveLinkInventoryList(integer linknum, key target, string folder, list inventory)
+    Gives inventory items from the speified prim to target, creating a new folder to put them in.
   </string>
   <string name="LSLTipText_iwGiveLinkInventoryList" translate="false">
     iwGiveLinkInventoryList(integer linknum, key target, string folder, list inventory)
     Gives inventory items from the speified prim to target, creating a new folder to put them in.
   </string>
+  <string name="LSLTipText_halGetNotecardSegment" translate="false">
+    key halGetNotecardSegment(string name, integer line, integer startOffset, integer maxLength)
+    Returns a line of the specified notecard via the dataserver event, from startOffset for maxLength characters.
+  </string>
   <string name="LSLTipText_iwGetNotecardSegment" translate="false">
     key iwGetNotecardSegment(string name, integer line, integer startOffset, integer maxLength)
     Returns a line of the specified notecard via the dataserver event, from startOffset for maxLength characters.
+  </string>
+  <string name="LSLTipText_halGetLinkNumberOfNotecardLines" translate="false">
+    key halGetLinkNumberOfNotecardLines(integer linknumber, string name);
+    Returns number of lines in specified notecard in the specified prim, via the dataserver event (cast return value to integer)
   </string>
   <string name="LSLTipText_iwGetLinkNumberOfNotecardLines" translate="false">
     key iwGetLinkNumberOfNotecardLines(integer linknumber, string name);
     Returns number of lines in specified notecard in the specified prim, via the dataserver event (cast return value to integer)
   </string>
+  <string name="LSLTipText_halGetLinkNotecardLine" translate="false">
+    key halGetLinkNotecardLine(integer linknumber, string name, integer line);
+    Returns specified line of the specified notecard in the specified prim, via the dataserver event.
+  </string>
   <string name="LSLTipText_iwGetLinkNotecardLine" translate="false">
     key iwGetLinkNotecardLine(integer linknumber, string name, integer line);
     Returns specified line of the specified notecard in the specified prim, via the dataserver event.
+  </string>
+  <string name="LSLTipText_halGetLinkNotecardSegment" translate="false">
+    key halGetLinkNotecardSegment(integer linknumber, string name, integer line, integer startOffset, integer maxLength);
+    Returns a line of the specified notecard in the specified prim, via the dataserver event, from startOffset for maxLength characters.
   </string>
   <string name="LSLTipText_iwGetLinkNotecardSegment" translate="false">
     key iwGetLinkNotecardSegment(integer linknumber, string name, integer line, integer startOffset, integer maxLength);
     Returns a line of the specified notecard in the specified prim, via the dataserver event, from startOffset for maxLength characters.
   </string>
+  <string name="LSLTipText_halActiveGroup" translate="false">
+    integer halActiveGroup(key agentId, key groupId)
+    Returns TRUE if avatar id is in the same region and has the specific active group, otherwise FALSE
+  </string>
   <string name="LSLTipText_iwActiveGroup" translate="false">
     integer iwActiveGroup(key agentId, key groupId)
     Returns TRUE if avatar id is in the same region and has the specific active group, otherwise FALSE
+  </string>
+  <string name="LSLTipText_halAvatarOnLink" translate="false">
+    key halAvatarOnLink(integer linknumber)
+    If an avatar is seated on the specified prim, returns the avatar&apos;s key, otherwise NULL_KEY. Does not require a sit target.
   </string>
   <string name="LSLTipText_iwAvatarOnLink" translate="false">
     key iwAvatarOnLink(integer linknumber)
@@ -1580,6 +1652,10 @@
     integer llGetUsedMemory()
     Returns the number of bytes of memory used by the script
   </string>
+  <string name="LSLTipText_halGetLinkInventoryDesc" translate="false">
+    string halGetLinkInventoryDesc(integer linknumber, string name);
+    Returns the description text the specified inventory item.
+  </string>
   <string name="LSLTipText_iwGetLinkInventoryDesc" translate="false">
     string iwGetLinkInventoryDesc(integer linknumber, string name);
     Returns the description text the specified inventory item.
@@ -1588,17 +1664,33 @@
     key llGenerateKey();
     Allocates and returns a new unique key (UUID).
   </string>
+  <string name="LSLTipText_halGetLinkInventoryLastOwner" translate="false">
+    key halGetLinkInventoryLastOwner(integer linknumber, string name);
+    Returns the key of the last owner key of the specified inventory item.
+  </string>
   <string name="LSLTipText_iwGetLinkInventoryLastOwner" translate="false">
     key iwGetLinkInventoryLastOwner(integer linknumber, string name);
     Returns the key of the last owner key of the specified inventory item.
+  </string>
+  <string name="LSLTipText_halRezObject" translate="false">
+    key halRezObject(string inventory, vector pos, vector vel, rotation rot, integer param)
+    Instantiates Contents object as specified like llRezObject but also returns the key of the new object.
   </string>
   <string name="LSLTipText_iwRezObject" translate="false">
     key iwRezObject(string inventory, vector pos, vector vel, rotation rot, integer param)
     Instantiates Contents object as specified like llRezObject but also returns the key of the new object.
   </string>
+  <string name="LSLTipText_halRezAtRoot" translate="false">
+    key halRezAtRoot(string inventory, vector pos, vector vel, rotation rot, integer param)
+    Instantiates Contents object as specified like llRezAtRoot but also returns the key of the new object.
+  </string>
   <string name="LSLTipText_iwRezAtRoot" translate="false">
     key iwRezAtRoot(string inventory, vector pos, vector vel, rotation rot, integer param)
     Instantiates Contents object as specified like llRezAtRoot but also returns the key of the new object.
+  </string>
+  <string name="LSLTipText_halRezPrim" translate="false">
+    key halRezPrim(list primParams, list particleSystem, list inventoryList, vector pos, vector vel, rotation rot, integer param)
+    Instantiates a new prim as specified with prim, particle and initial inventory Contents, returning the key of the new object.
   </string>
   <string name="LSLTipText_iwRezPrim" translate="false">
     key iwRezPrim(list primParams, list particleSystem, list inventoryList, vector pos, vector vel, rotation rot, integer param)
@@ -1609,11 +1701,21 @@
     Returns a list of up to 100 keys for users in a region according to the specifed scope.
     The options parameter is not used.  See iwGetAgentList for more control.
   </string>
+  <string name="LSLTipText_halGetAgentList" translate="false">
+    list halGetAgentList(integer scope, vector minPos, vector maxPos, list params)
+    Returns a list of up to 100 keys for users in a region according to the specifed scope
+    and bounding box specified by the minimum and maximum position vectors.
+    The params are the same as those used by llGetObjectDetails.
+  </string>
   <string name="LSLTipText_iwGetAgentList" translate="false">
     list iwGetAgentList(integer scope, vector minPos, vector maxPos, list params)
     Returns a list of up to 100 keys for users in a region according to the specifed scope
     and bounding box specified by the minimum and maximum position vectors.
     The params are the same as those used by llGetObjectDetails.
+  </string>
+  <string name="LSLTipText_halGetWorldBoundingBox" translate="false">
+    list halGetWorldBoundingBox(key object)
+    Returns the bounding box around the object (including any linked prims) in absolute world coordinates, in a list in the format [ (vector) min_corner, (vector) max_corner ]
   </string>
   <string name="LSLTipText_iwGetWorldBoundingBox" translate="false">
     list iwGetWorldBoundingBox(key object)
@@ -1648,6 +1750,10 @@
     float llGetObjectMass(key id)
     Returns the mass in kilograms (KG) of the avatar or object in the region
   </string>
+  <string name="LSLTipText_halSetGround" translate="false">
+    halSetGround(integer x1, integer y1, integer x2, integer y2, float height);
+    Modifies the terrain to set the ground the the height specified within the rectangle specified
+  </string>
   <string name="LSLTipText_iwSetGround" translate="false">
     iwSetGround(integer x1, integer y1, integer x2, integer y2, float height);
     Modifies the terrain to set the ground the the height specified within the rectangle specified
@@ -1676,17 +1782,33 @@
 	list llJson2List( string src );
 	This function takes a string representing JSON, and returns a list of the top level.
   </string>
+  <string name="LSLTipText_halSetWind" translate="false">
+    halSetWind( integer type, vector offset, vector speed );
+    This function sets (or unsets) the current wind speed at the given region coordinates.
+  </string>
   <string name="LSLTipText_iwSetWind" translate="false">
     iwSetWind( integer type, vector offset, vector speed );
     This function sets (or unsets) the current wind speed at the given region coordinates.
+  </string>
+  <string name="LSLTipText_halHasParcelPowers" translate="false">
+    integer halHasParcelPowers( integer groupPower );
+    This function returns non-zero if the script owner has the specific group power (see HAL_POWER_* constants).
   </string>
   <string name="LSLTipText_iwHasParcelPowers" translate="false">
     integer iwHasParcelPowers( integer groupPower );
     This function returns non-zero if the script owner has the specific group power (see IW_POWER_* constants).
   </string>
+  <string name="LSLTipText_halGroundSurfaceNormal" translate="false">
+    vector halGroundSurfaceNormal(vector offset)
+    Returns the actual surface normal to the ground below the object position + offset
+  </string>
   <string name="LSLTipText_iwGroundSurfaceNormal" translate="false">
     vector iwGroundSurfaceNormal(vector offset)
     Returns the actual surface normal to the ground below the object position + offset
+  </string>
+  <string name="LSLTipText_halRequestAnimationData" translate="false">
+    key halGetAnimationData(string name)
+    Returns a key for a dataserver event that will provide details about an animation in the prim's contents.
   </string>
   <string name="LSLTipText_iwRequestAnimationData" translate="false">
     key iwGetAnimationData(string name)
@@ -1705,6 +1827,10 @@
     Specify a list of times, positions, and orientations to be followed by an object.
     The object will be smoothly moved between keyframes by the simulator.
   </string>
+  <string name="LSLTipText_halWind" translate="false">
+    vector halWind(vector offset)
+    Like llWind except that it can include a Z coordinate value.
+  </string>
   <string name="LSLTipText_iwWind" translate="false">
     vector iwWind(vector offset)
     Like llWind except that it can include a Z coordinate value.
@@ -1714,19 +1840,40 @@
     Returns the physical characteristics of an object, as a list, in the form:
     [ float gravity_multiplier, float restitution, float friction, float density ]
   </string>
+  <string name="LSLTipText_halGetLocalTime" translate="false">
+    integer halGetLocalTime()
+    Returns a unix time similar to llGetTime, but in LOCAL time, NOT GMT/UTC.
+  </string>
   <string name="LSLTipText_iwGetLocalTime" translate="false">
     integer iwGetLocalTime()
     Returns a unix time similar to llGetTime, but in LOCAL time, NOT GMT/UTC.
   </string>
+  <string name="LSLTipText_halGetLocalTimeOffset" translate="false">
+    integer halGetLocalTimeOffset()
+    Returns the difference in the unix time stamps for local and UTC time, in seconds. (e.g. -28800 for -8 hours for HAL time)
+  </string>
   <string name="LSLTipText_iwGetLocalTimeOffset" translate="false">
     integer iwGetLocalTimeOffset()
     Returns the difference in the unix time stamps for local and UTC time, in seconds. (e.g. -28800 for -8 hours for IW time)
+  </string>
+  <string name="LSLTipText_halFormatTime" translate="false">
+    halFormatTime(integer unixtime, integer isUTC, string format)
+    Translates the specified unix time into a date/time timestamp string.
+    The unixtime may be specified in local time or UTC, and is indicated in the second parameter.
+    If the format specified is "", a default sortable format like 2013-12-31 23:59:08 is used.
   </string>
   <string name="LSLTipText_iwFormatTime" translate="false">
     iwFormatTime(integer unixtime, integer isUTC, string format)
     Translates the specified unix time into a date/time timestamp string.
     The unixtime may be specified in local time or UTC, and is indicated in the second parameter.
     If the format specified is "", a default sortable format like 2013-12-31 23:59:08 is used.
+  </string>
+  <string name="halCheckRezError" translate="false">
+    integer halCheckRezError(vector offset, integer isTemp, integer landImpact)
+    Verifies whether an attempt to rez an object would succeed at the specified offset.
+    The second parameter, isTemp, can be set to any known temp status for the item being rezzed.  This is useful on scenic regions were temp objects are allowed.  Pass FALSE if unknown.
+    The third parameter specifies an optional known land impact of the object being rezzed. Pass 0 to skip the LI tests. This can be useful as a pre-check when the land impact of the object is known.
+    Returns one of: HAL_REZ_OK (0), HAL_REZ_NOT_PERMITTED (1), HAL_REZ_REGION_SCENIC (2), HAL_REZ_NO_LAND_PARCEL (3), HAL_REZ_PARCEL_LAND_IMPACT (4), or HAL_REZ_REGION_LAND_IMPACT (5).
   </string>
   <string name="iwCheckRezError" translate="false">
     integer iwCheckRezError(vector offset, integer isTemp, integer landImpact)
@@ -1735,62 +1882,123 @@
     The third parameter specifies an optional known land impact of the object being rezzed. Pass 0 to skip the LI tests. This can be useful as a pre-check when the land impact of the object is known.
     Returns one of: IW_REZ_OK (0), IW_REZ_NOT_PERMITTED (1), IW_REZ_REGION_SCENIC (2), IW_REZ_NO_LAND_PARCEL (3), IW_REZ_PARCEL_LAND_IMPACT (4), or IW_REZ_REGION_LAND_IMPACT (5).
   </string>
+  <string name="halParseList2String" translate="false">
+    list halParseString2List(string source, list separators, list spacers, list params)
+    An enhanced version of llParseString2List.  It will parse the input string, using the strings in separators to divide the strings.  Strings in the spacers list will be used likewise, but will be included in the string.
+    The list params allows optional arguments to be passed to the parser to control its output.
+  </string>
   <string name="iwParseList2String" translate="false">
     list iwParseString2List(string source, list separators, list spacers, list params)
     An enhanced version of llParseString2List.  It will parse the input string, using the strings in separators to divide the strings.  Strings in the spacers list will be used likewise, but will be included in the string.
     The list params allows optional arguments to be passed to the parser to control its output.
   </string>
+  <string name="halChar2Int" translate="false">
+    integer halChar2int(string source, integer index)
+    Takes the a character from the source string, specified by index number, and converts it to its unicode integer value.
+  </string>
   <string name="iwChar2Int" translate="false">
     integer iwChar2int(string source, integer index)
     Takes the a character from the source string, specified by index number, and converts it to its unicode integer value.
+  </string>
+  <string name="halInt2Char" translate="false">
+    string halInt2Char(integer num)
+    Takes the input integer value and converts it to a string value, using the integer as a unicode value.
   </string>
   <string name="iwInt2Char" translate="false">
     string iwInt2Char(integer num)
     Takes the input integer value and converts it to a string value, using the integer as a unicode value.
   </string>
+  <string name="halReplaceString" translate="false">
+    string halReplaceString(string source, string pattern, string replacement)
+    Searches the source string for all instances of pattern, and substitutes them with the replacement string.  If the replacement string is blank, then the substrings are effectively deleted.
+  </string>
   <string name="iwReplaceString" translate="false">
     string iwReplaceString(string source, string pattern, string replacement)
     Searches the source string for all instances of pattern, and substitutes them with the replacement string.  If the replacement string is blank, then the substrings are effectively deleted.
+  </string>
+  <string name="halFormatString" translate="false">
+    string halFormatString(string source, list values)
+    Searches the string for curly-bracketed numbers, and then replaces them with the corresponding element in the supplied list of values.  All instances of {0} will be replaced with the element at index 0, all instances of {1} will be replaced with the element at index 1, etc.  As well, the list of values can be any data type, and will simply be automatically cast to strings when used.
   </string>
   <string name="iwFormatString" translate="false">
     string iwFormatString(string source, list values)
     Searches the string for curly-bracketed numbers, and then replaces them with the corresponding element in the supplied list of values.  All instances of {0} will be replaced with the element at index 0, all instances of {1} will be replaced with the element at index 1, etc.  As well, the list of values can be any data type, and will simply be automatically cast to strings when used.
   </string>
+  <string name="halMatchString" translate="false">
+    string halMatchString(string source, string pattern, integer matchType)
+    Attempts to match the pattern string against the source string, returning an integer value depending on the results.
+  </string>
   <string name="iwMatchString" translate="false">
     string iwMatchString(string source, string pattern, integer matchType)
     Attempts to match the pattern string against the source string, returning an integer value depending on the results.
+  </string>
+  <string name="halStringCodec" translate="false">
+    string halStringCodec(string source, string codec, integer operation, list extraParams);
+    Attempts to encode or decode a source string according to a specified codec.  Returns a null string if the operation failed.  Integer specifies the operation type; 0 indicates decoding and 1 indicates encoding.  The extraParams list is for additional parameters that some codecs might require.
   </string>
   <string name="iwStringCodec" translate="false">
     string iwStringCodec(string source, string codec, integer operation, list extraParams);
     Attempts to encode or decode a source string according to a specified codec.  Returns a null string if the operation failed.  Integer specifies the operation type; 0 indicates decoding and 1 indicates encoding.  The extraParams list is for additional parameters that some codecs might require.
   </string>
+  <string name="halMatchList" translate="false">
+    string halMatchList(list list1, list list2, integer matchType);
+    Iterates over list1 and list2 and attempts to evaluate them for equality, based on the matchType input.  0 evaluates the entire list, 1 evaluates to check if list1 begins with list2, and 2 evaluates to check if list1 ends with list2.
+  </string>
   <string name="iwMatchList" translate="false">
     string iwMatchList(list list1, list list2, integer matchType);
     Iterates over list1 and list2 and attempts to evaluate them for equality, based on the matchType input.  0 evaluates the entire list, 1 evaluates to check if list1 begins with list2, and 2 evaluates to check if list1 ends with list2.
+  </string>
+  <string name="halColorConvert" translate="false">
+    vector halRGBColorToHSL(vector input, int color1, int color2);
+    Converts an input vector from color1's colorspace to color2's colorspace.  The color1 and color2 arguments can be any of the following constants: HAL_COLORSPACE_RGB, HAL_COLORSPACE_HSL, HAL_COLORSPACE_HSV.
   </string>
   <string name="iwColorConvert" translate="false">
     vector iwRGBColorToHSL(vector input, int color1, int color2);
     Converts an input vector from color1's colorspace to color2's colorspace.  The color1 and color2 arguments can be any of the following constants: IW_COLORSPACE_RGB, IW_COLORSPACE_HSL, IW_COLORSPACE_HSV.
   </string>
+  <string name="halNameToColor" translate="false">
+    vector halNameToColor(string name);
+    Obtains a color value from its name, without spaces.
+  </string>
   <string name="iwNameToColor" translate="false">
     vector iwNameToColor(string name);
     Obtains a color value from its name, without spaces.
+  </string>
+  <string name="halVerifyType" translate="false">
+    integer halVerifyType(string str, integer type);
+    Determines the data type of the value held within a string, and will return either TYPE_INTEGER, TYPE_FLOAT, TYPE_VECTOR, TYPE_ROTATION, TYPE_KEY, or TYPE_STRING if nothing else.
   </string>
   <string name="iwVerifyType" translate="false">
     integer iwVerifyType(string str, integer type);
     Determines the data type of the value held within a string, and will return either TYPE_INTEGER, TYPE_FLOAT, TYPE_VECTOR, TYPE_ROTATION, TYPE_KEY, or TYPE_STRING if nothing else.
   </string>
+  <string name="halGroupInvite" translate="false">
+    halGroupInvite(key group, key user, string role)
+    Invites the specified user into the specified group with the specified role name. A role name of "" can be passed for the "Everyone" role. If the user, group or role name does not exist, it will report an error and do nothing.
+  </string>
   <string name="iwGroupInvite" translate="false">
     iwGroupInvite(key group, key user, string role)
     Invites the specified user into the specified group with the specified role name. A role name of "" can be passed for the "Everyone" role. If the user, group or role name does not exist, it will report an error and do nothing.
+  </string>
+  <string name="halGroupEject" translate="false">
+    halGroupEject(key group, key user)
+    Ejects the specified user from the specified group. If the user or group do not exist, it will report an error and do nothing.
   </string>
   <string name="iwGroupEject" translate="false">
     iwGroupEject(key group, key user)
     Ejects the specified user from the specified group. If the user or group do not exist, it will report an error and do nothing.
   </string>
+  <string name="LSLTipText_halGetAgentData" translate="false">
+    string halGetAgentData(key id, integer data)
+    Requests data about an agent in the region. Unlike llRequestAgentData, when the agent is present, the data is returned directly to the caller.
+  </string>
   <string name="LSLTipText_iwGetAgentData" translate="false">
     string iwGetAgentData(key id, integer data)
     Requests data about an agent in the region. Unlike llRequestAgentData, when the agent is present, the data is returned directly to the caller.
+  </string>
+  <string name="LSLTipText_halIsPlusUser" translate="false">
+    integer halIsPlusUser(key id)
+    Returns true if the user matching the specified id is a paid "Plus" account.
   </string>
   <string name="LSLTipText_iwIsPlusUser" translate="false">
     integer iwIsPlusUser(key id)
@@ -1800,33 +2008,65 @@
     llAttachToAvatarTemp(integer id)
     Attaches an object to the avatar but does not add it to the avatar's inventory
   </string>
+  <string name="halListIncludesElements" translate="false">
+    integer halListIncludesElements(list src, list elements, integer any)
+    Returns true if the src list contains at least one instance of every element in the list of elements.  If the integer any is true, then it will instead check if it has at least one instance of any element.
+  </string>
   <string name="iwListIncludesElements" translate="false">
     integer iwListIncludesElements(list src, list elements, integer any)
     Returns true if the src list contains at least one instance of every element in the list of elements.  If the integer any is true, then it will instead check if it has at least one instance of any element.
+  </string>
+  <string name="halReverseString" translate="false">
+    string halReverseString(string src);
+    This will return a reversed version of the input string.
   </string>
   <string name="iwReverseString" translate="false">
     string iwReverseString(string src);
     This will return a reversed version of the input string.
   </string>
+  <string name="halReverseList" translate="false">
+    list halReverseList(list src, integer stride);
+    This will return a reversed version of the input list.  If stride is more than one, then it will preserve the order of elements within a stride.
+  </string>
   <string name="iwReverseList" translate="false">
     list iwReverseList(list src, integer stride);
     This will return a reversed version of the input list.  If stride is more than one, then it will preserve the order of elements within a stride.
+  </string>
+  <string name="halSearchInventory" translate="false">
+    list halSearchInventory(integer type, string pattern, integer matchtype);
+    This will return a list of all items of the specified type in the task inventory which match the specified pattern.  Pattern-matching is performed the same way as halMatchString.
   </string>
   <string name="iwSearchInventory" translate="false">
     list iwSearchInventory(integer type, string pattern, integer matchtype);
     This will return a list of all items of the specified type in the task inventory which match the specified pattern.  Pattern-matching is performed the same way as iwMatchString.
   </string>
+  <string name="halSearchLinkInventory" translate="false">
+    list halSearchInventory(integer link, integer type, string pattern, integer matchtype);
+    This will return a list of all items of the specified type in the specified link, which match the specified pattern.  Pattern-matching is performed the same way as halMatchString.
+  </string>
   <string name="iwSearchLinkInventory" translate="false">
     list iwSearchInventory(integer link, integer type, string pattern, integer matchtype);
     This will return a list of all items of the specified type in the specified link, which match the specified pattern.  Pattern-matching is performed the same way as iwMatchString.
+  </string>
+  <string name="halIntRand" translate="false">
+    integer halIntRand(integer max);
+    Returns a random integer, ranging from zero up to (and including) the maximum value specified.
   </string>
   <string name="iwIntRand" translate="false">
     integer iwIntRand(integer max);
     Returns a random integer, ranging from zero up to (and including) the maximum value specified.
   </string>
+  <string name="halIntRandRange" translate="false">
+    integer halIntRandRange(integer min, integer max);
+    Returns a random integer ranging from min to max.
+  </string>
   <string name="iwIntRandRange" translate="false">
     integer iwIntRandRange(integer min, integer max);
     Returns a random integer ranging from min to max.
+  </string>
+  <string name="halFrandRange" translate="false">
+    float halFrandRange(float min, float max);
+    Returns a random float ranging from min to max.
   </string>
   <string name="iwFrandRange" translate="false">
     float iwFrandRange(float min, float max);
@@ -1837,36 +2077,72 @@
     As botGetBotOutfits, except it only returns a list of bot outfits with names that match a specified pattern.  Pattern-matching is performed the same way as iwMatchString.
     Passing an empty string as a pattern will act as a wildcard.  Also, using the start and end parameters, it will return a subset of the return results.
   </string>
+  <string name="halListRemoveElements" translate="false">
+    list halListRemoveElements(list src, list elements, integer count, integer mode);
+    This will scan through the src list and find all occurences of the list elements, and then removes them.  If the count integer is more than 0, it will only remove an instance
+    of the specified element list that many times.  So, if you set it to one, it will only remove the first instance it finds, and if two it will only remove the first two instances
+    that it finds, and so on.
+  </string>
   <string name="iwListRemoveElements" translate="false">
     list iwListRemoveElements(list src, list elements, integer count, integer mode);
     This will scan through the src list and find all occurences of the list elements, and then removes them.  If the count integer is more than 0, it will only remove an instance
     of the specified element list that many times.  So, if you set it to one, it will only remove the first instance it finds, and if two it will only remove the first two instances
     that it finds, and so on.
   </string>
+  <string name="halListRemoveDuplicates">
+    list halListRemoveDuplicates(list src);
+    This will return a copy of the src list with all duplicated elements removed.  So if src was [1, 2, 1, 4, 2, 3, 4, -7], then it would return [1, 2, 3, 4, -7].
+  </string>
   <string name="iwListRemoveDuplicates">
     list iwListRemoveDuplicates(list src);
     This will return a copy of the src list with all duplicated elements removed.  So if src was [1, 2, 1, 4, 2, 3, 4, -7], then it would return [1, 2, 3, 4, -7].
+  </string>
+  <string name="halStartLinkAnimation">
+    halStartLinkAnimation(integer link, string anim);
+    This function works as llStartAnimation, but instead of trying to start an animation in the current prim, it will instead start an animation from the specified link number.
   </string>
   <string name="iwStartLinkAnimation">
     iwStartLinkAnimation(integer link, string anim);
     This function works as llStartAnimation, but instead of trying to start an animation in the current prim, it will instead start an animation from the specified link number.
   </string>
+  <string name="halStopLinkAnimation">
+    halStopLinkAnimation(integer link, string anim);
+    This function works as llStopAnimation, but instead of trying to stop an animation in the current prim, it will instead stop an animation from the specified link number.
+  </string>
   <string name="iwStopLinkAnimation">
     iwStopLinkAnimation(integer link, string anim);
     This function works as llStopAnimation, but instead of trying to stop an animation in the current prim, it will instead stop an animation from the specified link number.
+  </string>
+  <string name="halClampInt">
+    integer halClampInt(integer value, integer min, integer max);
+    This function clamps the input value, forcing it to fall within the range of min and max if it is outside that range.
   </string>
   <string name="iwClampInt">
     integer iwClampInt(integer value, integer min, integer max);
     This function clamps the input value, forcing it to fall within the range of min and max if it is outside that range.
   </string>
+  <string name="halClampFloat">
+    float halClampFloat(float value, float min, float max);
+    This function clamps the input value, forcing it to fall within the range of min and max if it is outside of that range.
+  </string>
   <string name="iwClampFloat">
     float iwClampFloat(float value, float min, float max);
     This function clamps the input value, forcing it to fall within the range of min and max if it is outside of that range.
+  </string>
+  <string name="halSearchLinksByName">
+    list halSearchLinksByName(string pattern, integer matchType, integer linksOnly);
+    This function searches the linkset and returns a strided list of link number and link name pairs for any links with names matching the pattern, following the semantics of halMatchString.
+    If the integer linksOnly is TRUE, then the function will omit the link names and only return a list of link numbers.
   </string>
   <string name="iwSearchLinksByName">
     list iwSearchLinksByName(string pattern, integer matchType, integer linksOnly);
     This function searches the linkset and returns a strided list of link number and link name pairs for any links with names matching the pattern, following the semantics of iwMatchString.
     If the integer linksOnly is TRUE, then the function will omit the link names and only return a list of link numbers.
+  </string>
+  <string name="halSearchLinksByDesc">
+    list halSearchLinksByDesc(string pattern, integer matchType, integer linksOnly);
+    This function searches the linkset and returns a strided list of link number and link description pairs for any links with descriptions matching the pattern, following the semantics of halMatchString.
+    If the integer linksOnly is TRUE, then the function will omit the link descriptions and only return a list of link numbers.
   </string>
   <string name="iwSearchLinksByDesc">
     list iwSearchLinksByDesc(string pattern, integer matchType, integer linksOnly);
@@ -1882,22 +2158,42 @@
     Returns a list of all tags associated with the specified bot, if any.
   </string>
   <!--
+  <string name="halGetRezzerKey" translate="false">
+    key halGetRezzerKey(key id);
+    Returns the key of the object which rezzed the specified object.  If the input key is NULL_KEY, then it will get the rezzer key of the object the prim is contained in.
+  </string>
   <string name="iwGetRezzerKey" translate="false">
     key iwGetRezzerKey(key id);
     Returns the key of the object which rezzed the specified object.  If the input key is NULL_KEY, then it will get the rezzer key of the object the prim is contained in.
   </string>
   -->
+  <string name = "halRemoteLoadScriptPin">
+  	integer halRemoteLoadScriptPin(key target, string name, integer pin, integer running, integer start_param);
+  	Functions same as llRemoteLoadScriptPin, but if the PIN doesn't match, then it returns an integer status code instead of shouting a debug message
+  </string>
   <string name = "iwRemoteLoadScriptPin">
   	integer iwRemoteLoadScriptPin(key target, string name, integer pin, integer running, integer start_param);
   	Functions same as llRemoteLoadScriptPin, but if the PIN doesn't match, then it returns an integer status code instead of shouting a debug message
+  </string>
+  <string name="halValidateURL">
+    integer halValidateURL(string url);
+    Returns TRUE if the input url's formatting is valid according to the HTTP, HTTPS, or WWW schemes.
   </string>
   <string name="iwValidateURL">
     integer iwValidateURL(string url);
     Returns TRUE if the input url's formatting is valid according to the HTTP, HTTPS, or WWW schemes.
   </string>
+  <string name="LSLTipText_halDeliverInventory" translate="false">
+    integer halDeliverInventory(integer linknumber, key destination, string inventory)
+    Gives inventory from the specified prim to the specified target, returning an completion code.
+  </string>
   <string name="LSLTipText_iwDeliverInventory" translate="false">
     integer iwDeliverInventory(integer linknumber, key destination, string inventory)
     Gives inventory from the specified prim to the specified target, returning an completion code.
+  </string>
+  <string name="LSLTipText_halDeliverInventoryList" translate="false">
+    integer halDeliverInventoryList(integer linknumber, key target, string folder, list inventory)
+    Gives inventory items from the specified prim to target, creating a new folder to put them in, and returning an completion code.
   </string>
   <string name="LSLTipText_iwDeliverInventoryList" translate="false">
     integer iwDeliverInventoryList(integer linknumber, key target, string folder, list inventory)
@@ -1924,15 +2220,29 @@
     Returns a key used in a matching transaction_result event for the success or failure of the transfer.
     If the transaction is successful, this key will show in the transaction history.
   </string>
+  <string name="LSLTipText_halGiveMoney" translate="false">
+    string halGiveMoney(key destination, integer amount)
+    Directly returns the transaction ID for the success or failure of a money transfer.
+    If the transaction is successful, it returns the actual transaction ID that will show in the transaction history.
+    If the transaction fails, or an error tag on error, e.g. "MISSING_PERMISSION_DEBIT".
+  </string>
   <string name="LSLTipText_iwGiveMoney" translate="false">
     string iwGiveMoney(key destination, integer amount)
     Directly returns the transaction ID for the success or failure of a money transfer.
     If the transaction is successful, it returns the actual transaction ID that will show in the transaction history.
     If the transaction fails, or an error tag on error, e.g. "MISSING_PERMISSION_DEBIT".
   </string>
+  <string name="LSLTipText_halStandTarget" translate="false">
+    halStandTarget(vector offset, rotation rot)
+    Specifies the location, relative to the current prim, for a seated avatar to be placed when they stand up.
+  </string>
   <string name="LSLTipText_iwStandTarget" translate="false">
     iwStandTarget(vector offset, rotation rot)
     Specifies the location, relative to the current prim, for a seated avatar to be placed when they stand up.
+  </string>
+  <string name="LSLTipText_halLinkStandTarget" translate="false">
+    halLinkStandTarget(integer link, vector offset, rotation rot)
+    Specifies the location, relative to the specified prim, for a seated avatar to be placed when they stand up.
   </string>
   <string name="LSLTipText_iwLinkStandTarget" translate="false">
     iwLinkStandTarget(integer link, vector offset, rotation rot)

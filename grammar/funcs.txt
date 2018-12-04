@@ -361,49 +361,80 @@ string llGetUsername(key id)
 key llRequestUsername(key id)
 string llGetDisplayName(key id)
 key llRequestDisplayName(key id)
+halMakeNotecard(string name, list data)
 iwMakeNotecard(string name, list data)
+key halAvatarName2Key(string firstName, string lastName)
 key iwAvatarName2Key(string firstName, string lastName)
 string llGetParcelMusicURL()
+halLinkTargetOmega(integer linknumber, vector axis, float spinrate, float gain);
 iwLinkTargetOmega(integer linknumber, vector axis, float spinrate, float gain);
 integer llSetRegionPos(vector v)
+integer halGetLinkInventoryNumber(integer linknumber, integer type)
 integer iwGetLinkInventoryNumber(integer linknumber, integer type)
+integer halGetLinkInventoryType(integer linknumber, string name)
 integer iwGetLinkInventoryType(integer linknumber, string name)
+integer halGetLinkInventoryPermMask(integer linknumber, string item, integer mask)
 integer iwGetLinkInventoryPermMask(integer linknumber, string item, integer mask)
+string halGetLinkInventoryName(integer linknumber, integer type, integer number)
 string iwGetLinkInventoryName(integer linknumber, integer type, integer number)
+key halGetLinkInventoryKey(integer linknumber, string name)
 key iwGetLinkInventoryKey(integer linknumber, string name)
+key halGetLinkInventoryCreator(integer linknumber, string item)
 key iwGetLinkInventoryCreator(integer linknumber, string item)
+string halSHA256String(string src)
 string iwSHA256String(string src)
+halTeleportAgent(key agent, string region, vector pos, vector lookat)
 iwTeleportAgent(key agent, string region, vector pos, vector lookat)
 key llAvatarOnLinkSitTarget(integer linknumber)
+key halGetLastOwner()
 key iwGetLastOwner()
+halRemoveLinkInventory(integer linknumber, string item)
 iwRemoveLinkInventory(integer linknumber, string item)
+halGiveLinkInventory(integer linknumber, key destination, string inventory)
 iwGiveLinkInventory(integer linknumber, key destination, string inventory)
+halGiveLinkInventoryList(integer linknumber, key target, string folder, list inventory)
 iwGiveLinkInventoryList(integer linknumber, key target, string folder, list inventory)
+key halGetLinkNumberOfNotecardLines(integer linknumber, string name)
 key iwGetLinkNumberOfNotecardLines(integer linknumber, string name)
+key halGetLinkNotecardLine(integer linknumber, string name, integer line)
 key iwGetLinkNotecardLine(integer linknumber, string name, integer line)
+key halGetNotecardSegment(string name, integer line, integer startOffset, integer maxLength)
 key iwGetNotecardSegment(string name, integer line, integer startOffset, integer maxLength)
+key halGetLinkNotecardSegment(integer linknumber, string name, integer line, integer startOffset, integer maxLength)
 key iwGetLinkNotecardSegment(integer linknumber, string name, integer line, integer startOffset, integer maxLength)
+integer halActiveGroup(key agent, key group)
 integer iwActiveGroup(key agent, key group)
+key halAvatarOnLink(integer linknumber)
 key iwAvatarOnLink(integer linknumber)
 llRegionSayTo(string destId, integer channel, string msg)
 integer llGetUsedMemory()
+string halGetLinkInventoryDesc(integer linknumber, string name)
 string iwGetLinkInventoryDesc(integer linknumber, string name)
 key llGenerateKey()
+key halGetLinkInventoryLastOwner(integer linknumber, string name)
 key iwGetLinkInventoryLastOwner(integer linknumber, string name)
+key halRezObject(string inventory, vector pos, vector vel, rotation rot, integer param)
 key iwRezObject(string inventory, vector pos, vector vel, rotation rot, integer param)
+key halRezAtRoot(string inventory, vector pos, vector vel, rotation rot, integer param)
 key iwRezAtRoot(string inventory, vector pos, vector vel, rotation rot, integer param)
+key halRezPrim(list primParams, list particleSystem, list inventoryList, vector pos, vector vel, rotation rot, integer param)
 key iwRezPrim(list primParams, list particleSystem, list inventoryList, vector pos, vector vel, rotation rot, integer param)
 list llGetAgentList(integer scope, list options)
+list halGetAgentList(integer scope, vector minPos, vector maxPos, list params)
 list iwGetAgentList(integer scope, vector minPos, vector maxPos, list params)
+list halGetWorldBoundingBox(key object)
 list iwGetWorldBoundingBox(key object)
 integer llSetMemoryLimit(integer limit)
 integer llGetMemoryLimit()
 integer llManageEstateAccess(integer action, key avatar)
+integer halSubStringIndex(string source, string pattern, integer offset, integer isCaseSensitive)
 integer iwSubStringIndex(string source, string pattern, integer offset, integer isCaseSensitive)
 llLinkSitTarget(integer link, vector offset, rotation rot)
 float llGetMassMKS()
+float halGetObjectMassMKS(key id)
 float iwGetObjectMassMKS(key id)
 llSetLinkCamera(integer linknumber, vector eyeOffset, vector cameraAt)
+halSetGround(integer x1, integer y1, integer x2, integer y2, float height)
 iwSetGround(integer x1, integer y1, integer x2, integer y2, float height)
 llSetContentType( key request_id, integer content_type )
 string llJsonGetValue( string json, list specifiers )
@@ -411,16 +442,24 @@ string llJsonValueType( string json, list specifiers )
 string llJsonSetValue( string json, list specifiers, string value )
 string llList2Json( string type, list values )
 list llJson2List( string src )
+halSetWind(integer type, vector offset, vector speed)
 iwSetWind(integer type, vector offset, vector speed)
+integer halHasParcelPowers(integer groupPower)
 integer iwHasParcelPowers(integer groupPower)
+vector halGroundSurfaceNormal(vector offset)
 vector iwGroundSurfaceNormal(vector offset)
+key halRequestAnimationData(string name)
 key iwRequestAnimationData(string name)
 list llCastRay(vector start, vector end, list options)
 llSetKeyframedMotion(list keyframes, list options)
+vector halWind(vector offset)
 vector iwWind(vector offset)
 list llGetPhysicsMaterial()
+integer halGetLocalTime()
 integer iwGetLocalTime()
+integer halGetLocalTimeOffset()
 integer iwGetLocalTimeOffset()
+string halFormatTime(integer unixtime, integer isUTC, string format)
 string iwFormatTime(integer unixtime, integer isUTC, string format)
 key botCreateBot(string firstName, string lastName, string outfitName, vector startPosition, integer options)
 botAddTag(key botID, string tag)
@@ -460,6 +499,7 @@ botGiveInventory(key botID, key destination, string inventory)
 botSensor(key botID, string name, key id, integer type, float range, float arc)
 botSensorRepeat(key botID, string name, key id, integer type, float range, float arc, float rate)
 botSensorRemove()
+key halDetectedBot()
 key iwDetectedBot()
 integer botListen(key botID, integer channel, string name, key id, string msg)
 botRegisterForCollisionEvents(key botID)
@@ -473,54 +513,95 @@ botWanderWithin(key botID, vector origin, float xDistance, float yDistance, list
 botMessageLinked(key botID, integer num, string message, key id)
 botSetProfileParams(key botID, list profileParams)
 list botGetProfileParams(key botID, list profileParams)
+integer halCheckRezError(vector position, integer isTemp, integer landImpact)
 integer iwCheckRezError(vector position, integer isTemp, integer landImpact)
+vector halGetAngularVelocity()
 vector iwGetAngularVelocity()
+integer halGetAppearanceParam(key who, integer which)
 integer iwGetAppearanceParam(key who, integer which)
+list halParseString2List(string str, list separators, list spacers, list args)
 list iwParseString2List(string str, list separators, list spacers, list args)
+integer halChar2Int(string str, integer index)
 integer iwChar2Int(string str, integer index)
+string halInt2Char(integer num)
 string iwInt2Char(integer num)
+string halReplaceString(string str, string pattern, string replace)
 string iwReplaceString(string str, string pattern, string replace)
+string halFormatString(string str, list values)
 string iwFormatString(string str, list values)
+integer halMatchString(string str, string pattern, integer matchType)
 integer iwMatchString(string str, string pattern, integer matchType)
+string halStringCodec(string str, string codec, integer operation, list extraParams);
 string iwStringCodec(string str, string codec, integer operation, list extraParams);
+list halMatchList(list list1, list list2, int matchType);
 list iwMatchList(list list1, list list2, int matchType);
+vector halColorConvert(vector input, int color1, int color2);
 vector iwColorConvert(vector input, int color1, int color2);
+vector halNameToColor(string name);
 vector iwNameToColor(string name);
+integer halVerifyType(string str, integer type);
 integer iwVerifyType(string str, integer type);
+halGroupInvite(key user, key group, string role);
 iwGroupInvite(key user, key group, string role);
+halGroupEject(key user, key group);
 iwGroupEject(key user, key group);
+string halGetAgentData(key id, integer data);
 string iwGetAgentData(key id, integer data);
+integer halIsPlusUser(key id);
 integer iwIsPlusUser(key id);
 llAttachToAvatarTemp(integer attachPoint);
+integer halListIncludesElements(list src, list elements, integer any);
 integer iwListIncludesElements(list src, list elements, integer any);
+string halReverseString(string src);
 string iwReverseString(string src);
+list halReverseList(list src, integer stride);
 list iwReverseList(list src, integer stride);
+list halSearchInventory(integer type, string pattern, integer matchType);
 list iwSearchInventory(integer type, string pattern, integer matchType);
+list halSearchLinkInventory(integer link, integer type, string pattern, integer matchType);
 list iwSearchLinkInventory(integer link, integer type, string pattern, integer matchType);
+integer halIntRand(integer max);
 integer iwIntRand(integer max);
+integer halIntRange(integer min, integer max);
 integer iwIntRange(integer min, integer max);
+float halFrandRange(float min, float max);
 float iwFrandRange(float min, float max);
 list botSearchBotOutfits(string pattern, integer matchType, integer start, integer end);
+list halListRemoveElements(list src, list elements, integer count, integer mode);
 list iwListRemoveElements(list src, list elements, integer count, integer mode);
+list halListRemoveDuplicates(list src);
 list iwListRemoveDuplicates(list src);
+halStartLinkAnimation(integer link, string anim);
 iwStartLinkAnimation(integer link, string anim);
+halStopLinkAnimation(integer link, string anim);
 iwStopLinkAnimation(integer link, string anim);
+integer halClampInt(integer value, integer min, integer max);
 integer iwClampInt(integer value, integer min, integer max);
+float halClampFloat(float value, float min, float max);
 float iwClampFloat(float value, float min, float max);
+list halSearchLinksByName(string pattern, integer matchType, integer linksOnly);
 list iwSearchLinksByName(string pattern, integer matchType, integer linksOnly);
+list halSearchLinksByDesc(string pattern, integer matchType, integer linksOnly);
 list iwSearchLinksByDesc(string pattern, integer matchType, integer linksOnly);
 integer botHasTag(key botID, string tag);
 list botGetBotTags(key botID);
+integer halRemoteLoadScriptPin(key target, string name, integer pin, integer running, integer start_param);
 integer iwRemoteLoadScriptPin(key target, string name, integer pin, integer running, integer start_param);
+integer halValidateURL(string url);
 integer iwValidateURL(string url);
+integer halDeliverInventory(integer linknumber, key destination, string inventory)
 integer iwDeliverInventory(integer linknumber, key destination, string inventory)
+integer halDeliverInventoryList(integer linknumber, key target, string folder, list inventory)
 integer iwDeliverInventoryList(integer linknumber, key target, string folder, list inventory)
 list llGetAttachedList(key avatar)
 integer llReturnObjectsByOwner(key owner, integer scope)
 integer llReturnObjectsByID(list objects)
 key llTransferLindenDollars(key destination, integer amount)
+string halGiveMoney(key destination, integer amount)
 string iwGiveMoney(key destination, integer amount)
+halStandTarget(vector offset, rotation rot)
 iwStandTarget(vector offset, rotation rot)
+halLinkStandTarget(integer link, vector offset, rotation rot)
 iwLinkStandTarget(integer link, vector offset, rotation rot)
 string llGetAnimationOverride(string anim_state)
 llSetAnimationOverride(string anim_state, string anim)

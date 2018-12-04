@@ -416,36 +416,36 @@ namespace Halcyon.Phlox.Glue
                 Shim_llRequestUsername,     //356
                 Shim_llGetDisplayName,      //357
                 Shim_llRequestDisplayName,  //358
-                Shim_iwMakeNotecard,        //359
-                Shim_iwAvatarName2Key,      //360
-                Shim_iwLinkTargetOmega,     //361
+                Shim_halMakeNotecard,        //359
+                Shim_halAvatarName2Key,      //360
+                Shim_halLinkTargetOmega,     //361
                 Shim_llSetVehicleRotationParam, //362
                 Shim_llGetParcelMusicURL,   //363
                 Shim_llSetRegionPos,        //364
-                Shim_iwGetLinkInventoryNumber,  //365
-                Shim_iwGetLinkInventoryType,    //366
-                Shim_iwGetLinkInventoryPermMask,//367
-                Shim_iwGetLinkInventoryName,//368
-                Shim_iwGetLinkInventoryKey, //369
-                Shim_iwGetLinkInventoryCreator, //370
-                Shim_iwSHA256String,        //371
-                Shim_iwTeleportAgent,       //372
+                Shim_halGetLinkInventoryNumber,  //365
+                Shim_halGetLinkInventoryType,    //366
+                Shim_halGetLinkInventoryPermMask,//367
+                Shim_halGetLinkInventoryName,//368
+                Shim_halGetLinkInventoryKey, //369
+                Shim_halGetLinkInventoryCreator, //370
+                Shim_halSHA256String,        //371
+                Shim_halTeleportAgent,       //372
                 Shim_llAvatarOnLinkSitTarget,   //373
-                Shim_iwGetLastOwner,        //374
-                Shim_iwRemoveLinkInventory, //375
-                Shim_iwGiveLinkInventory,   //376
-                Shim_iwGiveLinkInventoryList,   //377
-                Shim_iwGetNotecardSegment,  //378
-                Shim_iwGetLinkNumberOfNotecardLines,    //379
-                Shim_iwGetLinkNotecardLine, //380
-                Shim_iwGetLinkNotecardSegment,  //381
-                Shim_iwActiveGroup,         //382
-                Shim_iwAvatarOnLink,        //383
+                Shim_halGetLastOwner,        //374
+                Shim_halRemoveLinkInventory, //375
+                Shim_halGiveLinkInventory,   //376
+                Shim_halGiveLinkInventoryList,   //377
+                Shim_halGetNotecardSegment,  //378
+                Shim_halGetLinkNumberOfNotecardLines,    //379
+                Shim_halGetLinkNotecardLine, //380
+                Shim_halGetLinkNotecardSegment,  //381
+                Shim_halActiveGroup,         //382
+                Shim_halAvatarOnLink,        //383
                 Shim_llRegionSayTo,         //384
                 Shim_llGetUsedMemory,       //385
-                Shim_iwGetLinkInventoryDesc,//386
+                Shim_halGetLinkInventoryDesc,//386
                 Shim_llGenerateKey,            //387
-                Shim_iwGetLinkInventoryLastOwner, //388
+                Shim_halGetLinkInventoryLastOwner, //388
                 Shim_llSetLinkMedia,        //389
                 Shim_llGetLinkMedia,        //390
                 Shim_llClearLinkMedia,      //391
@@ -453,38 +453,38 @@ namespace Halcyon.Phlox.Glue
                 Shim_llSetAngularVelocity,  //393
                 Shim_llSetPhysicsMaterial,  //394
                 Shim_llSetVelocity,         //395
-                Shim_iwRezObject,           //396
-                Shim_iwRezAtRoot,           //397
-                Shim_iwRezPrim,             //398
+                Shim_halRezObject,           //396
+                Shim_halRezAtRoot,           //397
+                Shim_halRezPrim,             //398
                 Shim_llGetAgentList,        //399
-                Shim_iwGetAgentList,        //400
-                Shim_iwGetWorldBoundingBox, //401
+                Shim_halGetAgentList,        //400
+                Shim_halGetWorldBoundingBox, //401
                 Shim_llSetMemoryLimit,      //402
                 Shim_llGetMemoryLimit,      //403
                 Shim_llManageEstateAccess,  //404
-                Shim_iwSubStringIndex,      //405
+                Shim_halSubStringIndex,      //405
                 Shim_llLinkSitTarget,       //406
                 Shim_llGetMass,             //407
-                Shim_iwGetObjectMassMKS,    //408
+                Shim_halGetObjectMassMKS,    //408
                 Shim_llSetLinkCamera,       //409
-                Shim_iwSetGround,           //410
+                Shim_halSetGround,           //410
                 Shim_llSetContentType,      //411
                 Shim_llJsonGetValue,        //412
                 Shim_llJsonValueType,       //413
                 Shim_llJsonSetValue,        //414
                 Shim_llList2Json,           //415
                 Shim_llJson2List,           //416
-                Shim_iwSetWind,             //417
-                Shim_iwHasParcelPowers,     //418
-                Shim_iwGroundSurfaceNormal, //419
-                Shim_iwRequestAnimationData,//420
+                Shim_halSetWind,             //417
+                Shim_halHasParcelPowers,     //418
+                Shim_halGroundSurfaceNormal, //419
+                Shim_halRequestAnimationData,//420
                 Shim_llCastRay,             //421
                 Shim_llSetKeyframedMotion,  //422
-                Shim_iwWind,                //423
+                Shim_halWind,                //423
                 Shim_llGetPhysicsMaterial,  //424
-                Shim_iwGetLocalTime,        //425
-                Shim_iwGetLocalTimeOffset,  //426
-                Shim_iwFormatTime,          //427
+                Shim_halGetLocalTime,        //425
+                Shim_halGetLocalTimeOffset,  //426
+                Shim_halFormatTime,          //427
                 Shim_botCreateBot,          //428
                 Shim_botAddTag,             //429
                 Shim_botRemoveTag,          //430
@@ -523,7 +523,7 @@ namespace Halcyon.Phlox.Glue
                 Shim_botSensor,             //463
                 Shim_botSensorRepeat,       //464
                 Shim_botSensorRemove,       //465
-                Shim_iwDetectedBot,         //466
+                Shim_halDetectedBot,         //466
                 Shim_botListen,             //467
                 Shim_botRegisterForCollisionEvents,//468
                 Shim_botDeregisterFromCollisionEvents,//469
@@ -536,55 +536,55 @@ namespace Halcyon.Phlox.Glue
                 Shim_botMessageLinked,      //476
                 Shim_botSetProfileParams,   //477
                 Shim_botGetProfileParams,   //478
-                Shim_iwCheckRezError,       //479
-                Shim_iwGetAngularVelocity,  //480
-                Shim_iwGetAppearanceParam,  //481
-                Shim_iwParseString2List,    //482
-                Shim_iwChar2Int,            //483
-                Shim_iwInt2Char,            //484
-                Shim_iwReplaceString,       //485
-                Shim_iwFormatString,        //486
-                Shim_iwMatchString,         //487
-                Shim_iwStringCodec,         //488
-                Shim_iwMatchList,           //489
-                Shim_iwColorConvert,        //490
-                Shim_iwNameToColor,         //491
-                Shim_iwVerifyType,          //492
-                Shim_iwGroupInvite,         //493
-                Shim_iwGroupEject,          //494
-                Shim_iwGetAgentData,        //495
-                Shim_iwIsPlusUser,          //496
+                Shim_halCheckRezError,       //479
+                Shim_halGetAngularVelocity,  //480
+                Shim_halGetAppearanceParam,  //481
+                Shim_halParseString2List,    //482
+                Shim_halChar2Int,            //483
+                Shim_halInt2Char,            //484
+                Shim_halReplaceString,       //485
+                Shim_halFormatString,        //486
+                Shim_halMatchString,         //487
+                Shim_halStringCodec,         //488
+                Shim_halMatchList,           //489
+                Shim_halColorConvert,        //490
+                Shim_halNameToColor,         //491
+                Shim_halVerifyType,          //492
+                Shim_halGroupInvite,         //493
+                Shim_halGroupEject,          //494
+                Shim_halGetAgentData,        //495
+                Shim_halIsPlusUser,          //496
                 Shim_llAttachToAvatarTemp,  //497
-                Shim_iwListIncludesElements,//498
-                Shim_iwReverseString,       //499
-                Shim_iwReverseList,         //500
-                Shim_iwSearchInventory,     //501
-                Shim_iwSearchLinkInventory, //502
-                Shim_iwIntRand,             //503
-                Shim_iwIntRandRange,        //504
-                Shim_iwFrandRange,          //505
+                Shim_halListIncludesElements,//498
+                Shim_halReverseString,       //499
+                Shim_halReverseList,         //500
+                Shim_halSearchInventory,     //501
+                Shim_halSearchLinkInventory, //502
+                Shim_halIntRand,             //503
+                Shim_halIntRandRange,        //504
+                Shim_halFrandRange,          //505
                 Shim_botSearchBotOutfits,   //506
-                Shim_iwListRemoveElements,  //507
-                Shim_iwListRemoveDuplicates,//508
-                Shim_iwStartLinkAnimation,  //509
-                Shim_iwStopLinkAnimation,   //510
-                Shim_iwClampInt,            //511
-                Shim_iwClampFloat,          //512
-                Shim_iwSearchLinksByName,   //513
-                Shim_iwSearchLinksByDesc,   //514
+                Shim_halListRemoveElements,  //507
+                Shim_halListRemoveDuplicates,//508
+                Shim_halStartLinkAnimation,  //509
+                Shim_halStopLinkAnimation,   //510
+                Shim_halClampInt,            //511
+                Shim_halClampFloat,          //512
+                Shim_halSearchLinksByName,   //513
+                Shim_halSearchLinksByDesc,   //514
                 Shim_botHasTag,             //515
                 Shim_botGetBotTags,         //516
-                Shim_iwValidateURL,         //517
-                Shim_iwRemoteLoadScriptPin, //518
-                Shim_iwDeliverInventory,    //519
-                Shim_iwDeliverInventoryList,//520
+                Shim_halValidateURL,         //517
+                Shim_halRemoteLoadScriptPin, //518
+                Shim_halDeliverInventory,    //519
+                Shim_halDeliverInventoryList,//520
                 Shim_llGetAttachedList,     //521
                 Shim_llReturnObjectsByOwner,//522
                 Shim_llReturnObjectsByID,   //523
                 Shim_llTransferLindenDollars,//524
-                Shim_iwGiveMoney,           //525
-                Shim_iwStandTarget,         //526
-                Shim_iwLinkStandTarget,     //527
+                Shim_halGiveMoney,           //525
+                Shim_halStandTarget,         //526
+                Shim_halLinkStandTarget,     //527
         };
 
         public void SetScriptEventFlags()
@@ -2315,14 +2315,14 @@ namespace Halcyon.Phlox.Glue
             self._interpreter.SafeOperandsPush(ConvToLSLType(ret));
         }
 
-        static private void Shim_iwSubStringIndex(SyscallShim self)
+        static private void Shim_halSubStringIndex(SyscallShim self)
         {
             int p3 = ConvToInt(self._interpreter.ScriptState.Operands.Pop());
             int p2 = ConvToInt(self._interpreter.ScriptState.Operands.Pop());
             string p1 = ConvToString(self._interpreter.ScriptState.Operands.Pop());
             string p0 = ConvToString(self._interpreter.ScriptState.Operands.Pop());
 
-            int ret = self._systemAPI.iwSubStringIndex(p0, p1, p2, p3);
+            int ret = self._systemAPI.halSubStringIndex(p0, p1, p2, p3);
 
             self._interpreter.SafeOperandsPush(ConvToLSLType(ret));
         }
@@ -2650,14 +2650,14 @@ namespace Halcyon.Phlox.Glue
             self._interpreter.SafeOperandsPush(ConvToLSLType(ret));
         }
 
-        static private void Shim_iwParseString2List(SyscallShim self)
+        static private void Shim_halParseString2List(SyscallShim self)
         {
             LSLList p3 = ConvToLSLList(self._interpreter.ScriptState.Operands.Pop());
             LSLList p2 = ConvToLSLList(self._interpreter.ScriptState.Operands.Pop());
             LSLList p1 = ConvToLSLList(self._interpreter.ScriptState.Operands.Pop());
             string p0 = ConvToString(self._interpreter.ScriptState.Operands.Pop());
 
-            LSLList ret = self._systemAPI.iwParseString2List(p0, p1, p2, p3);
+            LSLList ret = self._systemAPI.halParseString2List(p0, p1, p2, p3);
 
             self._interpreter.SafeOperandsPush(ConvToLSLType(ret));
         }
@@ -3206,11 +3206,11 @@ namespace Halcyon.Phlox.Glue
             self._interpreter.SafeOperandsPush(ConvToLSLType(ret));
         }
 
-        static private void Shim_iwGetWorldBoundingBox(SyscallShim self)
+        static private void Shim_halGetWorldBoundingBox(SyscallShim self)
         {
             string p0 = ConvToString(self._interpreter.ScriptState.Operands.Pop());
 
-            LSLList ret = self._systemAPI.iwGetWorldBoundingBox(p0);
+            LSLList ret = self._systemAPI.halGetWorldBoundingBox(p0);
 
             self._interpreter.SafeOperandsPush(ConvToLSLType(ret));
         }
@@ -4025,7 +4025,7 @@ namespace Halcyon.Phlox.Glue
             });
         }
 
-        static private void Shim_iwMakeNotecard(SyscallShim self)
+        static private void Shim_halMakeNotecard(SyscallShim self)
         {
             LSLList p1 = ConvToLSLList(self._interpreter.ScriptState.Operands.Pop());
             string p0 = ConvToString(self._interpreter.ScriptState.Operands.Pop());
@@ -4035,11 +4035,11 @@ namespace Halcyon.Phlox.Glue
 
             self._asyncCallDelegate(delegate ()
             {
-                self._systemAPI.iwMakeNotecard(p0, p1);
+                self._systemAPI.halMakeNotecard(p0, p1);
             });
         }
 
-        static private void Shim_iwAvatarName2Key(SyscallShim self)
+        static private void Shim_halAvatarName2Key(SyscallShim self)
         {
             string p1 = ConvToString(self._interpreter.ScriptState.Operands.Pop());
             string p0 = ConvToString(self._interpreter.ScriptState.Operands.Pop());
@@ -4049,18 +4049,18 @@ namespace Halcyon.Phlox.Glue
 
             self._asyncCallDelegate(delegate ()
             {
-                self._systemAPI.iwAvatarName2Key(p0, p1);
+                self._systemAPI.halAvatarName2Key(p0, p1);
             });
         }
 
-        static private void Shim_iwLinkTargetOmega(SyscallShim self)
+        static private void Shim_halLinkTargetOmega(SyscallShim self)
         {
             float p3 = ConvToFloat(self._interpreter.ScriptState.Operands.Pop());
             float p2 = ConvToFloat(self._interpreter.ScriptState.Operands.Pop());
             Vector3 p1 = ConvToVector(self._interpreter.ScriptState.Operands.Pop());
             int p0 = ConvToInt(self._interpreter.ScriptState.Operands.Pop());
 
-            self._systemAPI.iwLinkTargetOmega(p0, p1, p2, p3);
+            self._systemAPI.halLinkTargetOmega(p0, p1, p2, p3);
         }
 
         static private void Shim_llGetParcelMusicURL(SyscallShim self)
@@ -4077,96 +4077,96 @@ namespace Halcyon.Phlox.Glue
             self._interpreter.SafeOperandsPush(ConvToLSLType(ret));
         }
 
-        static private void Shim_iwGetLinkInventoryNumber(SyscallShim self)
+        static private void Shim_halGetLinkInventoryNumber(SyscallShim self)
         {
             int type = ConvToInt(self._interpreter.ScriptState.Operands.Pop());
             int linknumber = ConvToInt(self._interpreter.ScriptState.Operands.Pop());
 
-            int ret = self._systemAPI.iwGetLinkInventoryNumber(linknumber, type);
+            int ret = self._systemAPI.halGetLinkInventoryNumber(linknumber, type);
 
             self._interpreter.SafeOperandsPush(ConvToLSLType(ret));
         }
 
-        static private void Shim_iwGetLinkInventoryType(SyscallShim self)
+        static private void Shim_halGetLinkInventoryType(SyscallShim self)
         {
             string name = ConvToString(self._interpreter.ScriptState.Operands.Pop());
             int linknumber = ConvToInt(self._interpreter.ScriptState.Operands.Pop());
 
-            int ret = self._systemAPI.iwGetLinkInventoryType(linknumber, name);
+            int ret = self._systemAPI.halGetLinkInventoryType(linknumber, name);
 
             self._interpreter.SafeOperandsPush(ConvToLSLType(ret));
         }
 
-        static private void Shim_iwGetLinkInventoryPermMask(SyscallShim self)
+        static private void Shim_halGetLinkInventoryPermMask(SyscallShim self)
         {
             int mask = ConvToInt(self._interpreter.ScriptState.Operands.Pop());
             string item = ConvToString(self._interpreter.ScriptState.Operands.Pop());
             int linknumber = ConvToInt(self._interpreter.ScriptState.Operands.Pop());
 
-            int ret = self._systemAPI.iwGetLinkInventoryPermMask(linknumber, item, mask);
+            int ret = self._systemAPI.halGetLinkInventoryPermMask(linknumber, item, mask);
             self._interpreter.SafeOperandsPush(ConvToLSLType(ret));
         }
 
-        static private void Shim_iwGetLinkInventoryName(SyscallShim self)
+        static private void Shim_halGetLinkInventoryName(SyscallShim self)
         {
             int number = ConvToInt(self._interpreter.ScriptState.Operands.Pop());
             int type = ConvToInt(self._interpreter.ScriptState.Operands.Pop());
             int linknumber = ConvToInt(self._interpreter.ScriptState.Operands.Pop());
 
-            string ret = self._systemAPI.iwGetLinkInventoryName(linknumber, type, number);
+            string ret = self._systemAPI.halGetLinkInventoryName(linknumber, type, number);
 
             self._interpreter.SafeOperandsPush(ConvToLSLType(ret));
         }
 
-        static private void Shim_iwGetLinkInventoryKey(SyscallShim self)
+        static private void Shim_halGetLinkInventoryKey(SyscallShim self)
         {
             string name = ConvToString(self._interpreter.ScriptState.Operands.Pop());
             int linknumber = ConvToInt(self._interpreter.ScriptState.Operands.Pop());
 
-            string ret = self._systemAPI.iwGetLinkInventoryKey(linknumber, name);
+            string ret = self._systemAPI.halGetLinkInventoryKey(linknumber, name);
 
             self._interpreter.SafeOperandsPush(ConvToLSLType(ret));
         }
 
-        static private void Shim_iwGetLinkInventoryCreator(SyscallShim self)
+        static private void Shim_halGetLinkInventoryCreator(SyscallShim self)
         {
             string item = ConvToString(self._interpreter.ScriptState.Operands.Pop());
             int linknumber = ConvToInt(self._interpreter.ScriptState.Operands.Pop());
 
-            string ret = self._systemAPI.iwGetLinkInventoryCreator(linknumber, item);
+            string ret = self._systemAPI.halGetLinkInventoryCreator(linknumber, item);
 
             self._interpreter.SafeOperandsPush(ConvToLSLType(ret));
         }
 
-        static private void Shim_iwGetLinkInventoryDesc(SyscallShim self)
+        static private void Shim_halGetLinkInventoryDesc(SyscallShim self)
         {
             string item = ConvToString(self._interpreter.ScriptState.Operands.Pop());
             int linknumber = ConvToInt(self._interpreter.ScriptState.Operands.Pop());
 
-            string ret = self._systemAPI.iwGetLinkInventoryDesc(linknumber, item);
+            string ret = self._systemAPI.halGetLinkInventoryDesc(linknumber, item);
 
             self._interpreter.SafeOperandsPush(ConvToLSLType(ret));
         }
 
-        static private void Shim_iwGetLinkInventoryLastOwner(SyscallShim self)
+        static private void Shim_halGetLinkInventoryLastOwner(SyscallShim self)
         {
             string item = ConvToString(self._interpreter.ScriptState.Operands.Pop());
             int linknumber = ConvToInt(self._interpreter.ScriptState.Operands.Pop());
 
-            string ret = self._systemAPI.iwGetLinkInventoryLastOwner(linknumber, item);
+            string ret = self._systemAPI.halGetLinkInventoryLastOwner(linknumber, item);
 
             self._interpreter.SafeOperandsPush(ConvToLSLType(ret));
         }
 
-        static private void Shim_iwSHA256String(SyscallShim self)
+        static private void Shim_halSHA256String(SyscallShim self)
         {
             string src = ConvToString(self._interpreter.ScriptState.Operands.Pop());
-            string ret = self._systemAPI.iwSHA256String(src);
+            string ret = self._systemAPI.halSHA256String(src);
 
             self._interpreter.SafeOperandsPush(ConvToLSLType(ret));
         }
 
-        static private void Shim_iwTeleportAgent(SyscallShim self)
+        static private void Shim_halTeleportAgent(SyscallShim self)
         {
             Vector3 lookat = ConvToVector(self._interpreter.ScriptState.Operands.Pop());
             Vector3 pos = ConvToVector(self._interpreter.ScriptState.Operands.Pop());
@@ -4177,7 +4177,7 @@ namespace Halcyon.Phlox.Glue
 
             self._asyncCallDelegate(delegate ()
             {
-                self._systemAPI.iwTeleportAgent(agent, region, pos, lookat);
+                self._systemAPI.halTeleportAgent(agent, region, pos, lookat);
             });
 
         }
@@ -4191,21 +4191,21 @@ namespace Halcyon.Phlox.Glue
             self._interpreter.SafeOperandsPush(ConvToLSLType(ret));
         }
 
-        static private void Shim_iwGetLastOwner(SyscallShim self)
+        static private void Shim_halGetLastOwner(SyscallShim self)
         {
-            string ret = self._systemAPI.iwGetLastOwner();
+            string ret = self._systemAPI.halGetLastOwner();
             self._interpreter.SafeOperandsPush(ConvToLSLType(ret));
         }
 
-        static private void Shim_iwRemoveLinkInventory(SyscallShim self)
+        static private void Shim_halRemoveLinkInventory(SyscallShim self)
         {
             string p1 = ConvToString(self._interpreter.ScriptState.Operands.Pop());
             int p0 = ConvToInt(self._interpreter.ScriptState.Operands.Pop());
 
-            self._systemAPI.iwRemoveLinkInventory(p0, p1);
+            self._systemAPI.halRemoveLinkInventory(p0, p1);
         }
 
-        static private void Shim_iwGiveLinkInventory(SyscallShim self)
+        static private void Shim_halGiveLinkInventory(SyscallShim self)
         {
             string p2 = ConvToString(self._interpreter.ScriptState.Operands.Pop());
             string p1 = ConvToString(self._interpreter.ScriptState.Operands.Pop());
@@ -4216,11 +4216,11 @@ namespace Halcyon.Phlox.Glue
 
             self._asyncCallDelegate(delegate ()
             {
-                self._systemAPI.iwGiveLinkInventory(p0, p1, p2);
+                self._systemAPI.halGiveLinkInventory(p0, p1, p2);
             });
         }
 
-        static private void Shim_iwGiveLinkInventoryList(SyscallShim self)
+        static private void Shim_halGiveLinkInventoryList(SyscallShim self)
         {
             LSLList p3 = ConvToLSLList(self._interpreter.ScriptState.Operands.Pop());
             string p2 = ConvToString(self._interpreter.ScriptState.Operands.Pop());
@@ -4231,44 +4231,44 @@ namespace Halcyon.Phlox.Glue
 
             self._asyncCallDelegate(delegate ()
             {
-                self._systemAPI.iwGiveLinkInventoryList(p0, p1, p2, p3);
+                self._systemAPI.halGiveLinkInventoryList(p0, p1, p2, p3);
             });
         }
 
-        static private void Shim_iwGetNotecardSegment(SyscallShim self)
+        static private void Shim_halGetNotecardSegment(SyscallShim self)
         {
             int p3 = ConvToInt(self._interpreter.ScriptState.Operands.Pop());
             int p2 = ConvToInt(self._interpreter.ScriptState.Operands.Pop());
             int p1 = ConvToInt(self._interpreter.ScriptState.Operands.Pop());
             string p0 = ConvToString(self._interpreter.ScriptState.Operands.Pop());
 
-            string ret = self._systemAPI.iwGetNotecardSegment(p0, p1, p2, p3);
+            string ret = self._systemAPI.halGetNotecardSegment(p0, p1, p2, p3);
 
             self._interpreter.SafeOperandsPush(ConvToLSLType(ret));
         }
 
-        static private void Shim_iwGetLinkNumberOfNotecardLines(SyscallShim self)
+        static private void Shim_halGetLinkNumberOfNotecardLines(SyscallShim self)
         {
             string p1 = ConvToString(self._interpreter.ScriptState.Operands.Pop());
             int p0 = ConvToInt(self._interpreter.ScriptState.Operands.Pop());
 
-            string ret = self._systemAPI.iwGetLinkNumberOfNotecardLines(p0, p1);
+            string ret = self._systemAPI.halGetLinkNumberOfNotecardLines(p0, p1);
 
             self._interpreter.SafeOperandsPush(ConvToLSLType(ret));
         }
 
-        static private void Shim_iwGetLinkNotecardLine(SyscallShim self)
+        static private void Shim_halGetLinkNotecardLine(SyscallShim self)
         {
             int p2 = ConvToInt(self._interpreter.ScriptState.Operands.Pop());
             string p1 = ConvToString(self._interpreter.ScriptState.Operands.Pop());
             int p0 = ConvToInt(self._interpreter.ScriptState.Operands.Pop());
 
-            string ret = self._systemAPI.iwGetLinkNotecardLine(p0, p1, p2);
+            string ret = self._systemAPI.halGetLinkNotecardLine(p0, p1, p2);
 
             self._interpreter.SafeOperandsPush(ConvToLSLType(ret));
         }
 
-        static private void Shim_iwGetLinkNotecardSegment(SyscallShim self)
+        static private void Shim_halGetLinkNotecardSegment(SyscallShim self)
         {
             int p4 = ConvToInt(self._interpreter.ScriptState.Operands.Pop());
             int p3 = ConvToInt(self._interpreter.ScriptState.Operands.Pop());
@@ -4276,26 +4276,26 @@ namespace Halcyon.Phlox.Glue
             string p1 = ConvToString(self._interpreter.ScriptState.Operands.Pop());
             int p0 = ConvToInt(self._interpreter.ScriptState.Operands.Pop());
 
-            string ret = self._systemAPI.iwGetLinkNotecardSegment(p0, p1, p2, p3, p4);
+            string ret = self._systemAPI.halGetLinkNotecardSegment(p0, p1, p2, p3, p4);
 
             self._interpreter.SafeOperandsPush(ConvToLSLType(ret));
         }
 
-        static private void Shim_iwActiveGroup(SyscallShim self)
+        static private void Shim_halActiveGroup(SyscallShim self)
         {
             string p1 = ConvToString(self._interpreter.ScriptState.Operands.Pop());
             string p0 = ConvToString(self._interpreter.ScriptState.Operands.Pop());
 
-            int ret = self._systemAPI.iwActiveGroup(p0, p1);
+            int ret = self._systemAPI.halActiveGroup(p0, p1);
 
             self._interpreter.SafeOperandsPush(ConvToLSLType(ret));
         }
 
-        static private void Shim_iwAvatarOnLink(SyscallShim self)
+        static private void Shim_halAvatarOnLink(SyscallShim self)
         {
             int p0 = ConvToInt(self._interpreter.ScriptState.Operands.Pop());
 
-            string ret = self._systemAPI.iwAvatarOnLink(p0);
+            string ret = self._systemAPI.halAvatarOnLink(p0);
 
             self._interpreter.SafeOperandsPush(ConvToLSLType(ret));
         }
@@ -4352,7 +4352,7 @@ namespace Halcyon.Phlox.Glue
             self._systemAPI.llSetVelocity(p0, p1);
         }
 
-        static private void Shim_iwRezObject(SyscallShim self)
+        static private void Shim_halRezObject(SyscallShim self)
         {
             int p4 = ConvToInt(self._interpreter.ScriptState.Operands.Pop());
             Quaternion p3 = ConvToQuat(self._interpreter.ScriptState.Operands.Pop());
@@ -4365,11 +4365,11 @@ namespace Halcyon.Phlox.Glue
 
             self._asyncCallDelegate(delegate ()
             {
-                self._systemAPI.iwRezObject(p0, p1, p2, p3, p4);
+                self._systemAPI.halRezObject(p0, p1, p2, p3, p4);
             });
         }
 
-        static private void Shim_iwRezAtRoot(SyscallShim self)
+        static private void Shim_halRezAtRoot(SyscallShim self)
         {
             int p4 = ConvToInt(self._interpreter.ScriptState.Operands.Pop());
             Quaternion p3 = ConvToQuat(self._interpreter.ScriptState.Operands.Pop());
@@ -4382,11 +4382,11 @@ namespace Halcyon.Phlox.Glue
 
             self._asyncCallDelegate(delegate ()
             {
-                self._systemAPI.iwRezAtRoot(p0, p1, p2, p3, p4);
+                self._systemAPI.halRezAtRoot(p0, p1, p2, p3, p4);
             });
         }
 
-        static private void Shim_iwRezPrim(SyscallShim self)
+        static private void Shim_halRezPrim(SyscallShim self)
         {
             int p6 = ConvToInt(self._interpreter.ScriptState.Operands.Pop());
             Quaternion p5 = ConvToQuat(self._interpreter.ScriptState.Operands.Pop());
@@ -4395,7 +4395,7 @@ namespace Halcyon.Phlox.Glue
             LSLList p2 = ConvToLSLList(self._interpreter.ScriptState.Operands.Pop());
             LSLList p1 = ConvToLSLList(self._interpreter.ScriptState.Operands.Pop());
             LSLList p0 = ConvToLSLList(self._interpreter.ScriptState.Operands.Pop());
-            string ret = self._systemAPI.iwRezPrim(p0, p1, p2, p3, p4, p5, p6);
+            string ret = self._systemAPI.halRezPrim(p0, p1, p2, p3, p4, p5, p6);
 
             self._interpreter.SafeOperandsPush(ConvToLSLType(ret));
 
@@ -4412,15 +4412,15 @@ namespace Halcyon.Phlox.Glue
             self._interpreter.SafeOperandsPush(ConvToLSLType(ret));
         }
 
-        // LSLList iwGetAgentList(int scope, Vector3 minPos, Vector3 maxPos, LSLList paramList);
-        static private void Shim_iwGetAgentList(SyscallShim self)
+        // LSLList halGetAgentList(int scope, Vector3 minPos, Vector3 maxPos, LSLList paramList);
+        static private void Shim_halGetAgentList(SyscallShim self)
         {
             LSLList p3 = ConvToLSLList(self._interpreter.ScriptState.Operands.Pop());
             Vector3 p2 = ConvToVector(self._interpreter.ScriptState.Operands.Pop());
             Vector3 p1 = ConvToVector(self._interpreter.ScriptState.Operands.Pop());
             int p0 = ConvToInt(self._interpreter.ScriptState.Operands.Pop());
 
-            LSLList ret = self._systemAPI.iwGetAgentList(p0, p1, p2, p3);
+            LSLList ret = self._systemAPI.halGetAgentList(p0, p1, p2, p3);
 
             self._interpreter.SafeOperandsPush(ConvToLSLType(ret));
         }
@@ -4470,11 +4470,11 @@ namespace Halcyon.Phlox.Glue
             self._interpreter.SafeOperandsPush(ConvToLSLType(ret));
         }
 
-        static private void Shim_iwGetObjectMassMKS(SyscallShim self)
+        static private void Shim_halGetObjectMassMKS(SyscallShim self)
         {
             string p0 = ConvToString(self._interpreter.ScriptState.Operands.Pop());
 
-            float ret = self._systemAPI.iwGetObjectMassMKS(p0);
+            float ret = self._systemAPI.halGetObjectMassMKS(p0);
 
             self._interpreter.SafeOperandsPush(ConvToLSLType(ret));
         }
@@ -4489,7 +4489,7 @@ namespace Halcyon.Phlox.Glue
 
         }
 
-        static private void Shim_iwSetGround(SyscallShim self)
+        static private void Shim_halSetGround(SyscallShim self)
         {
             float p4 = ConvToFloat(self._interpreter.ScriptState.Operands.Pop());
             int p3 = ConvToInt(self._interpreter.ScriptState.Operands.Pop());
@@ -4497,7 +4497,7 @@ namespace Halcyon.Phlox.Glue
             int p1 = ConvToInt(self._interpreter.ScriptState.Operands.Pop());
             int p0 = ConvToInt(self._interpreter.ScriptState.Operands.Pop());
 
-            self._systemAPI.iwSetGround(p0, p1, p2, p3, p4);
+            self._systemAPI.halSetGround(p0, p1, p2, p3, p4);
         }
 
         static private void Shim_llSetContentType(SyscallShim self)
@@ -4558,39 +4558,39 @@ namespace Halcyon.Phlox.Glue
             self._interpreter.SafeOperandsPush(ConvToLSLType(ret));
         }
 
-        static private void Shim_iwSetWind(SyscallShim self)
+        static private void Shim_halSetWind(SyscallShim self)
         {
             Vector3 p2 = ConvToVector(self._interpreter.ScriptState.Operands.Pop());
             Vector3 p1 = ConvToVector(self._interpreter.ScriptState.Operands.Pop());
             int p0 = ConvToInt(self._interpreter.ScriptState.Operands.Pop());
 
-            self._systemAPI.iwSetWind(p0, p1, p2);
+            self._systemAPI.halSetWind(p0, p1, p2);
         }
 
-        static private void Shim_iwHasParcelPowers(SyscallShim self)
+        static private void Shim_halHasParcelPowers(SyscallShim self)
         {
             int p0 = ConvToInt(self._interpreter.ScriptState.Operands.Pop());
 
-            int ret = self._systemAPI.iwHasParcelPowers(p0);
+            int ret = self._systemAPI.halHasParcelPowers(p0);
 
             self._interpreter.SafeOperandsPush(ConvToLSLType(ret));
         }
 
-        static private void Shim_iwGroundSurfaceNormal(SyscallShim self)
+        static private void Shim_halGroundSurfaceNormal(SyscallShim self)
         {
             Vector3 p0 = ConvToVector(self._interpreter.ScriptState.Operands.Pop());
 
-            Vector3 ret = self._systemAPI.iwGroundSurfaceNormal(p0);
+            Vector3 ret = self._systemAPI.halGroundSurfaceNormal(p0);
 
             self._interpreter.SafeOperandsPush(ConvToLSLType(ret));
         }
 
 
-        static private void Shim_iwRequestAnimationData(SyscallShim self)
+        static private void Shim_halRequestAnimationData(SyscallShim self)
         {
             string p0 = ConvToString(self._interpreter.ScriptState.Operands.Pop());
 
-            string ret = self._systemAPI.iwRequestAnimationData(p0);
+            string ret = self._systemAPI.halRequestAnimationData(p0);
 
             self._interpreter.SafeOperandsPush(ConvToLSLType(ret));
         }
@@ -4614,11 +4614,11 @@ namespace Halcyon.Phlox.Glue
             self._systemAPI.llSetKeyframedMotion(p0, p1);
         }
 
-        static private void Shim_iwWind(SyscallShim self)
+        static private void Shim_halWind(SyscallShim self)
         {
             Vector3 p0 = ConvToVector(self._interpreter.ScriptState.Operands.Pop());
 
-            Vector3 ret = self._systemAPI.iwWind(p0);
+            Vector3 ret = self._systemAPI.halWind(p0);
 
             self._interpreter.SafeOperandsPush(ConvToLSLType(ret));
         }
@@ -4630,38 +4630,38 @@ namespace Halcyon.Phlox.Glue
             self._interpreter.SafeOperandsPush(ConvToLSLType(ret));
         }
 
-        static private void Shim_iwGetLocalTime(SyscallShim self)
+        static private void Shim_halGetLocalTime(SyscallShim self)
         {
-            int ret = self._systemAPI.iwGetLocalTime();
+            int ret = self._systemAPI.halGetLocalTime();
 
             self._interpreter.SafeOperandsPush(ConvToLSLType(ret));
         }
 
-        static private void Shim_iwGetLocalTimeOffset(SyscallShim self)
+        static private void Shim_halGetLocalTimeOffset(SyscallShim self)
         {
-            int ret = self._systemAPI.iwGetLocalTimeOffset();
+            int ret = self._systemAPI.halGetLocalTimeOffset();
 
             self._interpreter.SafeOperandsPush(ConvToLSLType(ret));
         }
 
-        static private void Shim_iwFormatTime(SyscallShim self)
+        static private void Shim_halFormatTime(SyscallShim self)
         {
             string p2 = ConvToString(self._interpreter.ScriptState.Operands.Pop());
             int p1 = ConvToInt(self._interpreter.ScriptState.Operands.Pop());
             int p0 = ConvToInt(self._interpreter.ScriptState.Operands.Pop());
 
-            string ret = self._systemAPI.iwFormatTime(p0, p1, p2);
+            string ret = self._systemAPI.halFormatTime(p0, p1, p2);
 
             self._interpreter.SafeOperandsPush(ConvToLSLType(ret));
         }
 
-        static private void Shim_iwCheckRezError(SyscallShim self)
+        static private void Shim_halCheckRezError(SyscallShim self)
         {
             int p2 = ConvToInt(self._interpreter.ScriptState.Operands.Pop());
             int p1 = ConvToInt(self._interpreter.ScriptState.Operands.Pop());
             Vector3 p0 = ConvToVector(self._interpreter.ScriptState.Operands.Pop());
 
-            int ret = self._systemAPI.iwCheckRezError(p0, p1, p2);
+            int ret = self._systemAPI.halCheckRezError(p0, p1, p2);
 
             self._interpreter.SafeOperandsPush(ConvToLSLType(ret));
         }
@@ -5018,9 +5018,9 @@ namespace Halcyon.Phlox.Glue
             self._systemAPI.botSensorRemove();
         }
 
-        static private void Shim_iwDetectedBot(SyscallShim self)
+        static private void Shim_halDetectedBot(SyscallShim self)
         {
-            string ret = self._systemAPI.iwDetectedBot();
+            string ret = self._systemAPI.halDetectedBot();
 
             self._interpreter.SafeOperandsPush(ConvToLSLType(ret));
         }
@@ -5149,167 +5149,167 @@ namespace Halcyon.Phlox.Glue
             self._interpreter.SafeOperandsPush(ConvToLSLType(ret));
         }
 
-        static private void Shim_iwGetAngularVelocity(SyscallShim self)
+        static private void Shim_halGetAngularVelocity(SyscallShim self)
         {
-            Vector3 ret = self._systemAPI.iwGetAngularVelocity();
+            Vector3 ret = self._systemAPI.halGetAngularVelocity();
 
             self._interpreter.SafeOperandsPush(ConvToLSLType(ret));
         }
 
-        // int iwGetAppearanceParam(string who, int which)
-        static private void Shim_iwGetAppearanceParam(SyscallShim self)
-        {
-            int p1 = ConvToInt(self._interpreter.ScriptState.Operands.Pop());
-            string p0 = ConvToString(self._interpreter.ScriptState.Operands.Pop());
-
-            int ret = self._systemAPI.iwGetAppearanceParam(p0, p1);
-
-            self._interpreter.SafeOperandsPush(ConvToLSLType(ret));
-        }
-
-        static private void Shim_iwChar2Int(SyscallShim self)
+        // int halGetAppearanceParam(string who, int which)
+        static private void Shim_halGetAppearanceParam(SyscallShim self)
         {
             int p1 = ConvToInt(self._interpreter.ScriptState.Operands.Pop());
             string p0 = ConvToString(self._interpreter.ScriptState.Operands.Pop());
 
-            int ret = self._systemAPI.iwChar2Int(p0, p1);
+            int ret = self._systemAPI.halGetAppearanceParam(p0, p1);
 
             self._interpreter.SafeOperandsPush(ConvToLSLType(ret));
         }
 
-        static private void Shim_iwInt2Char(SyscallShim self)
+        static private void Shim_halChar2Int(SyscallShim self)
+        {
+            int p1 = ConvToInt(self._interpreter.ScriptState.Operands.Pop());
+            string p0 = ConvToString(self._interpreter.ScriptState.Operands.Pop());
+
+            int ret = self._systemAPI.halChar2Int(p0, p1);
+
+            self._interpreter.SafeOperandsPush(ConvToLSLType(ret));
+        }
+
+        static private void Shim_halInt2Char(SyscallShim self)
         {
             int p0 = ConvToInt(self._interpreter.ScriptState.Operands.Pop());
 
-            string ret = self._systemAPI.iwInt2Char(p0);
+            string ret = self._systemAPI.halInt2Char(p0);
 
             self._interpreter.SafeOperandsPush(ConvToLSLType(ret));
         }
 
-        static private void Shim_iwReplaceString(SyscallShim self)
+        static private void Shim_halReplaceString(SyscallShim self)
         {
 
             string p2 = ConvToString(self._interpreter.ScriptState.Operands.Pop());
             string p1 = ConvToString(self._interpreter.ScriptState.Operands.Pop());
             string p0 = ConvToString(self._interpreter.ScriptState.Operands.Pop());
 
-            string ret = self._systemAPI.iwReplaceString(p0, p1, p2);
+            string ret = self._systemAPI.halReplaceString(p0, p1, p2);
 
             self._interpreter.SafeOperandsPush(ConvToLSLType(ret));
         }
 
-        static private void Shim_iwFormatString(SyscallShim self)
+        static private void Shim_halFormatString(SyscallShim self)
         {
             LSLList p1 = ConvToLSLList(self._interpreter.ScriptState.Operands.Pop());
             string p0 = ConvToString(self._interpreter.ScriptState.Operands.Pop());
 
-            string ret = self._systemAPI.iwFormatString(p0, p1);
+            string ret = self._systemAPI.halFormatString(p0, p1);
 
             self._interpreter.SafeOperandsPush(ConvToLSLType(ret));
         }
 
-        static private void Shim_iwMatchString(SyscallShim self)
+        static private void Shim_halMatchString(SyscallShim self)
         {
             int p2 = ConvToInt(self._interpreter.ScriptState.Operands.Pop());
             string p1 = ConvToString(self._interpreter.ScriptState.Operands.Pop());
             string p0 = ConvToString(self._interpreter.ScriptState.Operands.Pop());
 
-            int ret = self._systemAPI.iwMatchString(p0, p1, p2);
+            int ret = self._systemAPI.halMatchString(p0, p1, p2);
 
             self._interpreter.SafeOperandsPush(ConvToLSLType(ret));
         }
 
-        static private void Shim_iwStringCodec(SyscallShim self)
+        static private void Shim_halStringCodec(SyscallShim self)
         {
             LSLList p3 = ConvToLSLList(self._interpreter.ScriptState.Operands.Pop());
             int p2 = ConvToInt(self._interpreter.ScriptState.Operands.Pop());
             string p1 = ConvToString(self._interpreter.ScriptState.Operands.Pop());
             string p0 = ConvToString(self._interpreter.ScriptState.Operands.Pop());
 
-            string ret = self._systemAPI.iwStringCodec(p0, p1, p2, p3);
+            string ret = self._systemAPI.halStringCodec(p0, p1, p2, p3);
 
             self._interpreter.SafeOperandsPush(ConvToLSLType(ret));
         }
 
-        static private void Shim_iwMatchList(SyscallShim self)
+        static private void Shim_halMatchList(SyscallShim self)
         {
             int p2 = ConvToInt(self._interpreter.ScriptState.Operands.Pop());
             LSLList p1 = ConvToLSLList(self._interpreter.ScriptState.Operands.Pop());
             LSLList p0 = ConvToLSLList(self._interpreter.ScriptState.Operands.Pop());
 
-            int ret = self._systemAPI.iwMatchList(p0, p1, p2);
+            int ret = self._systemAPI.halMatchList(p0, p1, p2);
 
             self._interpreter.SafeOperandsPush(ConvToLSLType(ret));
         }
 
-        static private void Shim_iwColorConvert(SyscallShim self)
+        static private void Shim_halColorConvert(SyscallShim self)
         {
             int p2 = ConvToInt(self._interpreter.ScriptState.Operands.Pop());
             int p1 = ConvToInt(self._interpreter.ScriptState.Operands.Pop());
             Vector3 p0 = ConvToVector(self._interpreter.ScriptState.Operands.Pop());
 
-            Vector3 ret = self._systemAPI.iwColorConvert(p0, p1, p2);
+            Vector3 ret = self._systemAPI.halColorConvert(p0, p1, p2);
 
             self._interpreter.SafeOperandsPush(ConvToLSLType(ret));
         }
 
-        static private void Shim_iwNameToColor(SyscallShim self)
+        static private void Shim_halNameToColor(SyscallShim self)
         {
             string p0 = ConvToString(self._interpreter.ScriptState.Operands.Pop());
 
-            Vector3 ret = self._systemAPI.iwNameToColor(p0);
+            Vector3 ret = self._systemAPI.halNameToColor(p0);
 
             self._interpreter.SafeOperandsPush(ConvToLSLType(ret));
         }
 
-        static private void Shim_iwVerifyType(SyscallShim self)
+        static private void Shim_halVerifyType(SyscallShim self)
         {
             int p1 = ConvToInt(self._interpreter.ScriptState.Operands.Pop());
             string p0 = ConvToString(self._interpreter.ScriptState.Operands.Pop());
 
-            int ret = self._systemAPI.iwVerifyType(p0, p1);
+            int ret = self._systemAPI.halVerifyType(p0, p1);
 
             self._interpreter.SafeOperandsPush(ConvToLSLType(ret));
         }
 
-        static private void Shim_iwGroupInvite(SyscallShim self)
+        static private void Shim_halGroupInvite(SyscallShim self)
         {
             string p2 = ConvToString(self._interpreter.ScriptState.Operands.Pop());
             string p1 = ConvToString(self._interpreter.ScriptState.Operands.Pop());
             string p0 = ConvToString(self._interpreter.ScriptState.Operands.Pop());
 
-            int ret = self._systemAPI.iwGroupInvite(p0, p1, p2);
+            int ret = self._systemAPI.halGroupInvite(p0, p1, p2);
 
             self._interpreter.SafeOperandsPush(ConvToLSLType(ret));
         }
 
-        static private void Shim_iwGroupEject(SyscallShim self)
+        static private void Shim_halGroupEject(SyscallShim self)
         {
             string p1 = ConvToString(self._interpreter.ScriptState.Operands.Pop());
             string p0 = ConvToString(self._interpreter.ScriptState.Operands.Pop());
 
-            int ret = self._systemAPI.iwGroupEject(p0, p1);
+            int ret = self._systemAPI.halGroupEject(p0, p1);
 
             self._interpreter.SafeOperandsPush(ConvToLSLType(ret));
         }
 
-        // string iwGetAgentData(key id, integer data)
-        static private void Shim_iwGetAgentData(SyscallShim self)
+        // string halGetAgentData(key id, integer data)
+        static private void Shim_halGetAgentData(SyscallShim self)
         {
             int data = ConvToInt(self._interpreter.ScriptState.Operands.Pop());
             string id = ConvToString(self._interpreter.ScriptState.Operands.Pop());
 
-            string ret = self._systemAPI.iwGetAgentData(id, data);
+            string ret = self._systemAPI.halGetAgentData(id, data);
 
             self._interpreter.SafeOperandsPush(ConvToLSLType(ret));
         }
 
-        // integer iwIsPlusUser(key id)
-        static private void Shim_iwIsPlusUser(SyscallShim self)
+        // integer halIsPlusUser(key id)
+        static private void Shim_halIsPlusUser(SyscallShim self)
         {
             string id = ConvToString(self._interpreter.ScriptState.Operands.Pop());
 
-            int ret = self._systemAPI.iwIsPlusUser(id);
+            int ret = self._systemAPI.halIsPlusUser(id);
 
             self._interpreter.SafeOperandsPush(ConvToLSLType(ret));
         }
@@ -5321,92 +5321,92 @@ namespace Halcyon.Phlox.Glue
             self._systemAPI.llAttachToAvatarTemp(p0);
         }
 
-        // integer iwListIncludesElements(list src, list elements, integer any)
-        static private void Shim_iwListIncludesElements(SyscallShim self)
+        // integer halListIncludesElements(list src, list elements, integer any)
+        static private void Shim_halListIncludesElements(SyscallShim self)
         {
             int p2 = ConvToInt(self._interpreter.ScriptState.Operands.Pop());
             LSLList p1 = ConvToLSLList(self._interpreter.ScriptState.Operands.Pop());
             LSLList p0 = ConvToLSLList(self._interpreter.ScriptState.Operands.Pop());
 
-            int ret = self._systemAPI.iwListIncludesElements(p0, p1, p2);
+            int ret = self._systemAPI.halListIncludesElements(p0, p1, p2);
 
             self._interpreter.SafeOperandsPush(ConvToLSLType(ret));
         }
 
-        // string iwReverseString(string src);
-        static private void Shim_iwReverseString(SyscallShim self)
+        // string halReverseString(string src);
+        static private void Shim_halReverseString(SyscallShim self)
         {
             string p0 = ConvToString(self._interpreter.ScriptState.Operands.Pop());
 
-            string ret = self._systemAPI.iwReverseString(p0);
+            string ret = self._systemAPI.halReverseString(p0);
 
             self._interpreter.SafeOperandsPush(ConvToLSLType(ret));
         }
 
-        // list iwReverseList(list src, integer stride)
-        static private void Shim_iwReverseList(SyscallShim self)
+        // list halReverseList(list src, integer stride)
+        static private void Shim_halReverseList(SyscallShim self)
         {
             int p1 = ConvToInt(self._interpreter.ScriptState.Operands.Pop());
             LSLList p0 = ConvToLSLList(self._interpreter.ScriptState.Operands.Pop());
 
-            LSLList ret = self._systemAPI.iwReverseList(p0, p1);
+            LSLList ret = self._systemAPI.halReverseList(p0, p1);
 
             self._interpreter.SafeOperandsPush(ConvToLSLType(ret));
         }
 
-        // list iwSearchInventory(integer type, string pattern, integer matchtype)
-        static private void Shim_iwSearchInventory(SyscallShim self)
+        // list halSearchInventory(integer type, string pattern, integer matchtype)
+        static private void Shim_halSearchInventory(SyscallShim self)
         {
             int p2 = ConvToInt(self._interpreter.ScriptState.Operands.Pop());
             string p1 = ConvToString(self._interpreter.ScriptState.Operands.Pop());
             int p0 = ConvToInt(self._interpreter.ScriptState.Operands.Pop());
 
-            LSLList ret = self._systemAPI.iwSearchInventory(p0, p1, p2);
+            LSLList ret = self._systemAPI.halSearchInventory(p0, p1, p2);
 
             self._interpreter.SafeOperandsPush(ConvToLSLType(ret));
         }
 
-        // list iwSearchLinkInventory(integer link, integer type, string pattern, integer matchtype)
-        static private void Shim_iwSearchLinkInventory(SyscallShim self)
+        // list halSearchLinkInventory(integer link, integer type, string pattern, integer matchtype)
+        static private void Shim_halSearchLinkInventory(SyscallShim self)
         {
             int p3 = ConvToInt(self._interpreter.ScriptState.Operands.Pop());
             string p2 = ConvToString(self._interpreter.ScriptState.Operands.Pop());
             int p1 = ConvToInt(self._interpreter.ScriptState.Operands.Pop());
             int p0 = ConvToInt(self._interpreter.ScriptState.Operands.Pop());
 
-            LSLList ret = self._systemAPI.iwSearchLinkInventory(p0, p1, p2, p3);
+            LSLList ret = self._systemAPI.halSearchLinkInventory(p0, p1, p2, p3);
 
             self._interpreter.SafeOperandsPush(ConvToLSLType(ret));
         }
 
-        // integer iwIntRand(integer max);
-        static private void Shim_iwIntRand(SyscallShim self)
+        // integer halIntRand(integer max);
+        static private void Shim_halIntRand(SyscallShim self)
         {
             int p0 = ConvToInt(self._interpreter.ScriptState.Operands.Pop());
 
-            int ret = self._systemAPI.iwIntRand(p0);
+            int ret = self._systemAPI.halIntRand(p0);
 
             self._interpreter.SafeOperandsPush(ConvToLSLType(ret));
         }
 
-        // integer iwIntRandRange(integer min, integer max);
-        static private void Shim_iwIntRandRange(SyscallShim self)
+        // integer halIntRandRange(integer min, integer max);
+        static private void Shim_halIntRandRange(SyscallShim self)
         {
             int p1 = ConvToInt(self._interpreter.ScriptState.Operands.Pop());
             int p0 = ConvToInt(self._interpreter.ScriptState.Operands.Pop());
 
-            int ret = self._systemAPI.iwIntRandRange(p0, p1);
+            int ret = self._systemAPI.halIntRandRange(p0, p1);
 
             self._interpreter.SafeOperandsPush(ConvToLSLType(ret));
         }
 
-        // float iwFloatRandRange(float min, float max);
-        static private void Shim_iwFrandRange(SyscallShim self)
+        // float halFloatRandRange(float min, float max);
+        static private void Shim_halFrandRange(SyscallShim self)
         {
             float p1 = ConvToFloat(self._interpreter.ScriptState.Operands.Pop());
             float p0 = ConvToFloat(self._interpreter.ScriptState.Operands.Pop());
 
-            float ret = self._systemAPI.iwFrandRange(p0, p1);
+            float ret = self._systemAPI.halFrandRange(p0, p1);
 
             self._interpreter.SafeOperandsPush(ConvToLSLType(ret));
         }
@@ -5429,91 +5429,91 @@ namespace Halcyon.Phlox.Glue
             });
         }
 
-        // list iwListRemoveElements(list src, list elements, integer count);
-        static private void Shim_iwListRemoveElements(SyscallShim self)
+        // list halListRemoveElements(list src, list elements, integer count);
+        static private void Shim_halListRemoveElements(SyscallShim self)
         {
             int p3 = ConvToInt(self._interpreter.ScriptState.Operands.Pop());
             int p2 = ConvToInt(self._interpreter.ScriptState.Operands.Pop());
             LSLList p1 = ConvToLSLList(self._interpreter.ScriptState.Operands.Pop());
             LSLList p0 = ConvToLSLList(self._interpreter.ScriptState.Operands.Pop());
 
-            LSLList ret = self._systemAPI.iwListRemoveElements(p0, p1, p2, p3);
+            LSLList ret = self._systemAPI.halListRemoveElements(p0, p1, p2, p3);
 
             self._interpreter.SafeOperandsPush(ConvToLSLType(ret));
         }
 
-        // list iwListRemoveDuplicates(list src, list elements, integer count);
-        static private void Shim_iwListRemoveDuplicates(SyscallShim self)
+        // list halListRemoveDuplicates(list src, list elements, integer count);
+        static private void Shim_halListRemoveDuplicates(SyscallShim self)
         {
             LSLList p0 = ConvToLSLList(self._interpreter.ScriptState.Operands.Pop());
 
-            LSLList ret = self._systemAPI.iwListRemoveDuplicates(p0);
+            LSLList ret = self._systemAPI.halListRemoveDuplicates(p0);
 
             self._interpreter.SafeOperandsPush(ConvToLSLType(ret));
         }
 
-        // iwStartLinkAnimation(integer link, string anim);
-        static private void Shim_iwStartLinkAnimation(SyscallShim self)
+        // halStartLinkAnimation(integer link, string anim);
+        static private void Shim_halStartLinkAnimation(SyscallShim self)
         {
             string p1 = ConvToString(self._interpreter.ScriptState.Operands.Pop());
             int p0 = ConvToInt(self._interpreter.ScriptState.Operands.Pop());
 
-            self._systemAPI.iwStartLinkAnimation(p0, p1);
+            self._systemAPI.halStartLinkAnimation(p0, p1);
         }
 
-        // iwStopLinkAnimation(integer link, string anim);
-        static private void Shim_iwStopLinkAnimation(SyscallShim self)
+        // halStopLinkAnimation(integer link, string anim);
+        static private void Shim_halStopLinkAnimation(SyscallShim self)
         {
             string p1 = ConvToString(self._interpreter.ScriptState.Operands.Pop());
             int p0 = ConvToInt(self._interpreter.ScriptState.Operands.Pop());
 
-            self._systemAPI.iwStopLinkAnimation(p0, p1);
+            self._systemAPI.halStopLinkAnimation(p0, p1);
         }
 
-        // integer iwClampInt(integer value, integer min, integer max);
-        static private void Shim_iwClampInt(SyscallShim self)
+        // integer halClampInt(integer value, integer min, integer max);
+        static private void Shim_halClampInt(SyscallShim self)
         {
             int p2 = ConvToInt(self._interpreter.ScriptState.Operands.Pop());
             int p1 = ConvToInt(self._interpreter.ScriptState.Operands.Pop());
             int p0 = ConvToInt(self._interpreter.ScriptState.Operands.Pop());
 
-            int ret = self._systemAPI.iwClampInt(p0, p1, p2);
+            int ret = self._systemAPI.halClampInt(p0, p1, p2);
 
             self._interpreter.SafeOperandsPush(ConvToLSLType(ret));
         }
 
-        // float iwClampFloat(float value, float min, float max);
-        static private void Shim_iwClampFloat(SyscallShim self)
+        // float halClampFloat(float value, float min, float max);
+        static private void Shim_halClampFloat(SyscallShim self)
         {
             float p2 = ConvToFloat(self._interpreter.ScriptState.Operands.Pop());
             float p1 = ConvToFloat(self._interpreter.ScriptState.Operands.Pop());
             float p0 = ConvToFloat(self._interpreter.ScriptState.Operands.Pop());
 
-            float ret = self._systemAPI.iwClampFloat(p0, p1, p2);
+            float ret = self._systemAPI.halClampFloat(p0, p1, p2);
 
             self._interpreter.SafeOperandsPush(ConvToLSLType(ret));
         }
 
-        // list iwSearchLinksByName(string pattern, integer matchType, integer linksOnly);
-        static private void Shim_iwSearchLinksByName(SyscallShim self)
+        // list halSearchLinksByName(string pattern, integer matchType, integer linksOnly);
+        static private void Shim_halSearchLinksByName(SyscallShim self)
         {
             int p2 = ConvToInt(self._interpreter.ScriptState.Operands.Pop());
             int p1 = ConvToInt(self._interpreter.ScriptState.Operands.Pop());
             string p0 = ConvToString(self._interpreter.ScriptState.Operands.Pop());
 
-            LSLList ret = self._systemAPI.iwSearchLinksByName(p0, p1, p2);
+            LSLList ret = self._systemAPI.halSearchLinksByName(p0, p1, p2);
 
             self._interpreter.SafeOperandsPush(ConvToLSLType(ret));
         }
 
-        // list iwSearchLinksByDesc(string pattern, integer matchType, integer linksOnly);
-        static private void Shim_iwSearchLinksByDesc(SyscallShim self)
+        // list halSearchLinksByDesc(string pattern, integer matchType, integer linksOnly);
+        static private void Shim_halSearchLinksByDesc(SyscallShim self)
         {
             int p2 = ConvToInt(self._interpreter.ScriptState.Operands.Pop());
             int p1 = ConvToInt(self._interpreter.ScriptState.Operands.Pop());
             string p0 = ConvToString(self._interpreter.ScriptState.Operands.Pop());
 
-            LSLList ret = self._systemAPI.iwSearchLinksByDesc(p0, p1, p2);
+            LSLList ret = self._systemAPI.halSearchLinksByDesc(p0, p1, p2);
 
             self._interpreter.SafeOperandsPush(ConvToLSLType(ret));
         }
@@ -5538,16 +5538,16 @@ namespace Halcyon.Phlox.Glue
             self._interpreter.SafeOperandsPush(ConvToLSLType(ret));
         }
 
-        static private void Shim_iwValidateURL(SyscallShim self)
+        static private void Shim_halValidateURL(SyscallShim self)
         {
             string p0 = ConvToString(self.Interpreter.ScriptState.Operands.Pop());
 
-            int ret = self._systemAPI.iwValidateURL(p0);
+            int ret = self._systemAPI.halValidateURL(p0);
 
             self._interpreter.SafeOperandsPush(ConvToLSLType(ret));
         }
 
-        static private void Shim_iwRemoteLoadScriptPin(SyscallShim self)
+        static private void Shim_halRemoteLoadScriptPin(SyscallShim self)
         {
             int p4 = ConvToInt(self._interpreter.ScriptState.Operands.Pop());
             int p3 = ConvToInt(self._interpreter.ScriptState.Operands.Pop());
@@ -5555,12 +5555,12 @@ namespace Halcyon.Phlox.Glue
             string p1 = ConvToString(self._interpreter.ScriptState.Operands.Pop());
             string p0 = ConvToString(self._interpreter.ScriptState.Operands.Pop());
 
-            int ret = self._systemAPI.iwRemoteLoadScriptPin(p0, p1, p2, p3, p4);
+            int ret = self._systemAPI.halRemoteLoadScriptPin(p0, p1, p2, p3, p4);
 
             self._interpreter.SafeOperandsPush(ConvToLSLType(ret));
         }
 
-        static private void Shim_iwDeliverInventory(SyscallShim self)
+        static private void Shim_halDeliverInventory(SyscallShim self)
         {
             string p2 = ConvToString(self._interpreter.ScriptState.Operands.Pop());
             string p1 = ConvToString(self._interpreter.ScriptState.Operands.Pop());
@@ -5571,11 +5571,11 @@ namespace Halcyon.Phlox.Glue
 
             self._asyncCallDelegate(delegate ()
             {
-                self._systemAPI.iwDeliverInventory(p0, p1, p2);
+                self._systemAPI.halDeliverInventory(p0, p1, p2);
             });
         }
 
-        static private void Shim_iwDeliverInventoryList(SyscallShim self)
+        static private void Shim_halDeliverInventoryList(SyscallShim self)
         {
             LSLList p3 = ConvToLSLList(self._interpreter.ScriptState.Operands.Pop());
             string p2 = ConvToString(self._interpreter.ScriptState.Operands.Pop());
@@ -5586,7 +5586,7 @@ namespace Halcyon.Phlox.Glue
 
             self._asyncCallDelegate(delegate ()
             {
-                self._systemAPI.iwDeliverInventoryList(p0, p1, p2, p3);
+                self._systemAPI.halDeliverInventoryList(p0, p1, p2, p3);
             });
         }
 
@@ -5628,31 +5628,31 @@ namespace Halcyon.Phlox.Glue
             self._interpreter.SafeOperandsPush(ConvToLSLType(ret));
         }
 
-        static private void Shim_iwGiveMoney(SyscallShim self)
+        static private void Shim_halGiveMoney(SyscallShim self)
         {
             int p1 = ConvToInt(self._interpreter.ScriptState.Operands.Pop());
             string p0 = ConvToString(self._interpreter.ScriptState.Operands.Pop());
 
-            string ret = self._systemAPI.iwGiveMoney(p0, p1);
+            string ret = self._systemAPI.halGiveMoney(p0, p1);
 
             self._interpreter.SafeOperandsPush(ConvToLSLType(ret));
         }
 
-        static private void Shim_iwStandTarget(SyscallShim self)
+        static private void Shim_halStandTarget(SyscallShim self)
         {
             Quaternion p1 = ConvToQuat(self._interpreter.ScriptState.Operands.Pop());
             Vector3 p0 = ConvToVector(self._interpreter.ScriptState.Operands.Pop());
 
-            self._systemAPI.iwStandTarget(p0, p1);
+            self._systemAPI.halStandTarget(p0, p1);
         }
 
-        static private void Shim_iwLinkStandTarget(SyscallShim self)
+        static private void Shim_halLinkStandTarget(SyscallShim self)
         {
             Quaternion p2 = ConvToQuat(self._interpreter.ScriptState.Operands.Pop());
             Vector3 p1 = ConvToVector(self._interpreter.ScriptState.Operands.Pop());
             int p0 = ConvToInt(self._interpreter.ScriptState.Operands.Pop());
 
-            self._systemAPI.iwLinkStandTarget(p0, p1, p2);
+            self._systemAPI.halLinkStandTarget(p0, p1, p2);
         }
 
         static private void Shim_llGetAnimationOverride(SyscallShim self)
