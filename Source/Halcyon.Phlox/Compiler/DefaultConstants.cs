@@ -1,13 +1,10 @@
-﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 namespace Halcyon.Phlox.Compiler
 {
     public class DefaultConstants
     {
-        static public Dictionary<string, ConstantSymbol> Constants = new Dictionary<string,ConstantSymbol>()
+        static public Dictionary<string, ConstantSymbol> Constants = new Dictionary<string, ConstantSymbol>()
         {
             {"TRUE",    new ConstantSymbol("TRUE", SymbolTable.INT, "1")},
             {"FALSE",   new ConstantSymbol("FALSE", SymbolTable.INT, "0")},
@@ -78,54 +75,54 @@ namespace Halcyon.Phlox.Compiler
             {"AGENT_BUSY", new ConstantSymbol("AGENT_BUSY", SymbolTable.INT, "2048")},
             {"AGENT_ALWAYS_RUN", new ConstantSymbol("AGENT_ALWAYS_RUN", SymbolTable.INT, "4096")},
 
-			{"PSYS_PART_FLAGS", new ConstantSymbol("PSYS_PART_FLAGS", SymbolTable.INT, "0")},
-			{"PSYS_PART_BOUNCE_MASK", new ConstantSymbol("PSYS_PART_BOUNCE_MASK", SymbolTable.INT, "4")},
-			{"PSYS_PART_EMISSIVE_MASK", new ConstantSymbol("PSYS_PART_EMISSIVE_MASK", SymbolTable.INT, "256")},
-			{"PSYS_PART_FOLLOW_SRC_MASK", new ConstantSymbol("PSYS_PART_FOLLOW_SRC_MASK", SymbolTable.INT, "16")},
-			{"PSYS_PART_FOLLOW_VELOCITY_MASK", new ConstantSymbol("PSYS_PART_FOLLOW_VELOCITY_MASK", SymbolTable.INT, "32")},
+            {"PSYS_PART_FLAGS", new ConstantSymbol("PSYS_PART_FLAGS", SymbolTable.INT, "0")},
+            {"PSYS_PART_BOUNCE_MASK", new ConstantSymbol("PSYS_PART_BOUNCE_MASK", SymbolTable.INT, "4")},
+            {"PSYS_PART_EMISSIVE_MASK", new ConstantSymbol("PSYS_PART_EMISSIVE_MASK", SymbolTable.INT, "256")},
+            {"PSYS_PART_FOLLOW_SRC_MASK", new ConstantSymbol("PSYS_PART_FOLLOW_SRC_MASK", SymbolTable.INT, "16")},
+            {"PSYS_PART_FOLLOW_VELOCITY_MASK", new ConstantSymbol("PSYS_PART_FOLLOW_VELOCITY_MASK", SymbolTable.INT, "32")},
             {"PSYS_PART_INTERP_COLOR_MASK", new ConstantSymbol("PSYS_PART_INTERP_COLOR_MASK", SymbolTable.INT, "1")},
             {"PSYS_PART_INTERP_SCALE_MASK", new ConstantSymbol("PSYS_PART_INTERP_SCALE_MASK", SymbolTable.INT, "2")},
-			{"PSYS_PART_RIBBON_MASK", new ConstantSymbol("PSYS_PART_RIBBON_MASK", SymbolTable.INT, "1024")},
-			{"PSYS_PART_TARGET_LINEAR_MASK", new ConstantSymbol("PSYS_PART_TARGET_LINEAR_MASK", SymbolTable.INT, "128")},
-			{"PSYS_PART_TARGET_POS_MASK", new ConstantSymbol("PSYS_PART_TARGET_POS_MASK", SymbolTable.INT, "64")},
+            {"PSYS_PART_RIBBON_MASK", new ConstantSymbol("PSYS_PART_RIBBON_MASK", SymbolTable.INT, "1024")},
+            {"PSYS_PART_TARGET_LINEAR_MASK", new ConstantSymbol("PSYS_PART_TARGET_LINEAR_MASK", SymbolTable.INT, "128")},
+            {"PSYS_PART_TARGET_POS_MASK", new ConstantSymbol("PSYS_PART_TARGET_POS_MASK", SymbolTable.INT, "64")},
             {"PSYS_PART_WIND_MASK", new ConstantSymbol("PSYS_PART_WIND_MASK", SymbolTable.INT, "8")},
-			{"PSYS_SRC_PATTERN", new ConstantSymbol("PSYS_SRC_PATTERN", SymbolTable.INT, "9")},
-			{"PSYS_SRC_PATTERN_EXPLODE", new ConstantSymbol("PSYS_SRC_PATTERN_EXPLODE", SymbolTable.INT, "2")},
-			{"PSYS_SRC_PATTERN_ANGLE_CONE", new ConstantSymbol("PSYS_SRC_PATTERN_ANGLE_CONE", SymbolTable.INT, "8")},
-			{"PSYS_SRC_PATTERN_ANGLE", new ConstantSymbol("PSYS_SRC_PATTERN_ANGLE", SymbolTable.INT, "4")},
-			{"PSYS_SRC_PATTERN_DROP", new ConstantSymbol("PSYS_SRC_PATTERN_DROP", SymbolTable.INT, "1")},
-			{"PSYS_SRC_PATTERN_ANGLE_CONE_EMPTY", new ConstantSymbol("PSYS_SRC_PATTERN_ANGLE_CONE_EMPTY", SymbolTable.INT, "16")},
-			{"PSYS_SRC_BURST_RADIUS", new ConstantSymbol("PSYS_SRC_BURST_RADIUS", SymbolTable.INT, "16")},
-			{"PSYS_SRC_ANGLE_BEGIN", new ConstantSymbol("PSYS_SRC_ANGLE_BEGIN", SymbolTable.INT, "22")},
-			{"PSYS_SRC_ANGLE_END", new ConstantSymbol("PSYS_SRC_ANGLE_END", SymbolTable.INT, "23")},
-			{"PSYS_SRC_INNERANGLE", new ConstantSymbol("PSYS_SRC_INNERANGLE", SymbolTable.INT, "10")},	// Deprecated: Use PSYS_SRC_ANGLE_BEGIN
-			{"PSYS_SRC_OUTERANGLE", new ConstantSymbol("PSYS_SRC_OUTERANGLE", SymbolTable.INT, "11")},	// Deprecated: Use PSYS_SRC_ANGLE_END
-			{"PSYS_SRC_TARGET_KEY", new ConstantSymbol("PSYS_SRC_TARGET_KEY", SymbolTable.INT, "20")},
+            {"PSYS_SRC_PATTERN", new ConstantSymbol("PSYS_SRC_PATTERN", SymbolTable.INT, "9")},
+            {"PSYS_SRC_PATTERN_EXPLODE", new ConstantSymbol("PSYS_SRC_PATTERN_EXPLODE", SymbolTable.INT, "2")},
+            {"PSYS_SRC_PATTERN_ANGLE_CONE", new ConstantSymbol("PSYS_SRC_PATTERN_ANGLE_CONE", SymbolTable.INT, "8")},
+            {"PSYS_SRC_PATTERN_ANGLE", new ConstantSymbol("PSYS_SRC_PATTERN_ANGLE", SymbolTable.INT, "4")},
+            {"PSYS_SRC_PATTERN_DROP", new ConstantSymbol("PSYS_SRC_PATTERN_DROP", SymbolTable.INT, "1")},
+            {"PSYS_SRC_PATTERN_ANGLE_CONE_EMPTY", new ConstantSymbol("PSYS_SRC_PATTERN_ANGLE_CONE_EMPTY", SymbolTable.INT, "16")},
+            {"PSYS_SRC_BURST_RADIUS", new ConstantSymbol("PSYS_SRC_BURST_RADIUS", SymbolTable.INT, "16")},
+            {"PSYS_SRC_ANGLE_BEGIN", new ConstantSymbol("PSYS_SRC_ANGLE_BEGIN", SymbolTable.INT, "22")},
+            {"PSYS_SRC_ANGLE_END", new ConstantSymbol("PSYS_SRC_ANGLE_END", SymbolTable.INT, "23")},
+            {"PSYS_SRC_INNERANGLE", new ConstantSymbol("PSYS_SRC_INNERANGLE", SymbolTable.INT, "10")},    // Deprecated: Use PSYS_SRC_ANGLE_BEGIN
+            {"PSYS_SRC_OUTERANGLE", new ConstantSymbol("PSYS_SRC_OUTERANGLE", SymbolTable.INT, "11")},    // Deprecated: Use PSYS_SRC_ANGLE_END
+            {"PSYS_SRC_TARGET_KEY", new ConstantSymbol("PSYS_SRC_TARGET_KEY", SymbolTable.INT, "20")},
             {"PSYS_PART_START_COLOR", new ConstantSymbol("PSYS_PART_START_COLOR", SymbolTable.INT, "1")},
-			{"PSYS_PART_END_COLOR", new ConstantSymbol("PSYS_PART_END_COLOR", SymbolTable.INT, "3")},
+            {"PSYS_PART_END_COLOR", new ConstantSymbol("PSYS_PART_END_COLOR", SymbolTable.INT, "3")},
             {"PSYS_PART_START_ALPHA", new ConstantSymbol("PSYS_PART_START_ALPHA", SymbolTable.INT, "2")},
             {"PSYS_PART_END_ALPHA", new ConstantSymbol("PSYS_PART_END_ALPHA", SymbolTable.INT, "4")},
             {"PSYS_PART_START_SCALE", new ConstantSymbol("PSYS_PART_START_SCALE", SymbolTable.INT, "5")},
             {"PSYS_PART_END_SCALE", new ConstantSymbol("PSYS_PART_END_SCALE", SymbolTable.INT, "6")},
-			{"PSYS_SRC_TEXTURE", new ConstantSymbol("PSYS_SRC_TEXTURE", SymbolTable.INT, "12")},
-			{"PSYS_PART_START_GLOW", new ConstantSymbol("PSYS_PART_START_GLOW", SymbolTable.INT, "26")},
-			{"PSYS_PART_END_GLOW", new ConstantSymbol("PSYS_PART_END_GLOW", SymbolTable.INT, "27")},
-			{"PSYS_PART_BLEND_FUNC_SOURCE", new ConstantSymbol("PSYS_PART_BLEND_FUNC_SOURCE", SymbolTable.INT, "24")},
-			{"PSYS_PART_BLEND_FUNC_DEST", new ConstantSymbol("PSYS_PART_BLEND_FUNC_DEST", SymbolTable.INT, "25")},
-			{"PSYS_PART_BF_ONE", new ConstantSymbol("PSYS_PART_BF_ONE", SymbolTable.INT, "0")},
-			{"PSYS_PART_BF_ZERO", new ConstantSymbol("PSYS_PART_BF_ZERO", SymbolTable.INT, "1")},
-			{"PSYS_PART_BF_DEST_COLOR", new ConstantSymbol("PSYS_PART_BF_DEST_COLOR", SymbolTable.INT, "2")},
-			{"PSYS_PART_BF_SOURCE_COLOR", new ConstantSymbol("PSYS_PART_BF_SOURCE_COLOR", SymbolTable.INT, "3")},
-			{"PSYS_PART_BF_ONE_MINUS_DEST_COLOR", new ConstantSymbol("PSYS_PART_BF_ONE_MINUS_DEST_COLOR", SymbolTable.INT, "4")},
-			{"PSYS_PART_BF_ONE_MINUS_SOURCE_COLOR", new ConstantSymbol("PSYS_PART_BF_ONE_MINUS_SOURCE_COLOR", SymbolTable.INT, "5")},
-			{"PSYS_PART_BF_SOURCE_ALPHA", new ConstantSymbol("PSYS_PART_BF_SOURCE_ALPHA", SymbolTable.INT, "7")},
-			{"PSYS_PART_BF_ONE_MINUS_SOURCE_ALPHA", new ConstantSymbol("PSYS_PART_BF_ONE_MINUS_SOURCE_ALPHA", SymbolTable.INT, "9")},
-			{"PSYS_SRC_MAX_AGE", new ConstantSymbol("PSYS_SRC_MAX_AGE", SymbolTable.INT, "19")},
+            {"PSYS_SRC_TEXTURE", new ConstantSymbol("PSYS_SRC_TEXTURE", SymbolTable.INT, "12")},
+            {"PSYS_PART_START_GLOW", new ConstantSymbol("PSYS_PART_START_GLOW", SymbolTable.INT, "26")},
+            {"PSYS_PART_END_GLOW", new ConstantSymbol("PSYS_PART_END_GLOW", SymbolTable.INT, "27")},
+            {"PSYS_PART_BLEND_FUNC_SOURCE", new ConstantSymbol("PSYS_PART_BLEND_FUNC_SOURCE", SymbolTable.INT, "24")},
+            {"PSYS_PART_BLEND_FUNC_DEST", new ConstantSymbol("PSYS_PART_BLEND_FUNC_DEST", SymbolTable.INT, "25")},
+            {"PSYS_PART_BF_ONE", new ConstantSymbol("PSYS_PART_BF_ONE", SymbolTable.INT, "0")},
+            {"PSYS_PART_BF_ZERO", new ConstantSymbol("PSYS_PART_BF_ZERO", SymbolTable.INT, "1")},
+            {"PSYS_PART_BF_DEST_COLOR", new ConstantSymbol("PSYS_PART_BF_DEST_COLOR", SymbolTable.INT, "2")},
+            {"PSYS_PART_BF_SOURCE_COLOR", new ConstantSymbol("PSYS_PART_BF_SOURCE_COLOR", SymbolTable.INT, "3")},
+            {"PSYS_PART_BF_ONE_MINUS_DEST_COLOR", new ConstantSymbol("PSYS_PART_BF_ONE_MINUS_DEST_COLOR", SymbolTable.INT, "4")},
+            {"PSYS_PART_BF_ONE_MINUS_SOURCE_COLOR", new ConstantSymbol("PSYS_PART_BF_ONE_MINUS_SOURCE_COLOR", SymbolTable.INT, "5")},
+            {"PSYS_PART_BF_SOURCE_ALPHA", new ConstantSymbol("PSYS_PART_BF_SOURCE_ALPHA", SymbolTable.INT, "7")},
+            {"PSYS_PART_BF_ONE_MINUS_SOURCE_ALPHA", new ConstantSymbol("PSYS_PART_BF_ONE_MINUS_SOURCE_ALPHA", SymbolTable.INT, "9")},
+            {"PSYS_SRC_MAX_AGE", new ConstantSymbol("PSYS_SRC_MAX_AGE", SymbolTable.INT, "19")},
             {"PSYS_PART_MAX_AGE", new ConstantSymbol("PSYS_PART_MAX_AGE", SymbolTable.INT, "7")},
-			{"PSYS_SRC_BURST_RATE", new ConstantSymbol("PSYS_SRC_BURST_RATE", SymbolTable.INT, "13")},
-			{"PSYS_SRC_BURST_PART_COUNT", new ConstantSymbol("PSYS_SRC_BURST_PART_COUNT", SymbolTable.INT, "15")},
+            {"PSYS_SRC_BURST_RATE", new ConstantSymbol("PSYS_SRC_BURST_RATE", SymbolTable.INT, "13")},
+            {"PSYS_SRC_BURST_PART_COUNT", new ConstantSymbol("PSYS_SRC_BURST_PART_COUNT", SymbolTable.INT, "15")},
             {"PSYS_SRC_ACCEL", new ConstantSymbol("PSYS_SRC_ACCEL", SymbolTable.INT, "8")},
-			{"PSYS_SRC_OMEGA", new ConstantSymbol("PSYS_SRC_OMEGA", SymbolTable.INT, "21")},
+            {"PSYS_SRC_OMEGA", new ConstantSymbol("PSYS_SRC_OMEGA", SymbolTable.INT, "21")},
             {"PSYS_SRC_BURST_SPEED_MIN", new ConstantSymbol("PSYS_SRC_BURST_SPEED_MIN", SymbolTable.INT, "17")},
             {"PSYS_SRC_BURST_SPEED_MAX", new ConstantSymbol("PSYS_SRC_BURST_SPEED_MAX", SymbolTable.INT, "18")},
             {"VEHICLE_TYPE_NONE", new ConstantSymbol("VEHICLE_TYPE_NONE", SymbolTable.INT, "0")},
@@ -358,7 +355,7 @@ namespace Halcyon.Phlox.Compiler
             {"PRIM_NAME", new ConstantSymbol("PRIM_NAME", SymbolTable.INT, "27")},
             {"PRIM_DESC", new ConstantSymbol("PRIM_DESC", SymbolTable.INT, "28")},
             {"PRIM_ROT_LOCAL", new ConstantSymbol("PRIM_ROT_LOCAL", SymbolTable.INT, "29")},
-            
+
             {"PRIM_PHYSICS_SHAPE_TYPE", new ConstantSymbol("PRIM_PHYSICS_SHAPE_TYPE", SymbolTable.INT, "30")},
             {"PRIM_PHYSICS_SHAPE_PRIM", new ConstantSymbol("PRIM_PHYSICS_SHAPE_PRIM", SymbolTable.INT, "0")},
             {"PRIM_PHYSICS_SHAPE_CONVEX", new ConstantSymbol("PRIM_PHYSICS_SHAPE_CONVEX", SymbolTable.INT, "2")},
@@ -754,7 +751,7 @@ namespace Halcyon.Phlox.Compiler
             {"BOT_USER_NOT_FOUND", new ConstantSymbol("BOT_USER_NOT_FOUND", SymbolTable.INT, "-2")},
             {"BOT_NOT_FOUND", new ConstantSymbol("BOT_NOT_FOUND", SymbolTable.INT, "-1")},
             {"BOT_SUCCESS", new ConstantSymbol("BOT_SUCCESS", SymbolTable.INT, "0")},
-            
+
             {"BOT_ALLOW_RUNNING", new ConstantSymbol("BOT_ALLOW_RUNNING", SymbolTable.INT, "1")},
             {"BOT_ALLOW_FLYING", new ConstantSymbol("BOT_ALLOW_FLYING", SymbolTable.INT, "2")},
             {"BOT_ALLOW_JUMPING", new ConstantSymbol("BOT_ALLOW_JUMPING", SymbolTable.INT, "3")},
@@ -763,29 +760,29 @@ namespace Halcyon.Phlox.Compiler
             {"BOT_START_FOLLOWING_DISTANCE", new ConstantSymbol("BOT_START_FOLLOWING_DISTANCE", SymbolTable.INT, "6")},
             {"BOT_STOP_FOLLOWING_DISTANCE", new ConstantSymbol("BOT_STOP_FOLLOWING_DISTANCE", SymbolTable.INT, "7")},
             {"BOT_LOST_AVATAR_DISTANCE", new ConstantSymbol("BOT_LOST_AVATAR_DISTANCE", SymbolTable.INT, "8")},
-            
+
             {"BOT_TRAVELMODE_WALK", new ConstantSymbol("BOT_TRAVELMODE_WALK", SymbolTable.INT, "1")},
             {"BOT_TRAVELMODE_RUN", new ConstantSymbol("BOT_TRAVELMODE_RUN", SymbolTable.INT, "2")},
             {"BOT_TRAVELMODE_FLY", new ConstantSymbol("BOT_TRAVELMODE_FLY", SymbolTable.INT, "3")},
             {"BOT_TRAVELMODE_TELEPORT", new ConstantSymbol("BOT_TRAVELMODE_TELEPORT", SymbolTable.INT, "4")},
             {"BOT_TRAVELMODE_WAIT", new ConstantSymbol("BOT_TRAVELMODE_WAIT", SymbolTable.INT, "5")},
-            
+
             {"BOT_MOVEMENT_TYPE", new ConstantSymbol("BOT_MOVEMENT_TYPE", SymbolTable.INT, "0")},
             {"BOT_MOVEMENT_TELEPORT_AFTER", new ConstantSymbol("BOT_MOVEMENT_TELEPORT_AFTER", SymbolTable.INT, "1")},
-            
+
             {"BOT_MOVEMENT_FLAG_NONE", new ConstantSymbol("BOT_MOVEMENT_FLAG_NONE", SymbolTable.INT, "0")},
             {"BOT_MOVEMENT_FLAG_FOLLOW_INDEFINITELY", new ConstantSymbol("BOT_MOVEMENT_FLAG_FOLLOW_INDEFINITELY", SymbolTable.INT, "1")},
 
             {"BOT_CREATE_DEFAULT", new ConstantSymbol("BOT_CREATE_DEFAULT", SymbolTable.INT, "0")},
-            
+
             {"BOT_MOVE_COMPLETE", new ConstantSymbol("BOT_MOVE_COMPLETE", SymbolTable.INT, "1")},
             {"BOT_MOVE_UPDATE", new ConstantSymbol("BOT_MOVE_UPDATE", SymbolTable.INT, "2")},
             {"BOT_MOVE_FAILED", new ConstantSymbol("BOT_MOVE_FAILED", SymbolTable.INT, "3")},
             {"BOT_MOVE_AVATAR_LOST", new ConstantSymbol("BOT_MOVE_AVATAR_LOST", SymbolTable.INT, "4")},
-            
+
             {"BOT_WANDER_MOVEMENT_TYPE", new ConstantSymbol("BOT_WANDER_MOVEMENT_TYPE", SymbolTable.INT, "1")},
             {"BOT_WANDER_TIME_BETWEEN_NODES", new ConstantSymbol("BOT_WANDER_TIME_BETWEEN_NODES", SymbolTable.INT, "2")},
-            
+
             {"BOT_ABOUT_TEXT", new ConstantSymbol("BOT_ABOUT_TEXT", SymbolTable.INT, "1")},
             {"BOT_EMAIL", new ConstantSymbol("BOT_EMAIL", SymbolTable.INT, "2")},
             {"BOT_IMAGE_UUID", new ConstantSymbol("BOT_IMAGE_UUID", SymbolTable.INT, "3")},
@@ -814,7 +811,7 @@ namespace Halcyon.Phlox.Compiler
 
             // Generic operations result codes that can be used to provide a unified number space for operation return codes. 
                 // 0: ok/success (two aliases that may be more appealing depending on your preferences)
-            { "IW_SUCCESS", new ConstantSymbol("IW_SUCCESS", SymbolTable.INT, "0") }, 
+            { "IW_SUCCESS", new ConstantSymbol("IW_SUCCESS", SymbolTable.INT, "0") },
             { "IWERR_NONE", new ConstantSymbol("IWERR_NONE", SymbolTable.INT, "0") }, 
                 // 1: ignored, the request was redundant, nothing needed to be done
             { "IWERR_NOCHANGE", new ConstantSymbol("IWERR_NOCHANGE", SymbolTable.INT, "1") },
@@ -831,33 +828,33 @@ namespace Halcyon.Phlox.Compiler
                 // 7: the ID/target/object does not exist
             { "IWERR_NOTFOUND", new ConstantSymbol("IWERR_NOTFOUND", SymbolTable.INT, "7") },
 
-			// Return codes for iwRemoteLoadScriptPin
-			{ "IW_REMOTELOAD_SUCCESS", new ConstantSymbol("IW_REMOTELOAD_SUCCESS", SymbolTable.INT,  "1") },
-			{ "IW_REMOTELOAD_FAILURE", new ConstantSymbol("IW_REMOTELOAD_FAILURE", SymbolTable.INT,  "0") },
-			{ "IW_REMOTELOAD_BAD_PIN", new ConstantSymbol("IW_REMOTELOAD_BAD_PIN", SymbolTable.INT, "-1") },
-			{ "IW_REMOTELOAD_NO_PIN",  new ConstantSymbol("IW_REMOTELOAD_NO_PIN",  SymbolTable.INT, "-2") },
+            // Return codes for iwRemoteLoadScriptPin
+            { "IW_REMOTELOAD_SUCCESS", new ConstantSymbol("IW_REMOTELOAD_SUCCESS", SymbolTable.INT,  "1") },
+            { "IW_REMOTELOAD_FAILURE", new ConstantSymbol("IW_REMOTELOAD_FAILURE", SymbolTable.INT,  "0") },
+            { "IW_REMOTELOAD_BAD_PIN", new ConstantSymbol("IW_REMOTELOAD_BAD_PIN", SymbolTable.INT, "-1") },
+            { "IW_REMOTELOAD_NO_PIN",  new ConstantSymbol("IW_REMOTELOAD_NO_PIN",  SymbolTable.INT, "-2") },
 
-			// Return codes for iwDeliverInventory and iwDeliverInventoryList
-			{ "IW_DELIVER_OK",      new ConstantSymbol("IW_DELIVER_OK",     SymbolTable.INT, "0") },
-			{ "IW_DELIVER_BADKEY",  new ConstantSymbol("IW_DELIVER_BADKEY", SymbolTable.INT, "1") },
-			{ "IW_DELIVER_MUTED",   new ConstantSymbol("IW_DELIVER_MUTED",  SymbolTable.INT, "2") },
-			{ "IW_DELIVER_ITEM",    new ConstantSymbol("IW_DELIVER_ITEM",   SymbolTable.INT, "3") },
-			{ "IW_DELIVER_PRIM",    new ConstantSymbol("IW_DELIVER_PRIM",   SymbolTable.INT, "4") },
-			{ "IW_DELIVER_USER",    new ConstantSymbol("IW_DELIVER_USER",   SymbolTable.INT, "5") },
-			{ "IW_DELIVER_PERM",    new ConstantSymbol("IW_DELIVER_PERM",   SymbolTable.INT, "6") },
-			{ "IW_DELIVER_NONE",    new ConstantSymbol("IW_DELIVER_NONE",   SymbolTable.INT, "7") },
+            // Return codes for iwDeliverInventory and iwDeliverInventoryList
+            { "IW_DELIVER_OK",      new ConstantSymbol("IW_DELIVER_OK",     SymbolTable.INT, "0") },
+            { "IW_DELIVER_BADKEY",  new ConstantSymbol("IW_DELIVER_BADKEY", SymbolTable.INT, "1") },
+            { "IW_DELIVER_MUTED",   new ConstantSymbol("IW_DELIVER_MUTED",  SymbolTable.INT, "2") },
+            { "IW_DELIVER_ITEM",    new ConstantSymbol("IW_DELIVER_ITEM",   SymbolTable.INT, "3") },
+            { "IW_DELIVER_PRIM",    new ConstantSymbol("IW_DELIVER_PRIM",   SymbolTable.INT, "4") },
+            { "IW_DELIVER_USER",    new ConstantSymbol("IW_DELIVER_USER",   SymbolTable.INT, "5") },
+            { "IW_DELIVER_PERM",    new ConstantSymbol("IW_DELIVER_PERM",   SymbolTable.INT, "6") },
+            { "IW_DELIVER_NONE",    new ConstantSymbol("IW_DELIVER_NONE",   SymbolTable.INT, "7") },
 
             // Used by llReturnObjectsByOwner
-			{ "OBJECT_RETURN_PARCEL",       new ConstantSymbol("OBJECT_RETURN_PARCEL",          SymbolTable.INT, "1") },
-			{ "OBJECT_RETURN_PARCEL_OWNER", new ConstantSymbol("OBJECT_RETURN_PARCEL_OWNER",    SymbolTable.INT, "2") },
-			{ "OBJECT_RETURN_REGION",       new ConstantSymbol("OBJECT_RETURN_REGION",          SymbolTable.INT, "4") },
+            { "OBJECT_RETURN_PARCEL",       new ConstantSymbol("OBJECT_RETURN_PARCEL",          SymbolTable.INT, "1") },
+            { "OBJECT_RETURN_PARCEL_OWNER", new ConstantSymbol("OBJECT_RETURN_PARCEL_OWNER",    SymbolTable.INT, "2") },
+            { "OBJECT_RETURN_REGION",       new ConstantSymbol("OBJECT_RETURN_REGION",          SymbolTable.INT, "4") },
             
             // Returned by llReturnObjectsByOwner and llReturnObjectsByID
-			{ "ERR_GENERIC",                new ConstantSymbol("ERR_GENERIC",                   SymbolTable.INT, "-1") },
-			{ "ERR_PARCEL_PERMISSIONS",     new ConstantSymbol("ERR_PARCEL_PERMISSIONS",        SymbolTable.INT, "-2") },
-			{ "ERR_MALFORMED_PARAMS",       new ConstantSymbol("ERR_MALFORMED_PARAMS",          SymbolTable.INT, "-3") },
-			{ "ERR_RUNTIME_PERMISSIONS",    new ConstantSymbol("ERR_RUNTIME_PERMISSIONS",       SymbolTable.INT, "-4") },
-			{ "ERR_THROTTLED",              new ConstantSymbol("ERR_THROTTLED",                 SymbolTable.INT, "-5") },
+            { "ERR_GENERIC",                new ConstantSymbol("ERR_GENERIC",                   SymbolTable.INT, "-1") },
+            { "ERR_PARCEL_PERMISSIONS",     new ConstantSymbol("ERR_PARCEL_PERMISSIONS",        SymbolTable.INT, "-2") },
+            { "ERR_MALFORMED_PARAMS",       new ConstantSymbol("ERR_MALFORMED_PARAMS",          SymbolTable.INT, "-3") },
+            { "ERR_RUNTIME_PERMISSIONS",    new ConstantSymbol("ERR_RUNTIME_PERMISSIONS",       SymbolTable.INT, "-4") },
+            { "ERR_THROTTLED",              new ConstantSymbol("ERR_THROTTLED",                 SymbolTable.INT, "-5") },
 
         };
     }
