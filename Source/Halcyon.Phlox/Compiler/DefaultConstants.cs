@@ -1,4 +1,4 @@
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
 namespace Halcyon.Phlox.Compiler
 {
@@ -374,6 +374,14 @@ namespace Halcyon.Phlox.Compiler
             { "PRIM_SCRIPTED_SIT_ONLY", new ConstantSymbol("PRIM_SCRIPTED_SIT_ONLY", SymbolTable.INT, "40")},
             { "PRIM_SIT_TARGET", new ConstantSymbol("PRIM_SIT_TARGET", SymbolTable.INT, "41")},
 
+            {"HAL_PRIM_ALPHA", new ConstantSymbol("HAL_PRIM_ALPHA", SymbolTable.INT, "11001")},   // HAL extensions to PRIM_* constants
+            {"HAL_PRIM_PROJECTOR",          new ConstantSymbol("HAL_PRIM_PROJECTOR",          SymbolTable.INT, "11100")},
+            {"HAL_PRIM_PROJECTOR_ENABLED",  new ConstantSymbol("HAL_PRIM_PROJECTOR_ENABLED",  SymbolTable.INT, "11101")},
+            {"HAL_PRIM_PROJECTOR_TEXTURE",  new ConstantSymbol("HAL_PRIM_PROJECTOR_TEXTURE",  SymbolTable.INT, "11102")},
+            {"HAL_PRIM_PROJECTOR_FOV",      new ConstantSymbol("HAL_PRIM_PROJECTOR_FOV",      SymbolTable.INT, "11103")},
+            {"HAL_PRIM_PROJECTOR_FOCUS",    new ConstantSymbol("HAL_PRIM_PROJECTOR_FOCUS",    SymbolTable.INT, "11104")},
+            {"HAL_PRIM_PROJECTOR_AMBIENCE", new ConstantSymbol("HAL_PRIM_PROJECTOR_AMBIENCE", SymbolTable.INT, "11105")},
+            // NOTE: All IW* prefixes are deprecated in favor of HAL prefixes.
             {"IW_PRIM_ALPHA", new ConstantSymbol("IW_PRIM_ALPHA", SymbolTable.INT, "11001")},   // IW extensions to PRIM_* constants
             {"IW_PRIM_PROJECTOR",          new ConstantSymbol("IW_PRIM_PROJECTOR",          SymbolTable.INT, "11100")},
             {"IW_PRIM_PROJECTOR_ENABLED",  new ConstantSymbol("IW_PRIM_PROJECTOR_ENABLED",  SymbolTable.INT, "11101")},
@@ -544,9 +552,11 @@ namespace Halcyon.Phlox.Compiler
             {"OBJECT_BODY_SHAPE_TYPE", new ConstantSymbol("OBJECT_BODY_SHAPE_TYPE", SymbolTable.INT, "26")},
             {"OBJECT_LAST_OWNER_ID", new ConstantSymbol("OBJECT_LAST_OWNER_ID", SymbolTable.INT, "27")},
             {"OBJECT_CLICK_ACTION", new ConstantSymbol("OBJECT_CLICK_ACTION", SymbolTable.INT, "28")},
+            {"HAL_OBJECT_SCRIPT_MEMORY_USED", new ConstantSymbol("HAL_OBJECT_SCRIPT_MEMORY_USED", SymbolTable.INT, "10001") },
+            // NOTE: All IW* prefixes are deprecated in favor of HAL prefixes.
             {"IW_OBJECT_SCRIPT_MEMORY_USED", new ConstantSymbol("IW_OBJECT_SCRIPT_MEMORY_USED", SymbolTable.INT, "10001") },
 
-            // IW extensions to the OBJECT_CONSTANTS at out-of-range unexpected values
+            // Halcyon extensions to the OBJECT_CONSTANTS at out-of-range unexpected values
             {"OBJECT_TOTAL_UPDATES", new ConstantSymbol("OBJECT_TOTAL_UPDATES", SymbolTable.INT, "11001")},
 
             {"OPT_OTHER", new ConstantSymbol("OPT_OTHER", SymbolTable.INT, "-1")},
@@ -662,6 +672,54 @@ namespace Halcyon.Phlox.Compiler
             {"WIND_SPEED_FIXED", new ConstantSymbol("WIND_SPEED_FIXED", SymbolTable.INT, "1")},
             {"WIND_SPEED_TERRAIN_TURBULENCE", new ConstantSymbol("WIND_SPEED_TERRAIN_TURBULENCE", SymbolTable.INT, "2")},
 
+            {"HAL_POWER_INVITE", new ConstantSymbol("HAL_POWER_INVITE", SymbolTable.INT, "2")},
+            {"HAL_POWER_EJECT", new ConstantSymbol("HAL_POWER_EJECT", SymbolTable.INT, "4") },
+            {"HAL_POWER_GROUP_OPTIONS", new ConstantSymbol("HAL_POWER_GROUP_OPTIONS", SymbolTable.INT, "8")},
+            {"HAL_POWER_CREATE_ROLE", new ConstantSymbol("HAL_POWER_CREATE_ROLE", SymbolTable.INT, "16")},
+            {"HAL_POWER_DELETE_ROLE", new ConstantSymbol("HAL_POWER_DELETE_ROLE", SymbolTable.INT, "32")},
+            {"HAL_POWER_ROLE_PROPERTIES", new ConstantSymbol("HAL_POWER_ROLE_PROPERTIES", SymbolTable.INT, "64")},
+            {"HAL_POWER_ASSIGN_LIMITED", new ConstantSymbol("HAL_POWER_ASSIGN_LIMITED", SymbolTable.INT, "128")},
+            {"HAL_POWER_ASSIGN_ANY", new ConstantSymbol("HAL_POWER_ASSIGN_ANY", SymbolTable.INT, "256")},
+            {"HAL_POWER_REMOVE_ANY", new ConstantSymbol("HAL_POWER_REMOVE_ANY", SymbolTable.INT, "512")},
+            {"HAL_POWER_CHANGE_ABILITIES", new ConstantSymbol("HAL_POWER_CHANGE_ABILITIES", SymbolTable.INT, "1024")},
+            {"HAL_POWER_GROUP_IDENTITY", new ConstantSymbol("HAL_POWER_GROUP_IDENTITY", SymbolTable.INT, "2048")},
+            {"HAL_POWER_LAND_DEED", new ConstantSymbol("HAL_POWER_LAND_DEED", SymbolTable.INT, "4096")},
+            {"HAL_POWER_LAND_RELEASE", new ConstantSymbol("HAL_POWER_LAND_RELEASE", SymbolTable.INT, "8192")},
+            {"HAL_POWER_LAND_SALE", new ConstantSymbol("HAL_POWER_LAND_SALE", SymbolTable.INT, "16384")},
+            {"HAL_POWER_LAND_JOIN", new ConstantSymbol("HAL_POWER_LAND_JOIN", SymbolTable.INT, "32768")},
+            {"HAL_POWER_CHAT_JOIN", new ConstantSymbol("HAL_POWER_CHAT_JOIN", SymbolTable.INT, "65536")},
+            {"HAL_POWER_FIND_PLACES", new ConstantSymbol("HAL_POWER_FIND_PLACES", SymbolTable.INT, "131072")},
+            {"HAL_POWER_LAND_IDENTITY", new ConstantSymbol("HAL_POWER_LAND_IDENTITY", SymbolTable.INT, "262144")},
+            {"HAL_POWER_LANDING_POINT", new ConstantSymbol("HAL_POWER_LANDING_POINT", SymbolTable.INT, "524288")},
+            {"HAL_POWER_CHANGE_MEDIA", new ConstantSymbol("HAL_POWER_CHANGE_MEDIA", SymbolTable.INT, "1048576")},
+            {"HAL_POWER_TERRAIN_OPTION", new ConstantSymbol("HAL_POWER_TERRAIN_OPTION", SymbolTable.INT, "2097152")},
+            {"HAL_POWER_LAND_OPTIONS", new ConstantSymbol("HAL_POWER_LAND_OPTIONS", SymbolTable.INT, "4194304")},
+            {"HAL_POWER_ALLOW_TERRAIN", new ConstantSymbol("HAL_POWER_ALLOW_TERRAIN", SymbolTable.INT, "8388608")},
+            {"HAL_POWER_ALLOW_FLY", new ConstantSymbol("HAL_POWER_ALLOW_FLY", SymbolTable.INT, "16777216")},
+            {"HAL_POWER_ALLOW_REZ", new ConstantSymbol("HAL_POWER_ALLOW_REZ", SymbolTable.INT, "33554432")},
+            {"HAL_POWER_ALLOW_LANDMARK", new ConstantSymbol("HAL_POWER_ALLOW_LANDMARK", SymbolTable.INT, "67108864")},
+            {"HAL_POWER_ALLOW_VOICE", new ConstantSymbol("HAL_POWER_ALLOW_VOICE", SymbolTable.INT, "134217728")},
+            {"HAL_POWER_ALLOW_HOME", new ConstantSymbol("HAL_POWER_ALLOW_HOME", SymbolTable.INT, "268435456")},
+            {"HAL_POWER_MANAGE_LAND", new ConstantSymbol("HAL_POWER_MANAGE_LAND", SymbolTable.INT, "536870912")},
+            {"HAL_POWER_MANAGE_BANNED", new ConstantSymbol("HAL_POWER_MANAGE_BANNED", SymbolTable.INT, "1073741824")},
+            {"HAL_POWER_MANAGE_PASSES", new ConstantSymbol("HAL_POWER_MANAGE_PASSES", SymbolTable.INT, "2147483648")},
+            {"HAL_POWER_FREEZE_EJECT", new ConstantSymbol("HAL_POWER_FREEZE_EJECT", SymbolTable.INT, "4294967296")},
+            {"HAL_POWER_RETURN_GROUP", new ConstantSymbol("HAL_POWER_RETURN_GROUP", SymbolTable.INT, "8589934592")},
+            {"HAL_POWER_RETURN_NONGROUP", new ConstantSymbol("HAL_POWER_RETURN_NONGROUP", SymbolTable.INT, "17179869184")},
+            {"HAL_POWER_LANDSCAPE_PLANTS", new ConstantSymbol("HAL_POWER_LANDSCAPE_PLANTS", SymbolTable.INT, "34359738368")},
+            {"HAL_POWER_OBJECT_DEED", new ConstantSymbol("HAL_POWER_OBJECT_DEED", SymbolTable.INT, "68719476736")},
+            {"HAL_POWER_CHAT_MODERATE", new ConstantSymbol("HAL_POWER_CHAT_MODERATE", SymbolTable.INT, "137438953472")},
+            {"HAL_POWER_OBJECT_MOVE", new ConstantSymbol("HAL_POWER_OBJECT_MOVE", SymbolTable.INT, "274877906944")},
+            {"HAL_POWER_OBJECT_SALE", new ConstantSymbol("HAL_POWER_OBJECT_SALE", SymbolTable.INT, "549755813888")},
+            {"HAL_POWER_ACCOUNTABLE", new ConstantSymbol("HAL_POWER_ACCOUNTABLE", SymbolTable.INT, "1099511627776")},
+            {"HAL_POWER_HOST_EVENT", new ConstantSymbol("HAL_POWER_HOST_EVENT", SymbolTable.INT, "2199023255552")},
+            {"HAL_POWER_NOTICE_SEND", new ConstantSymbol("HAL_POWER_NOTICE_SEND", SymbolTable.INT, "4398046511104")},
+            {"HAL_POWER_NOTICE_RECV", new ConstantSymbol("HAL_POWER_NOTICE_RECV", SymbolTable.INT, "8796093022208")},
+            {"HAL_POWER_PROPOSAL_ADD", new ConstantSymbol("HAL_POWER_PROPOSAL_ADD", SymbolTable.INT, "17592186044416")},
+            {"HAL_POWER_PROPOSAL_VOTE", new ConstantSymbol("HAL_POWER_PROPOSAL_VOTE", SymbolTable.INT, "35184372088832")},
+            {"HAL_POWER_VISIBLE", new ConstantSymbol("HAL_POWER_VISIBLE", SymbolTable.INT, "140737488355328")},
+            {"HAL_POWER_OBJECT_RETURN", new ConstantSymbol("HAL_POWER_OBJECT_RETURN", SymbolTable.INT, "281474976710656")},
+            // NOTE: All IW* prefixes are deprecated in favor of HAL prefixes.
             {"IW_POWER_INVITE", new ConstantSymbol("IW_POWER_INVITE", SymbolTable.INT, "2")},
             {"IW_POWER_EJECT", new ConstantSymbol("IW_POWER_EJECT", SymbolTable.INT, "4") },
             {"IW_POWER_GROUP_OPTIONS", new ConstantSymbol("IW_POWER_GROUP_OPTIONS", SymbolTable.INT, "8")},
@@ -788,6 +846,13 @@ namespace Halcyon.Phlox.Compiler
             {"BOT_IMAGE_UUID", new ConstantSymbol("BOT_IMAGE_UUID", SymbolTable.INT, "3")},
             {"BOT_PROFILE_URL", new ConstantSymbol("BOT_PROFILE_URL", SymbolTable.INT, "4")},
 
+            {"HAL_REZ_OK", new ConstantSymbol("HAL_REZ_OK", SymbolTable.INT, "0")},
+            {"HAL_REZ_NOT_PERMITTED", new ConstantSymbol("HAL_REZ_NOT_PERMITTED", SymbolTable.INT, "1")},
+            {"HAL_REZ_REGION_SCENIC", new ConstantSymbol("HAL_REZ_REGION_SCENIC", SymbolTable.INT, "2")},
+            {"HAL_REZ_NO_LAND_PARCEL", new ConstantSymbol("HAL_REZ_NO_LAND_PARCEL", SymbolTable.INT, "3")},
+            {"HAL_REZ_PARCEL_LAND_IMPACT", new ConstantSymbol("HAL_REZ_PARCEL_LAND_IMPACT", SymbolTable.INT, "4")},
+            {"HAL_REZ_REGION_LAND_IMPACT", new ConstantSymbol("HAL_REZ_REGION_LAND_IMPACT", SymbolTable.INT, "5")},
+            // NOTE: All IW* prefixes are deprecated in favor of HAL prefixes.
             {"IW_REZ_OK", new ConstantSymbol("IW_REZ_OK", SymbolTable.INT, "0")},
             {"IW_REZ_NOT_PERMITTED", new ConstantSymbol("IW_REZ_NOT_PERMITTED", SymbolTable.INT, "1")},
             {"IW_REZ_REGION_SCENIC", new ConstantSymbol("IW_REZ_REGION_SCENIC", SymbolTable.INT, "2")},
@@ -795,8 +860,18 @@ namespace Halcyon.Phlox.Compiler
             {"IW_REZ_PARCEL_LAND_IMPACT", new ConstantSymbol("IW_REZ_PARCEL_LAND_IMPACT", SymbolTable.INT, "4")},
             {"IW_REZ_REGION_LAND_IMPACT", new ConstantSymbol("IW_REZ_REGION_LAND_IMPACT", SymbolTable.INT, "5")},
 
+            {"HAL_APPEARANCE_GENDER", new ConstantSymbol("HAL_APPEARANCE_GENDER", SymbolTable.INT, "31")},
+            // NOTE: All IW* prefixes are deprecated in favor of HAL prefixes.
             {"IW_APPEARANCE_GENDER", new ConstantSymbol("IW_APPEARANCE_GENDER", SymbolTable.INT, "31")},
 
+            {"HAL_MATCH_INCLUDE", new ConstantSymbol("HAL_MATCH_INCLUDE", SymbolTable.INT, "-2")},
+            {"HAL_MATCH_EQUAL", new ConstantSymbol("HAL_MATCH_EQUAL", SymbolTable.INT, "-1")},
+            {"HAL_MATCH_HEAD", new ConstantSymbol("HAL_MATCH_HEAD", SymbolTable.INT, "0")},
+            {"HAL_MATCH_TAIL", new ConstantSymbol("HAL_MATCH_TAIL", SymbolTable.INT, "1")},
+            {"HAL_MATCH_REGEX", new ConstantSymbol("HAL_MATCH_REGEX", SymbolTable.INT, "2")},
+            {"HAL_MATCH_COUNT", new ConstantSymbol("HAL_MATCH_COUNT", SymbolTable.INT, "3")},
+            {"HAL_MATCH_COUNT_REGEX", new ConstantSymbol("HAL_MATCH_COUNT_REGEX", SymbolTable.INT, "4")},
+            // NOTE: All IW* prefixes are deprecated in favor of HAL prefixes.
             {"IW_MATCH_INCLUDE", new ConstantSymbol("IW_MATCH_INCLUDE", SymbolTable.INT, "-2")},
             {"IW_MATCH_EQUAL", new ConstantSymbol("IW_MATCH_EQUAL", SymbolTable.INT, "-1")},
             {"IW_MATCH_HEAD", new ConstantSymbol("IW_MATCH_HEAD", SymbolTable.INT, "0")},
@@ -805,36 +880,64 @@ namespace Halcyon.Phlox.Compiler
             {"IW_MATCH_COUNT", new ConstantSymbol("IW_MATCH_COUNT", SymbolTable.INT, "3")},
             {"IW_MATCH_COUNT_REGEX", new ConstantSymbol("IW_MATCH_COUNT_REGEX", SymbolTable.INT, "4")},
 
+            {"HAL_COLORSPACE_RGB", new ConstantSymbol("HAL_COLORSPACE_RGB", SymbolTable.INT, "0")},
+            {"HAL_COLORSPACE_HSL", new ConstantSymbol("HAL_COLORSPACE_HSL", SymbolTable.INT, "1")},
+            {"HAL_COLORSPACE_HSV", new ConstantSymbol("HAL_COLORSPACE_HSV", SymbolTable.INT, "2")},
+            // NOTE: All IW* prefixes are deprecated in favor of HAL prefixes.
             {"IW_COLORSPACE_RGB", new ConstantSymbol("IW_COLORSPACE_RGB", SymbolTable.INT, "0")},
             {"IW_COLORSPACE_HSL", new ConstantSymbol("IW_COLORSPACE_HSL", SymbolTable.INT, "1")},
             {"IW_COLORSPACE_HSV", new ConstantSymbol("IW_COLORSPACE_HSV", SymbolTable.INT, "2")},
 
             // Generic operations result codes that can be used to provide a unified number space for operation return codes. 
+            // NOTE: All IW* prefixes are deprecated in favor of HAL prefixes.
                 // 0: ok/success (two aliases that may be more appealing depending on your preferences)
+            { "HAL_SUCCESS", new ConstantSymbol("HAL_SUCCESS", SymbolTable.INT, "0") },
             { "IW_SUCCESS", new ConstantSymbol("IW_SUCCESS", SymbolTable.INT, "0") },
+            { "HALERR_NONE", new ConstantSymbol("HALERR_NONE", SymbolTable.INT, "0") },
             { "IWERR_NONE", new ConstantSymbol("IWERR_NONE", SymbolTable.INT, "0") }, 
                 // 1: ignored, the request was redundant, nothing needed to be done
+            { "HALERR_NOCHANGE", new ConstantSymbol("HALERR_NOCHANGE", SymbolTable.INT, "1") },
             { "IWERR_NOCHANGE", new ConstantSymbol("IWERR_NOCHANGE", SymbolTable.INT, "1") },
                 // 2: generic error, internal server failure (like module not loaded)
+            { "HALERR_FAILED", new ConstantSymbol("HALERR_FAILED", SymbolTable.INT, "2") },
             { "IWERR_FAILED", new ConstantSymbol("IWERR_FAILED", SymbolTable.INT, "2") },
                 // 3: one or more of the parameters is invalid
+            { "HALERR_PARAMETER", new ConstantSymbol("HALERR_PARAMETER", SymbolTable.INT, "3") },
             { "IWERR_PARAMETER", new ConstantSymbol("IWERR_PARAMETER", SymbolTable.INT, "3") },
                 // 4: forbidden, due to region/parcel access restrictions
+            { "HALERR_ACCESS", new ConstantSymbol("HALERR_ACCESS", SymbolTable.INT, "4") },
             { "IWERR_ACCESS", new ConstantSymbol("IWERR_ACCESS", SymbolTable.INT, "4") },
                 // 5: forbidden, permissions error or missing group role
+            { "HALERR_PERMISSION", new ConstantSymbol("HALERR_PERMISSION", SymbolTable.INT, "5") },
             { "IWERR_PERMISSION", new ConstantSymbol("IWERR_PERMISSION", SymbolTable.INT, "5") },
                 // 6: operations prevented due to muting
+            { "HALERR_MUTED", new ConstantSymbol("HALERR_MUTED", SymbolTable.INT, "6") },
             { "IWERR_MUTED", new ConstantSymbol("IWERR_MUTED", SymbolTable.INT, "6") },
                 // 7: the ID/target/object does not exist
+            { "HALERR_NOTFOUND", new ConstantSymbol("HALERR_NOTFOUND", SymbolTable.INT, "7") },
             { "IWERR_NOTFOUND", new ConstantSymbol("IWERR_NOTFOUND", SymbolTable.INT, "7") },
 
-            // Return codes for iwRemoteLoadScriptPin
+            // Return codes for halRemoteLoadScriptPin
+            { "HAL_REMOTELOAD_SUCCESS", new ConstantSymbol("HAL_REMOTELOAD_SUCCESS", SymbolTable.INT,  "1") },
+            { "HAL_REMOTELOAD_FAILURE", new ConstantSymbol("HAL_REMOTELOAD_FAILURE", SymbolTable.INT,  "0") },
+            { "HAL_REMOTELOAD_BAD_PIN", new ConstantSymbol("HAL_REMOTELOAD_BAD_PIN", SymbolTable.INT, "-1") },
+            { "HAL_REMOTELOAD_NO_PIN",  new ConstantSymbol("HAL_REMOTELOAD_NO_PIN",  SymbolTable.INT, "-2") },
+            // NOTE: All IW* prefixes are deprecated in favor of HAL prefixes.
             { "IW_REMOTELOAD_SUCCESS", new ConstantSymbol("IW_REMOTELOAD_SUCCESS", SymbolTable.INT,  "1") },
             { "IW_REMOTELOAD_FAILURE", new ConstantSymbol("IW_REMOTELOAD_FAILURE", SymbolTable.INT,  "0") },
             { "IW_REMOTELOAD_BAD_PIN", new ConstantSymbol("IW_REMOTELOAD_BAD_PIN", SymbolTable.INT, "-1") },
             { "IW_REMOTELOAD_NO_PIN",  new ConstantSymbol("IW_REMOTELOAD_NO_PIN",  SymbolTable.INT, "-2") },
 
-            // Return codes for iwDeliverInventory and iwDeliverInventoryList
+            // Return codes for halDeliverInventory and halDeliverInventoryList
+            { "HAL_DELIVER_OK",      new ConstantSymbol("HAL_DELIVER_OK",     SymbolTable.INT, "0") },
+            { "HAL_DELIVER_BADKEY",  new ConstantSymbol("HAL_DELIVER_BADKEY", SymbolTable.INT, "1") },
+            { "HAL_DELIVER_MUTED",   new ConstantSymbol("HAL_DELIVER_MUTED",  SymbolTable.INT, "2") },
+            { "HAL_DELIVER_ITEM",    new ConstantSymbol("HAL_DELIVER_ITEM",   SymbolTable.INT, "3") },
+            { "HAL_DELIVER_PRIM",    new ConstantSymbol("HAL_DELIVER_PRIM",   SymbolTable.INT, "4") },
+            { "HAL_DELIVER_USER",    new ConstantSymbol("HAL_DELIVER_USER",   SymbolTable.INT, "5") },
+            { "HAL_DELIVER_PERM",    new ConstantSymbol("HAL_DELIVER_PERM",   SymbolTable.INT, "6") },
+            { "HAL_DELIVER_NONE",    new ConstantSymbol("HAL_DELIVER_NONE",   SymbolTable.INT, "7") },
+            // NOTE: All IW* prefixes are deprecated in favor of HAL prefixes.
             { "IW_DELIVER_OK",      new ConstantSymbol("IW_DELIVER_OK",     SymbolTable.INT, "0") },
             { "IW_DELIVER_BADKEY",  new ConstantSymbol("IW_DELIVER_BADKEY", SymbolTable.INT, "1") },
             { "IW_DELIVER_MUTED",   new ConstantSymbol("IW_DELIVER_MUTED",  SymbolTable.INT, "2") },
