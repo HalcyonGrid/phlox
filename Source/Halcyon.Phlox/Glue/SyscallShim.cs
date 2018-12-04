@@ -1,58 +1,53 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using OpenMetaverse;
-
 using Halcyon.Phlox.Types;
+using OpenMetaverse;
 
 namespace Halcyon.Phlox.Glue
 {
-	public class SyscallShim : ISyscallShim
-	{
-		public delegate void ShimCall(SyscallShim self);
+    public class SyscallShim : ISyscallShim
+    {
+        public delegate void ShimCall(SyscallShim self);
         public delegate void LongRunSyscallDelegate();
         public delegate void PerformAsyncCallDelegate(LongRunSyscallDelegate longCall);
 
-		private Halcyon.Phlox.VM.Interpreter _interpreter;
-		private ISystemAPI _systemAPI;
+        private Halcyon.Phlox.VM.Interpreter _interpreter;
+        private ISystemAPI _systemAPI;
         private PerformAsyncCallDelegate _asyncCallDelegate;
 
-		public Halcyon.Phlox.VM.Interpreter Interpreter
-		{
-			get
-			{
-				return _interpreter;
-			}
+        public Halcyon.Phlox.VM.Interpreter Interpreter
+        {
+            get
+            {
+                return _interpreter;
+            }
 
-			set
-			{
-				_interpreter = value;
-			}
-		}
+            set
+            {
+                _interpreter = value;
+            }
+        }
 
-		public ISystemAPI SystemAPI
-		{
-			get
-			{
-				return _systemAPI;
-			}
+        public ISystemAPI SystemAPI
+        {
+            get
+            {
+                return _systemAPI;
+            }
 
-			set
-			{
-				_systemAPI = value;
-			}
-		}
+            set
+            {
+                _systemAPI = value;
+            }
+        }
 
-		private static string ConvToString(object o) { return (string)o; }
-		private static int ConvToInt(object o) { return (int)o; }
-		private static float ConvToFloat(object o) { return (float)o; }
-		private static Vector3 ConvToVector(object o) { return (Vector3)o; }
-		private static LSLList ConvToLSLList(object o) { return (LSLList)o; }
-		private static Quaternion ConvToQuat(object o) { return (Quaternion)o; }
-		private static UUID ConvToUUID(object o) { return UUID.Parse((string)o); }
+        private static string ConvToString(object o) { return (string)o; }
+        private static int ConvToInt(object o) { return (int)o; }
+        private static float ConvToFloat(object o) { return (float)o; }
+        private static Vector3 ConvToVector(object o) { return (Vector3)o; }
+        private static LSLList ConvToLSLList(object o) { return (LSLList)o; }
+        private static Quaternion ConvToQuat(object o) { return (Quaternion)o; }
+        private static UUID ConvToUUID(object o) { return UUID.Parse((string)o); }
 
-		private static string ConvToLSLType(string o) { return o; }
+        private static string ConvToLSLType(string o) { return o; }
         private static int ConvToLSLType(int o) { return o; }
         private static float ConvToLSLType(float o) { return o; }
         private static Vector3 ConvToLSLType(Vector3 o) { return o; }
@@ -62,370 +57,370 @@ namespace Halcyon.Phlox.Glue
 
         private static ShimCall[] _shimMap = new ShimCall[]
         {
-            	Shim_llSin,                 //0
-				Shim_llCos,                 //1
-				Shim_llTan,                 //2
-				Shim_llAtan2,               //3
-				Shim_llSqrt,                //4
-				Shim_llPow,                 //5
-				Shim_llAbs,                 //6
-				Shim_llFabs,                //7
-				Shim_llFrand,               //8
-				Shim_llFloor,               //9
-				Shim_llCeil,                //10
-				Shim_llRound,               //11
-				Shim_llVecMag,              //12
-				Shim_llVecNorm,             //13
-				Shim_llVecDist,             //14
-				Shim_llRot2Euler,           //15
-				Shim_llEuler2Rot,           //16
-				Shim_llAxes2Rot,            //17
-				Shim_llRot2Fwd,             //18
-				Shim_llRot2Left,            //19
-				Shim_llRot2Up,              //20
-				Shim_llRotBetween,          //21
-				Shim_llWhisper,             //22
-				Shim_llSay,                 //23
-				Shim_llShout,               //24
-				Shim_llListen,              //25
-				Shim_llListenControl,       //26
-				Shim_llListenRemove,        //27
-				Shim_llSensor,              //28
-				Shim_llSensorRepeat,        //29
-				Shim_llSensorRemove,        //30
-				Shim_llDetectedName,        //31
-				Shim_llDetectedKey,         //32
-				Shim_llDetectedOwner,       //33
-				Shim_llDetectedType,        //34
-				Shim_llDetectedPos,         //35
-				Shim_llDetectedVel,         //36
-				Shim_llDetectedGrab,        //37
-				Shim_llDetectedRot,         //38
-				Shim_llDetectedGroup,       //39
-				Shim_llDetectedLinkNumber,  //40
-				Shim_llDie,                 //41
-				Shim_llGround,              //42
-				Shim_llCloud,               //43
-				Shim_llWind,                //44
-				Shim_llSetStatus,           //45
-				Shim_llGetStatus,           //46
-				Shim_llSetScale,            //47
-				Shim_llGetScale,            //48
-				Shim_llSetColor,            //49
-				Shim_llGetAlpha,            //50
-				Shim_llSetAlpha,            //51
-				Shim_llGetColor,            //52
-				Shim_llSetTexture,          //53
-				Shim_llScaleTexture,        //54
-				Shim_llOffsetTexture,       //55
-				Shim_llRotateTexture,       //56
-				Shim_llGetTexture,          //57
-				Shim_llSetPos,              //58
-				Shim_llGetPos,              //59
-				Shim_llGetLocalPos,         //60
-				Shim_llSetRot,              //61
-				Shim_llGetRot,              //62
-				Shim_llGetLocalRot,         //63
-				Shim_llSetForce,            //64
-				Shim_llGetForce,            //65
-				Shim_llTarget,              //66
-				Shim_llTargetRemove,        //67
-				Shim_llRotTarget,           //68
-				Shim_llRotTargetRemove,     //69
-				Shim_llMoveToTarget,        //70
-				Shim_llStopMoveToTarget,    //71
-				Shim_llApplyImpulse,        //72
-				Shim_llApplyRotationalImpulse,  //73
-				Shim_llSetTorque,           //74
-				Shim_llGetTorque,           //75
-				Shim_llSetForceAndTorque,   //76
-				Shim_llGetVel,              //77
-				Shim_llGetAccel,            //78
-				Shim_llGetOmega,            //79
-				Shim_llGetTimeOfDay,        //80
-				Shim_llGetWallclock,        //81
-				Shim_llGetTime,             //82
-				Shim_llResetTime,           //83
-				Shim_llGetAndResetTime,     //84
-				Shim_llSound,               //85
-				Shim_llPlaySound,           //86
-				Shim_llLoopSound,           //87
-				Shim_llLoopSoundMaster,     //88
-				Shim_llLoopSoundSlave,      //89
-				Shim_llPlaySoundSlave,      //90
-				Shim_llTriggerSound,        //91
-				Shim_llStopSound,           //92
-				Shim_llPreloadSound,        //93
-				Shim_llGetSubString,        //94
-				Shim_llDeleteSubString,     //95
-				Shim_llInsertString,        //96
-				Shim_llToUpper,             //97
-				Shim_llToLower,             //98
-				Shim_llGiveMoney,           //99
-				Shim_llMakeExplosion,       //100
-				Shim_llMakeFountain,        //101
-				Shim_llMakeSmoke,           //102
-				Shim_llMakeFire,            //103
-				Shim_llRezObject,           //104
-				Shim_llLookAt,              //105
-				Shim_llStopLookAt,          //106
-				Shim_llSetTimerEvent,       //107
-				Shim_llSleep,               //108
-				Shim_llGetMass,             //109
-				Shim_llCollisionFilter,     //110
-				Shim_llTakeControls,        //111
-				Shim_llReleaseControls,     //112
-				Shim_llAttachToAvatar,      //113
-				Shim_llDetachFromAvatar,    //114
-				Shim_llTakeCamera,          //115
-				Shim_llReleaseCamera,       //116
-				Shim_llGetOwner,            //117
-				Shim_llInstantMessage,      //118
-				Shim_llEmail,               //119
-				Shim_llGetNextEmail,        //120
-				Shim_llGetKey,              //121
-				Shim_llSetBuoyancy,         //122
-				Shim_llSetHoverHeight,      //123
-				Shim_llStopHover,           //124
-				Shim_llMinEventDelay,       //125
-				Shim_llSoundPreload,        //126
-				Shim_llRotLookAt,           //127
-				Shim_llStringLength,        //128
-				Shim_llStartAnimation,      //129
-				Shim_llStopAnimation,       //130
-				Shim_llPointAt,             //131
-				Shim_llStopPointAt,         //132
-				Shim_llTargetOmega,         //133
-				Shim_llGetStartParameter,   //134
-				Shim_llGodLikeRezObject,    //135
-				Shim_llRequestPermissions,  //136
-				Shim_llGetPermissionsKey,   //137
-				Shim_llGetPermissions,      //138
-				Shim_llGetLinkNumber,       //139
-				Shim_llSetLinkColor,        //140
-				Shim_llCreateLink,          //141
-				Shim_llBreakLink,           //142
-				Shim_llBreakAllLinks,       //143
-				Shim_llGetLinkKey,          //144
-				Shim_llGetLinkName,         //145
-				Shim_llGetInventoryNumber,  //146
-				Shim_llGetInventoryName,    //147
-				Shim_llSetScriptState,      //148
-				Shim_llGetEnergy,           //149
-				Shim_llGiveInventory,       //150
-				Shim_llRemoveInventory,     //151
-				Shim_llSetText,             //152
-				Shim_llWater,               //153
-				Shim_llPassTouches,         //154
-				Shim_llRequestAgentData,    //155
-				Shim_llRequestInventoryData,    //156
-				Shim_llSetDamage,           //157
-				Shim_llTeleportAgentHome,   //158
-				Shim_llModifyLand,          //159
-				Shim_llCollisionSound,      //160
-				Shim_llCollisionSprite,     //161
-				Shim_llGetAnimation,        //162
-				Shim_llResetScript,         //163
-				Shim_llMessageLinked,       //164
-				Shim_llPushObject,          //165
-				Shim_llPassCollisions,      //166
-				Shim_llGetScriptName,       //167
-				Shim_llGetNumberOfSides,    //168
-				Shim_llAxisAngle2Rot,       //169
-				Shim_llRot2Axis,            //170
-				Shim_llRot2Angle,           //171
-				Shim_llAcos,                //172
-				Shim_llAsin,                //173
-				Shim_llAngleBetween,        //174
-				Shim_llGetInventoryKey,     //175
-				Shim_llAllowInventoryDrop,  //176
-				Shim_llGetSunDirection,     //177
-				Shim_llGetTextureOffset,    //178
-				Shim_llGetTextureScale,     //179
-				Shim_llGetTextureRot,       //180
-				Shim_llSubStringIndex,      //181
-				Shim_llGetOwnerKey,         //182
-				Shim_llGetCenterOfMass,     //183
-				Shim_llListSort,            //184
-				Shim_llGetListLength,       //185
-				Shim_llList2Integer,        //186
-				Shim_llList2Float,          //187
-				Shim_llList2String,         //188
-				Shim_llList2Key,            //189
-				Shim_llList2Vector,         //190
-				Shim_llList2Rot,            //191
-				Shim_llList2List,           //192
-				Shim_llDeleteSubList,       //193
-				Shim_llGetListEntryType,    //194
-				Shim_llList2CSV,            //195
-				Shim_llCSV2List,            //196
-				Shim_llListRandomize,       //197
-				Shim_llList2ListStrided,    //198
-				Shim_llGetRegionCorner,     //199
-				Shim_llListInsertList,      //200
-				Shim_llListFindList,        //201
-				Shim_llGetObjectName,       //202
-				Shim_llSetObjectName,       //203
-				Shim_llGetDate,             //204
-				Shim_llEdgeOfWorld,         //205
-				Shim_llGetAgentInfo,        //206
-				Shim_llAdjustSoundVolume,   //207
-				Shim_llSetSoundQueueing,    //208
-				Shim_llSetSoundRadius,      //209
-				Shim_llKey2Name,            //210
-				Shim_llSetTextureAnim,      //211
-				Shim_llTriggerSoundLimited, //212
-				Shim_llEjectFromLand,       //213
-				Shim_llParseString2List,    //214
-				Shim_llOverMyLand,          //215
-				Shim_llGetLandOwnerAt,      //216
-				Shim_llGetNotecardLine,     //217
-				Shim_llGetAgentSize,        //218
-				Shim_llSameGroup,           //219
-				Shim_llUnSit,               //220
-				Shim_llGroundSlope,         //221
-				Shim_llGroundNormal,        //222
-				Shim_llGroundContour,       //223
-				Shim_llGetAttached,         //224
-				Shim_llGetFreeMemory,       //225
-				Shim_llGetRegionName,       //226
-				Shim_llGetRegionTimeDilation,   //227
-				Shim_llGetRegionFPS,        //228
-				Shim_llParticleSystem,      //229
-				Shim_llGroundRepel,         //230
-				Shim_llGiveInventoryList,   //231
-				Shim_llSetVehicleType,      //232
-				Shim_llSetVehicleFloatParam,//233
-				Shim_llSetVehicleVectorParam,   //234
-				Shim_llSetVehicleFlags,     //235
-				Shim_llRemoveVehicleFlags,  //236
-				Shim_llSitTarget,           //237
-				Shim_llAvatarOnSitTarget,   //238
-				Shim_llAddToLandPassList,   //239
-				Shim_llSetTouchText,        //240
-				Shim_llSetSitText,          //241
-				Shim_llSetCameraEyeOffset,  //242
-				Shim_llSetCameraAtOffset,   //243
-				Shim_llDumpList2String,     //244
+                Shim_llSin,                 //0
+                Shim_llCos,                 //1
+                Shim_llTan,                 //2
+                Shim_llAtan2,               //3
+                Shim_llSqrt,                //4
+                Shim_llPow,                 //5
+                Shim_llAbs,                 //6
+                Shim_llFabs,                //7
+                Shim_llFrand,               //8
+                Shim_llFloor,               //9
+                Shim_llCeil,                //10
+                Shim_llRound,               //11
+                Shim_llVecMag,              //12
+                Shim_llVecNorm,             //13
+                Shim_llVecDist,             //14
+                Shim_llRot2Euler,           //15
+                Shim_llEuler2Rot,           //16
+                Shim_llAxes2Rot,            //17
+                Shim_llRot2Fwd,             //18
+                Shim_llRot2Left,            //19
+                Shim_llRot2Up,              //20
+                Shim_llRotBetween,          //21
+                Shim_llWhisper,             //22
+                Shim_llSay,                 //23
+                Shim_llShout,               //24
+                Shim_llListen,              //25
+                Shim_llListenControl,       //26
+                Shim_llListenRemove,        //27
+                Shim_llSensor,              //28
+                Shim_llSensorRepeat,        //29
+                Shim_llSensorRemove,        //30
+                Shim_llDetectedName,        //31
+                Shim_llDetectedKey,         //32
+                Shim_llDetectedOwner,       //33
+                Shim_llDetectedType,        //34
+                Shim_llDetectedPos,         //35
+                Shim_llDetectedVel,         //36
+                Shim_llDetectedGrab,        //37
+                Shim_llDetectedRot,         //38
+                Shim_llDetectedGroup,       //39
+                Shim_llDetectedLinkNumber,  //40
+                Shim_llDie,                 //41
+                Shim_llGround,              //42
+                Shim_llCloud,               //43
+                Shim_llWind,                //44
+                Shim_llSetStatus,           //45
+                Shim_llGetStatus,           //46
+                Shim_llSetScale,            //47
+                Shim_llGetScale,            //48
+                Shim_llSetColor,            //49
+                Shim_llGetAlpha,            //50
+                Shim_llSetAlpha,            //51
+                Shim_llGetColor,            //52
+                Shim_llSetTexture,          //53
+                Shim_llScaleTexture,        //54
+                Shim_llOffsetTexture,       //55
+                Shim_llRotateTexture,       //56
+                Shim_llGetTexture,          //57
+                Shim_llSetPos,              //58
+                Shim_llGetPos,              //59
+                Shim_llGetLocalPos,         //60
+                Shim_llSetRot,              //61
+                Shim_llGetRot,              //62
+                Shim_llGetLocalRot,         //63
+                Shim_llSetForce,            //64
+                Shim_llGetForce,            //65
+                Shim_llTarget,              //66
+                Shim_llTargetRemove,        //67
+                Shim_llRotTarget,           //68
+                Shim_llRotTargetRemove,     //69
+                Shim_llMoveToTarget,        //70
+                Shim_llStopMoveToTarget,    //71
+                Shim_llApplyImpulse,        //72
+                Shim_llApplyRotationalImpulse,  //73
+                Shim_llSetTorque,           //74
+                Shim_llGetTorque,           //75
+                Shim_llSetForceAndTorque,   //76
+                Shim_llGetVel,              //77
+                Shim_llGetAccel,            //78
+                Shim_llGetOmega,            //79
+                Shim_llGetTimeOfDay,        //80
+                Shim_llGetWallclock,        //81
+                Shim_llGetTime,             //82
+                Shim_llResetTime,           //83
+                Shim_llGetAndResetTime,     //84
+                Shim_llSound,               //85
+                Shim_llPlaySound,           //86
+                Shim_llLoopSound,           //87
+                Shim_llLoopSoundMaster,     //88
+                Shim_llLoopSoundSlave,      //89
+                Shim_llPlaySoundSlave,      //90
+                Shim_llTriggerSound,        //91
+                Shim_llStopSound,           //92
+                Shim_llPreloadSound,        //93
+                Shim_llGetSubString,        //94
+                Shim_llDeleteSubString,     //95
+                Shim_llInsertString,        //96
+                Shim_llToUpper,             //97
+                Shim_llToLower,             //98
+                Shim_llGiveMoney,           //99
+                Shim_llMakeExplosion,       //100
+                Shim_llMakeFountain,        //101
+                Shim_llMakeSmoke,           //102
+                Shim_llMakeFire,            //103
+                Shim_llRezObject,           //104
+                Shim_llLookAt,              //105
+                Shim_llStopLookAt,          //106
+                Shim_llSetTimerEvent,       //107
+                Shim_llSleep,               //108
+                Shim_llGetMass,             //109
+                Shim_llCollisionFilter,     //110
+                Shim_llTakeControls,        //111
+                Shim_llReleaseControls,     //112
+                Shim_llAttachToAvatar,      //113
+                Shim_llDetachFromAvatar,    //114
+                Shim_llTakeCamera,          //115
+                Shim_llReleaseCamera,       //116
+                Shim_llGetOwner,            //117
+                Shim_llInstantMessage,      //118
+                Shim_llEmail,               //119
+                Shim_llGetNextEmail,        //120
+                Shim_llGetKey,              //121
+                Shim_llSetBuoyancy,         //122
+                Shim_llSetHoverHeight,      //123
+                Shim_llStopHover,           //124
+                Shim_llMinEventDelay,       //125
+                Shim_llSoundPreload,        //126
+                Shim_llRotLookAt,           //127
+                Shim_llStringLength,        //128
+                Shim_llStartAnimation,      //129
+                Shim_llStopAnimation,       //130
+                Shim_llPointAt,             //131
+                Shim_llStopPointAt,         //132
+                Shim_llTargetOmega,         //133
+                Shim_llGetStartParameter,   //134
+                Shim_llGodLikeRezObject,    //135
+                Shim_llRequestPermissions,  //136
+                Shim_llGetPermissionsKey,   //137
+                Shim_llGetPermissions,      //138
+                Shim_llGetLinkNumber,       //139
+                Shim_llSetLinkColor,        //140
+                Shim_llCreateLink,          //141
+                Shim_llBreakLink,           //142
+                Shim_llBreakAllLinks,       //143
+                Shim_llGetLinkKey,          //144
+                Shim_llGetLinkName,         //145
+                Shim_llGetInventoryNumber,  //146
+                Shim_llGetInventoryName,    //147
+                Shim_llSetScriptState,      //148
+                Shim_llGetEnergy,           //149
+                Shim_llGiveInventory,       //150
+                Shim_llRemoveInventory,     //151
+                Shim_llSetText,             //152
+                Shim_llWater,               //153
+                Shim_llPassTouches,         //154
+                Shim_llRequestAgentData,    //155
+                Shim_llRequestInventoryData,    //156
+                Shim_llSetDamage,           //157
+                Shim_llTeleportAgentHome,   //158
+                Shim_llModifyLand,          //159
+                Shim_llCollisionSound,      //160
+                Shim_llCollisionSprite,     //161
+                Shim_llGetAnimation,        //162
+                Shim_llResetScript,         //163
+                Shim_llMessageLinked,       //164
+                Shim_llPushObject,          //165
+                Shim_llPassCollisions,      //166
+                Shim_llGetScriptName,       //167
+                Shim_llGetNumberOfSides,    //168
+                Shim_llAxisAngle2Rot,       //169
+                Shim_llRot2Axis,            //170
+                Shim_llRot2Angle,           //171
+                Shim_llAcos,                //172
+                Shim_llAsin,                //173
+                Shim_llAngleBetween,        //174
+                Shim_llGetInventoryKey,     //175
+                Shim_llAllowInventoryDrop,  //176
+                Shim_llGetSunDirection,     //177
+                Shim_llGetTextureOffset,    //178
+                Shim_llGetTextureScale,     //179
+                Shim_llGetTextureRot,       //180
+                Shim_llSubStringIndex,      //181
+                Shim_llGetOwnerKey,         //182
+                Shim_llGetCenterOfMass,     //183
+                Shim_llListSort,            //184
+                Shim_llGetListLength,       //185
+                Shim_llList2Integer,        //186
+                Shim_llList2Float,          //187
+                Shim_llList2String,         //188
+                Shim_llList2Key,            //189
+                Shim_llList2Vector,         //190
+                Shim_llList2Rot,            //191
+                Shim_llList2List,           //192
+                Shim_llDeleteSubList,       //193
+                Shim_llGetListEntryType,    //194
+                Shim_llList2CSV,            //195
+                Shim_llCSV2List,            //196
+                Shim_llListRandomize,       //197
+                Shim_llList2ListStrided,    //198
+                Shim_llGetRegionCorner,     //199
+                Shim_llListInsertList,      //200
+                Shim_llListFindList,        //201
+                Shim_llGetObjectName,       //202
+                Shim_llSetObjectName,       //203
+                Shim_llGetDate,             //204
+                Shim_llEdgeOfWorld,         //205
+                Shim_llGetAgentInfo,        //206
+                Shim_llAdjustSoundVolume,   //207
+                Shim_llSetSoundQueueing,    //208
+                Shim_llSetSoundRadius,      //209
+                Shim_llKey2Name,            //210
+                Shim_llSetTextureAnim,      //211
+                Shim_llTriggerSoundLimited, //212
+                Shim_llEjectFromLand,       //213
+                Shim_llParseString2List,    //214
+                Shim_llOverMyLand,          //215
+                Shim_llGetLandOwnerAt,      //216
+                Shim_llGetNotecardLine,     //217
+                Shim_llGetAgentSize,        //218
+                Shim_llSameGroup,           //219
+                Shim_llUnSit,               //220
+                Shim_llGroundSlope,         //221
+                Shim_llGroundNormal,        //222
+                Shim_llGroundContour,       //223
+                Shim_llGetAttached,         //224
+                Shim_llGetFreeMemory,       //225
+                Shim_llGetRegionName,       //226
+                Shim_llGetRegionTimeDilation,   //227
+                Shim_llGetRegionFPS,        //228
+                Shim_llParticleSystem,      //229
+                Shim_llGroundRepel,         //230
+                Shim_llGiveInventoryList,   //231
+                Shim_llSetVehicleType,      //232
+                Shim_llSetVehicleFloatParam,//233
+                Shim_llSetVehicleVectorParam,   //234
+                Shim_llSetVehicleFlags,     //235
+                Shim_llRemoveVehicleFlags,  //236
+                Shim_llSitTarget,           //237
+                Shim_llAvatarOnSitTarget,   //238
+                Shim_llAddToLandPassList,   //239
+                Shim_llSetTouchText,        //240
+                Shim_llSetSitText,          //241
+                Shim_llSetCameraEyeOffset,  //242
+                Shim_llSetCameraAtOffset,   //243
+                Shim_llDumpList2String,     //244
                 Shim_llScriptDanger,        //245
-				Shim_llDialog,              //246
-				Shim_llVolumeDetect,        //247
-				Shim_llResetOtherScript,    //248
-				Shim_llGetScriptState,      //249
-				Shim_llSetRemoteScriptAccessPin,    //250
-				Shim_llRemoteLoadScriptPin, //251
-				Shim_llOpenRemoteDataChannel,   //252
-				Shim_llSendRemoteData,      //253
-				Shim_llRemoteDataReply,     //254
-				Shim_llCloseRemoteDataChannel,  //255
-				Shim_llMD5String,           //256
-				Shim_llSetPrimitiveParams,  //257
-				Shim_llStringToBase64,      //258
-				Shim_llBase64ToString,      //259
-				Shim_llXorBase64Strings,    //260
-				Shim_llLog10,               //261
-				Shim_llLog,                 //262
-				Shim_llGetAnimationList,    //263
-				Shim_llSetParcelMusicURL,   //264
-				Shim_llGetRootPosition,     //265
-				Shim_llGetRootRotation,     //266
-				Shim_llGetObjectDesc,       //267
-				Shim_llSetObjectDesc,       //268
-				Shim_llGetCreator,          //269
-				Shim_llGetTimestamp,        //270
-				Shim_llSetLinkAlpha,        //271
-				Shim_llGetNumberOfPrims,    //272
-				Shim_llGetNumberOfNotecardLines,    //273
-				Shim_llGetBoundingBox,      //274
-				Shim_llGetGeometricCenter,  //275
-				Shim_llGetPrimitiveParams,  //276
-				Shim_llIntegerToBase64,     //277
-				Shim_llBase64ToInteger,     //278
-				Shim_llGetGMTclock,         //279
-				Shim_llGetSimulatorHostname,//280
-				Shim_llSetLocalRot,         //281
-				Shim_llParseStringKeepNulls,//282
-				Shim_llRezAtRoot,           //283
-				Shim_llGetObjectPermMask,   //284
-				Shim_llSetObjectPermMask,   //285
-				Shim_llGetInventoryPermMask,//286
-				Shim_llSetInventoryPermMask,//287
-				Shim_llGetInventoryCreator, //288
-				Shim_llOwnerSay,            //289
-				Shim_llRequestSimulatorData,//290
-				Shim_llForceMouselook,      //291
-				Shim_llGetObjectMass,       //292
-				Shim_llListReplaceList,     //293
-				Shim_llLoadURL,             //294
-				Shim_llParcelMediaCommandList,  //295
-				Shim_llParcelMediaQuery,    //296
-				Shim_llModPow,              //297
-				Shim_llGetInventoryType,    //298
-				Shim_llSetPayPrice,         //299
-				Shim_llGetCameraPos,        //300
-				Shim_llGetCameraRot,        //301
-				Shim_llSetPrimURL,          //302
-				Shim_llRefreshPrimURL,      //303
-				Shim_llEscapeURL,           //304
-				Shim_llUnescapeURL,         //305
-				Shim_llMapDestination,      //306
-				Shim_llAddToLandBanList,    //307
-				Shim_llRemoveFromLandPassList,  //308
-				Shim_llRemoveFromLandBanList,   //309
-				Shim_llSetCameraParams,     //310
-				Shim_llClearCameraParams,   //311
-				Shim_llListStatistics,      //312
-				Shim_llGetUnixTime,         //313
-				Shim_llGetParcelFlags,      //314
-				Shim_llGetRegionFlags,      //315
-				Shim_llXorBase64StringsCorrect, //316
-				Shim_llHTTPRequest,         //317
-				Shim_llResetLandBanList,    //318
-				Shim_llResetLandPassList,   //319
-				Shim_llGetObjectPrimCount,  //320
-				Shim_llGetParcelPrimOwners, //321
-				Shim_llGetParcelPrimCount,  //322
-				Shim_llGetParcelMaxPrims,   //323
-				Shim_llGetParcelDetails,    //324
-				Shim_llSetLinkPrimitiveParams,  //325
-				Shim_llSetLinkTexture,      //326
-				Shim_llStringTrim,          //327
-				Shim_llRegionSay,           //328
-				Shim_llGetObjectDetails,    //329
-				Shim_llSetClickAction,      //330
-				Shim_llGetRegionAgentCount, //331
-				Shim_llTextBox,             //332
-				Shim_llGetAgentLanguage,    //333
-				Shim_llDetectedTouchUV,     //334
-				Shim_llDetectedTouchFace,   //335
-				Shim_llDetectedTouchPos,    //336
-				Shim_llDetectedTouchNormal, //337
-				Shim_llDetectedTouchBinormal,   //338
-				Shim_llDetectedTouchST,     //339
-				Shim_llSHA1String,          //340
-				Shim_llGetFreeURLs,         //341
-				Shim_llRequestURL,          //342
-				Shim_llRequestSecureURL,    //343
-				Shim_llReleaseURL,          //344
-				Shim_llHTTPResponse,        //345
-				Shim_llGetHTTPHeader,       //346
-				Shim_llSetPrimMediaParams,  //347
-				Shim_llGetPrimMediaParams,  //348
-				Shim_llClearPrimMedia,      //349
-				Shim_llSetLinkPrimitiveParamsFast,  //350
-				Shim_llGetLinkPrimitiveParams,  //351
-				Shim_llLinkParticleSystem,  //352
-				Shim_llSetLinkTextureAnim,  //353
-				Shim_llGetLinkNumberOfSides,//354
-				Shim_llGetUsername,         //355
-				Shim_llRequestUsername,     //356
-				Shim_llGetDisplayName,      //357
-				Shim_llRequestDisplayName,  //358
-				Shim_iwMakeNotecard,        //359
-				Shim_iwAvatarName2Key,      //360
+                Shim_llDialog,              //246
+                Shim_llVolumeDetect,        //247
+                Shim_llResetOtherScript,    //248
+                Shim_llGetScriptState,      //249
+                Shim_llSetRemoteScriptAccessPin,    //250
+                Shim_llRemoteLoadScriptPin, //251
+                Shim_llOpenRemoteDataChannel,   //252
+                Shim_llSendRemoteData,      //253
+                Shim_llRemoteDataReply,     //254
+                Shim_llCloseRemoteDataChannel,  //255
+                Shim_llMD5String,           //256
+                Shim_llSetPrimitiveParams,  //257
+                Shim_llStringToBase64,      //258
+                Shim_llBase64ToString,      //259
+                Shim_llXorBase64Strings,    //260
+                Shim_llLog10,               //261
+                Shim_llLog,                 //262
+                Shim_llGetAnimationList,    //263
+                Shim_llSetParcelMusicURL,   //264
+                Shim_llGetRootPosition,     //265
+                Shim_llGetRootRotation,     //266
+                Shim_llGetObjectDesc,       //267
+                Shim_llSetObjectDesc,       //268
+                Shim_llGetCreator,          //269
+                Shim_llGetTimestamp,        //270
+                Shim_llSetLinkAlpha,        //271
+                Shim_llGetNumberOfPrims,    //272
+                Shim_llGetNumberOfNotecardLines,    //273
+                Shim_llGetBoundingBox,      //274
+                Shim_llGetGeometricCenter,  //275
+                Shim_llGetPrimitiveParams,  //276
+                Shim_llIntegerToBase64,     //277
+                Shim_llBase64ToInteger,     //278
+                Shim_llGetGMTclock,         //279
+                Shim_llGetSimulatorHostname,//280
+                Shim_llSetLocalRot,         //281
+                Shim_llParseStringKeepNulls,//282
+                Shim_llRezAtRoot,           //283
+                Shim_llGetObjectPermMask,   //284
+                Shim_llSetObjectPermMask,   //285
+                Shim_llGetInventoryPermMask,//286
+                Shim_llSetInventoryPermMask,//287
+                Shim_llGetInventoryCreator, //288
+                Shim_llOwnerSay,            //289
+                Shim_llRequestSimulatorData,//290
+                Shim_llForceMouselook,      //291
+                Shim_llGetObjectMass,       //292
+                Shim_llListReplaceList,     //293
+                Shim_llLoadURL,             //294
+                Shim_llParcelMediaCommandList,  //295
+                Shim_llParcelMediaQuery,    //296
+                Shim_llModPow,              //297
+                Shim_llGetInventoryType,    //298
+                Shim_llSetPayPrice,         //299
+                Shim_llGetCameraPos,        //300
+                Shim_llGetCameraRot,        //301
+                Shim_llSetPrimURL,          //302
+                Shim_llRefreshPrimURL,      //303
+                Shim_llEscapeURL,           //304
+                Shim_llUnescapeURL,         //305
+                Shim_llMapDestination,      //306
+                Shim_llAddToLandBanList,    //307
+                Shim_llRemoveFromLandPassList,  //308
+                Shim_llRemoveFromLandBanList,   //309
+                Shim_llSetCameraParams,     //310
+                Shim_llClearCameraParams,   //311
+                Shim_llListStatistics,      //312
+                Shim_llGetUnixTime,         //313
+                Shim_llGetParcelFlags,      //314
+                Shim_llGetRegionFlags,      //315
+                Shim_llXorBase64StringsCorrect, //316
+                Shim_llHTTPRequest,         //317
+                Shim_llResetLandBanList,    //318
+                Shim_llResetLandPassList,   //319
+                Shim_llGetObjectPrimCount,  //320
+                Shim_llGetParcelPrimOwners, //321
+                Shim_llGetParcelPrimCount,  //322
+                Shim_llGetParcelMaxPrims,   //323
+                Shim_llGetParcelDetails,    //324
+                Shim_llSetLinkPrimitiveParams,  //325
+                Shim_llSetLinkTexture,      //326
+                Shim_llStringTrim,          //327
+                Shim_llRegionSay,           //328
+                Shim_llGetObjectDetails,    //329
+                Shim_llSetClickAction,      //330
+                Shim_llGetRegionAgentCount, //331
+                Shim_llTextBox,             //332
+                Shim_llGetAgentLanguage,    //333
+                Shim_llDetectedTouchUV,     //334
+                Shim_llDetectedTouchFace,   //335
+                Shim_llDetectedTouchPos,    //336
+                Shim_llDetectedTouchNormal, //337
+                Shim_llDetectedTouchBinormal,   //338
+                Shim_llDetectedTouchST,     //339
+                Shim_llSHA1String,          //340
+                Shim_llGetFreeURLs,         //341
+                Shim_llRequestURL,          //342
+                Shim_llRequestSecureURL,    //343
+                Shim_llReleaseURL,          //344
+                Shim_llHTTPResponse,        //345
+                Shim_llGetHTTPHeader,       //346
+                Shim_llSetPrimMediaParams,  //347
+                Shim_llGetPrimMediaParams,  //348
+                Shim_llClearPrimMedia,      //349
+                Shim_llSetLinkPrimitiveParamsFast,  //350
+                Shim_llGetLinkPrimitiveParams,  //351
+                Shim_llLinkParticleSystem,  //352
+                Shim_llSetLinkTextureAnim,  //353
+                Shim_llGetLinkNumberOfSides,//354
+                Shim_llGetUsername,         //355
+                Shim_llRequestUsername,     //356
+                Shim_llGetDisplayName,      //357
+                Shim_llRequestDisplayName,  //358
+                Shim_iwMakeNotecard,        //359
+                Shim_iwAvatarName2Key,      //360
                 Shim_iwLinkTargetOmega,     //361
                 Shim_llSetVehicleRotationParam, //362
-				Shim_llGetParcelMusicURL,   //363
+                Shim_llGetParcelMusicURL,   //363
                 Shim_llSetRegionPos,        //364
                 Shim_iwGetLinkInventoryNumber,  //365
                 Shim_iwGetLinkInventoryType,    //366
@@ -437,42 +432,42 @@ namespace Halcyon.Phlox.Glue
                 Shim_iwTeleportAgent,       //372
                 Shim_llAvatarOnLinkSitTarget,   //373
                 Shim_iwGetLastOwner,        //374
-				Shim_iwRemoveLinkInventory, //375
-				Shim_iwGiveLinkInventory,   //376
-				Shim_iwGiveLinkInventoryList,   //377
+                Shim_iwRemoveLinkInventory, //375
+                Shim_iwGiveLinkInventory,   //376
+                Shim_iwGiveLinkInventoryList,   //377
                 Shim_iwGetNotecardSegment,  //378
                 Shim_iwGetLinkNumberOfNotecardLines,    //379
                 Shim_iwGetLinkNotecardLine, //380
                 Shim_iwGetLinkNotecardSegment,  //381
                 Shim_iwActiveGroup,         //382
                 Shim_iwAvatarOnLink,        //383
-				Shim_llRegionSayTo,         //384
+                Shim_llRegionSayTo,         //384
                 Shim_llGetUsedMemory,       //385
                 Shim_iwGetLinkInventoryDesc,//386
-                Shim_llGenerateKey,			//387
+                Shim_llGenerateKey,            //387
                 Shim_iwGetLinkInventoryLastOwner, //388
-				Shim_llSetLinkMedia,        //389
-				Shim_llGetLinkMedia,        //390
-				Shim_llClearLinkMedia,      //391
+                Shim_llSetLinkMedia,        //389
+                Shim_llGetLinkMedia,        //390
+                Shim_llClearLinkMedia,      //391
                 Shim_llGetEnv,              //392
                 Shim_llSetAngularVelocity,  //393
                 Shim_llSetPhysicsMaterial,  //394
                 Shim_llSetVelocity,         //395
-				Shim_iwRezObject,           //396
-				Shim_iwRezAtRoot,           //397
-				Shim_iwRezPrim,             //398
+                Shim_iwRezObject,           //396
+                Shim_iwRezAtRoot,           //397
+                Shim_iwRezPrim,             //398
                 Shim_llGetAgentList,        //399
                 Shim_iwGetAgentList,        //400
                 Shim_iwGetWorldBoundingBox, //401
                 Shim_llSetMemoryLimit,      //402
                 Shim_llGetMemoryLimit,      //403
                 Shim_llManageEstateAccess,  //404
-				Shim_iwSubStringIndex,      //405
+                Shim_iwSubStringIndex,      //405
                 Shim_llLinkSitTarget,       //406
-				Shim_llGetMass,             //407
+                Shim_llGetMass,             //407
                 Shim_iwGetObjectMassMKS,    //408
                 Shim_llSetLinkCamera,       //409
-				Shim_iwSetGround,           //410
+                Shim_iwSetGround,           //410
                 Shim_llSetContentType,      //411
                 Shim_llJsonGetValue,        //412
                 Shim_llJsonValueType,       //413
@@ -557,7 +552,7 @@ namespace Halcyon.Phlox.Glue
                 Shim_iwVerifyType,          //492
                 Shim_iwGroupInvite,         //493
                 Shim_iwGroupEject,          //494
-				Shim_iwGetAgentData,        //495
+                Shim_iwGetAgentData,        //495
                 Shim_iwIsPlusUser,          //496
                 Shim_llAttachToAvatarTemp,  //497
                 Shim_iwListIncludesElements,//498
@@ -578,18 +573,18 @@ namespace Halcyon.Phlox.Glue
                 Shim_iwSearchLinksByName,   //513
                 Shim_iwSearchLinksByDesc,   //514
                 Shim_botHasTag,             //515
-				Shim_botGetBotTags,         //516
+                Shim_botGetBotTags,         //516
                 Shim_iwValidateURL,         //517
-				Shim_iwRemoteLoadScriptPin, //518
-				Shim_iwDeliverInventory,    //519
-				Shim_iwDeliverInventoryList,//520
-				Shim_llGetAttachedList,     //521
-				Shim_llReturnObjectsByOwner,//522
-				Shim_llReturnObjectsByID,   //523
-				Shim_llTransferLindenDollars,//524
-				Shim_iwGiveMoney,           //525
-				Shim_iwStandTarget,         //526
-				Shim_iwLinkStandTarget,     //527
+                Shim_iwRemoteLoadScriptPin, //518
+                Shim_iwDeliverInventory,    //519
+                Shim_iwDeliverInventoryList,//520
+                Shim_llGetAttachedList,     //521
+                Shim_llReturnObjectsByOwner,//522
+                Shim_llReturnObjectsByID,   //523
+                Shim_llTransferLindenDollars,//524
+                Shim_iwGiveMoney,           //525
+                Shim_iwStandTarget,         //526
+                Shim_iwLinkStandTarget,     //527
         };
 
         public void SetScriptEventFlags()
@@ -602,10 +597,10 @@ namespace Halcyon.Phlox.Glue
             _systemAPI.ShoutError(errorText);
         }
 
-		public SyscallShim(PerformAsyncCallDelegate asyncCallDelegate)
-		{
+        public SyscallShim(PerformAsyncCallDelegate asyncCallDelegate)
+        {
             _asyncCallDelegate = asyncCallDelegate;
-		}
+        }
 
         public void OnScriptReset()
         {
@@ -1620,7 +1615,7 @@ namespace Halcyon.Phlox.Glue
             //set the script to long running syscall and call the function async
             self._interpreter.ScriptState.RunState = VM.RuntimeState.Status.Syscall;
 
-            self._asyncCallDelegate(delegate()
+            self._asyncCallDelegate(delegate ()
             {
                 self._systemAPI.llRezObject(p0, p1, p2, p3, p4);
             });
@@ -1739,7 +1734,7 @@ namespace Halcyon.Phlox.Glue
             //set the script to long running syscall and call the function async
             self._interpreter.ScriptState.RunState = VM.RuntimeState.Status.Syscall;
 
-            self._asyncCallDelegate(delegate()
+            self._asyncCallDelegate(delegate ()
             {
                 self._systemAPI.llInstantMessage(p0, p1);
             });
@@ -1754,7 +1749,7 @@ namespace Halcyon.Phlox.Glue
             //set the script to long running syscall and call the function async
             self._interpreter.ScriptState.RunState = VM.RuntimeState.Status.Syscall;
 
-            self._asyncCallDelegate(delegate()
+            self._asyncCallDelegate(delegate ()
             {
                 self._systemAPI.llEmail(p0, p1, p2);
             });
@@ -1768,7 +1763,7 @@ namespace Halcyon.Phlox.Glue
             //set the script to long running syscall and call the function async
             self._interpreter.ScriptState.RunState = VM.RuntimeState.Status.Syscall;
 
-            self._asyncCallDelegate(delegate()
+            self._asyncCallDelegate(delegate ()
             {
                 self._systemAPI.llGetNextEmail(p0, p1);
             });
@@ -2030,7 +2025,7 @@ namespace Halcyon.Phlox.Glue
             //set the script to long running syscall and call the function async
             self._interpreter.ScriptState.RunState = VM.RuntimeState.Status.Syscall;
 
-            self._asyncCallDelegate(delegate()
+            self._asyncCallDelegate(delegate ()
             {
                 self._systemAPI.llGiveInventory(p0, p1);
             });
@@ -2078,7 +2073,7 @@ namespace Halcyon.Phlox.Glue
             //set the script to long running syscall and call the function async
             self._interpreter.ScriptState.RunState = VM.RuntimeState.Status.Syscall;
 
-            self._asyncCallDelegate(delegate()
+            self._asyncCallDelegate(delegate ()
             {
                 self._systemAPI.llRequestAgentData(p0, p1);
             });
@@ -2108,7 +2103,7 @@ namespace Halcyon.Phlox.Glue
             //set the script to long running syscall and call the function async
             self._interpreter.ScriptState.RunState = VM.RuntimeState.Status.Syscall;
 
-            self._asyncCallDelegate(delegate()
+            self._asyncCallDelegate(delegate ()
             {
                 self._systemAPI.llTeleportAgentHome(p0);
             });
@@ -2638,7 +2633,7 @@ namespace Halcyon.Phlox.Glue
             //set the script to long running syscall and call the function async
             self._interpreter.ScriptState.RunState = VM.RuntimeState.Status.Syscall;
 
-            self._asyncCallDelegate(delegate()
+            self._asyncCallDelegate(delegate ()
             {
                 self._systemAPI.llEjectFromLand(p0);
             });
@@ -2821,7 +2816,7 @@ namespace Halcyon.Phlox.Glue
 
             self._interpreter.ScriptState.RunState = VM.RuntimeState.Status.Syscall;
 
-            self._asyncCallDelegate(delegate()
+            self._asyncCallDelegate(delegate ()
             {
                 self._systemAPI.llGiveInventoryList(p0, p1, p2);
             });
@@ -3301,7 +3296,7 @@ namespace Halcyon.Phlox.Glue
             //set the script to long running syscall and call the function async
             self._interpreter.ScriptState.RunState = VM.RuntimeState.Status.Syscall;
 
-            self._asyncCallDelegate(delegate()
+            self._asyncCallDelegate(delegate ()
             {
                 self._systemAPI.llRezAtRoot(p0, p1, p2, p3, p4);
             });
@@ -3926,7 +3921,7 @@ namespace Halcyon.Phlox.Glue
 
         static private void Shim_llClearLinkMedia(SyscallShim self)
         {
-            int p1 = ConvToInt(self._interpreter.ScriptState.Operands.Pop()); 
+            int p1 = ConvToInt(self._interpreter.ScriptState.Operands.Pop());
             int p0 = ConvToInt(self._interpreter.ScriptState.Operands.Pop());
 
             int ret = self._systemAPI.llClearPrimMedia(p0);
@@ -4002,7 +3997,7 @@ namespace Halcyon.Phlox.Glue
             //set the script to long running syscall and call the function async
             self._interpreter.ScriptState.RunState = VM.RuntimeState.Status.Syscall;
 
-            self._asyncCallDelegate(delegate()
+            self._asyncCallDelegate(delegate ()
             {
                 self._systemAPI.llRequestUsername(p0);
             });
@@ -4024,7 +4019,7 @@ namespace Halcyon.Phlox.Glue
             //set the script to long running syscall and call the function async
             self._interpreter.ScriptState.RunState = VM.RuntimeState.Status.Syscall;
 
-            self._asyncCallDelegate(delegate()
+            self._asyncCallDelegate(delegate ()
             {
                 self._systemAPI.llRequestDisplayName(p0);
             });
@@ -4038,7 +4033,7 @@ namespace Halcyon.Phlox.Glue
             //set the script to long running syscall and call the function async
             self._interpreter.ScriptState.RunState = VM.RuntimeState.Status.Syscall;
 
-            self._asyncCallDelegate(delegate()
+            self._asyncCallDelegate(delegate ()
             {
                 self._systemAPI.iwMakeNotecard(p0, p1);
             });
@@ -4052,7 +4047,7 @@ namespace Halcyon.Phlox.Glue
             //set the script to long running syscall and call the function async
             self._interpreter.ScriptState.RunState = VM.RuntimeState.Status.Syscall;
 
-            self._asyncCallDelegate(delegate()
+            self._asyncCallDelegate(delegate ()
             {
                 self._systemAPI.iwAvatarName2Key(p0, p1);
             });
@@ -4180,11 +4175,11 @@ namespace Halcyon.Phlox.Glue
 
             self._interpreter.ScriptState.RunState = VM.RuntimeState.Status.Syscall;
 
-            self._asyncCallDelegate(delegate()
+            self._asyncCallDelegate(delegate ()
             {
                 self._systemAPI.iwTeleportAgent(agent, region, pos, lookat);
             });
-            
+
         }
 
         static private void Shim_llAvatarOnLinkSitTarget(SyscallShim self)
@@ -4219,7 +4214,7 @@ namespace Halcyon.Phlox.Glue
             //set the script to long running syscall and call the function async
             self._interpreter.ScriptState.RunState = VM.RuntimeState.Status.Syscall;
 
-            self._asyncCallDelegate(delegate()
+            self._asyncCallDelegate(delegate ()
             {
                 self._systemAPI.iwGiveLinkInventory(p0, p1, p2);
             });
@@ -4234,7 +4229,7 @@ namespace Halcyon.Phlox.Glue
 
             self._interpreter.ScriptState.RunState = VM.RuntimeState.Status.Syscall;
 
-            self._asyncCallDelegate(delegate()
+            self._asyncCallDelegate(delegate ()
             {
                 self._systemAPI.iwGiveLinkInventoryList(p0, p1, p2, p3);
             });
@@ -4368,7 +4363,7 @@ namespace Halcyon.Phlox.Glue
             //set the script to long running syscall and call the function async
             self._interpreter.ScriptState.RunState = VM.RuntimeState.Status.Syscall;
 
-            self._asyncCallDelegate(delegate()
+            self._asyncCallDelegate(delegate ()
             {
                 self._systemAPI.iwRezObject(p0, p1, p2, p3, p4);
             });
@@ -4385,7 +4380,7 @@ namespace Halcyon.Phlox.Glue
             //set the script to long running syscall and call the function async
             self._interpreter.ScriptState.RunState = VM.RuntimeState.Status.Syscall;
 
-            self._asyncCallDelegate(delegate()
+            self._asyncCallDelegate(delegate ()
             {
                 self._systemAPI.iwRezAtRoot(p0, p1, p2, p3, p4);
             });
@@ -4447,13 +4442,13 @@ namespace Halcyon.Phlox.Glue
 
         static private void Shim_llManageEstateAccess(SyscallShim self)
         {
-            string p1 = ConvToString(self._interpreter.ScriptState.Operands.Pop()); 
+            string p1 = ConvToString(self._interpreter.ScriptState.Operands.Pop());
             int p0 = ConvToInt(self._interpreter.ScriptState.Operands.Pop());
 
             //set the script to long running syscall and call the function async
             self._interpreter.ScriptState.RunState = VM.RuntimeState.Status.Syscall;
 
-            self._asyncCallDelegate(delegate()
+            self._asyncCallDelegate(delegate ()
             {
                 self._systemAPI.llManageEstateAccess(p0, p1);
             });
@@ -4546,7 +4541,7 @@ namespace Halcyon.Phlox.Glue
 
         static private void Shim_llList2Json(SyscallShim self)
         {
-            LSLList p1 = ConvToLSLList(self._interpreter.ScriptState.Operands.Pop()); 
+            LSLList p1 = ConvToLSLList(self._interpreter.ScriptState.Operands.Pop());
             string p0 = ConvToString(self._interpreter.ScriptState.Operands.Pop());
 
             string ret = self._systemAPI.llList2Json(p0, p1);
@@ -4567,7 +4562,7 @@ namespace Halcyon.Phlox.Glue
         {
             Vector3 p2 = ConvToVector(self._interpreter.ScriptState.Operands.Pop());
             Vector3 p1 = ConvToVector(self._interpreter.ScriptState.Operands.Pop());
-            int     p0 = ConvToInt(self._interpreter.ScriptState.Operands.Pop());
+            int p0 = ConvToInt(self._interpreter.ScriptState.Operands.Pop());
 
             self._systemAPI.iwSetWind(p0, p1, p2);
         }
@@ -4606,7 +4601,7 @@ namespace Halcyon.Phlox.Glue
             Vector3 p1 = ConvToVector(self._interpreter.ScriptState.Operands.Pop());
             Vector3 p0 = ConvToVector(self._interpreter.ScriptState.Operands.Pop());
 
-            LSLList ret = self._systemAPI.llCastRay(p0,p1,p2);
+            LSLList ret = self._systemAPI.llCastRay(p0, p1, p2);
 
             self._interpreter.SafeOperandsPush(ConvToLSLType(ret));
         }
@@ -4616,7 +4611,7 @@ namespace Halcyon.Phlox.Glue
             LSLList p1 = ConvToLSLList(self._interpreter.ScriptState.Operands.Pop());
             LSLList p0 = ConvToLSLList(self._interpreter.ScriptState.Operands.Pop());
 
-            self._systemAPI.llSetKeyframedMotion(p0,p1);
+            self._systemAPI.llSetKeyframedMotion(p0, p1);
         }
 
         static private void Shim_iwWind(SyscallShim self)
@@ -4678,11 +4673,11 @@ namespace Halcyon.Phlox.Glue
             string p2 = ConvToString(self._interpreter.ScriptState.Operands.Pop());
             string p1 = ConvToString(self._interpreter.ScriptState.Operands.Pop());
             string p0 = ConvToString(self._interpreter.ScriptState.Operands.Pop());
-            
+
             //set the script to long running syscall and call the function async
             self._interpreter.ScriptState.RunState = VM.RuntimeState.Status.Syscall;
 
-            self._asyncCallDelegate(delegate()
+            self._asyncCallDelegate(delegate ()
             {
                 self._systemAPI.botCreateBot(p0, p1, p2, p3, p4);
             });
@@ -4716,11 +4711,11 @@ namespace Halcyon.Phlox.Glue
         static private void Shim_botRemoveBotsWithTag(SyscallShim self)
         {
             string p0 = ConvToString(self._interpreter.ScriptState.Operands.Pop());
-            
+
             //set the script to long running syscall and call the function async
             self._interpreter.ScriptState.RunState = VM.RuntimeState.Status.Syscall;
 
-            self._asyncCallDelegate(delegate()
+            self._asyncCallDelegate(delegate ()
             {
                 self._systemAPI.botRemoveBotsWithTag(p0);
             });
@@ -4729,11 +4724,11 @@ namespace Halcyon.Phlox.Glue
         static private void Shim_botRemoveBot(SyscallShim self)
         {
             string p0 = ConvToString(self._interpreter.ScriptState.Operands.Pop());
-            
+
             //set the script to long running syscall and call the function async
             self._interpreter.ScriptState.RunState = VM.RuntimeState.Status.Syscall;
 
-            self._asyncCallDelegate(delegate()
+            self._asyncCallDelegate(delegate ()
             {
                 self._systemAPI.botRemoveBot(p0);
             });
@@ -4803,7 +4798,7 @@ namespace Halcyon.Phlox.Glue
             //set the script to long running syscall and call the function async
             self._interpreter.ScriptState.RunState = VM.RuntimeState.Status.Syscall;
 
-            self._asyncCallDelegate(delegate()
+            self._asyncCallDelegate(delegate ()
             {
                 self._systemAPI.botSendInstantMessage(p0, p1, p2);
             });
@@ -4987,7 +4982,7 @@ namespace Halcyon.Phlox.Glue
             //set the script to long running syscall and call the function async
             self._interpreter.ScriptState.RunState = VM.RuntimeState.Status.Syscall;
 
-            self._asyncCallDelegate(delegate()
+            self._asyncCallDelegate(delegate ()
             {
                 self._systemAPI.botGiveInventory(p0, p1, p2);
             });
@@ -5067,11 +5062,11 @@ namespace Halcyon.Phlox.Glue
         static private void Shim_botSetOutfit(SyscallShim self)
         {
             string p0 = ConvToString(self._interpreter.ScriptState.Operands.Pop());
-            
+
             //set the script to long running syscall and call the function async
             self._interpreter.ScriptState.RunState = VM.RuntimeState.Status.Syscall;
 
-            self._asyncCallDelegate(delegate()
+            self._asyncCallDelegate(delegate ()
             {
                 self._systemAPI.botSetOutfit(p0);
             });
@@ -5080,11 +5075,11 @@ namespace Halcyon.Phlox.Glue
         static private void Shim_botRemoveOutfit(SyscallShim self)
         {
             string p0 = ConvToString(self._interpreter.ScriptState.Operands.Pop());
-            
+
             //set the script to long running syscall and call the function async
             self._interpreter.ScriptState.RunState = VM.RuntimeState.Status.Syscall;
 
-            self._asyncCallDelegate(delegate()
+            self._asyncCallDelegate(delegate ()
             {
                 self._systemAPI.botRemoveOutfit(p0);
             });
@@ -5094,11 +5089,11 @@ namespace Halcyon.Phlox.Glue
         {
             string p1 = ConvToString(self._interpreter.ScriptState.Operands.Pop());
             string p0 = ConvToString(self._interpreter.ScriptState.Operands.Pop());
-            
+
             //set the script to long running syscall and call the function async
             self._interpreter.ScriptState.RunState = VM.RuntimeState.Status.Syscall;
 
-            self._asyncCallDelegate(delegate()
+            self._asyncCallDelegate(delegate ()
             {
                 self._systemAPI.botChangeOutfit(p0, p1);
             });
@@ -5109,7 +5104,7 @@ namespace Halcyon.Phlox.Glue
             //set the script to long running syscall and call the function async
             self._interpreter.ScriptState.RunState = VM.RuntimeState.Status.Syscall;
 
-            self._asyncCallDelegate(delegate()
+            self._asyncCallDelegate(delegate ()
             {
                 self._systemAPI.botGetBotOutfits();
             });
@@ -5553,17 +5548,17 @@ namespace Halcyon.Phlox.Glue
         }
 
         static private void Shim_iwRemoteLoadScriptPin(SyscallShim self)
-		{
-			int p4 = ConvToInt(self._interpreter.ScriptState.Operands.Pop());
-			int p3 = ConvToInt(self._interpreter.ScriptState.Operands.Pop());
-			int p2 = ConvToInt(self._interpreter.ScriptState.Operands.Pop());
-			string p1 = ConvToString(self._interpreter.ScriptState.Operands.Pop());
-			string p0 = ConvToString(self._interpreter.ScriptState.Operands.Pop());
+        {
+            int p4 = ConvToInt(self._interpreter.ScriptState.Operands.Pop());
+            int p3 = ConvToInt(self._interpreter.ScriptState.Operands.Pop());
+            int p2 = ConvToInt(self._interpreter.ScriptState.Operands.Pop());
+            string p1 = ConvToString(self._interpreter.ScriptState.Operands.Pop());
+            string p0 = ConvToString(self._interpreter.ScriptState.Operands.Pop());
 
-			int ret = self._systemAPI.iwRemoteLoadScriptPin(p0, p1, p2, p3, p4);
+            int ret = self._systemAPI.iwRemoteLoadScriptPin(p0, p1, p2, p3, p4);
 
-			self._interpreter.SafeOperandsPush (ConvToLSLType (ret));
-		}
+            self._interpreter.SafeOperandsPush(ConvToLSLType(ret));
+        }
 
         static private void Shim_iwDeliverInventory(SyscallShim self)
         {
@@ -5660,17 +5655,17 @@ namespace Halcyon.Phlox.Glue
             self._systemAPI.iwLinkStandTarget(p0, p1, p2);
         }
 
-	    static private void Shim_llGetAnimationOverride(SyscallShim self)
-	    {
+        static private void Shim_llGetAnimationOverride(SyscallShim self)
+        {
             string p0 = ConvToString(self._interpreter.ScriptState.Operands.Pop());
-    
+
             string ret = self._systemAPI.llGetAnimationOverride(p0);
 
             self._interpreter.SafeOperandsPush(ConvToLSLType(ret));
         }
 
-	    static private void Shim_llSetAnimationOverride(SyscallShim self)
-	    {
+        static private void Shim_llSetAnimationOverride(SyscallShim self)
+        {
             string p1 = ConvToString(self._interpreter.ScriptState.Operands.Pop());
             string p0 = ConvToString(self._interpreter.ScriptState.Operands.Pop());
 
@@ -5678,10 +5673,10 @@ namespace Halcyon.Phlox.Glue
         }
 
         static private void Shim_llResetAnimationOverride(SyscallShim self)
-	    {
+        {
             string p0 = ConvToString(self._interpreter.ScriptState.Operands.Pop());
 
             self._systemAPI.llResetAnimationOverride(p0);
-	    }
+        }
     }
 }
