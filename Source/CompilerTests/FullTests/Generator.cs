@@ -1,14 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+using System.IO;
+using System.Text.RegularExpressions;
+
+using Halcyon.Phlox.VM;
 
 using NUnit.Framework;
-using Antlr.Runtime;
 
 using MCompilerFrontend = Halcyon.Phlox.Glue.CompilerFrontend;
-using Halcyon.Phlox.VM;
-using System.Text.RegularExpressions;
 
 namespace CompilerTests.FullTests
 {
@@ -32,7 +30,7 @@ namespace CompilerTests.FullTests
                     }";
 
             TestListener listener = new TestListener();
-            MCompilerFrontend testFrontend = new MCompilerFrontend(listener, TestContext.CurrentContext.TestDirectory + "/../grammar");
+            MCompilerFrontend testFrontend = new MCompilerFrontend(listener, Path.Combine(TestContext.CurrentContext.TestDirectory, "..", "grammar"));
             CompiledScript script = testFrontend.Compile(test);
 
             Assert.AreEqual(0, listener.ErrorCount);
@@ -62,7 +60,7 @@ namespace CompilerTests.FullTests
                     ";
 
             TestListener listener = new TestListener();
-            MCompilerFrontend testFrontend = new MCompilerFrontend(listener, TestContext.CurrentContext.TestDirectory + "/../grammar", true);
+            MCompilerFrontend testFrontend = new MCompilerFrontend(listener, Path.Combine(TestContext.CurrentContext.TestDirectory, "..", "grammar"), true);
             CompiledScript script = testFrontend.Compile(test);
 
             string byteCode = testFrontend.GeneratedByteCode;
@@ -94,7 +92,7 @@ namespace CompilerTests.FullTests
                     ";
 
             TestListener listener = new TestListener();
-            MCompilerFrontend testFrontend = new MCompilerFrontend(listener, TestContext.CurrentContext.TestDirectory + "/../grammar", true);
+            MCompilerFrontend testFrontend = new MCompilerFrontend(listener, Path.Combine(TestContext.CurrentContext.TestDirectory, "..", "grammar"), true);
             CompiledScript script = testFrontend.Compile(test);
 
             string byteCode = testFrontend.GeneratedByteCode;
@@ -126,7 +124,7 @@ namespace CompilerTests.FullTests
                     ";
 
             TestListener listener = new TestListener();
-            MCompilerFrontend testFrontend = new MCompilerFrontend(listener, TestContext.CurrentContext.TestDirectory + "/../grammar", true);
+            MCompilerFrontend testFrontend = new MCompilerFrontend(listener, Path.Combine(TestContext.CurrentContext.TestDirectory, "..", "grammar"), true);
             CompiledScript script = testFrontend.Compile(test);
 
             string byteCode = testFrontend.GeneratedByteCode;
@@ -155,7 +153,7 @@ namespace CompilerTests.FullTests
                     ";
 
             TestListener listener = new TestListener();
-            MCompilerFrontend testFrontend = new MCompilerFrontend(listener, TestContext.CurrentContext.TestDirectory + "/../grammar", true);
+            MCompilerFrontend testFrontend = new MCompilerFrontend(listener, Path.Combine(TestContext.CurrentContext.TestDirectory, "..", "grammar"), true);
             CompiledScript script = testFrontend.Compile(test);
 
             string byteCode = testFrontend.GeneratedByteCode;
@@ -188,7 +186,7 @@ namespace CompilerTests.FullTests
                     ";
 
             TestListener listener = new TestListener();
-            MCompilerFrontend testFrontend = new MCompilerFrontend(listener, TestContext.CurrentContext.TestDirectory + "/../grammar", true);
+            MCompilerFrontend testFrontend = new MCompilerFrontend(listener, Path.Combine(TestContext.CurrentContext.TestDirectory, "..", "grammar"), true);
             CompiledScript script = testFrontend.Compile(test);
 
             string byteCode = testFrontend.GeneratedByteCode;
@@ -224,7 +222,7 @@ namespace CompilerTests.FullTests
                     ";
 
             TestListener listener = new TestListener();
-            MCompilerFrontend testFrontend = new MCompilerFrontend(listener, TestContext.CurrentContext.TestDirectory + "/../grammar", true);
+            MCompilerFrontend testFrontend = new MCompilerFrontend(listener, Path.Combine(TestContext.CurrentContext.TestDirectory, "..", "grammar"), true);
             CompiledScript script = testFrontend.Compile(test);
 
             string byteCode = testFrontend.GeneratedByteCode;
@@ -258,7 +256,7 @@ namespace CompilerTests.FullTests
                     ";
 
             TestListener listener = new TestListener();
-            MCompilerFrontend testFrontend = new MCompilerFrontend(listener, TestContext.CurrentContext.TestDirectory + "/../grammar", true);
+            MCompilerFrontend testFrontend = new MCompilerFrontend(listener, Path.Combine(TestContext.CurrentContext.TestDirectory, "..", "grammar"), true);
             CompiledScript script = testFrontend.Compile(test);
 
             string byteCode = testFrontend.GeneratedByteCode;
@@ -293,7 +291,7 @@ namespace CompilerTests.FullTests
                         }";
 
             TestListener listener = new TestListener();
-            MCompilerFrontend testFrontend = new MCompilerFrontend(listener, TestContext.CurrentContext.TestDirectory + "/../grammar", true);
+            MCompilerFrontend testFrontend = new MCompilerFrontend(listener, Path.Combine(TestContext.CurrentContext.TestDirectory, "..", "grammar"), true);
             CompiledScript script = testFrontend.Compile(test);
 
             string byteCode = testFrontend.GeneratedByteCode;

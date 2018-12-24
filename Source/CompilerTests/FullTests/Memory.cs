@@ -48,7 +48,7 @@ namespace CompilerTests.FullTests
                     default { state_entry() {} }
                     ";
 
-            MCompilerFrontend testFrontend = new MCompilerFrontend(new TestListener(), TestContext.CurrentContext.TestDirectory + "/../grammar");
+            MCompilerFrontend testFrontend = new MCompilerFrontend(new TestListener(), Path.Combine(TestContext.CurrentContext.TestDirectory, "..", "grammar"));
             CompiledScript script = testFrontend.Compile(test);
 
             Interpreter i = InterpRunner.Run(script);

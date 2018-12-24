@@ -27,7 +27,7 @@ namespace CompilerTests.FullTests
                         }
                     }";
 
-            MCompilerFrontend testFrontend = new MCompilerFrontend(new TestListener(), TestContext.CurrentContext.TestDirectory + "/../grammar");
+            MCompilerFrontend testFrontend = new MCompilerFrontend(new TestListener(), Path.Combine(TestContext.CurrentContext.TestDirectory, "..", "grammar"));
             CompiledScript script = testFrontend.Compile(test);
 
             Assert.Contains(93, script.ByteCode);
@@ -38,7 +38,7 @@ namespace CompilerTests.FullTests
         {
             string test;
 
-            string LAUKS_LARROW = TestContext.CurrentContext.TestDirectory + "/../grammar/test_files/Lauks_Larrow_Main.lsl";
+            string LAUKS_LARROW = Path.Combine(TestContext.CurrentContext.TestDirectory, "..", "grammar", "test_files", "Lauks_Larrow_Main.lsl");
             // This file is not committed; skip test if not on a machine where it can be found.
             if (!File.Exists(LAUKS_LARROW))
                 return;
@@ -49,7 +49,7 @@ namespace CompilerTests.FullTests
             }
 
             TestListener listener = new TestListener();
-            MCompilerFrontend testFrontend = new MCompilerFrontend(listener, TestContext.CurrentContext.TestDirectory + "/../grammar");
+            MCompilerFrontend testFrontend = new MCompilerFrontend(listener, Path.Combine(TestContext.CurrentContext.TestDirectory, "..", "grammar"));
             CompiledScript script = testFrontend.Compile(test);
 
             Assert.IsTrue(listener.HasErrors() == false);
