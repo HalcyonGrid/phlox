@@ -58,13 +58,21 @@ for:
     - image: Ubuntu
   build_script:
   - msbuild Phlox.sln
+  test_script:
+  - sh: mono ./NUnit.ConsoleRunner.*/tools/nunit3-console.exe $APPVEYOR_BUILD_FOLDER/phlox/*Test*.dll --result=TEST_RESULTS.xml;format=AppVeyor
 
 after_build:
 - ps: Set-Location "$env:APPVEYOR_BUILD_FOLDER"
 - ps: Rename-Item -Path bin -NewName phlox
+- sh: nuget install NUnit.Runners
 
-# No tests for now.
-test: off
+test:
+  assemblies:
+    only:
+    - '**/CompilerTests.dll'
+
+on_finish:
+- sh: find "$APPVEYOR_BUILD_FOLDER" -type f -name 'TEST*.xml' -print0 | xargs -0 -I '{}' curl -F 'file=@{}' "https://ci.appveyor.com/api/testresults/nunit/$APPVEYOR_JOB_ID"
 
 artifacts:
 - path: phlox
