@@ -246,7 +246,14 @@ namespace Halcyon.Phlox.Glue
             }
             catch (Exception e)
             {
-                _listener.Error(e.Message);    
+                string message = e.Message;
+
+                while((e = e.InnerException) != null) 
+                {
+                    message += "\n" + e.Message;
+                }
+
+                _listener.Error(message);
             }
 
             return null;
