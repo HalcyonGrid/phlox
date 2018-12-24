@@ -89,6 +89,7 @@
     <Compile Include="CompilerFrontend.cs" />
     <Compile Include="StateTests\SaveAndLoadState.cs" />
     <Compile Include="TestListener.cs" />
+    <Compile Include="TestSetup.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Halcyon.Phlox\Halcyon.Phlox.csproj">

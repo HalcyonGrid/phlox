@@ -15,7 +15,7 @@ using Halcyon.Phlox.Util;
 
 using OpenMetaverse;
 
-namespace CompilerTests.SateTests
+namespace CompilerTests.StateTests
 {
     [TestFixture]
     class SaveAndLoadState
@@ -291,7 +291,7 @@ namespace CompilerTests.SateTests
             frame.ReturnAddress = 999;
             frame.FunctionInfo = new FunctionInfo { Address = 9282, Name = "blam", NumberOfArguments = 1, NumberOfLocals = 0 };
 
-            using (FileStream outStream = File.OpenWrite("primitive.txt"))
+            using (FileStream outStream = File.OpenWrite(Path.Combine(TestContext.CurrentContext.TestDirectory, "primitive.txt")))
             {
                 ProtoBuf.Serializer.Serialize(outStream, frame);
             }
